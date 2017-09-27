@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
- /*- Alex Scicluna -*/
+/*- Alex Scicluna -*/
 
 public class Base_System : MonoBehaviour
 {
- 
+
 
     private bool isPowered = false;
     private bool isCanisterConnected = false;
     private bool isActive = false;
 
     [SerializeField]
-    [Range(0,5)]
+    [Range(0, 5)]
     //[Tooltip("")]
     private int baseDepletionRate;
 
@@ -77,12 +77,22 @@ public class Current_System
 {
     [Tooltip("Core_Power AND Canister is connected")]
     public bool isActive;
+
     [Tooltip("System Type")]
     public SystemType type;
+
     [Tooltip("System Direction")]
     public Direction direction;
+
     [Tooltip("Core_Power ON || OFF")]
-    public bool isPowered;
+    public bool corePower;
+
+    [Tooltip("Junction Box connected to the current system.")]
+    public GameObject junctionBox;
+
+    [Tooltip("Canister of the current system.")]
+    public GameObject canisterSlot;
+
     [Tooltip("Canister connected TRUE || FALSE")]
     public bool canisterConnected;
 
