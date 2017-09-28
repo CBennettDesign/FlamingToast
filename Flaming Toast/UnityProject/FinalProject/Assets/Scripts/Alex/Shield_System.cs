@@ -29,7 +29,9 @@ public class Shield_System : MonoBehaviour
     //Pre-Initialisation
     private void Awake()
     {
+        //Get the system manager
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
+        //Grab the base usage amount
         usageAmount = system.Shield_UsageAmount;
 
         //Canister slot
@@ -41,9 +43,13 @@ public class Shield_System : MonoBehaviour
     //Main-Initialisation
     private void Start()
     {
+        //Set the current system type
         currentSystem.type = SystemType.SHIELD;
         //systemDirection = Direction.TOP; - use the inspector.
+
+        //Grab the depletionRate 
         depletionRate = system.DepletionRate;
+        //If it it active
         currentSystem.isActive = system.IsActive;
 
     }
@@ -64,11 +70,11 @@ public class Shield_System : MonoBehaviour
     private void LateUpdate()
     {
         //Returns true or false
-        //canisterSlot.CheckForCanister();
+        canisterSlot.CheckForCanister();
 
         //Debuging the canister slot state.
-        string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
-        Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
+        //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
+        //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
     }
 
 

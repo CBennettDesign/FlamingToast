@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*- Alex Scicluna -*/
+
+[ExecuteInEditMode]
 public class CanisterSlot : MonoBehaviour
 {
 
@@ -36,12 +39,12 @@ public class CanisterSlot : MonoBehaviour
     //Animations || !Important
     private void LateUpdate()
     {
-        Debug.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Color.red);
+         
     }
+
 
     public bool CheckForCanister()
     {
-
         /*Logic for checking if the canister is connected.*/
         if (Physics.Raycast(rayCast, out hitInfo, 1.5f))
         {
@@ -58,6 +61,14 @@ public class CanisterSlot : MonoBehaviour
         {
             return false;
         }
-
     }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z));
+    }
+
+
 }

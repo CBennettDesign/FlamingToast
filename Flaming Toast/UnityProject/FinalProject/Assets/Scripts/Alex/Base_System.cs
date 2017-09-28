@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Base_System : MonoBehaviour
 {
-
+    public GameObject[] player;
 
     private bool isPowered = false;
     private bool isCanisterConnected = false;
@@ -54,12 +54,46 @@ public class Base_System : MonoBehaviour
     }
 
 
-    public bool CheckForCanister()
+
+    //Ocygen System 
+    private bool oxygenDepleted;
+
+    public bool OxygenDepleted
     {
-        //if a canister is in the slot return true
-        //else false
-        return false;
+        get { return oxygenDepleted; }
+        set { oxygenDepleted = value; }
     }
+
+    private bool oxyUsed = false;
+ 
+
+    private void Update()
+    {
+        //If the ocygen has been depleted and the oxyUsed has not been used yet. 
+        //This will only run once and then only check the first if statement, instead of
+        //going into the foreach loop and double checking for the null value.
+        if (oxygenDepleted && !oxyUsed)
+        {
+            //For every player in the players array
+            foreach (GameObject p in player)
+            {
+                //safe gaurd - double check for null values
+                if (p != null)
+                {
+                    //Set the players movement speed to 0.0f
+                    p.GetComponent<Movement>().movementSpeed = 0.0f;
+                    Debug.Log("Stopped: " + p.name);
+                }
+            }
+                    
+            oxyUsed = true;
+            Debug.Log("Oxygen Depleted!!");
+        }
+        
+                
+ 
+    }
+
 
 }
 
@@ -72,6 +106,12 @@ public enum SystemType
     NONE
 }
 
+
+
+/// <summary>
+/// Everything to do with a ship system.
+/// 
+/// </summary>
 [System.Serializable]
 public class Current_System
 {

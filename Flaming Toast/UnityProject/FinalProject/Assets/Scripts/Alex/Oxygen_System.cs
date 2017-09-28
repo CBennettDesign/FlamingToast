@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*- Alex Scicluna -*/
+
 public class Oxygen_System : MonoBehaviour
 {
 
@@ -19,8 +21,11 @@ public class Oxygen_System : MonoBehaviour
     [Header("*Current Oxygen level: Default starting amount 100%")]
     [Range(1, 100)]
     public int oxygenLevel = 100;
-
+    
+    //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
+
+    //private float[] playerMovement;
 
     //Pre-Initialisation
     private void Awake()
@@ -30,16 +35,18 @@ public class Oxygen_System : MonoBehaviour
        
         //Canister slot
         canisterSlot = currentSystem.canisterSlot.transform.GetChild(0).GetComponent<CanisterSlot>();
-
-
+         
     }
 
 
     //Main-Initialisation
     private void Start()
     {
+        //Current System Type
         currentSystem.type = SystemType.OXYGEN;
+        //Base Depletion rate
         depletionRate = system.DepletionRate;
+        //Is the system active
         currentSystem.isActive = system.IsActive;
     }
 
@@ -55,26 +62,51 @@ public class Oxygen_System : MonoBehaviour
     {
 
 
-
-        //Depletion timer
-        timer += Time.deltaTime;
-        if (timer >= 1.0f && oxygenLevel > 0)
+        //While the oxygen hasn't been depleted.
+        if (!system.OxygenDepleted)
         {
-            oxygenLevel -= depletionRate;
-            if (oxygenLevel < 0)
+            //Depletion timer
+            timer += Time.deltaTime;
+
+            //Approx 1 second and while it is above Zero
+            if (timer >= 1.0f && oxygenLevel > 0) 
             {
-                oxygenLevel = 0;
-            }    
-            timer = 0.0f;
+                //Decrease the oxygen level
+                oxygenLevel -= depletionRate;
+
+                //if negative number
+                if (oxygenLevel < 0)
+                {
+                    //Clean up - No negative numbers
+                    oxygenLevel = 0;
+                }
+   
+                //Timer reset
+                timer = 0.0f;
+
+                if (oxygenLevel == 0)
+                {
+                    //Exit point
+                    system.OxygenDepleted = true;
+                }
+
+            }
         }
+   
+ 
+
+
     }
 
     //Animations || !Important
     private void LateUpdate()
     {
+        //Returns true or false
+        canisterSlot.CheckForCanister();
+
         //Debuging the canister slot state.
-        string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
-        Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
+        //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
+        //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
     }
 
 }

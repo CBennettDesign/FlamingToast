@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Junction_Box : MonoBehaviour
 {
-
-
-
-
+ 
     //Pre-Initialisation
     private void Awake()
     { 
