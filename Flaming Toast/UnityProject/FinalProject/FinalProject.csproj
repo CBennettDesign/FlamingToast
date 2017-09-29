@@ -111,6 +111,7 @@
     <Compile Include="Assets\3rd Party\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
     <Compile Include="Assets\Scripts\Alex\Base_System.cs" />
     <Compile Include="Assets\Scripts\Alex\CanisterSlot.cs" />
+    <Compile Include="Assets\Scripts\Alex\Gravity_System.cs" />
     <Compile Include="Assets\Scripts\Alex\Junction_Box.cs" />
     <Compile Include="Assets\Scripts\Alex\Oxygen_System.cs" />
     <Compile Include="Assets\Scripts\Alex\Shield_System.cs" />

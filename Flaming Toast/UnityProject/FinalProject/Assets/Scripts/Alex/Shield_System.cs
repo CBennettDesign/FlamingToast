@@ -12,7 +12,7 @@ public class Shield_System : MonoBehaviour
     private Base_System system;
     [Header("Base System")]
     [Tooltip("Value Overriden by the Base System")]
-    public int depletionRate;
+    public float depletionRate;
     //[Header("Current System")]
     public Current_System currentSystem;
 

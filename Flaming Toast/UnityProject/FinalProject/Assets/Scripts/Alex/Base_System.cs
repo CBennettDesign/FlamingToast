@@ -15,7 +15,7 @@ public class Base_System : MonoBehaviour
     [SerializeField]
     [Range(0, 5)]
     //[Tooltip("")]
-    private int baseDepletionRate;
+    private float baseDepletionRate;
 
     [SerializeField]
     [Tooltip("Shield System")]
@@ -41,7 +41,7 @@ public class Base_System : MonoBehaviour
         set { isCanisterConnected = value; }
     }
 
-    public int DepletionRate
+    public float DepletionRate
     {
         get { return baseDepletionRate; }
         set { baseDepletionRate = value; }
@@ -55,7 +55,7 @@ public class Base_System : MonoBehaviour
 
 
 
-    //Ocygen System 
+    //Oxygen System 
     private bool oxygenDepleted;
 
     public bool OxygenDepleted
@@ -63,13 +63,24 @@ public class Base_System : MonoBehaviour
         get { return oxygenDepleted; }
         set { oxygenDepleted = value; }
     }
-
+    //Oxygen Trigger
     private bool oxyUsed = false;
- 
+
+    //Gravity System 
+    private bool gravityDepleted;
+
+    public bool GravityDepleted
+    {
+        get { return gravityDepleted; }
+        set { gravityDepleted = value; }
+    }
+    //Gravity Trigger
+    private bool gravUsed = false;
+
 
     private void Update()
     {
-        //If the ocygen has been depleted and the oxyUsed has not been used yet. 
+        //If the oxygen has been depleted and the oxyUsed has not been used yet. 
         //This will only run once and then only check the first if statement, instead of
         //going into the foreach loop and double checking for the null value.
         if (oxygenDepleted && !oxyUsed)
@@ -85,17 +96,40 @@ public class Base_System : MonoBehaviour
                     Debug.Log("Stopped: " + p.name);
                 }
             }
-                    
+
             oxyUsed = true;
             Debug.Log("Oxygen Depleted!!");
         }
-        
-                
- 
+
+        //If the gravity has been depleted and the gravUsed has not been used yet. 
+        //This will only run once and then only check the first if statement, instead of
+        //going into the foreach loop and double checking for the null value.
+        if (gravityDepleted && !gravUsed)
+        {
+            //For every player in the players array
+            foreach (GameObject p in player)
+            {
+                //safe gaurd - double check for null values
+                if (p != null)
+                {
+                    //Slow the players by half of their current speed
+                    p.GetComponent<Movement>().movementSpeed -= (p.GetComponent<Movement>().movementSpeed / 2.0f);
+                    Debug.Log("Slowed: " + p.name);
+                }
+            }
+
+            gravUsed = true;
+            Debug.Log("Gravity Depleted!!");
+
+
+
+        }
+
+
     }
 
 
-}
+}//End of Base_System
 
 public enum SystemType
 {

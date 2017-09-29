@@ -11,7 +11,7 @@ public class Oxygen_System : MonoBehaviour
     private Base_System system;
     [Header("Base System")]
     [Tooltip("Value Overriden by the Base System")]
-    public int depletionRate;
+    public float depletionRate;
     //[Header("Current System")]
     public Current_System currentSystem;
 
@@ -20,13 +20,11 @@ public class Oxygen_System : MonoBehaviour
 
     [Header("*Current Oxygen level: Default starting amount 100%")]
     [Range(1, 100)]
-    public int oxygenLevel = 100;
+    public float oxygenLevel = 100;
     
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
-
-    //private float[] playerMovement;
-
+ 
     //Pre-Initialisation
     private void Awake()
     {
@@ -63,7 +61,7 @@ public class Oxygen_System : MonoBehaviour
 
 
         //While the oxygen hasn't been depleted.
-        if (!system.OxygenDepleted)
+        if (oxygenLevel > 0)//!system.OxygenDepleted
         {
             //Depletion timer
             timer += Time.deltaTime;
@@ -72,7 +70,7 @@ public class Oxygen_System : MonoBehaviour
             if (timer >= 1.0f && oxygenLevel > 0) 
             {
                 //Decrease the oxygen level
-                oxygenLevel -= depletionRate;
+                oxygenLevel -= depletionRate / 2.0f;
 
                 //if negative number
                 if (oxygenLevel < 0)
