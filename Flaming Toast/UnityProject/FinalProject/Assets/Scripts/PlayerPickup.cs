@@ -42,10 +42,10 @@ public class PlayerPickup : MonoBehaviour {
                 Rigidbody cap = inHands.GetComponent<Rigidbody>();
                 cap.isKinematic = false;
                 inHands = null;
-                //Drops Capsule on an angle so riged body will take effect
-                var rotationVector = cap.transform.rotation.eulerAngles;
-                rotationVector.z = 10.0f;
-                cap.transform.rotation = Quaternion.Euler(rotationVector);
+                ////Drops Capsule on an angle so riged body will take effect
+                //var rotationVector = cap.transform.rotation.eulerAngles;
+                //rotationVector.z = 10.0f;
+                //cap.transform.rotation = Quaternion.Euler(rotationVector);
             }
         }
 	}
