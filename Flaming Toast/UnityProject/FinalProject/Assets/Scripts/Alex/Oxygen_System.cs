@@ -9,18 +9,18 @@ public class Oxygen_System : MonoBehaviour
 
     //Base System
     private Base_System system;
-    [Header("Base System")]
-    [Tooltip("Value Overriden by the Base System")]
-    public float depletionRate;
+    //[Header("Base System")]
+    //[Tooltip("Value Overriden by the Base System")]
+    //public float depletionRate;
     //[Header("Current System")]
     public Current_System currentSystem;
 
     //Current Systems canister slot
-    private CanisterSlot canisterSlot;
+    private Canister_Slot canisterSlot;
 
     [Header("*Current Oxygen level: Default starting amount 100%")]
-    [Range(1, 100)]
-    public float oxygenLevel = 100;
+    [Range(0, 100)]
+    public float oxygenLevel;
     
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
@@ -28,24 +28,29 @@ public class Oxygen_System : MonoBehaviour
     //Pre-Initialisation
     private void Awake()
     {
+       //Grab the base system 
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
-       
         //Canister slot
-        canisterSlot = currentSystem.canisterSlot.transform.GetChild(0).GetComponent<CanisterSlot>();
-         
+        canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
     }
+         
 
 
     //Main-Initialisation
     private void Start()
     {
         //Current System Type
-        currentSystem.type = SystemType.OXYGEN;
-        //Base Depletion rate
-        depletionRate = system.DepletionRate;
+        currentSystem.Type = SystemType.OXYGEN;
+
+        //Flux type requirement
+        currentSystem.FluxType = FluxType.BLUE;
+
         //Is the system active
-        currentSystem.isActive = system.IsActive;
+        currentSystem.IsActive = system.IsActive;
+
+        //Start with 100%
+        oxygenLevel = 100;
     }
 
     //Physics
@@ -61,6 +66,7 @@ public class Oxygen_System : MonoBehaviour
 
 
         //While the oxygen hasn't been depleted.
+        //When exactly 0 it won't step into it - Good
         if (oxygenLevel > 0)//!system.OxygenDepleted
         {
             //Depletion timer
@@ -69,8 +75,8 @@ public class Oxygen_System : MonoBehaviour
             //Approx 1 second and while it is above Zero
             if (timer >= 1.0f && oxygenLevel > 0) 
             {
-                //Decrease the oxygen level
-                oxygenLevel -= depletionRate / 2.0f;
+                //Decrease the oxygen level - Balance the numbers later
+                oxygenLevel -= system.DepletionRate / 2.0f;
 
                 //if negative number
                 if (oxygenLevel < 0)
@@ -82,12 +88,12 @@ public class Oxygen_System : MonoBehaviour
                 //Timer reset
                 timer = 0.0f;
 
-                if (oxygenLevel == 0)
-                {
-                    //Exit point
-                    system.OxygenDepleted = true;
-                }
-
+            }
+            
+            if (oxygenLevel == 0)
+            {
+                //Exit point
+                system.OxygenDepleted = true;
             }
         }
    
@@ -99,8 +105,16 @@ public class Oxygen_System : MonoBehaviour
     //Animations || !Important
     private void LateUpdate()
     {
-        //Returns true or false
-        canisterSlot.CheckForCanister();
+        //Does the canisterSlot have a canister?
+        if (canisterSlot.CheckForCanister())
+        {
+            //Only Drain when the canister matches the Flux Type of this system
+            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+            {
+                canisterSlot.DrainCanister();
+            }
+
+        }
 
         //Debuging the canister slot state.
         //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";

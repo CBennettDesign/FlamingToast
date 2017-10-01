@@ -15,12 +15,21 @@ public class Base_System : MonoBehaviour
     [SerializeField]
     [Range(0, 5)]
     //[Tooltip("")]
-    private float baseDepletionRate;
+    private int baseDepletionRate;
 
     [SerializeField]
     [Tooltip("Shield System")]
     [Range(1, 100)]
     private int shield_UsageAmount;
+
+
+    [SerializeField]
+    [Tooltip("Canister Depot System")]
+    [Range(1, 10)]
+    private int maxCanisterCount;
+
+    public int MaxCanisterCount
+    { get { return maxCanisterCount; } }
 
 
     public bool IsPowered
@@ -41,7 +50,7 @@ public class Base_System : MonoBehaviour
         set { isCanisterConnected = value; }
     }
 
-    public float DepletionRate
+    public int DepletionRate
     {
         get { return baseDepletionRate; }
         set { baseDepletionRate = value; }
@@ -52,6 +61,7 @@ public class Base_System : MonoBehaviour
         get { return shield_UsageAmount; }
         set { shield_UsageAmount = value; }
     }
+
 
 
 
@@ -131,6 +141,7 @@ public class Base_System : MonoBehaviour
 
 }//End of Base_System
 
+
 public enum SystemType
 {
     SHIELD,
@@ -140,37 +151,100 @@ public enum SystemType
     NONE
 }
 
-
+public enum FluxType
+{
+    NONE,
+    RED,
+    BLUE
+}
 
 /// <summary>
 /// Everything to do with a ship system.
-/// 
 /// </summary>
 [System.Serializable]
 public class Current_System
 {
     [Tooltip("Core_Power AND Canister is connected")]
-    public bool isActive;
+    [SerializeField]
+    private bool isActive;
+
+    public bool IsActive
+    {
+        get { return isActive; }
+        set { isActive = value; }
+    }
 
     [Tooltip("System Type")]
-    public SystemType type;
+    [SerializeField]
+    private SystemType type;
+
+    public SystemType Type
+    {
+        get { return type; }
+        set { type = value; }
+    }
+
+    [Tooltip("What the flux type it requires")]
+    [SerializeField]
+    private FluxType fluxType;
+
+    public FluxType FluxType
+    {
+        get { return fluxType; }
+        set { fluxType = value; }
+    }
 
     [Tooltip("System Direction")]
-    public Direction direction;
+    [SerializeField]
+    private SystemDirection direction;
+
+    public SystemDirection Direction
+    {
+        get { return direction; }
+        set { direction = value; }
+    }
 
     [Tooltip("Core_Power ON || OFF")]
-    public bool corePower;
+    [SerializeField]
+    private bool corePower;
+
+    public bool CorePower
+    {
+        get { return corePower; }
+        set { corePower = value; }
+    }
 
     [Tooltip("Junction Box connected to the current system.")]
-    public GameObject junctionBox;
+    [SerializeField]
+    private GameObject junctionBox;
+
+    public GameObject JunctionBox
+    {
+        get { return junctionBox; }
+        set { junctionBox = value; }
+    }
 
     [Tooltip("Canister of the current system.")]
-    public GameObject canisterSlot;
+    [SerializeField]
+    private GameObject canisterSlot;
+
+    public GameObject CanisterSlot
+    {
+        get { return canisterSlot; }
+        set { canisterSlot = value; }
+    }
 
     [Tooltip("Canister connected TRUE || FALSE")]
-    public bool canisterConnected;
+    [SerializeField]
+    private bool canisterConnected;
 
-    public enum Direction
+    public bool CanisterConnected
+    {
+        get { return canisterConnected; }
+        set { canisterConnected = value; }
+    }
+
+    public enum SystemDirection
     {
         LEFT,
         RIGHT,
