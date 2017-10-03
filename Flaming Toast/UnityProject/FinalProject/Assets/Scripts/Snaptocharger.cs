@@ -16,6 +16,8 @@ public class Snaptocharger : MonoBehaviour
     float lerptime;
     public Color Startcolor;
     public Color Endcolor;
+    GameObject canister = null;
+    public float Radius = 2;
     // Use this for initialization
     void Start()
     {
@@ -25,13 +27,15 @@ public class Snaptocharger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit info;
-        int layermask = 1 << LayerMask.NameToLayer("Cap");
-        if (XCI.GetButtonDown(XboxButton.B))
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * Radius);
+
+        if (!canister)
         {
-            if (Physics.SphereCast(transform.position, 0.5f, transform.forward, out info, pickUpDistance, layermask))
+            int layermask = 1 << LayerMask.NameToLayer("Cap");
+            Collider[] colliderList = Physics.OverlapSphere(transform.position, Radius, layermask);
+            if (colliderList.Length > 0)
             {
-                GameObject obj = info.collider.gameObject;
+                GameObject obj = colliderList[0].gameObject;
                 obj.transform.parent = transform.transform;
                 obj.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
                 Rigidbody cap = obj.GetComponent<Rigidbody>();
@@ -39,11 +43,13 @@ public class Snaptocharger : MonoBehaviour
                 cap.velocity = Vector3.zero;
                 cap.angularVelocity = Vector3.zero;
                 cap.transform.Rotate(90.0f, 0f, 0f);
-                lerptime += speed * Time.deltaTime;
-
-                cap.GetComponent<Renderer>().material.color = Color.Lerp(Startcolor, Endcolor, lerptime);
-                
+                canister = obj;
             }
+        }
+        else
+        {
+            lerptime += speed * Time.deltaTime;
+            canister.GetComponent<Renderer>().material.color = Color.Lerp(Startcolor, Endcolor, lerptime);
         }
     }
 }
