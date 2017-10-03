@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: JunctionBox_001_Interior_001_Box
     400000: //RootNode
+    400002: JunctionBox_001_Interior_001_Box
     2300000: //RootNode
+    2300002: JunctionBox_001_Interior_001_Box
     3300000: //RootNode
+    3300002: JunctionBox_001_Interior_001_Box
     4300000: JunctionBox_001_Interior_001_Box
   materials:
     importMaterials: 1

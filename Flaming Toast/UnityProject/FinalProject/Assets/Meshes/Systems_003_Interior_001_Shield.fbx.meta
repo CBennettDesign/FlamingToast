@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Systems_003_Interior_001_Shield
     400000: //RootNode
+    400002: Systems_003_Interior_001_Shield
     2300000: //RootNode
+    2300002: Systems_003_Interior_001_Shield
     3300000: //RootNode
+    3300002: Systems_003_Interior_001_Shield
     4300000: Systems_003_Interior_001_Shield
   materials:
     importMaterials: 1

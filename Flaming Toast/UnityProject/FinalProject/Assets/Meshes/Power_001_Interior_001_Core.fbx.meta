@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Power_001_Interior_001_Core
     400000: //RootNode
+    400002: Power_001_Interior_001_Core
     2300000: //RootNode
+    2300002: Power_001_Interior_001_Core
     3300000: //RootNode
+    3300002: Power_001_Interior_001_Core
     4300000: Power_001_Interior_001_Core
   materials:
     importMaterials: 1

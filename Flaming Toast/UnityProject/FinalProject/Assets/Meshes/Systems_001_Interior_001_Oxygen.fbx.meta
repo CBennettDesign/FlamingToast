@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Systems_001_Interior_001_Oxygen
     400000: //RootNode
+    400002: Systems_001_Interior_001_Oxygen
     2300000: //RootNode
+    2300002: Systems_001_Interior_001_Oxygen
     3300000: //RootNode
+    3300002: Systems_001_Interior_001_Oxygen
     4300000: Systems_001_Interior_001_Oxygen
   materials:
     importMaterials: 1

@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Wire_002_Interior_001_StraightLong
     400000: //RootNode
+    400002: Wire_002_Interior_001_StraightLong
     2300000: //RootNode
+    2300002: Wire_002_Interior_001_StraightLong
     3300000: //RootNode
+    3300002: Wire_002_Interior_001_StraightLong
     4300000: Wire_002_Interior_001_StraightLong
   materials:
     importMaterials: 1

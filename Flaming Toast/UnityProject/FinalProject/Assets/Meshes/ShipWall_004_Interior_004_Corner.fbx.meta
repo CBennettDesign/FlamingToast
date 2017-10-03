@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: ShipWall_004_Interior_004_Corner
     400000: //RootNode
+    400002: ShipWall_004_Interior_004_Corner
     2300000: //RootNode
+    2300002: ShipWall_004_Interior_004_Corner
     3300000: //RootNode
+    3300002: ShipWall_004_Interior_004_Corner
     4300000: ShipWall_004_Interior_004_Corner
   materials:
     importMaterials: 1

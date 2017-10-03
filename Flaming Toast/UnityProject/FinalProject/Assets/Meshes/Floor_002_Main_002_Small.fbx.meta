@@ -6,9 +6,13 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Floor_002_Main_002_Small
     400000: //RootNode
+    400002: Floor_002_Main_002_Small
     2300000: //RootNode
+    2300002: Floor_002_Main_002_Small
     3300000: //RootNode
+    3300002: Floor_002_Main_002_Small
     4300000: Floor_002_Main_002_Small
   materials:
     importMaterials: 1
