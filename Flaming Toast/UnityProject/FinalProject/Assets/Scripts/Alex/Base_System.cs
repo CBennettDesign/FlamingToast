@@ -188,7 +188,7 @@ public class Current_System
     [SerializeField]
     private GameObject wireSet;
 
-    public GameObject JunctionBox
+    public GameObject WireSet
     {
         get { return wireSet; }
         set { wireSet = value; }

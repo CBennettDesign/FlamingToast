@@ -51,7 +51,7 @@ public class System_RayCast : MonoBehaviour
     public bool CheckForCanister()
     {
         /*Logic for checking if the canister is connected. - Add later for the layer masking*/
-        if (Physics.Raycast(rayCast, out hitInfo, 1.5f))
+        if (Physics.Raycast(rayCast, out hitInfo, 0.5f))
         {
             if (hitInfo.collider.tag == "Canister") // - Rework for layer masking as this inner if statement would just result in true 
             {
@@ -82,8 +82,10 @@ public class System_RayCast : MonoBehaviour
     //Debug Visuals
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z));
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z));
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(transform.position, 0.1f);
     }
 
 }

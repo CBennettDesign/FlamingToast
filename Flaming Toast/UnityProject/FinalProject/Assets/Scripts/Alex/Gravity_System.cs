@@ -32,10 +32,15 @@ public class Gravity_System : MonoBehaviour
 
         //Canister slot
         canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
+
+
+        //currentSystem.WireSet.GetComponent<WireStatus>().status;
+
+        //Material mat = currentSystem.WireSet.transform.GetChild(0).GetComponent<Renderer>().material;
+        //mat.EnableKeyword("_EMISSION");
+        //Debug.Log("Wire Set " + currentSystem.WireSet.transform.GetChild(0).name + " : " + mat.GetFloat("_EmissionColor"));
     }
-
-
-
+       
 
     //Main-Initialisation
     private void Start()
@@ -112,8 +117,6 @@ public class Gravity_System : MonoBehaviour
             }
 
         }
-
-
 
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - Canister
   - Canister_Depot
   - Cap
+  - Power_Core
   layers:
   - Default
   - TransparentFX
