@@ -42,7 +42,7 @@ public class Snaptocharger : MonoBehaviour
                 cap.isKinematic = true;
                 cap.velocity = Vector3.zero;
                 cap.angularVelocity = Vector3.zero;
-                cap.transform.Rotate(90.0f, 0f, 0f);
+                cap.transform.Rotate(90.0f, 0f, 100f);
                 canister = obj;
             }
         }
