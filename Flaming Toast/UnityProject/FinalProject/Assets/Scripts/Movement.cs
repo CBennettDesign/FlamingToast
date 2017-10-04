@@ -14,6 +14,10 @@ public class Movement : MonoBehaviour {
 	[Range(0,20)]
 	public float movementSpeed;
 
+    //Copy of the movement speed 
+    private float defaultSpeed;
+    public float DefaultSpeed
+    { get { return defaultSpeed; } }
 
     //Player Physics
 	private Rigidbody rigidBody;
@@ -26,10 +30,44 @@ public class Movement : MonoBehaviour {
     private Quaternion targetRotation;
 
 
+    ////Gravity System 
+    //private bool gravityDepleted;
+    //
+    //public bool GravityDepleted
+    //{
+    //    get { return gravityDepleted; }
+    //    set { gravityDepleted = value; }
+    //}
+    ////Gravity Trigger
+    //private bool gravUsed = false;
+
+
     private void Awake()
 	{
-        //Get the rigidBody Component
-		rigidBody = GetComponent<Rigidbody>();
+        //Get a copy of the movement speed value
+        defaultSpeed = movementSpeed;
+
+        //No capsule collider
+        if (this.gameObject.GetComponent<CapsuleCollider>() == null)
+        {
+            this.gameObject.AddComponent<CapsuleCollider>();
+        }
+
+        //If the player object does not have a rigid body component add one
+        if (this.gameObject.GetComponent<Rigidbody>() == null)
+        {
+            //Add the rigid body
+            rigidBody = this.gameObject.AddComponent<Rigidbody>();
+            //Set the constaints
+            rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        else
+        {
+            //Get the rigidBody Component
+	    	rigidBody = GetComponent<Rigidbody>();
+            //Set the constaints - anyways
+            rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
+        }
 	}
 
 	private void FixedUpdate ()
@@ -58,5 +96,26 @@ public class Movement : MonoBehaviour {
             inputDebugSphere.transform.position  = rigidBody.position + inputDirection * 1.5f;	
         }
 
-	}
+        ////If the gravity has been depleted and the gravUsed has not been used yet. 
+        ////This will only run once and then only check the first if statement, instead of
+        ////going into the foreach loop and double checking for the null value.
+        //if (gravityDepleted && !gravUsed)
+        //{
+        //    //For every player in the players array
+        //    foreach (GameObject p in player)
+        //    {
+        //        //safe gaurd - double check for null values
+        //        if (p != null)
+        //        {
+        //            //Slow the players by half of their current speed
+        //            p.GetComponent<Movement>().movementSpeed -= (p.GetComponent<Movement>().movementSpeed / 2.0f);
+        //            Debug.Log("Slowed: " + p.name);
+        //        }
+        //    }
+        //
+        //    gravUsed = true;
+        //    Debug.Log("Gravity Depleted!!");
+        //}
+
+    }
 }

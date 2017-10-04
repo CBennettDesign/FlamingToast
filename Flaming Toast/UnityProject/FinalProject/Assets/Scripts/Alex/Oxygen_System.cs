@@ -64,36 +64,39 @@ public class Oxygen_System : MonoBehaviour
     private void Update()
     {
 
-
-        //While the oxygen hasn't been depleted.
-        //When exactly 0 it won't step into it - Good
-        if (oxygenLevel > 0)//!system.OxygenDepleted
+        //When the current System is active then it can run the following
+        if (currentSystem.IsActive)//When not active drain the oxygen??
         {
-            //Depletion timer
-            timer += Time.deltaTime;
-
-            //Approx 1 second and while it is above Zero
-            if (timer >= 1.0f && oxygenLevel > 0) 
+            //While the oxygen hasn't been depleted.
+            //When exactly 0 it won't step into it - Good
+            if (oxygenLevel > 0)//!system.OxygenDepleted
             {
-                //Decrease the oxygen level - Balance the numbers later
-                oxygenLevel -= system.DepletionRate / 2.0f;
+                //Depletion timer
+                timer += Time.deltaTime;
 
-                //if negative number
-                if (oxygenLevel < 0)
+                //Approx 1 second and while it is above Zero
+                if (timer >= 1.0f && oxygenLevel > 0) 
                 {
-                    //Clean up - No negative numbers
-                    oxygenLevel = 0;
-                }
-   
-                //Timer reset
-                timer = 0.0f;
+                    //Decrease the oxygen level - Balance the numbers later
+                    oxygenLevel -= system.DepletionRate / 2.0f;
 
-            }
+                    //if negative number
+                    if (oxygenLevel < 0)
+                    {
+                        //Clean up - No negative numbers
+                        oxygenLevel = 0;
+                    }
+   
+                    //Timer reset
+                    timer = 0.0f;
+
+                }
             
-            if (oxygenLevel == 0)
-            {
-                //Exit point
-                system.OxygenDepleted = true;
+                if (oxygenLevel == 0)
+                {
+                    //Exit point
+                    system.OxygenDepleted = true;
+                }
             }
         }
    
@@ -108,12 +111,37 @@ public class Oxygen_System : MonoBehaviour
         //Does the canisterSlot have a canister?
         if (canisterSlot.CheckForCanister())
         {
-            //Only Drain when the canister matches the Flux Type of this system
-            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+            //Update the current systems canister status
+            currentSystem.CanisterConnected = true;
+
+            //Only Drain when the canister matches the Flux Type of this system AND the system is running
+            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType && currentSystem.IsActive)
             {
                 canisterSlot.DrainCanister();
             }
 
+        }
+        else
+        {
+            //Reset the canister status
+            currentSystem.CanisterConnected = false;
+        }
+
+        //If Both the canister is there (with charge) AND it has power from the core then the current system is active.
+        if (currentSystem.CanisterConnected && currentSystem.CorePower)
+        {
+            //Set the current system to be active;
+            currentSystem.IsActive = true;
+            //Allows the canister slot to drain the connected canister
+            canisterSlot.CanDrainCanister = true;
+        }
+        //Either one is false
+        else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
+        {
+            //Set the current system IN ACTIVE;
+            currentSystem.IsActive = false;
+            //Denies the canister slot from draining the connected canister
+            canisterSlot.CanDrainCanister = false;
         }
 
         //Debuging the canister slot state.

@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Shield_System : MonoBehaviour
 {
+    //Ship Core
+    Power_Core shipCore;
+
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -24,20 +27,26 @@ public class Shield_System : MonoBehaviour
     [Range(1, 100)]
     public int usageAmount;
 
+    [Header("*Damage reduction amount when the shield are on.")]
+    //[Tooltip("")]
+    [Range(1, 10)]
+    public int reductionAmount;
+
+
     //Pre-Initialisation
     private void Awake()
     {
+        //Reference to the ship core.
+        shipCore = GameObject.FindGameObjectWithTag("Power_Core").GetComponent<Power_Core>();
         //Get the system manager
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         //Grab the base usage amount
         usageAmount = system.Shield_UsageAmount;
-
         //Canister slot
         canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
-
     }
-
-
+       
+    
     //Main-Initialisation
     private void Start()
     {
@@ -63,7 +72,10 @@ public class Shield_System : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-
+        shipCore.ShipHealth = shipCore.ShipHealth;
+        //The asteriod that collides with the shield parses it self as a game object to the shield system and from there
+        //The shield system will grab the value from the game object and use that for the damage calculations
+        //Asteriod Damage Random (1||2) - Shield Reduction value [reductionAmount](1,10) if Shields are up
     }
 
     //Animations || !Important
@@ -73,14 +85,39 @@ public class Shield_System : MonoBehaviour
         //Does the canisterSlot have a canister?
         if (canisterSlot.CheckForCanister())
         {
-            //Only Drain when the canister matches the Flux Type of this system
-            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+            //Update the current systems canister status
+            currentSystem.CanisterConnected = true;
+
+            //Only Drain when the canister matches the Flux Type of this system AND the system is running
+            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType && currentSystem.IsActive)
             {
                 canisterSlot.DrainCanister();
             }
- 
+
         }
-        
+        else
+        {
+            //Reset the canister status
+            currentSystem.CanisterConnected = false;
+        }
+
+        //If Both the canister is there (with charge) AND it has power from the core then the current system is active.
+        if (currentSystem.CanisterConnected && currentSystem.CorePower)
+        {
+            //Set the current system to be active;
+            currentSystem.IsActive = true;
+            //Allows the canister slot to drain the connected canister
+            canisterSlot.CanDrainCanister = true;
+        }
+        //Either one is false
+        else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
+        {
+            //Set the current system IN ACTIVE;
+            currentSystem.IsActive = false;
+            //Denies the canister slot from draining the connected canister
+            canisterSlot.CanDrainCanister = false;
+        }
+
         ////Debuging the canister slot state.
         //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
         //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);

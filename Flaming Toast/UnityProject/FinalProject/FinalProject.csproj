@@ -117,6 +117,8 @@
     <Compile Include="Assets\Scripts\Alex\Gravity_System.cs" />
     <Compile Include="Assets\Scripts\Alex\Junction_Box.cs" />
     <Compile Include="Assets\Scripts\Alex\Oxygen_System.cs" />
+    <Compile Include="Assets\Scripts\Alex\Power_Core.cs" />
+    <Compile Include="Assets\Scripts\Alex\ShaderTest.cs" />
     <Compile Include="Assets\Scripts\Alex\Shield_System.cs" />
     <Compile Include="Assets\Scripts\Alex\System_RayCast.cs" />
     <Compile Include="Assets\Scripts\Junctions.cs" />
@@ -154,6 +156,7 @@
     <None Include="Assets\3rd Party\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
     <None Include="Assets\3rd Party\ProCore\ProBuilder\readme.txt" />
     <None Include="Assets\Materials\PlaceHolder.txt" />
+    <None Include="Assets\Scripts\Alex\TDL.txt" />
     <None Include="Assets\Scripts\PlaceHolder.txt" />
     <None Include="Assets\Textures\PlaceHolder.txt" />
     <None Include="Assets\XInput\XInputDotNet\MITLicense.txt" />

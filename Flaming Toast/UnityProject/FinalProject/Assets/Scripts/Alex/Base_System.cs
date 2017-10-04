@@ -18,7 +18,7 @@ public class Base_System : MonoBehaviour
     private int baseDepletionRate;
 
     [SerializeField]
-    [Tooltip("Shield System")]
+    [Tooltip("Shield System usage amount per hit - amount taken away from connected canisters")]
     [Range(1, 100)]
     private int shield_UsageAmount;
 
@@ -76,17 +76,12 @@ public class Base_System : MonoBehaviour
     //Oxygen Trigger
     private bool oxyUsed = false;
 
-    //Gravity System 
-    private bool gravityDepleted;
 
-    public bool GravityDepleted
+    private void Awake()
     {
-        get { return gravityDepleted; }
-        set { gravityDepleted = value; }
+        //Makes Sure that this tag exists and then applies it to this object
+        this.gameObject.tag = "Base_System";
     }
-    //Gravity Trigger
-    private bool gravUsed = false;
-
 
     private void Update()
     {
@@ -110,31 +105,6 @@ public class Base_System : MonoBehaviour
             oxyUsed = true;
             Debug.Log("Oxygen Depleted!!");
         }
-
-        //If the gravity has been depleted and the gravUsed has not been used yet. 
-        //This will only run once and then only check the first if statement, instead of
-        //going into the foreach loop and double checking for the null value.
-        if (gravityDepleted && !gravUsed)
-        {
-            //For every player in the players array
-            foreach (GameObject p in player)
-            {
-                //safe gaurd - double check for null values
-                if (p != null)
-                {
-                    //Slow the players by half of their current speed
-                    p.GetComponent<Movement>().movementSpeed -= (p.GetComponent<Movement>().movementSpeed / 2.0f);
-                    Debug.Log("Slowed: " + p.name);
-                }
-            }
-
-            gravUsed = true;
-            Debug.Log("Gravity Depleted!!");
-
-
-
-        }
-
 
     }
 
@@ -214,14 +184,14 @@ public class Current_System
         set { corePower = value; }
     }
 
-    [Tooltip("Junction Box connected to the current system.")]
+    [Tooltip("Connected wire set to the current system.")]
     [SerializeField]
-    private GameObject junctionBox;
+    private GameObject wireSet;
 
     public GameObject JunctionBox
     {
-        get { return junctionBox; }
-        set { junctionBox = value; }
+        get { return wireSet; }
+        set { wireSet = value; }
     }
 
     [Tooltip("Canister of the current system.")]

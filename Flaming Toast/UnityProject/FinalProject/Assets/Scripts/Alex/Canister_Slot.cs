@@ -21,6 +21,15 @@ public class Canister_Slot : MonoBehaviour
     public Canister CurrentCanister
     { get { return currentCanister; } }
 
+    //Is the canister slot allowed to drain the canister that is connected
+    //Only when the system that this is attached to has a canister connected and power from the core.
+    private bool canDrainCanister;
+    //System Access point
+    public bool CanDrainCanister
+    {
+        get { return canDrainCanister; }
+        set { canDrainCanister = value; }
+    }
 
     //Pre-Initialisation
     private void Awake()
@@ -67,8 +76,12 @@ public class Canister_Slot : MonoBehaviour
     public void DrainCanister()
     {
         //Canister is in the canister slot for the system
-        if (currentCanister != null)
+        //And it is allowed to drain the canister - Given the all clear from the current system
+        if (currentCanister != null && canDrainCanister)
         {
+            //updtae the status of the canister
+            system.IsCanisterConnected = true;
+
             //Has charge in the cansiter
             if (currentCanister.Charge > 0)
             {
@@ -105,6 +118,11 @@ public class Canister_Slot : MonoBehaviour
 
             }
         }
+        else
+        {
+            //Reset the canister status
+            system.IsCanisterConnected = false;
+        }
 
     }
 
@@ -117,6 +135,7 @@ public class Canister_Slot : MonoBehaviour
     {
         if (system_Ray.CheckForCanister())
         {
+            //Found a canister
             currentCanister = system_Ray.CurrentCanister;
             return true;
         }

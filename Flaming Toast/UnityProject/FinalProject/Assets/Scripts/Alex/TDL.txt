@@ -1,0 +1,97 @@
+
+System Manager - Empty Game Object - (Base_System Script) - Object Tag "Base_System"
+
+-------------------------------------------------------------------------------------------------------------------	
+
+	Ship System Name - Empty Game Object
+		- System Prefab - (System Script)
+		- Canister Slot Prefab - (Canister Slot Script)
+			- RayCastCheckForCanister - Empty Game Object - (System Ray Cast Script) - 		  	  
+			  Centre position (*Add a Game Object Icon as it will be easier to move around)
+
+-------------------------------------------------------------------------------------------------------------------
+			
+	Ship System Name - Empty Game Object
+		- System Prefab - (System Script)
+		- Canister Slot Prefab - (Canister Slot Script)
+			- RayCastCheckForCanister - Empty Game Object - (System Ray Cast Script) - 			  
+	  		  Centre position (*Add a Game Object Icon as it will be easier to move around)
+
+-------------------------------------------------------------------------------------------------------------------
+
+	Canister_Depot - Empty Game Object - Object Tag "Canister_Depot"
+		- Canister_Depot Prefab - Canister_Depot Script
+			- Empty Game Object - Canister Spawn Location (*Add a Game Object Icon as it 			  
+ 			  will be easier to move around)
+
+-------------------------------------------------------------------------------------------------------------------		
+
+Game Object Tags
+	- Canister
+	- Base_System
+	- Power_Core
+	- Canister_Depot
+				
+System Script Requires
+	- Type
+	- Flux Type
+	- Direction
+	- Wire Set - Wires leading into the system
+	- Canister Slot
+	
+Canister Slot Script Requires
+	- Nothing
+	
+RayCastCheckForCanister Script Requires
+	- Nothing
+	
+Canister Charger Script Requires
+	- Charging amount per second
+	- Charging Type (Red or Blue Flux)
+	
+Canister Script Requires
+	- Canister Type
+	- Charge of the canister
+	
+Canister Depot Script Requires
+	- Spawn Interval Time
+	- Canister Prefab
+	- Max canister's allows in the scene
+	
+Base System Script Requires 
+	- 4 Player game objects
+	- Base depletion rate for all systems
+	- Shieild Usage amount - Amount used per hit
+
+Player Game Object Requires
+	- Player movement Script
+	- Ridig Body Component
+	
+	
+	
+Event System
+	List of events with the time interval that they happen
+	A fixed amount [range] per level - amount of events
+	
+	Set manually
+	Each event has 
+		- type (Enemy || Asteriod)
+		- time stamp
+		- direction * random, maybe
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

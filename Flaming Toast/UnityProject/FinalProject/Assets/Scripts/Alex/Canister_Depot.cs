@@ -12,31 +12,33 @@ public class Canister_Depot : MonoBehaviour
     [Range(0, 10)]
     public float spawnInterval;
 
+
+    //Canister Spawn location
+    [Tooltip("Spawn Point of the canister")]
+    private GameObject canisterSpawnLocation;
+
     //Canister PreFab
+    [Tooltip("PreFab Object")]
     public GameObject canisterPreFab;
     
-    //base System
+    //Base System
     private Base_System system;
 
+    //Overriden in the awake
+    [Tooltip("This value will be overriden by the base system canister count")]
+    public int canisterCountMax;
     //Current Canister Count
     [SerializeField]
+    [Tooltip("Current cansiters in the scene")]
     private int canisterCount;
 
-    
     public int CanisterCount
     {
         get { return canisterCount; }
-        set
-        {
-            //Range check validation
-            if (canisterCount >= 0 && canisterCount < system.MaxCanisterCount)
-            {
-                canisterCount = value;
-            }
-        }
-
+        set { canisterCount = value;}
     }
-
+    
+    
     //Spawn Timer
     private float timer;
 
@@ -52,12 +54,20 @@ public class Canister_Depot : MonoBehaviour
         //Start at Zero
         canisterCount = 0;
 
+        //get the max canister count
+        if (system != null)
+        {
+            canisterCountMax = system.MaxCanisterCount;
+        }
+
     }
+
 
     //Main-Initialisation
     private void Start()
     {
-
+        //Canister Depot's first child - "Canister Spawn Location"
+        canisterSpawnLocation = transform.GetChild(0).gameObject;
     }
 
 
@@ -83,9 +93,8 @@ public class Canister_Depot : MonoBehaviour
                 if (canisterPreFab != null)
                 {
  
-
-                    //Create a canister at a location - Re - work to a better solution for the position
-                    Instantiate(canisterPreFab, new Vector3(transform.position.x - 2.0f, transform.position.y + 3.0f, transform.position.z - 1.0f), Quaternion.identity);
+                    //Create a canister at a location Rotated by 90 on the Z axis
+                    Instantiate(canisterPreFab, canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
 
                     //Increase the count.
                     canisterCount++;
@@ -95,6 +104,12 @@ public class Canister_Depot : MonoBehaviour
 
                     //Reset the spawn canister check box.
                     spawnCanister = false;
+                }
+                else
+                {
+                    Debug.Log("Canister not found!");
+                    //Debug Cube
+                    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
                 }
             }
             else if (canisterCount >= system.MaxCanisterCount)

@@ -4852,7 +4852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 697674877}
-  m_RootOrder: 136
+  m_RootOrder: 129
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!23 &325686486
 MeshRenderer:
@@ -4979,6 +4979,7 @@ GameObject:
   - component: {fileID: 338783569}
   - component: {fileID: 338783571}
   - component: {fileID: 338783570}
+  - component: {fileID: 338783572}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (3)
   m_TagString: Untagged
@@ -4996,7 +4997,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000016093252}
   m_LocalPosition: {x: -0.5, y: 1, z: 13}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1980800779}
   m_Father: {fileID: 312168056}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
@@ -5041,6 +5043,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338783568}
   m_Mesh: {fileID: 4300000, guid: 5f4ff8dedfff2d9449d30f7617d968f6, type: 3}
+--- !u!114 &338783572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 338783568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &341477763
 GameObject:
   m_ObjectHideFlags: 0
@@ -5195,9 +5208,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 344615264}
+  - component: {fileID: 344615265}
   m_Layer: 0
   m_Name: System Manager
-  m_TagString: Untagged
+  m_TagString: Base_System
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5220,6 +5234,25 @@ Transform:
   m_Father: {fileID: 1461364008}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344615265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344615263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d248c36b2124a8446937414990d4b9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+  - {fileID: 1324133525}
+  - {fileID: 615622135}
+  - {fileID: 657431642}
+  - {fileID: 2000401626}
+  baseDepletionRate: 1
+  shield_UsageAmount: 36
+  maxCanisterCount: 10
 --- !u!1 &348285866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,6 +7041,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4344756396356560, guid: f36017e6ee016b44093b8907784f1f3a,
     type: 2}
   m_PrefabInternal: {fileID: 447358600}
+--- !u!1 &447358602 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1844486755477860, guid: f36017e6ee016b44093b8907784f1f3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 447358600}
+--- !u!114 &447358603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447358602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958220380d99f6049a65502e18be07ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSystem:
+    isActive: 0
+    type: 0
+    fluxType: 2
+    direction: 3
+    corePower: 0
+    wireSet: {fileID: 0}
+    canisterSlot: {fileID: 0}
+    canisterConnected: 0
+  usageAmount: 1
+  reductionAmount: 0
 --- !u!1 &449041524
 GameObject:
   m_ObjectHideFlags: 0
@@ -9371,6 +9431,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 568722323}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &569325620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 569325621}
+  - component: {fileID: 569325622}
+  m_Layer: 0
+  m_Name: RayCast_Canister
+  m_TagString: Untagged
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &569325621
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569325620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2127345690}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569325622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569325620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827d216601b6954991efbd67ae805d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &571026258
 GameObject:
   m_ObjectHideFlags: 0
@@ -10278,7 +10378,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_Name
-      value: Player_001_Main_001_Default (1)
+      value: Player_002
       objectReference: {fileID: 0}
     - target: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -10295,6 +10395,11 @@ Prefab:
 --- !u!4 &615622134 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33,
+    type: 2}
+  m_PrefabInternal: {fileID: 615622133}
+--- !u!1 &615622135 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
     type: 2}
   m_PrefabInternal: {fileID: 615622133}
 --- !u!1 &629487012
@@ -10490,6 +10595,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4344756396356560, guid: f36017e6ee016b44093b8907784f1f3a,
     type: 2}
   m_PrefabInternal: {fileID: 630937666}
+--- !u!1 &630937668 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1844486755477860, guid: f36017e6ee016b44093b8907784f1f3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 630937666}
+--- !u!114 &630937669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 630937668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958220380d99f6049a65502e18be07ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSystem:
+    isActive: 0
+    type: 0
+    fluxType: 2
+    direction: 2
+    corePower: 0
+    wireSet: {fileID: 0}
+    canisterSlot: {fileID: 0}
+    canisterConnected: 0
+  usageAmount: 1
+  reductionAmount: 0
 --- !u!1 &638437867
 GameObject:
   m_ObjectHideFlags: 0
@@ -11174,7 +11306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_Name
-      value: Player_001_Main_001_Default (2)
+      value: Player_003
       objectReference: {fileID: 0}
     - target: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -11199,6 +11331,11 @@ Prefab:
 --- !u!4 &657431641 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33,
+    type: 2}
+  m_PrefabInternal: {fileID: 657431640}
+--- !u!1 &657431642 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
     type: 2}
   m_PrefabInternal: {fileID: 657431640}
 --- !u!1 &658822266
@@ -11698,14 +11835,14 @@ Transform:
   - {fileID: 174921178}
   - {fileID: 799060065}
   - {fileID: 105725168}
+  - {fileID: 325686485}
   - {fileID: 158684569}
   - {fileID: 1073177941}
-  - {fileID: 1507475555}
   - {fileID: 449460322}
   - {fileID: 1560499028}
   - {fileID: 1068248706}
   - {fileID: 2068485600}
-  - {fileID: 325686485}
+  - {fileID: 1507475555}
   - {fileID: 1343021060}
   - {fileID: 450748655}
   - {fileID: 507430906}
@@ -14741,6 +14878,7 @@ GameObject:
   - component: {fileID: 901195612}
   - component: {fileID: 901195614}
   - component: {fileID: 901195613}
+  - component: {fileID: 901195615}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (4)
   m_TagString: Untagged
@@ -14758,7 +14896,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.0000032782555, z: -0, w: -1}
   m_LocalPosition: {x: -13.5, y: 1, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1303019820}
   m_Father: {fileID: 1854136576}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
@@ -14803,6 +14942,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901195611}
   m_Mesh: {fileID: 4300000, guid: 5f4ff8dedfff2d9449d30f7617d968f6, type: 3}
+--- !u!114 &901195615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901195611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &912305645
 GameObject:
   m_ObjectHideFlags: 0
@@ -19170,6 +19320,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1144668680}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &1149983583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1149983584}
+  - component: {fileID: 1149983585}
+  m_Layer: 0
+  m_Name: RayCast_Canister
+  m_TagString: Untagged
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149983584
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149983583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2117476354}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1149983585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149983583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827d216601b6954991efbd67ae805d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151818687
 GameObject:
   m_ObjectHideFlags: 0
@@ -20307,6 +20497,7 @@ GameObject:
   - component: {fileID: 1238951624}
   - component: {fileID: 1238951623}
   - component: {fileID: 1238951622}
+  - component: {fileID: 1238951625}
   m_Layer: 0
   m_Name: CanisterDepot_001_Interior_001_Default (3)
   m_TagString: Untagged
@@ -20382,6 +20573,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1238951620}
   m_Mesh: {fileID: 4300000, guid: 150dc6119449d4c41b2d45adf7069364, type: 3}
+--- !u!114 &1238951625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1238951620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4582b56290b04047b4b19f34d4d85de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCanister: 0
+  spawnInterval: 2
+  canisterPreFab: {fileID: 0}
+  canisterCountMax: 0
+  canisterCount: 0
 --- !u!1 &1239406435
 GameObject:
   m_ObjectHideFlags: 0
@@ -21614,6 +21821,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4344756396356560, guid: f36017e6ee016b44093b8907784f1f3a,
     type: 2}
   m_PrefabInternal: {fileID: 1300711092}
+--- !u!1 &1300711094 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1844486755477860, guid: f36017e6ee016b44093b8907784f1f3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300711092}
+--- !u!114 &1300711095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300711094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958220380d99f6049a65502e18be07ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSystem:
+    isActive: 0
+    type: 0
+    fluxType: 2
+    direction: 1
+    corePower: 0
+    wireSet: {fileID: 0}
+    canisterSlot: {fileID: 0}
+    canisterConnected: 0
+  usageAmount: 1
+  reductionAmount: 0
 --- !u!1 &1301149707
 GameObject:
   m_ObjectHideFlags: 0
@@ -21738,6 +21972,46 @@ Transform:
   m_PrefabParentObject: {fileID: 4647207804566906, guid: 1838aeed6fb84514094b141b925dcd49,
     type: 2}
   m_PrefabInternal: {fileID: 1302421449}
+--- !u!1 &1303019819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1303019820}
+  - component: {fileID: 1303019821}
+  m_Layer: 0
+  m_Name: RayCast_Canister
+  m_TagString: Untagged
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303019820
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1303019819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 901195612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303019821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1303019819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827d216601b6954991efbd67ae805d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1306482949
 GameObject:
   m_ObjectHideFlags: 0
@@ -22155,12 +22429,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cbad1252a21e12540a103c33eb2042a3, type: 2}
+    - target: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
+      propertyPath: m_Name
+      value: Player_001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1324133524 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33,
+    type: 2}
+  m_PrefabInternal: {fileID: 1324133523}
+--- !u!1 &1324133525 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
     type: 2}
   m_PrefabInternal: {fileID: 1324133523}
 --- !u!1 &1330053260
@@ -33862,6 +34145,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1978489432}
   m_Mesh: {fileID: 4300000, guid: c96e654c454acba4bbc1913e07ef0e10, type: 3}
+--- !u!1 &1980800778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1980800779}
+  - component: {fileID: 1980800780}
+  m_Layer: 0
+  m_Name: RayCast_Canister
+  m_TagString: Untagged
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980800779
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1980800778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 338783569}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980800780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1980800778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c827d216601b6954991efbd67ae805d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1981085729
 GameObject:
   m_ObjectHideFlags: 0
@@ -34271,7 +34594,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_Name
-      value: Player_001_Main_001_Default (3)
+      value: Player_004
       objectReference: {fileID: 0}
     - target: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -34296,6 +34619,11 @@ Prefab:
 --- !u!4 &2000401625 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33,
+    type: 2}
+  m_PrefabInternal: {fileID: 2000401624}
+--- !u!1 &2000401626 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
     type: 2}
   m_PrefabInternal: {fileID: 2000401624}
 --- !u!1 &2008379005
@@ -34783,6 +35111,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4344756396356560, guid: f36017e6ee016b44093b8907784f1f3a,
     type: 2}
   m_PrefabInternal: {fileID: 2037334331}
+--- !u!1 &2037334333 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1844486755477860, guid: f36017e6ee016b44093b8907784f1f3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2037334331}
+--- !u!114 &2037334334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037334333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958220380d99f6049a65502e18be07ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSystem:
+    isActive: 0
+    type: 0
+    fluxType: 2
+    direction: 0
+    corePower: 0
+    wireSet: {fileID: 0}
+    canisterSlot: {fileID: 0}
+    canisterConnected: 0
+  usageAmount: 1
+  reductionAmount: 0
 --- !u!1001 &2039880525
 Prefab:
   m_ObjectHideFlags: 0
@@ -36484,6 +36839,7 @@ GameObject:
   - component: {fileID: 2117476354}
   - component: {fileID: 2117476356}
   - component: {fileID: 2117476355}
+  - component: {fileID: 2117476357}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (1)
   m_TagString: Untagged
@@ -36501,7 +36857,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.000000029802322, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: 1, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1149983584}
   m_Father: {fileID: 182710848}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36546,6 +36903,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2117476353}
   m_Mesh: {fileID: 4300000, guid: 5f4ff8dedfff2d9449d30f7617d968f6, type: 3}
+--- !u!114 &2117476357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117476353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2119177864
 GameObject:
   m_ObjectHideFlags: 0
@@ -36631,6 +36999,7 @@ GameObject:
   - component: {fileID: 2123056215}
   - component: {fileID: 2123056214}
   - component: {fileID: 2123056213}
+  - component: {fileID: 2123056216}
   m_Layer: 0
   m_Name: CanisterDepot_001_Interior_001_Default (2)
   m_TagString: Untagged
@@ -36706,6 +37075,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2123056211}
   m_Mesh: {fileID: 4300000, guid: 150dc6119449d4c41b2d45adf7069364, type: 3}
+--- !u!114 &2123056216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123056211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4582b56290b04047b4b19f34d4d85de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCanister: 0
+  spawnInterval: 2
+  canisterPreFab: {fileID: 0}
+  canisterCountMax: 0
+  canisterCount: 0
 --- !u!1 &2126224704
 GameObject:
   m_ObjectHideFlags: 0
@@ -36790,6 +37175,7 @@ GameObject:
   - component: {fileID: 2127345690}
   - component: {fileID: 2127345692}
   - component: {fileID: 2127345691}
+  - component: {fileID: 2127345693}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (2)
   m_TagString: Untagged
@@ -36807,7 +37193,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071071, z: -0, w: -0.7071065}
   m_LocalPosition: {x: 19.5, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 569325621}
   m_Father: {fileID: 234575634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -270, z: 0}
@@ -36852,6 +37239,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2127345689}
   m_Mesh: {fileID: 4300000, guid: 5f4ff8dedfff2d9449d30f7617d968f6, type: 3}
+--- !u!114 &2127345693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2127345689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128768837
 GameObject:
   m_ObjectHideFlags: 0

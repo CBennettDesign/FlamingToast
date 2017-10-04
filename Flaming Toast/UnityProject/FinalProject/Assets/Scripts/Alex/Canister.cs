@@ -32,12 +32,16 @@ public class Canister : MonoBehaviour
     //Pre-Initialisation
     private void Awake()
     {
+        //Double check that the tag Canister exists and then apply it to this object
+        this.gameObject.tag = "Canister";
+
         cDepotRef = GameObject.FindGameObjectWithTag("Canister_Depot").GetComponent<Canister_Depot>();
+
         //None by default as it will be changed later
         canisterType = FluxType.NONE;
 
         //Every canister starts with the charge of Zero
-        Charge = 0;
+        Charge = 1;
     }
 
     //Main-Initialisation
