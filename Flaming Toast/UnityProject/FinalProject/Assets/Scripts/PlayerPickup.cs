@@ -20,7 +20,7 @@ public class PlayerPickup : MonoBehaviour {
 	void Update ()
     {
         // XBOX control
-		if (XCI.GetButtonDown(XboxButton.B))
+		if (XCI.GetButtonDown(XboxButton.A))
         {
             if (inHands == null)
             {
@@ -29,7 +29,8 @@ public class PlayerPickup : MonoBehaviour {
                 //Layermask set to Cap
                 int layermask = 1 << LayerMask.NameToLayer("Cap");
 
-                if (Physics.SphereCast(transform.position, 0.4f, transform.forward, out info, pickUpDistance, layermask))
+                
+                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
                 {
                     // Capsule ingame
                     GameObject obj = info.collider.gameObject;
@@ -37,34 +38,45 @@ public class PlayerPickup : MonoBehaviour {
                     // Set capsule infront of player
                     obj.transform.parent = transform.transform;
                     obj.transform.localPosition = new Vector3(0, 50, 80.0f);
+                    //obj.GetComponent<Collider>().enabled = true;
 
                     //Gets the rigidbody of capsule and sets Kenetic on and velocity off
                     Rigidbody cap = obj.GetComponent<Rigidbody>();
-                    cap.isKinematic = true;
-                    cap.velocity = Vector3.zero;
-
-                    //Turns angular velocity off
-                    cap.angularVelocity = Vector3.zero;
+                    Destroy(cap);
+                    
                     obj.transform.localRotation = Quaternion.identity;
                     inHands = obj;
+                    return;
+                }
+
+                layermask = 1 << LayerMask.NameToLayer("Junction");
+                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
+                {
+                    GameObject obj = info.collider.gameObject;
+                    Junctions CurrentJunction = obj.GetComponent<Junctions>();
+                    CurrentJunction.ToggleJunction();
                 }
             }
             else
             {
-                inHands.transform.parent = null;
-                // Capsule ingame
-                Rigidbody cap = inHands.GetComponent<Rigidbody>();
                 
-                //Sets kenetic off and sets inHands to null
-                cap.isKinematic = false;
-                inHands = null;
 
-                //SAVE FOR LATER USE
+                RaycastHit info;
+                int layermask = 1 << LayerMask.NameToLayer("Holder");
+                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
+                {
+                    GameObject holder = info.collider.gameObject;
+                    inHands.transform.parent = null;
+                    holder.BroadcastMessage("giveCanister", inHands, SendMessageOptions.DontRequireReceiver);
+                    inHands = null;
+                }
+                else
+                {
 
-                ////Drops Capsule on an angle so riged body will take effect
-                //var rotationVector = cap.transform.rotation.eulerAngles;
-                //rotationVector.z = 10.0f;
-                //cap.transform.rotation = Quaternion.Euler(rotationVector);
+                    inHands.transform.parent = null;
+                    inHands.AddComponent<Rigidbody>();
+                    inHands = null;
+                }
             }
         }
 	}

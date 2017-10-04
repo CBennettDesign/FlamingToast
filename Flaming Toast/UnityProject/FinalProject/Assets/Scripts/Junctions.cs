@@ -5,6 +5,7 @@ using XboxCtrlrInput;
 
 public class Junctions : MonoBehaviour {
     public GameObject[] Wires;
+    public GameObject[] Systems;
     public int startsIlluminated;
     private int selectedIndex = 0;
 
@@ -22,17 +23,19 @@ public class Junctions : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    if (XCI.GetButtonDown(XboxButton.A))
-        {
-            setIlluminated(selectedIndex, false);
-
-            selectedIndex++;
-            if (selectedIndex >= Wires.Length)
-                selectedIndex = 0;
-
-            setIlluminated(selectedIndex, true);
-        }	
+	  
 	}
+
+    public void ToggleJunction()
+    {
+        setIlluminated(selectedIndex, false);
+
+        selectedIndex++;
+        if (selectedIndex >= Wires.Length)
+            selectedIndex = 0;
+
+        setIlluminated(selectedIndex, true);
+    }
 
     void setIlluminated(int Wire, bool state)
     {
@@ -43,6 +46,7 @@ public class Junctions : MonoBehaviour {
                 child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.green);
                 child.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             }
+            //
         }
         else
         {

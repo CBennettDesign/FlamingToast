@@ -46,37 +46,7 @@ public class Snaptocharger : MonoBehaviour
 
         if (!canister)
         {
-            //Layer mask Cap
-            int layermask = 1 << LayerMask.NameToLayer("Cap");
-
-            //Starts Sphere cast
-            Collider[] colliderList = Physics.OverlapSphere(transform.position, Radius, layermask);
-
-            if (colliderList.Length > 0)
-            {
-                //List of current canisters
-                GameObject obj = colliderList[0].gameObject;
-                
-                //sets position to parents position
-                obj.transform.parent = transform.transform;
-
-                obj.GetComponent<Collider>().enabled = false;
-
-                //Sets to public local positions
-                obj.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
-
-                //creates rigidbody component
-                Rigidbody cap = obj.GetComponent<Rigidbody>();
-
-                //Sets kinematic to true and sets velocity to 0
-                cap.isKinematic = true;
-                cap.velocity = Vector3.zero;
-                cap.angularVelocity = Vector3.zero;
-
-                //Rotation of object when snaped
-                cap.transform.Rotate(90.0f, 0f, 0f);
-                canister = obj;
-            }
+           
         }
         else
         {
@@ -84,5 +54,24 @@ public class Snaptocharger : MonoBehaviour
             lerptime += speed * Time.deltaTime;
             canister.GetComponent<Renderer>().material.color = Color.Lerp(Startcolor, Endcolor, lerptime);
         }
+    }
+
+    public void giveCanister(GameObject GiveCanister)
+    {
+        //sets position to parents position
+        GiveCanister.transform.parent = transform.transform;
+
+        //Turns colider off ASK QUESTION
+        //GiveCanister.GetComponent<Collider>().enabled = false;
+
+        //Sets to public local positions
+        GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
+        GiveCanister.transform.localRotation = Quaternion.identity;
+
+        //creates rigidbody component
+        Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
+        Destroy(cap);
+
+        canister = GiveCanister;
     }
 }
