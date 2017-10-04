@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Alex\Base_System.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister_Charger.cs" />
+    <Compile Include="Assets\Scripts\Alex\Canister_Charger_Manager.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister_Depot.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister_Slot.cs" />
     <Compile Include="Assets\Scripts\Alex\Gravity_System.cs" />

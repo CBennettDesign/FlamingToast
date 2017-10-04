@@ -7,7 +7,7 @@ using UnityEngine;
 public class Canister : MonoBehaviour
 {
 
-    private Canister_Depot cDepotRef;
+    private Base_System system;
 
     [SerializeField]
     private FluxType canisterType;
@@ -35,12 +35,12 @@ public class Canister : MonoBehaviour
         //Double check that the tag Canister exists and then apply it to this object
         this.gameObject.tag = "Canister";
 
-        cDepotRef = GameObject.FindGameObjectWithTag("Canister_Depot").GetComponent<Canister_Depot>();
+        system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
         //None by default as it will be changed later
         canisterType = FluxType.NONE;
 
-        //Every canister starts with the charge of Zero
+        //Every canister starts with the charge of Zero || 1
         Charge = 1;
     }
 
@@ -71,7 +71,7 @@ public class Canister : MonoBehaviour
     public void Destroy()
     {
         //When deleting canister remove from depot canister count
-        cDepotRef.CanisterCount -= 1;
+        system.CurrentCanisterCount--;
 
         Destroy(this.gameObject);
     }

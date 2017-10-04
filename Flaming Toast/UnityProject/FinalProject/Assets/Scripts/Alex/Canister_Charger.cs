@@ -27,7 +27,9 @@ public class Canister_Charger : MonoBehaviour
 
     //Instance ID's of all the cansiters used.
     //Allows it not to be charged again when put back onto the charger
-    public List<int> usedCanisterID = new List<int>();
+    //Move to a single location Canister Charger Manager 
+    //public List<int> usedCanisterID = new List<int>();
+    private Canister_Charger_Manager CCM;
 
     //Default value, if it has not found a valid canister
     private bool isValidCanister = false;
@@ -39,11 +41,13 @@ public class Canister_Charger : MonoBehaviour
         ////Raycast Line Check - Rework to a sphere cast.?
         //rayCast = new Ray(transform.position, Vector3.up);
 
+        CCM = GameObject.FindGameObjectWithTag("CCM").GetComponent<Canister_Charger_Manager>();
+
         //Current systems ray casting object, first child of this
         system_Ray = this.transform.GetChild(0).GetComponent<System_RayCast>();
        
         //So that it has something to check against
-        usedCanisterID.Add(0);
+        CCM.usedCanisterID.Add(0);
 
     }
 
@@ -111,10 +115,10 @@ public class Canister_Charger : MonoBehaviour
         if (!isValidCanister)
         {
             //Check for canisterID match
-            for (int canisterID_index = 0; canisterID_index < usedCanisterID.Count; canisterID_index++)
+            for (int canisterID_index = 0; canisterID_index < CCM.usedCanisterID.Count; canisterID_index++)
             {
                 //Canister ID does not match the currentCanister ID
-                if (usedCanisterID[canisterID_index] != system_Ray.CurrentCanister.GetInstanceID())
+                if (CCM.usedCanisterID[canisterID_index] != system_Ray.CurrentCanister.GetInstanceID())
                 {
                     //Doesn't match
                     isValidCanister = true;
@@ -132,7 +136,7 @@ public class Canister_Charger : MonoBehaviour
             if (isValidCanister && system_Ray.CurrentCanister.Charge == 0)
             {
                 //Add it to the list of canister ID's so that it can not be used again.
-                usedCanisterID.Add(system_Ray.CurrentCanister.GetInstanceID());
+                CCM.usedCanisterID.Add(system_Ray.CurrentCanister.GetInstanceID());
             }
         }
 

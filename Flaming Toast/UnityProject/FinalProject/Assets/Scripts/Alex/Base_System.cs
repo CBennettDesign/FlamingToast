@@ -27,9 +27,15 @@ public class Base_System : MonoBehaviour
     [Tooltip("Canister Depot System")]
     [Range(1, 10)]
     private int maxCanisterCount;
-
     public int MaxCanisterCount
     { get { return maxCanisterCount; } }
+
+    private int currentCanisterCount;
+    public int CurrentCanisterCount
+    {
+        get { return currentCanisterCount; }
+        set { currentCanisterCount = value; }
+    }
 
 
     public bool IsPowered

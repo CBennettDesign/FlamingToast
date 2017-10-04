@@ -29,14 +29,9 @@ public class Canister_Depot : MonoBehaviour
     public int canisterCountMax;
     //Current Canister Count
     [SerializeField]
-    [Tooltip("Current cansiters in the scene")]
-    private int canisterCount;
-
-    public int CanisterCount
-    {
-        get { return canisterCount; }
-        set { canisterCount = value;}
-    }
+    [Tooltip("Current cansiters in the scene - Stored in the system manager")]
+    private int canisterCountOnScene;
+ 
     
     
     //Spawn Timer
@@ -51,13 +46,13 @@ public class Canister_Depot : MonoBehaviour
         //Default check
         spawnCanister = false;
 
-        //Start at Zero
-        canisterCount = 0;
 
         //get the max canister count
         if (system != null)
         {
+            //Starting values
             canisterCountMax = system.MaxCanisterCount;
+            canisterCountOnScene = system.CurrentCanisterCount;
         }
 
     }
@@ -80,14 +75,14 @@ public class Canister_Depot : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-        //Inspector checkbox
+        //Inspector checkbox - User Input / Interaction
         if (spawnCanister)
         {
             //increase timer
             timer += Time.deltaTime;
 
             //At 1 second AND less or equal to the max count of canisters
-            if (timer >= spawnInterval && canisterCount < system.MaxCanisterCount)
+            if (timer >= spawnInterval && system.CurrentCanisterCount < system.MaxCanisterCount)
             {
                 //There is a prefab gameobject to use.
                 if (canisterPreFab != null)
@@ -97,7 +92,10 @@ public class Canister_Depot : MonoBehaviour
                     Instantiate(canisterPreFab, canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
 
                     //Increase the count.
-                    canisterCount++;
+                    system.CurrentCanisterCount++;
+
+                    //Update the local canister count
+                    canisterCountOnScene = system.CurrentCanisterCount;
 
                     //Reset Timer
                     timer = 0.0f;
@@ -112,7 +110,7 @@ public class Canister_Depot : MonoBehaviour
                     Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
                 }
             }
-            else if (canisterCount >= system.MaxCanisterCount)
+            else if (system.CurrentCanisterCount >= system.MaxCanisterCount)
             {
                 Debug.Log("Max Canisters on scene");
             }

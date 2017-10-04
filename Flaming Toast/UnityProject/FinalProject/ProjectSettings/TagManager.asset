@@ -9,6 +9,7 @@ TagManager:
   - Canister_Depot
   - Cap
   - Power_Core
+  - CCM
   layers:
   - Default
   - TransparentFX
