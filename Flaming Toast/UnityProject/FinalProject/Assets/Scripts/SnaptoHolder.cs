@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-public class Snaptocharger : MonoBehaviour
+public class SnaptoHolder : MonoBehaviour
 {
     //Distance to pickup    
     public float pickUpDistance;
@@ -59,8 +59,6 @@ public class Snaptocharger : MonoBehaviour
                 
                 //sets position to parents position
                 obj.transform.parent = transform.transform;
-
-                obj.GetComponent<Collider>().enabled = false;
 
                 //Sets to public local positions
                 obj.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);

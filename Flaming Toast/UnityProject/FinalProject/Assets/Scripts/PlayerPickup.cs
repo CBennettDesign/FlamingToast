@@ -36,7 +36,7 @@ public class PlayerPickup : MonoBehaviour {
 
                     // Set capsule infront of player
                     obj.transform.parent = transform.transform;
-                    obj.transform.localPosition = new Vector3(0, 100, 75.0f);
+                    obj.transform.localPosition = new Vector3(0, 50, 80.0f);
 
                     //Gets the rigidbody of capsule and sets Kenetic on and velocity off
                     Rigidbody cap = obj.GetComponent<Rigidbody>();

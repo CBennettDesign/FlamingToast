@@ -108,6 +108,23 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2069420 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1507475554}
+--- !u!65 &2069423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &5106854
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +209,7 @@ GameObject:
   - component: {fileID: 11108418}
   - component: {fileID: 11108420}
   - component: {fileID: 11108419}
+  - component: {fileID: 11108421}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (19)
   m_TagString: Untagged
@@ -254,6 +272,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 11108417}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &11108421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 11108417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &12047399
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +295,7 @@ GameObject:
   - component: {fileID: 12047400}
   - component: {fileID: 12047402}
   - component: {fileID: 12047401}
+  - component: {fileID: 12047403}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (1)
   m_TagString: Untagged
@@ -327,6 +358,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12047399}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &12047403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12047399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
+--- !u!1001 &12207309
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.433559
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &17611728
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +614,7 @@ GameObject:
   - component: {fileID: 28901334}
   - component: {fileID: 28901336}
   - component: {fileID: 28901335}
+  - component: {fileID: 28901337}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (55)
   m_TagString: Untagged
@@ -579,6 +677,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 28901333}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &28901337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 28901333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &30349527
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +846,7 @@ GameObject:
   - component: {fileID: 36423357}
   - component: {fileID: 36423359}
   - component: {fileID: 36423358}
+  - component: {fileID: 36423360}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (22)
   m_TagString: Untagged
@@ -798,6 +909,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36423356}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &36423360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36423356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &40277140
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +932,7 @@ GameObject:
   - component: {fileID: 40277141}
   - component: {fileID: 40277143}
   - component: {fileID: 40277142}
+  - component: {fileID: 40277144}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (18)
   m_TagString: Untagged
@@ -871,6 +995,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 40277140}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &40277144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 40277140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &49700598
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +1033,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 49700598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.5, y: 1, z: 9}
+  m_LocalPosition: {x: -19.5, y: 1, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1171731688}
@@ -1320,6 +1456,7 @@ GameObject:
   - component: {fileID: 95541579}
   - component: {fileID: 95541581}
   - component: {fileID: 95541580}
+  - component: {fileID: 95541582}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (7)
   m_TagString: Untagged
@@ -1382,6 +1519,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95541578}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &95541582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95541578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1001 &100405534
 Prefab:
   m_ObjectHideFlags: 0
@@ -1495,6 +1644,7 @@ GameObject:
   - component: {fileID: 105725168}
   - component: {fileID: 105725170}
   - component: {fileID: 105725169}
+  - component: {fileID: 105725171}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (39)
   m_TagString: Untagged
@@ -1557,6 +1707,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105725167}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &105725171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105725167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &120535794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +2011,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133639795}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &133746357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 133746358}
+  - component: {fileID: 133746359}
+  m_Layer: 0
+  m_Name: Charger_001_Interior_001_Default (4.1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &133746358
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133746357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 653389182}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133746359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133746357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpDistance: 2
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+  speed: 0.2
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  Endcolor: {r: 0, g: 0, b: 0, a: 0}
+  Radius: 2
 --- !u!1 &134888179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +2143,7 @@ GameObject:
   - component: {fileID: 141838445}
   - component: {fileID: 141838447}
   - component: {fileID: 141838446}
+  - component: {fileID: 141838448}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (17)
   m_TagString: Untagged
@@ -1995,6 +2206,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141838444}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &141838448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141838444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &145408605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2392,7 @@ GameObject:
   - component: {fileID: 169394957}
   - component: {fileID: 169394959}
   - component: {fileID: 169394958}
+  - component: {fileID: 169394960}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (26)
   m_TagString: Untagged
@@ -2231,6 +2455,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169394956}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &169394960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169394956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &170375705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,6 +2509,7 @@ GameObject:
   - component: {fileID: 174921178}
   - component: {fileID: 174921180}
   - component: {fileID: 174921179}
+  - component: {fileID: 174921181}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (89)
   m_TagString: Untagged
@@ -2335,6 +2572,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 174921177}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &174921181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 174921177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &176076244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2789,7 @@ Transform:
   m_LocalScale: {x: 612.46326, y: 8.3353615, z: 330.8965}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &185237767
 MeshRenderer:
@@ -2677,6 +2926,7 @@ GameObject:
   - component: {fileID: 197932549}
   - component: {fileID: 197932551}
   - component: {fileID: 197932550}
+  - component: {fileID: 197932552}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (130)
   m_TagString: Untagged
@@ -2739,6 +2989,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 197932548}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &197932552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197932548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &205497396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,6 +3221,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219352339}
   m_Mesh: {fileID: 4300000, guid: fa190df2417fef44cb4305b9ddd10b60, type: 3}
+--- !u!1 &225884711 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1073177940}
+--- !u!65 &225884714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225884711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &226151581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,6 +3322,7 @@ GameObject:
   - component: {fileID: 230741601}
   - component: {fileID: 230741603}
   - component: {fileID: 230741602}
+  - component: {fileID: 230741604}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (41)
   m_TagString: Untagged
@@ -3105,6 +3385,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230741600}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &230741604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230741600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &231034541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,6 +3803,7 @@ GameObject:
   - component: {fileID: 238600063}
   - component: {fileID: 238600065}
   - component: {fileID: 238600064}
+  - component: {fileID: 238600066}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (22)
   m_TagString: Untagged
@@ -3573,6 +3866,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 238600062}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &238600066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 238600062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1001 &239473863
 Prefab:
   m_ObjectHideFlags: 0
@@ -3854,6 +4159,7 @@ GameObject:
   - component: {fileID: 247824722}
   - component: {fileID: 247824724}
   - component: {fileID: 247824723}
+  - component: {fileID: 247824725}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (40)
   m_TagString: Untagged
@@ -3916,6 +4222,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 247824721}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &247824725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247824721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &250769088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,6 +4464,7 @@ GameObject:
   - component: {fileID: 266093133}
   - component: {fileID: 266093135}
   - component: {fileID: 266093134}
+  - component: {fileID: 266093136}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (117)
   m_TagString: Untagged
@@ -4208,6 +4527,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 266093132}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &266093136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266093132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &275125747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4623,7 @@ GameObject:
   - component: {fileID: 281133853}
   - component: {fileID: 281133855}
   - component: {fileID: 281133854}
+  - component: {fileID: 281133856}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (62)
   m_TagString: Untagged
@@ -4354,6 +4686,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 281133852}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &281133856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 281133852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &288748859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +5104,7 @@ GameObject:
   - component: {fileID: 323759891}
   - component: {fileID: 323759893}
   - component: {fileID: 323759892}
+  - component: {fileID: 323759894}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (66)
   m_TagString: Untagged
@@ -4822,6 +5167,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323759890}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &323759894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323759890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &325686484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +5190,7 @@ GameObject:
   - component: {fileID: 325686485}
   - component: {fileID: 325686487}
   - component: {fileID: 325686486}
+  - component: {fileID: 325686488}
   m_Layer: 0
   m_Name: ShipWall_004_Interior_004_Corner (1)
   m_TagString: Untagged
@@ -4895,6 +5253,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325686484}
   m_Mesh: {fileID: 4300000, guid: 4afc96b9456c5ee4992dc6026a8b0aff, type: 3}
+--- !u!65 &325686488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325686484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.5000001, y: 1, z: -0.5000001}
 --- !u!1 &332321004 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
@@ -4913,7 +5283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputDebugSphere: {fileID: 0}
   controller: 1
-  movementSpeed: 5.3
+  movementSpeed: 10
 --- !u!54 &332321006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4953,7 +5323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b034e0d646b92634aa7c610a9686b51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpDistance: 6
+  pickUpDistance: 3
 --- !u!1 &336947739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,6 +5335,7 @@ GameObject:
   - component: {fileID: 336947740}
   - component: {fileID: 336947742}
   - component: {fileID: 336947741}
+  - component: {fileID: 336947743}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (70)
   m_TagString: Untagged
@@ -5027,6 +5398,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336947739}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &336947743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336947739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &338783568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,6 +5822,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349312102}
   m_Mesh: {fileID: 4300000, guid: c96e654c454acba4bbc1913e07ef0e10, type: 3}
+--- !u!1 &353843049 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1874261603}
+--- !u!65 &353843052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353843049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &354074940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5742,6 +6142,7 @@ GameObject:
   - component: {fileID: 381662148}
   - component: {fileID: 381662150}
   - component: {fileID: 381662149}
+  - component: {fileID: 381662151}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (51)
   m_TagString: Untagged
@@ -5804,6 +6205,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 381662147}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &381662151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381662147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1001 &384476195
 Prefab:
   m_ObjectHideFlags: 0
@@ -6023,6 +6436,7 @@ GameObject:
   - component: {fileID: 396254851}
   - component: {fileID: 396254853}
   - component: {fileID: 396254852}
+  - component: {fileID: 396254854}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (17)
   m_TagString: Untagged
@@ -6085,6 +6499,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 396254850}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &396254854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396254850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &397099190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,6 +6595,7 @@ GameObject:
   - component: {fileID: 399826474}
   - component: {fileID: 399826476}
   - component: {fileID: 399826475}
+  - component: {fileID: 399826477}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (49)
   m_TagString: Untagged
@@ -6231,6 +6658,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 399826473}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &399826477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399826473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &400788346
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,6 +6827,7 @@ GameObject:
   - component: {fileID: 413745718}
   - component: {fileID: 413745720}
   - component: {fileID: 413745719}
+  - component: {fileID: 413745721}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (18)
   m_TagString: Untagged
@@ -6450,6 +6890,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 413745717}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &413745721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413745717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &414206042
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6986,7 @@ GameObject:
   - component: {fileID: 416804928}
   - component: {fileID: 416804930}
   - component: {fileID: 416804929}
+  - component: {fileID: 416804931}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (18)
   m_TagString: Untagged
@@ -6596,6 +7049,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 416804927}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &416804931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416804927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &419407288
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,7 +7935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464048701
 GameObject:
@@ -7483,6 +7948,7 @@ GameObject:
   - component: {fileID: 464048702}
   - component: {fileID: 464048704}
   - component: {fileID: 464048703}
+  - component: {fileID: 464048705}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (1)
   m_TagString: Untagged
@@ -7545,6 +8011,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464048701}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &464048705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464048701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1001 &467260623
 Prefab:
   m_ObjectHideFlags: 0
@@ -7969,6 +8447,7 @@ GameObject:
   - component: {fileID: 483373994}
   - component: {fileID: 483373996}
   - component: {fileID: 483373995}
+  - component: {fileID: 483373997}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (28)
   m_TagString: Untagged
@@ -8031,6 +8510,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483373993}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &483373997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483373993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &483607308
 GameObject:
   m_ObjectHideFlags: 0
@@ -8188,6 +8679,7 @@ GameObject:
   - component: {fileID: 499030368}
   - component: {fileID: 499030370}
   - component: {fileID: 499030369}
+  - component: {fileID: 499030371}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (57)
   m_TagString: Untagged
@@ -8250,6 +8742,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 499030367}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &499030371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499030367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &500388979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8535,6 +9039,7 @@ GameObject:
   - component: {fileID: 520988777}
   - component: {fileID: 520988779}
   - component: {fileID: 520988778}
+  - component: {fileID: 520988780}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (3)
   m_TagString: Untagged
@@ -8597,6 +9102,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520988776}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &520988780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520988776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &533527372
 GameObject:
   m_ObjectHideFlags: 0
@@ -8608,6 +9125,7 @@ GameObject:
   - component: {fileID: 533527373}
   - component: {fileID: 533527375}
   - component: {fileID: 533527374}
+  - component: {fileID: 533527376}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (63)
   m_TagString: Untagged
@@ -8670,6 +9188,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533527372}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &533527376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533527372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &540761320
 GameObject:
   m_ObjectHideFlags: 0
@@ -8878,6 +9408,7 @@ GameObject:
   - component: {fileID: 550028493}
   - component: {fileID: 550028495}
   - component: {fileID: 550028494}
+  - component: {fileID: 550028496}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (43)
   m_TagString: Untagged
@@ -8940,6 +9471,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550028492}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &550028496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550028492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &551010825
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,6 +10156,7 @@ GameObject:
   - component: {fileID: 577376331}
   - component: {fileID: 577376333}
   - component: {fileID: 577376332}
+  - component: {fileID: 577376334}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (32)
   m_TagString: Untagged
@@ -9675,6 +10219,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577376330}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &577376334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 577376330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
+--- !u!1 &579798551 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 2068485599}
+--- !u!65 &579798554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579798551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.5000001, y: 1, z: -0.5000001}
 --- !u!1 &585539279
 GameObject:
   m_ObjectHideFlags: 0
@@ -9759,6 +10332,7 @@ GameObject:
   - component: {fileID: 592197182}
   - component: {fileID: 592197184}
   - component: {fileID: 592197183}
+  - component: {fileID: 592197185}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (2)
   m_TagString: Untagged
@@ -9821,6 +10395,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592197181}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &592197185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 592197181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &593893406
 GameObject:
   m_ObjectHideFlags: 0
@@ -9905,6 +10491,7 @@ GameObject:
   - component: {fileID: 597003115}
   - component: {fileID: 597003117}
   - component: {fileID: 597003116}
+  - component: {fileID: 597003118}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (85)
   m_TagString: Untagged
@@ -9967,6 +10554,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597003114}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &597003118
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597003114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &600066264
 GameObject:
   m_ObjectHideFlags: 0
@@ -10124,6 +10723,7 @@ GameObject:
   - component: {fileID: 604667098}
   - component: {fileID: 604667100}
   - component: {fileID: 604667099}
+  - component: {fileID: 604667101}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (3)
   m_TagString: Untagged
@@ -10186,6 +10786,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604667097}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &604667101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604667097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &605039518
 GameObject:
   m_ObjectHideFlags: 0
@@ -10197,6 +10809,7 @@ GameObject:
   - component: {fileID: 605039519}
   - component: {fileID: 605039521}
   - component: {fileID: 605039520}
+  - component: {fileID: 605039522}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (13)
   m_TagString: Untagged
@@ -10259,6 +10872,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605039518}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &605039522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605039518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1001 &615277179
 Prefab:
   m_ObjectHideFlags: 0
@@ -10381,6 +11006,7 @@ GameObject:
   - component: {fileID: 629487013}
   - component: {fileID: 629487015}
   - component: {fileID: 629487014}
+  - component: {fileID: 629487016}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (87)
   m_TagString: Untagged
@@ -10443,6 +11069,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 629487012}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &629487016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 629487012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &629857765
 GameObject:
   m_ObjectHideFlags: 0
@@ -10998,6 +11636,7 @@ GameObject:
   - component: {fileID: 650949119}
   - component: {fileID: 650949121}
   - component: {fileID: 650949120}
+  - component: {fileID: 650949122}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (8)
   m_TagString: Untagged
@@ -11060,6 +11699,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650949118}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &650949122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650949118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &653389181
 GameObject:
   m_ObjectHideFlags: 0
@@ -11071,6 +11722,7 @@ GameObject:
   - component: {fileID: 653389182}
   - component: {fileID: 653389184}
   - component: {fileID: 653389183}
+  - component: {fileID: 653389185}
   m_Layer: 0
   m_Name: Charger_001_Interior_001_Default (4)
   m_TagString: Untagged
@@ -11086,9 +11738,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653389181}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 8.5, y: 1, z: 17}
+  m_LocalPosition: {x: 8.43, y: 1, z: 18}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 133746358}
   m_Father: {fileID: 1171731688}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
@@ -11133,6 +11786,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653389181}
   m_Mesh: {fileID: 4300000, guid: dae1831c48a1d454389258d61f373e3a, type: 3}
+--- !u!114 &653389185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653389181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpDistance: 3
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+  speed: 0.2
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  Endcolor: {r: 0, g: 0, b: 0, a: 0}
+  Radius: 2
 --- !u!1 &654577200
 GameObject:
   m_ObjectHideFlags: 0
@@ -11144,6 +11816,7 @@ GameObject:
   - component: {fileID: 654577201}
   - component: {fileID: 654577203}
   - component: {fileID: 654577202}
+  - component: {fileID: 654577204}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (86)
   m_TagString: Untagged
@@ -11206,6 +11879,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 654577200}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &654577204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654577200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1001 &657431640
 Prefab:
   m_ObjectHideFlags: 0
@@ -11285,6 +11970,7 @@ GameObject:
   - component: {fileID: 658822267}
   - component: {fileID: 658822269}
   - component: {fileID: 658822268}
+  - component: {fileID: 658822270}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (10)
   m_TagString: Untagged
@@ -11347,6 +12033,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 658822266}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &658822270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 658822266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &664069065
 GameObject:
   m_ObjectHideFlags: 0
@@ -11431,6 +12129,7 @@ GameObject:
   - component: {fileID: 667158840}
   - component: {fileID: 667158842}
   - component: {fileID: 667158841}
+  - component: {fileID: 667158843}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (27)
   m_TagString: Untagged
@@ -11493,6 +12192,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 667158839}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &667158843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 667158839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &688568673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11943,6 +12654,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712285923}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &712867408 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1068248705}
+--- !u!65 &712867411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 712867408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &713394352
 GameObject:
   m_ObjectHideFlags: 0
@@ -11954,6 +12682,7 @@ GameObject:
   - component: {fileID: 713394353}
   - component: {fileID: 713394355}
   - component: {fileID: 713394354}
+  - component: {fileID: 713394356}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (27)
   m_TagString: Untagged
@@ -12016,6 +12745,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713394352}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &713394356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713394352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
+--- !u!1 &737002830 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1560499027}
+--- !u!65 &737002833
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 737002830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &737692162
 GameObject:
   m_ObjectHideFlags: 0
@@ -12027,6 +12785,7 @@ GameObject:
   - component: {fileID: 737692163}
   - component: {fileID: 737692165}
   - component: {fileID: 737692164}
+  - component: {fileID: 737692166}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (24)
   m_TagString: Untagged
@@ -12089,6 +12848,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737692162}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &737692166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 737692162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &754086907
 GameObject:
   m_ObjectHideFlags: 0
@@ -12100,6 +12871,7 @@ GameObject:
   - component: {fileID: 754086908}
   - component: {fileID: 754086910}
   - component: {fileID: 754086909}
+  - component: {fileID: 754086911}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (23)
   m_TagString: Untagged
@@ -12162,6 +12934,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 754086907}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &754086911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754086907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &759571131
 GameObject:
   m_ObjectHideFlags: 0
@@ -12387,6 +13171,7 @@ GameObject:
   - component: {fileID: 770380451}
   - component: {fileID: 770380453}
   - component: {fileID: 770380452}
+  - component: {fileID: 770380454}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (111)
   m_TagString: Untagged
@@ -12449,6 +13234,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 770380450}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &770380454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770380450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &777608427
 GameObject:
   m_ObjectHideFlags: 0
@@ -12533,6 +13330,7 @@ GameObject:
   - component: {fileID: 783397889}
   - component: {fileID: 783397891}
   - component: {fileID: 783397890}
+  - component: {fileID: 783397892}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (42)
   m_TagString: Untagged
@@ -12595,6 +13393,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783397888}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &783397892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783397888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &785068447
 GameObject:
   m_ObjectHideFlags: 0
@@ -12679,6 +13489,7 @@ GameObject:
   - component: {fileID: 793059943}
   - component: {fileID: 793059945}
   - component: {fileID: 793059944}
+  - component: {fileID: 793059946}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (42)
   m_TagString: Untagged
@@ -12741,6 +13552,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793059942}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &793059946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 793059942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &796560373
 GameObject:
   m_ObjectHideFlags: 0
@@ -12752,6 +13575,7 @@ GameObject:
   - component: {fileID: 796560374}
   - component: {fileID: 796560376}
   - component: {fileID: 796560375}
+  - component: {fileID: 796560377}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (4)
   m_TagString: Untagged
@@ -12814,6 +13638,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 796560373}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &796560377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796560373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &797589291
 GameObject:
   m_ObjectHideFlags: 0
@@ -12825,6 +13661,7 @@ GameObject:
   - component: {fileID: 797589292}
   - component: {fileID: 797589294}
   - component: {fileID: 797589293}
+  - component: {fileID: 797589295}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (23)
   m_TagString: Untagged
@@ -12887,6 +13724,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797589291}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &797589295
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797589291}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &798780717
 GameObject:
   m_ObjectHideFlags: 0
@@ -12971,6 +13820,7 @@ GameObject:
   - component: {fileID: 799060065}
   - component: {fileID: 799060067}
   - component: {fileID: 799060066}
+  - component: {fileID: 799060068}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (90)
   m_TagString: Untagged
@@ -13033,6 +13883,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799060064}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &799060068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799060064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &802113188
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,6 +14271,7 @@ GameObject:
   - component: {fileID: 818438157}
   - component: {fileID: 818438159}
   - component: {fileID: 818438158}
+  - component: {fileID: 818438160}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (7)
   m_TagString: Untagged
@@ -13471,6 +14334,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 818438156}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &818438160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818438156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &825526232
 GameObject:
   m_ObjectHideFlags: 0
@@ -14214,6 +15089,7 @@ GameObject:
   - component: {fileID: 869573689}
   - component: {fileID: 869573691}
   - component: {fileID: 869573690}
+  - component: {fileID: 869573692}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (131)
   m_TagString: Untagged
@@ -14276,6 +15152,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869573688}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &869573692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 869573688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1001 &870963481
 Prefab:
   m_ObjectHideFlags: 0
@@ -14741,6 +15629,7 @@ GameObject:
   - component: {fileID: 897471311}
   - component: {fileID: 897471313}
   - component: {fileID: 897471312}
+  - component: {fileID: 897471314}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (23)
   m_TagString: Untagged
@@ -14803,6 +15692,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 897471310}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &897471314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 897471310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &901195611
 GameObject:
   m_ObjectHideFlags: 0
@@ -15093,6 +15994,7 @@ GameObject:
   - component: {fileID: 918881333}
   - component: {fileID: 918881335}
   - component: {fileID: 918881334}
+  - component: {fileID: 918881336}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (24)
   m_TagString: Untagged
@@ -15155,6 +16057,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918881332}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &918881336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918881332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &920428433
 GameObject:
   m_ObjectHideFlags: 0
@@ -15239,6 +16153,7 @@ GameObject:
   - component: {fileID: 923072206}
   - component: {fileID: 923072208}
   - component: {fileID: 923072207}
+  - component: {fileID: 923072209}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (129)
   m_TagString: Untagged
@@ -15301,6 +16216,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 923072205}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &923072209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923072205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &930041089
 GameObject:
   m_ObjectHideFlags: 0
@@ -15312,6 +16239,7 @@ GameObject:
   - component: {fileID: 930041090}
   - component: {fileID: 930041092}
   - component: {fileID: 930041091}
+  - component: {fileID: 930041093}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (53)
   m_TagString: Untagged
@@ -15374,6 +16302,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 930041089}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &930041093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930041089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &933685086
 GameObject:
   m_ObjectHideFlags: 0
@@ -15385,6 +16325,7 @@ GameObject:
   - component: {fileID: 933685087}
   - component: {fileID: 933685089}
   - component: {fileID: 933685088}
+  - component: {fileID: 933685090}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (82)
   m_TagString: Untagged
@@ -15447,6 +16388,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933685086}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &933685090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933685086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &936332155
 GameObject:
   m_ObjectHideFlags: 0
@@ -15707,6 +16660,7 @@ GameObject:
   - component: {fileID: 941146596}
   - component: {fileID: 941146598}
   - component: {fileID: 941146597}
+  - component: {fileID: 941146599}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (88)
   m_TagString: Untagged
@@ -15769,6 +16723,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941146595}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &941146599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941146595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &945433664
 GameObject:
   m_ObjectHideFlags: 0
@@ -15853,6 +16819,7 @@ GameObject:
   - component: {fileID: 947266410}
   - component: {fileID: 947266412}
   - component: {fileID: 947266411}
+  - component: {fileID: 947266413}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (25)
   m_TagString: Untagged
@@ -15915,6 +16882,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 947266409}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &947266413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947266409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &947452626
 GameObject:
   m_ObjectHideFlags: 0
@@ -16420,6 +17399,7 @@ GameObject:
   - component: {fileID: 981739934}
   - component: {fileID: 981739936}
   - component: {fileID: 981739935}
+  - component: {fileID: 981739937}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (48)
   m_TagString: Untagged
@@ -16482,6 +17462,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 981739933}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &981739937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981739933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &989707293
 GameObject:
   m_ObjectHideFlags: 0
@@ -16525,6 +17517,7 @@ GameObject:
   - component: {fileID: 999333065}
   - component: {fileID: 999333067}
   - component: {fileID: 999333066}
+  - component: {fileID: 999333068}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (122)
   m_TagString: Untagged
@@ -16587,6 +17580,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999333064}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &999333068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999333064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
+--- !u!1 &1004703034 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1085807401}
+--- !u!65 &1004703037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004703034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.5000001, y: 1, z: -0.5000001}
 --- !u!1 &1010139329
 GameObject:
   m_ObjectHideFlags: 0
@@ -16598,6 +17620,7 @@ GameObject:
   - component: {fileID: 1010139330}
   - component: {fileID: 1010139332}
   - component: {fileID: 1010139331}
+  - component: {fileID: 1010139333}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (78)
   m_TagString: Untagged
@@ -16660,6 +17683,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010139329}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1010139333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010139329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1011138729
 GameObject:
   m_ObjectHideFlags: 0
@@ -17067,6 +18102,7 @@ GameObject:
   - component: {fileID: 1041619903}
   - component: {fileID: 1041619905}
   - component: {fileID: 1041619904}
+  - component: {fileID: 1041619906}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (14)
   m_TagString: Untagged
@@ -17129,6 +18165,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1041619902}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1041619906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041619902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1044954311
 GameObject:
   m_ObjectHideFlags: 0
@@ -17213,6 +18261,7 @@ GameObject:
   - component: {fileID: 1045978862}
   - component: {fileID: 1045978864}
   - component: {fileID: 1045978863}
+  - component: {fileID: 1045978865}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (36)
   m_TagString: Untagged
@@ -17275,6 +18324,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1045978861}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1045978865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1045978861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1052116402
 GameObject:
   m_ObjectHideFlags: 0
@@ -17286,6 +18347,7 @@ GameObject:
   - component: {fileID: 1052116403}
   - component: {fileID: 1052116405}
   - component: {fileID: 1052116404}
+  - component: {fileID: 1052116406}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (74)
   m_TagString: Untagged
@@ -17348,6 +18410,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052116402}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1052116406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052116402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1053866247
 GameObject:
   m_ObjectHideFlags: 0
@@ -17359,6 +18433,7 @@ GameObject:
   - component: {fileID: 1053866248}
   - component: {fileID: 1053866250}
   - component: {fileID: 1053866249}
+  - component: {fileID: 1053866251}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (83)
   m_TagString: Untagged
@@ -17421,6 +18496,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053866247}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1053866251
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053866247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1001 &1058929527
 Prefab:
   m_ObjectHideFlags: 0
@@ -17483,6 +18570,7 @@ GameObject:
   - component: {fileID: 1059867104}
   - component: {fileID: 1059867106}
   - component: {fileID: 1059867105}
+  - component: {fileID: 1059867107}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (30)
   m_TagString: Untagged
@@ -17545,6 +18633,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1059867103}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1059867107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059867103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1062243854
 GameObject:
   m_ObjectHideFlags: 0
@@ -17903,6 +19003,7 @@ GameObject:
   - component: {fileID: 1070812590}
   - component: {fileID: 1070812592}
   - component: {fileID: 1070812591}
+  - component: {fileID: 1070812593}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (65)
   m_TagString: Untagged
@@ -17965,6 +19066,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1070812589}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1070812593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1070812589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1071330510
 GameObject:
   m_ObjectHideFlags: 0
@@ -18436,6 +19549,7 @@ GameObject:
   - component: {fileID: 1106396868}
   - component: {fileID: 1106396870}
   - component: {fileID: 1106396869}
+  - component: {fileID: 1106396871}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (72)
   m_TagString: Untagged
@@ -18498,6 +19612,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1106396867}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1106396871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106396867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1001 &1108245195
 Prefab:
   m_ObjectHideFlags: 0
@@ -19108,6 +20234,7 @@ GameObject:
   - component: {fileID: 1142027775}
   - component: {fileID: 1142027777}
   - component: {fileID: 1142027776}
+  - component: {fileID: 1142027778}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (20)
   m_TagString: Untagged
@@ -19170,6 +20297,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142027774}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1142027778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1142027774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1144668680
 GameObject:
   m_ObjectHideFlags: 0
@@ -19254,6 +20393,7 @@ GameObject:
   - component: {fileID: 1151818688}
   - component: {fileID: 1151818690}
   - component: {fileID: 1151818689}
+  - component: {fileID: 1151818691}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (37)
   m_TagString: Untagged
@@ -19316,6 +20456,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1151818687}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1151818691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151818687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1156043574
 GameObject:
   m_ObjectHideFlags: 0
@@ -19735,7 +20887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!1 &1200544319
 GameObject:
@@ -20481,7 +21633,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239406435}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -13.5, y: 1, z: 20}
+  m_LocalPosition: {x: -13.5, y: 1, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1171731688}
@@ -20641,6 +21793,7 @@ GameObject:
   - component: {fileID: 1246493210}
   - component: {fileID: 1246493212}
   - component: {fileID: 1246493211}
+  - component: {fileID: 1246493213}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (25)
   m_TagString: Untagged
@@ -20703,6 +21856,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1246493209}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1246493213
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246493209}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1250106097
 GameObject:
   m_ObjectHideFlags: 0
@@ -20714,6 +21879,7 @@ GameObject:
   - component: {fileID: 1250106098}
   - component: {fileID: 1250106100}
   - component: {fileID: 1250106099}
+  - component: {fileID: 1250106101}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (31)
   m_TagString: Untagged
@@ -20776,6 +21942,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250106097}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1250106101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250106097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1001 &1250788531
 Prefab:
   m_ObjectHideFlags: 0
@@ -21476,6 +22654,7 @@ GameObject:
   - component: {fileID: 1282880641}
   - component: {fileID: 1282880643}
   - component: {fileID: 1282880642}
+  - component: {fileID: 1282880644}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (2)
   m_TagString: Untagged
@@ -21538,6 +22717,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282880640}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1282880644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282880640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
+--- !u!1 &1287178791 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 158684568}
+--- !u!65 &1287178794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287178791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1001 &1291643943
 Prefab:
   m_ObjectHideFlags: 0
@@ -22002,6 +23210,7 @@ GameObject:
   - component: {fileID: 1313496605}
   - component: {fileID: 1313496607}
   - component: {fileID: 1313496606}
+  - component: {fileID: 1313496608}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (118)
   m_TagString: Untagged
@@ -22064,6 +23273,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313496604}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1313496608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313496604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1001 &1321524615
 Prefab:
   m_ObjectHideFlags: 0
@@ -22122,6 +23343,7 @@ GameObject:
   - component: {fileID: 1322500739}
   - component: {fileID: 1322500741}
   - component: {fileID: 1322500740}
+  - component: {fileID: 1322500742}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (45)
   m_TagString: Untagged
@@ -22184,6 +23406,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322500738}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1322500742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322500738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1322622948
 GameObject:
   m_ObjectHideFlags: 0
@@ -22228,7 +23462,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0
   zPosition: 0
-  speed: 10
+  speed: 0.2
   Startcolor: {r: 1, g: 1, b: 1, a: 0}
   Endcolor: {r: 1, g: 0, b: 0, a: 0}
   Radius: 2
@@ -22295,6 +23529,7 @@ GameObject:
   - component: {fileID: 1330053261}
   - component: {fileID: 1330053263}
   - component: {fileID: 1330053262}
+  - component: {fileID: 1330053264}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (35)
   m_TagString: Untagged
@@ -22357,6 +23592,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330053260}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1330053264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330053260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1332716568
 GameObject:
   m_ObjectHideFlags: 0
@@ -22368,6 +23615,7 @@ GameObject:
   - component: {fileID: 1332716569}
   - component: {fileID: 1332716571}
   - component: {fileID: 1332716570}
+  - component: {fileID: 1332716572}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (22)
   m_TagString: Untagged
@@ -22430,6 +23678,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332716568}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1332716572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332716568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091896, y: 2, z: 0.7091896}
+  m_Center: {x: 0.3545948, y: 1, z: -0.3545948}
 --- !u!1 &1337010184
 GameObject:
   m_ObjectHideFlags: 0
@@ -22702,6 +23962,7 @@ GameObject:
   - component: {fileID: 1353343926}
   - component: {fileID: 1353343928}
   - component: {fileID: 1353343927}
+  - component: {fileID: 1353343929}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (69)
   m_TagString: Untagged
@@ -22764,6 +24025,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353343925}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1353343929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353343925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1354737750
 GameObject:
   m_ObjectHideFlags: 0
@@ -22775,6 +24048,7 @@ GameObject:
   - component: {fileID: 1354737751}
   - component: {fileID: 1354737753}
   - component: {fileID: 1354737752}
+  - component: {fileID: 1354737754}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (52)
   m_TagString: Untagged
@@ -22837,6 +24111,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1354737750}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1354737754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354737750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
+--- !u!1 &1355698063 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 507430905}
+--- !u!65 &1355698066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355698063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &1358519867
 GameObject:
   m_ObjectHideFlags: 0
@@ -23118,6 +24421,7 @@ GameObject:
   - component: {fileID: 1364108454}
   - component: {fileID: 1364108456}
   - component: {fileID: 1364108455}
+  - component: {fileID: 1364108457}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (47)
   m_TagString: Untagged
@@ -23180,6 +24484,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364108453}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1364108457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364108453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1364427134
 GameObject:
   m_ObjectHideFlags: 0
@@ -23337,6 +24653,7 @@ GameObject:
   - component: {fileID: 1370477800}
   - component: {fileID: 1370477802}
   - component: {fileID: 1370477801}
+  - component: {fileID: 1370477803}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (39)
   m_TagString: Untagged
@@ -23399,6 +24716,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1370477799}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1370477803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370477799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1389519678
 GameObject:
   m_ObjectHideFlags: 0
@@ -23702,6 +25031,7 @@ GameObject:
   - component: {fileID: 1397729039}
   - component: {fileID: 1397729041}
   - component: {fileID: 1397729040}
+  - component: {fileID: 1397729042}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (26)
   m_TagString: Untagged
@@ -23764,6 +25094,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397729038}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1397729042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397729038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1397990485
 GameObject:
   m_ObjectHideFlags: 0
@@ -23837,6 +25179,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397990485}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &1407864686 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343021059}
+--- !u!65 &1407864689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407864686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &1413032964
 GameObject:
   m_ObjectHideFlags: 0
@@ -23848,6 +25207,7 @@ GameObject:
   - component: {fileID: 1413032965}
   - component: {fileID: 1413032967}
   - component: {fileID: 1413032966}
+  - component: {fileID: 1413032968}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (9)
   m_TagString: Untagged
@@ -23910,105 +25270,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413032964}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
---- !u!1 &1417460055
-GameObject:
+--- !u!65 &1413032968
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1417460060}
-  - component: {fileID: 1417460059}
-  - component: {fileID: 1417460058}
-  - component: {fileID: 1417460057}
-  - component: {fileID: 1417460056}
-  m_Layer: 8
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!54 &1417460056
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417460055}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!23 &1417460057
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417460055}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!136 &1417460058
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417460055}
+  m_GameObject: {fileID: 1413032964}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1417460059
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417460055}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1417460060
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417460055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6657662, y: 2.69, z: 12.28}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1001 &1419436264
 Prefab:
   m_ObjectHideFlags: 0
@@ -24153,6 +25426,7 @@ GameObject:
   - component: {fileID: 1426117125}
   - component: {fileID: 1426117127}
   - component: {fileID: 1426117126}
+  - component: {fileID: 1426117128}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (44)
   m_TagString: Untagged
@@ -24215,6 +25489,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1426117124}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1426117128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426117124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1429613209
 GameObject:
   m_ObjectHideFlags: 0
@@ -24226,6 +25512,7 @@ GameObject:
   - component: {fileID: 1429613210}
   - component: {fileID: 1429613212}
   - component: {fileID: 1429613211}
+  - component: {fileID: 1429613213}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (20)
   m_TagString: Untagged
@@ -24288,6 +25575,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429613209}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1429613213
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429613209}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &1436739767
 GameObject:
   m_ObjectHideFlags: 0
@@ -24299,6 +25598,7 @@ GameObject:
   - component: {fileID: 1436739768}
   - component: {fileID: 1436739770}
   - component: {fileID: 1436739769}
+  - component: {fileID: 1436739771}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (4)
   m_TagString: Untagged
@@ -24361,6 +25661,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436739767}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1436739771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436739767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1442596556
 GameObject:
   m_ObjectHideFlags: 0
@@ -24434,6 +25746,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442596556}
   m_Mesh: {fileID: 4300000, guid: 1798e557245533346bd28bfcdae0d059, type: 3}
+--- !u!1 &1445107388 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1157902634239784, guid: 6a1b304a96a8a744896b636dbbb7ba33,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051774013}
+--- !u!114 &1445107389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445107388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099e8cb7caa13974086b0ed725a31908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputDebugSphere: {fileID: 0}
+  controller: 0
+  movementSpeed: 9.9
+--- !u!54 &1445107392
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445107388}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!65 &1445107393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445107388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 65.24564, y: 150.05418, z: 65.9302}
+  m_Center: {x: 0.000007629396, y: 75.027016, z: -1.2118418}
 --- !u!1 &1445503206
 GameObject:
   m_ObjectHideFlags: 0
@@ -24538,7 +25896,7 @@ Transform:
   - {fileID: 557708049}
   - {fileID: 1461364008}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450256046
 GameObject:
@@ -24832,6 +26190,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456089530}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &1460904300 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 449460321}
+--- !u!65 &1460904303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460904300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.5000001, y: 1, z: -0.5000001}
 --- !u!1 &1461364007
 GameObject:
   m_ObjectHideFlags: 0
@@ -24874,6 +26249,7 @@ GameObject:
   - component: {fileID: 1475312518}
   - component: {fileID: 1475312520}
   - component: {fileID: 1475312519}
+  - component: {fileID: 1475312521}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (67)
   m_TagString: Untagged
@@ -24936,6 +26312,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475312517}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1475312521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475312517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1479740348
 GameObject:
   m_ObjectHideFlags: 0
@@ -24947,6 +26335,7 @@ GameObject:
   - component: {fileID: 1479740349}
   - component: {fileID: 1479740351}
   - component: {fileID: 1479740350}
+  - component: {fileID: 1479740352}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (79)
   m_TagString: Untagged
@@ -25009,6 +26398,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1479740348}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1479740352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1479740348}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1484353127
 GameObject:
   m_ObjectHideFlags: 0
@@ -25020,6 +26421,7 @@ GameObject:
   - component: {fileID: 1484353128}
   - component: {fileID: 1484353130}
   - component: {fileID: 1484353129}
+  - component: {fileID: 1484353131}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (76)
   m_TagString: Untagged
@@ -25082,6 +26484,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484353127}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1484353131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484353127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1484599790
 GameObject:
   m_ObjectHideFlags: 0
@@ -25498,6 +26912,39 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1502167464}
   m_Mesh: {fileID: 4300000, guid: c96e654c454acba4bbc1913e07ef0e10, type: 3}
+--- !u!1 &1505860864 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
+  m_PrefabInternal: {fileID: 12207309}
+--- !u!54 &1505860868
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505860864}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1505860869
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505860864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 7d4a057e7df27c2469816b1011057481, type: 3}
 --- !u!1 &1507285407
 GameObject:
   m_ObjectHideFlags: 0
@@ -25608,7 +27055,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4832829422903874, guid: 0b254a7152b6a2a49bc0e5b0e98110ab, type: 2}
       propertyPath: m_RootOrder
-      value: 132
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab, type: 2}
       propertyPath: m_Name
@@ -26002,6 +27449,7 @@ GameObject:
   - component: {fileID: 1520338751}
   - component: {fileID: 1520338753}
   - component: {fileID: 1520338752}
+  - component: {fileID: 1520338754}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (50)
   m_TagString: Untagged
@@ -26064,6 +27512,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520338750}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1520338754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520338750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1521030337
 GameObject:
   m_ObjectHideFlags: 0
@@ -26148,6 +27608,7 @@ GameObject:
   - component: {fileID: 1534754114}
   - component: {fileID: 1534754116}
   - component: {fileID: 1534754115}
+  - component: {fileID: 1534754117}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (58)
   m_TagString: Untagged
@@ -26210,6 +27671,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1534754113}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1534754117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534754113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1543408926
 GameObject:
   m_ObjectHideFlags: 0
@@ -26594,6 +28067,7 @@ GameObject:
   - component: {fileID: 1558208944}
   - component: {fileID: 1558208946}
   - component: {fileID: 1558208945}
+  - component: {fileID: 1558208947}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (21)
   m_TagString: Untagged
@@ -26656,6 +28130,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1558208943}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1558208947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558208943}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1559907459
 GameObject:
   m_ObjectHideFlags: 0
@@ -27174,6 +28660,7 @@ GameObject:
   - component: {fileID: 1584550898}
   - component: {fileID: 1584550900}
   - component: {fileID: 1584550899}
+  - component: {fileID: 1584550901}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (54)
   m_TagString: Untagged
@@ -27236,6 +28723,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1584550897}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1584550901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1584550897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1586403311
 GameObject:
   m_ObjectHideFlags: 0
@@ -27351,6 +28850,7 @@ GameObject:
   - component: {fileID: 1595133537}
   - component: {fileID: 1595133539}
   - component: {fileID: 1595133538}
+  - component: {fileID: 1595133540}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (20)
   m_TagString: Untagged
@@ -27413,6 +28913,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595133536}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1595133540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595133536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1596244553
 GameObject:
   m_ObjectHideFlags: 0
@@ -27533,6 +29045,7 @@ GameObject:
   - component: {fileID: 1603967957}
   - component: {fileID: 1603967959}
   - component: {fileID: 1603967958}
+  - component: {fileID: 1603967960}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (123)
   m_TagString: Untagged
@@ -27595,6 +29108,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603967956}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1603967960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603967956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1605855999
 GameObject:
   m_ObjectHideFlags: 0
@@ -27679,6 +29204,7 @@ GameObject:
   - component: {fileID: 1619966046}
   - component: {fileID: 1619966048}
   - component: {fileID: 1619966047}
+  - component: {fileID: 1619966049}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (28)
   m_TagString: Untagged
@@ -27741,6 +29267,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1619966045}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1619966049
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619966045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1626039713
 GameObject:
   m_ObjectHideFlags: 0
@@ -27766,13 +29304,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1626039713}
-  m_LocalRotation: {x: -0, y: -0.7071067, z: -0, w: 0.70710695}
-  m_LocalPosition: {x: 15.5, y: 1, z: 5}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 17.5, y: 1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1171731688}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &1626039715
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27898,6 +29436,7 @@ GameObject:
   - component: {fileID: 1633844218}
   - component: {fileID: 1633844220}
   - component: {fileID: 1633844219}
+  - component: {fileID: 1633844221}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (33)
   m_TagString: Untagged
@@ -27960,6 +29499,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1633844217}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1633844221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633844217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 0.7091896}
+  m_Center: {x: 0.5000001, y: 1, z: -0.3545948}
 --- !u!1 &1636322015
 GameObject:
   m_ObjectHideFlags: 0
@@ -27971,6 +29522,7 @@ GameObject:
   - component: {fileID: 1636322016}
   - component: {fileID: 1636322018}
   - component: {fileID: 1636322017}
+  - component: {fileID: 1636322019}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (11)
   m_TagString: Untagged
@@ -28033,6 +29585,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636322015}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1636322019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636322015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1638887150
 GameObject:
   m_ObjectHideFlags: 0
@@ -28117,6 +29681,7 @@ GameObject:
   - component: {fileID: 1641526085}
   - component: {fileID: 1641526087}
   - component: {fileID: 1641526086}
+  - component: {fileID: 1641526088}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (84)
   m_TagString: Untagged
@@ -28179,6 +29744,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1641526084}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1641526088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1641526084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1648708878
 GameObject:
   m_ObjectHideFlags: 0
@@ -28409,6 +29986,7 @@ GameObject:
   - component: {fileID: 1656510208}
   - component: {fileID: 1656510210}
   - component: {fileID: 1656510209}
+  - component: {fileID: 1656510211}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (6)
   m_TagString: Untagged
@@ -28471,6 +30049,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656510207}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1656510211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656510207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &1659215585
 GameObject:
   m_ObjectHideFlags: 0
@@ -28651,7 +30241,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 69.33501, y: 63.904003, z: 54.06}
 --- !u!1 &1686533761
 GameObject:
@@ -28737,6 +30327,7 @@ GameObject:
   - component: {fileID: 1688729057}
   - component: {fileID: 1688729059}
   - component: {fileID: 1688729058}
+  - component: {fileID: 1688729060}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (24)
   m_TagString: Untagged
@@ -28799,6 +30390,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1688729056}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1688729060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688729056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1690052364
 GameObject:
   m_ObjectHideFlags: 0
@@ -29272,6 +30875,7 @@ GameObject:
   - component: {fileID: 1717869570}
   - component: {fileID: 1717869572}
   - component: {fileID: 1717869571}
+  - component: {fileID: 1717869573}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (25)
   m_TagString: Untagged
@@ -29334,6 +30938,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717869569}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1717869573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717869569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1720033963
 GameObject:
   m_ObjectHideFlags: 0
@@ -29345,6 +30961,7 @@ GameObject:
   - component: {fileID: 1720033964}
   - component: {fileID: 1720033966}
   - component: {fileID: 1720033965}
+  - component: {fileID: 1720033967}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (26)
   m_TagString: Untagged
@@ -29407,6 +31024,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1720033963}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1720033967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720033963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1720722670
 GameObject:
   m_ObjectHideFlags: 0
@@ -29418,6 +31047,7 @@ GameObject:
   - component: {fileID: 1720722671}
   - component: {fileID: 1720722673}
   - component: {fileID: 1720722672}
+  - component: {fileID: 1720722674}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (56)
   m_TagString: Untagged
@@ -29480,6 +31110,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1720722670}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1720722674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720722670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1723905049
 GameObject:
   m_ObjectHideFlags: 0
@@ -29615,6 +31257,7 @@ GameObject:
   - component: {fileID: 1745662986}
   - component: {fileID: 1745662988}
   - component: {fileID: 1745662987}
+  - component: {fileID: 1745662989}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (29)
   m_TagString: Untagged
@@ -29677,6 +31320,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1745662985}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &1745662989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745662985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &1749943769
 GameObject:
   m_ObjectHideFlags: 0
@@ -29769,6 +31424,7 @@ GameObject:
   - component: {fileID: 1754633938}
   - component: {fileID: 1754633940}
   - component: {fileID: 1754633939}
+  - component: {fileID: 1754633941}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (16)
   m_TagString: Untagged
@@ -29831,6 +31487,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1754633937}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1754633941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754633937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091896, y: 2, z: 0.7091896}
+  m_Center: {x: 0.3545948, y: 1, z: -0.3545948}
 --- !u!1 &1761942107
 GameObject:
   m_ObjectHideFlags: 0
@@ -29842,6 +31510,7 @@ GameObject:
   - component: {fileID: 1761942108}
   - component: {fileID: 1761942110}
   - component: {fileID: 1761942109}
+  - component: {fileID: 1761942111}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (121)
   m_TagString: Untagged
@@ -29904,6 +31573,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761942107}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1761942111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761942107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1762380827
 GameObject:
   m_ObjectHideFlags: 0
@@ -30120,7 +31801,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791528742
 GameObject:
@@ -30206,6 +31887,7 @@ GameObject:
   - component: {fileID: 1797388222}
   - component: {fileID: 1797388224}
   - component: {fileID: 1797388223}
+  - component: {fileID: 1797388225}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (15)
   m_TagString: Untagged
@@ -30268,6 +31950,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1797388221}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1797388225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797388221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &1799989066
 GameObject:
   m_ObjectHideFlags: 0
@@ -30527,6 +32221,7 @@ GameObject:
   - component: {fileID: 1819968710}
   - component: {fileID: 1819968712}
   - component: {fileID: 1819968711}
+  - component: {fileID: 1819968713}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (5)
   m_TagString: Untagged
@@ -30589,6 +32284,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819968709}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1819968713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819968709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1820300526
 GameObject:
   m_ObjectHideFlags: 0
@@ -30600,6 +32307,7 @@ GameObject:
   - component: {fileID: 1820300527}
   - component: {fileID: 1820300529}
   - component: {fileID: 1820300528}
+  - component: {fileID: 1820300530}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (15)
   m_TagString: Untagged
@@ -30662,6 +32370,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1820300526}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1820300530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820300526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1820685555
 GameObject:
   m_ObjectHideFlags: 0
@@ -30797,6 +32517,7 @@ GameObject:
   - component: {fileID: 1837789977}
   - component: {fileID: 1837789979}
   - component: {fileID: 1837789978}
+  - component: {fileID: 1837789980}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (14)
   m_TagString: Untagged
@@ -30859,6 +32580,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1837789976}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1837789980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1837789976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &1844700552
 GameObject:
   m_ObjectHideFlags: 0
@@ -30944,6 +32677,7 @@ GameObject:
   - component: {fileID: 1846095651}
   - component: {fileID: 1846095653}
   - component: {fileID: 1846095652}
+  - component: {fileID: 1846095654}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (80)
   m_TagString: Untagged
@@ -31006,6 +32740,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846095650}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1846095654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1846095650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1846730864
 GameObject:
   m_ObjectHideFlags: 0
@@ -31302,7 +33048,7 @@ RectTransform:
   m_Children:
   - {fileID: 572252533}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31320,6 +33066,7 @@ GameObject:
   - component: {fileID: 1848168670}
   - component: {fileID: 1848168672}
   - component: {fileID: 1848168671}
+  - component: {fileID: 1848168673}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (12)
   m_TagString: Untagged
@@ -31382,6 +33129,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1848168669}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1848168673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848168669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091896, y: 2, z: 0.7091896}
+  m_Center: {x: 0.3545948, y: 1, z: -0.3545948}
 --- !u!1 &1854136575
 GameObject:
   m_ObjectHideFlags: 0
@@ -31423,6 +33182,7 @@ GameObject:
   - component: {fileID: 1855302074}
   - component: {fileID: 1855302076}
   - component: {fileID: 1855302075}
+  - component: {fileID: 1855302077}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (19)
   m_TagString: Untagged
@@ -31485,6 +33245,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1855302073}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1855302077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1855302073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1 &1858428706
 GameObject:
   m_ObjectHideFlags: 0
@@ -31642,6 +33414,7 @@ GameObject:
   - component: {fileID: 1867973802}
   - component: {fileID: 1867973804}
   - component: {fileID: 1867973803}
+  - component: {fileID: 1867973805}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (21)
   m_TagString: Untagged
@@ -31704,6 +33477,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1867973801}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &1867973805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867973801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1001 &1874261603
 Prefab:
   m_ObjectHideFlags: 0
@@ -31770,6 +33555,7 @@ GameObject:
   - component: {fileID: 1876125061}
   - component: {fileID: 1876125063}
   - component: {fileID: 1876125062}
+  - component: {fileID: 1876125064}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (30)
   m_TagString: Untagged
@@ -31832,6 +33618,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876125060}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1876125064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876125060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1881970719
 GameObject:
   m_ObjectHideFlags: 0
@@ -31843,6 +33641,7 @@ GameObject:
   - component: {fileID: 1881970720}
   - component: {fileID: 1881970722}
   - component: {fileID: 1881970721}
+  - component: {fileID: 1881970723}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (128)
   m_TagString: Untagged
@@ -31905,6 +33704,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881970719}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1881970723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881970719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1882450083
 GameObject:
   m_ObjectHideFlags: 0
@@ -32427,6 +34238,7 @@ GameObject:
   - component: {fileID: 1896086057}
   - component: {fileID: 1896086059}
   - component: {fileID: 1896086058}
+  - component: {fileID: 1896086060}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (119)
   m_TagString: Untagged
@@ -32489,6 +34301,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1896086056}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1896086060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1896086056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1898677616
 GameObject:
   m_ObjectHideFlags: 0
@@ -32573,6 +34397,7 @@ GameObject:
   - component: {fileID: 1899945963}
   - component: {fileID: 1899945965}
   - component: {fileID: 1899945964}
+  - component: {fileID: 1899945966}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (6)
   m_TagString: Untagged
@@ -32635,6 +34460,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899945962}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1899945966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899945962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1900046589
 GameObject:
   m_ObjectHideFlags: 0
@@ -32646,6 +34483,7 @@ GameObject:
   - component: {fileID: 1900046590}
   - component: {fileID: 1900046592}
   - component: {fileID: 1900046591}
+  - component: {fileID: 1900046593}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (12)
   m_TagString: Untagged
@@ -32708,6 +34546,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900046589}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1900046593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900046589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1903091183
 GameObject:
   m_ObjectHideFlags: 0
@@ -32909,6 +34759,7 @@ GameObject:
   - component: {fileID: 1905934565}
   - component: {fileID: 1905934567}
   - component: {fileID: 1905934566}
+  - component: {fileID: 1905934568}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (71)
   m_TagString: Untagged
@@ -32971,6 +34822,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905934564}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1905934568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905934564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1907672390
 GameObject:
   m_ObjectHideFlags: 0
@@ -33055,6 +34918,7 @@ GameObject:
   - component: {fileID: 1909403534}
   - component: {fileID: 1909403536}
   - component: {fileID: 1909403535}
+  - component: {fileID: 1909403537}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (43)
   m_TagString: Untagged
@@ -33117,6 +34981,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909403533}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1909403537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909403533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &1909503355
 GameObject:
   m_ObjectHideFlags: 0
@@ -33128,6 +35004,7 @@ GameObject:
   - component: {fileID: 1909503356}
   - component: {fileID: 1909503358}
   - component: {fileID: 1909503357}
+  - component: {fileID: 1909503359}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (10)
   m_TagString: Untagged
@@ -33190,6 +35067,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909503355}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1909503359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909503355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1911722900
 GameObject:
   m_ObjectHideFlags: 0
@@ -33877,6 +35766,7 @@ GameObject:
   - component: {fileID: 1959889052}
   - component: {fileID: 1959889054}
   - component: {fileID: 1959889053}
+  - component: {fileID: 1959889055}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (68)
   m_TagString: Untagged
@@ -33939,6 +35829,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1959889051}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &1959889055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959889051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &1959980392
 GameObject:
   m_ObjectHideFlags: 0
@@ -34572,6 +36474,40 @@ Transform:
   m_PrefabParentObject: {fileID: 4886098825336340, guid: 6a1b304a96a8a744896b636dbbb7ba33,
     type: 2}
   m_PrefabInternal: {fileID: 2000401624}
+--- !u!1 &2003077199 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 967862069}
+--- !u!65 &2003077202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003077199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 1.0000002}
+  m_Center: {x: 0.5000001, y: 1, z: -0.5000001}
+--- !u!1 &2007635192 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1995588788}
+--- !u!65 &2007635195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2007635192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1 &2008379005
 GameObject:
   m_ObjectHideFlags: 0
@@ -35127,6 +37063,7 @@ GameObject:
   - component: {fileID: 2040448719}
   - component: {fileID: 2040448721}
   - component: {fileID: 2040448720}
+  - component: {fileID: 2040448722}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (115)
   m_TagString: Untagged
@@ -35189,6 +37126,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2040448718}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2040448722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040448718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &2043489429
 GameObject:
   m_ObjectHideFlags: 0
@@ -35626,6 +37575,7 @@ GameObject:
   - component: {fileID: 2060220965}
   - component: {fileID: 2060220967}
   - component: {fileID: 2060220966}
+  - component: {fileID: 2060220968}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (29)
   m_TagString: Untagged
@@ -35688,6 +37638,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060220964}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2060220968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060220964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &2060229278
 GameObject:
   m_ObjectHideFlags: 0
@@ -35699,6 +37661,7 @@ GameObject:
   - component: {fileID: 2060229279}
   - component: {fileID: 2060229281}
   - component: {fileID: 2060229280}
+  - component: {fileID: 2060229282}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (120)
   m_TagString: Untagged
@@ -35761,6 +37724,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060229278}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2060229282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060229278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &2063380846
 GameObject:
   m_ObjectHideFlags: 0
@@ -35951,6 +37926,7 @@ GameObject:
   - component: {fileID: 2075420569}
   - component: {fileID: 2075420571}
   - component: {fileID: 2075420570}
+  - component: {fileID: 2075420572}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (64)
   m_TagString: Untagged
@@ -36013,6 +37989,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075420568}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2075420572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075420568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &2078752815
 GameObject:
   m_ObjectHideFlags: 0
@@ -36097,6 +38085,7 @@ GameObject:
   - component: {fileID: 2083421996}
   - component: {fileID: 2083421998}
   - component: {fileID: 2083421997}
+  - component: {fileID: 2083421999}
   m_Layer: 0
   m_Name: ShipWall_002_Interior_002_Small (41)
   m_TagString: Untagged
@@ -36159,6 +38148,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2083421995}
   m_Mesh: {fileID: 4300000, guid: df36be0594b076643a6cfecc4a68a4b1, type: 3}
+--- !u!65 &2083421999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083421995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 0.7091894}
+  m_Center: {x: 0.5, y: 1, z: -0.3545947}
 --- !u!1 &2084608324
 GameObject:
   m_ObjectHideFlags: 0
@@ -36305,6 +38306,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085102450}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!1 &2085525120 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 450748654}
+--- !u!65 &2085525123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085525120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}
 --- !u!1001 &2086173311
 Prefab:
   m_ObjectHideFlags: 0
@@ -36393,6 +38411,7 @@ GameObject:
   - component: {fileID: 2098432275}
   - component: {fileID: 2098432277}
   - component: {fileID: 2098432276}
+  - component: {fileID: 2098432278}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (114)
   m_TagString: Untagged
@@ -36455,6 +38474,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098432274}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2098432278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098432274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &2103165008
 GameObject:
   m_ObjectHideFlags: 0
@@ -37137,6 +39168,7 @@ GameObject:
   - component: {fileID: 2128768838}
   - component: {fileID: 2128768840}
   - component: {fileID: 2128768839}
+  - component: {fileID: 2128768841}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (36)
   m_TagString: Untagged
@@ -37199,6 +39231,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2128768837}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2128768841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2128768837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &2128856425
 GameObject:
   m_ObjectHideFlags: 0
@@ -37210,6 +39254,7 @@ GameObject:
   - component: {fileID: 2128856426}
   - component: {fileID: 2128856428}
   - component: {fileID: 2128856427}
+  - component: {fileID: 2128856429}
   m_Layer: 0
   m_Name: ShipWall_003_Interior_003_Pillar (5)
   m_TagString: Untagged
@@ -37272,6 +39317,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2128856425}
   m_Mesh: {fileID: 4300000, guid: b86c20f4396ab8d4ab621de540a571e4, type: 3}
+--- !u!65 &2128856429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2128856425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7091894, y: 2, z: 0.7091894}
+  m_Center: {x: 0.3545947, y: 1, z: -0.3545947}
 --- !u!1001 &2129609607
 Prefab:
   m_ObjectHideFlags: 0
@@ -37407,6 +39464,7 @@ GameObject:
   - component: {fileID: 2133737120}
   - component: {fileID: 2133737122}
   - component: {fileID: 2133737121}
+  - component: {fileID: 2133737123}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (77)
   m_TagString: Untagged
@@ -37469,6 +39527,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133737119}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2133737123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133737119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 2, z: 0.7091896}
+  m_Center: {x: 1.0000002, y: 1, z: -0.3545948}
 --- !u!1 &2143776453
 GameObject:
   m_ObjectHideFlags: 0
@@ -37480,6 +39550,7 @@ GameObject:
   - component: {fileID: 2143776454}
   - component: {fileID: 2143776456}
   - component: {fileID: 2143776455}
+  - component: {fileID: 2143776457}
   m_Layer: 0
   m_Name: ShipWall_001_Interior_001_Large (46)
   m_TagString: Untagged
@@ -37542,6 +39613,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2143776453}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!65 &2143776457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143776453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.7091894}
+  m_Center: {x: 1, y: 1, z: -0.3545947}
 --- !u!1 &2147249431
 GameObject:
   m_ObjectHideFlags: 0

@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\PlayerPickup.cs" />
     <Compile Include="Assets\Scripts\PowercoreIllumination.cs" />
     <Compile Include="Assets\Scripts\Snaptocharger.cs" />
+    <Compile Include="Assets\Scripts\SnaptoHolder.cs" />
     <Compile Include="Assets\XInput\Plugins\XboxCtrlrInput.cs" />
     <Compile Include="Assets\XInput\Plugins\XboxCtrlrInput_Helpers\XciAxisDeadzoneData.cs" />
     <Compile Include="Assets\XInput\Plugins\XboxCtrlrInput_Helpers\XciInputManagerClone.cs" />
