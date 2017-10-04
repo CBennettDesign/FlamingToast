@@ -6,7 +6,7 @@ using XboxCtrlrInput;
 public class Snaptocharger : MonoBehaviour
 {
     //Distance to pickup    
-    public float pickUpDistance;
+    public float pickUpDistance = 0.5f;
     
     //Snapping positions x, y, z
     public float xPosition;
@@ -30,7 +30,7 @@ public class Snaptocharger : MonoBehaviour
     GameObject canister = null;
 
     //Radius of sphere cast
-    public float Radius = 2;
+    public float RadiusOfRayCast = 2;
 
 
     // Use this for initialization
@@ -42,7 +42,7 @@ public class Snaptocharger : MonoBehaviour
     void Update()
     {
         //Debug to show cast line
-        Debug.DrawLine(transform.position, transform.position + Vector3.forward * Radius);
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * RadiusOfRayCast);
 
         if (!canister)
         {
@@ -61,8 +61,6 @@ public class Snaptocharger : MonoBehaviour
         //sets position to parents position
         GiveCanister.transform.parent = transform.transform;
 
-        //Turns colider off ASK QUESTION
-        //GiveCanister.GetComponent<Collider>().enabled = false;
 
         //Sets to public local positions
         GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
