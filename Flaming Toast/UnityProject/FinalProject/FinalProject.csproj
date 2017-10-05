@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\Alex\Canister_Charger_Manager.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister_Depot.cs" />
     <Compile Include="Assets\Scripts\Alex\Canister_Slot.cs" />
+    <Compile Include="Assets\Scripts\Alex\Event_System_Manager.cs" />
     <Compile Include="Assets\Scripts\Alex\Gravity_System.cs" />
     <Compile Include="Assets\Scripts\Alex\Junction_Box.cs" />
     <Compile Include="Assets\Scripts\Alex\Oxygen_System.cs" />

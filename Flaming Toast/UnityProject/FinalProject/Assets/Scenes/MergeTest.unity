@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 24501019}
   - component: {fileID: 24501018}
   - component: {fileID: 24501020}
+  - component: {fileID: 24501021}
   m_Layer: 0
   m_Name: Systems_001_Interior_001_Oxygen (2)
   m_TagString: Untagged
@@ -481,6 +482,18 @@ MonoBehaviour:
     canisterSlot: {fileID: 895458018}
     canisterConnected: 0
   oxygenLevel: 0
+--- !u!65 &24501021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 24501016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337957, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.99999964, y: 0.70517325, z: -1.0024494}
 --- !u!1 &27232608
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1009,7 @@ GameObject:
   - component: {fileID: 49700601}
   - component: {fileID: 49700600}
   - component: {fileID: 49700602}
+  - component: {fileID: 49700603}
   m_Layer: 0
   m_Name: Charger_001_Interior_001_Default (2)
   m_TagString: Untagged
@@ -1072,6 +1086,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargingAmount: 1
   chargingType: 2
+--- !u!65 &49700603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49700598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9130566, y: 1.2960457, z: 1.8468188}
+  m_Center: {x: 0.5, y: 0.64418525, z: -1.010354}
 --- !u!1 &58223964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1325,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68886021}
   m_LocalRotation: {x: -0, y: -0.0000019073486, z: -0, w: -1}
-  m_LocalPosition: {x: 10.5, y: 1, z: 13}
+  m_LocalPosition: {x: 9.5, y: 1, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1846730865}
@@ -3261,6 +3287,7 @@ GameObject:
   - component: {fileID: 219352342}
   - component: {fileID: 219352341}
   - component: {fileID: 219352343}
+  - component: {fileID: 219352344}
   m_Layer: 0
   m_Name: Systems_002_Interior_001_Gravity (1)
   m_TagString: Untagged
@@ -3345,6 +3372,18 @@ MonoBehaviour:
     canisterSlot: {fileID: 551010825}
     canisterConnected: 0
   gravityStatus: 0
+--- !u!65 &219352344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219352339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337957, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.99999964, y: 0.70517325, z: -1.0024494}
 --- !u!1 &226151581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5762,6 +5801,7 @@ GameObject:
   - component: {fileID: 338783571}
   - component: {fileID: 338783570}
   - component: {fileID: 338783572}
+  - component: {fileID: 338783573}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (3)
   m_TagString: Untagged
@@ -5836,6 +5876,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &338783573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 338783568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &341477763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,7 +6092,7 @@ Transform:
   - {fileID: 1854136576}
   - {fileID: 1749943770}
   m_Father: {fileID: 1461364008}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &344615265
 MonoBehaviour:
@@ -10277,6 +10329,7 @@ GameObject:
   - component: {fileID: 551010828}
   - component: {fileID: 551010827}
   - component: {fileID: 551010829}
+  - component: {fileID: 551010830}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (2)
   m_TagString: Untagged
@@ -10351,6 +10404,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &551010830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551010825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &553682422
 GameObject:
   m_ObjectHideFlags: 0
@@ -12715,6 +12780,7 @@ GameObject:
   - component: {fileID: 653389184}
   - component: {fileID: 653389183}
   - component: {fileID: 653389185}
+  - component: {fileID: 653389186}
   m_Layer: 0
   m_Name: Charger_001_Interior_001_Default (4)
   m_TagString: Untagged
@@ -12791,6 +12857,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargingAmount: 1
   chargingType: 2
+--- !u!65 &653389186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653389181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9130566, y: 1.2960457, z: 1.8468188}
+  m_Center: {x: 0.5, y: 0.64418525, z: -1.010354}
 --- !u!1 &654577200
 GameObject:
   m_ObjectHideFlags: 0
@@ -16790,6 +16868,7 @@ GameObject:
   - component: {fileID: 895458021}
   - component: {fileID: 895458020}
   - component: {fileID: 895458022}
+  - component: {fileID: 895458023}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (7)
   m_TagString: Untagged
@@ -16864,6 +16943,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &895458023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895458018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0685623, y: 0.78080654, z: 1.6300735}
+  m_Center: {x: 0.39323738, y: 0.39040327, z: -0.9999984}
 --- !u!1 &897471310
 GameObject:
   m_ObjectHideFlags: 0
@@ -16962,6 +17053,7 @@ GameObject:
   - component: {fileID: 901195614}
   - component: {fileID: 901195613}
   - component: {fileID: 901195615}
+  - component: {fileID: 901195616}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (4)
   m_TagString: Untagged
@@ -17036,6 +17128,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &901195616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901195611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &912305645
 GameObject:
   m_ObjectHideFlags: 0
@@ -18492,6 +18596,7 @@ GameObject:
   - component: {fileID: 958239933}
   - component: {fileID: 958239932}
   - component: {fileID: 958239934}
+  - component: {fileID: 958239935}
   m_Layer: 0
   m_Name: Systems_003_Interior_001_Shield (1)
   m_TagString: Untagged
@@ -18577,6 +18682,18 @@ MonoBehaviour:
     canisterConnected: 0
   usageAmount: 0
   reductionAmount: 0
+--- !u!65 &958239935
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 958239930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337953, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.9999998, y: 0.70517325, z: -1.0024494}
 --- !u!1 &961430647
 GameObject:
   m_ObjectHideFlags: 0
@@ -21040,6 +21157,88 @@ Transform:
   m_PrefabParentObject: {fileID: 4647207804566906, guid: 1838aeed6fb84514094b141b925dcd49,
     type: 2}
   m_PrefabInternal: {fileID: 1103613792}
+--- !u!1 &1103887269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1103887270}
+  - component: {fileID: 1103887273}
+  - component: {fileID: 1103887272}
+  - component: {fileID: 1103887271}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1103887270
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103887269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 1324133524}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1103887271
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103887269}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &1103887272
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103887269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1103887273
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103887269}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1103927961
 Prefab:
   m_ObjectHideFlags: 0
@@ -21263,7 +21462,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1113793498}
   m_LocalRotation: {x: -0, y: -0.000002145767, z: -0, w: -1}
-  m_LocalPosition: {x: 10.5, y: 1, z: 5}
+  m_LocalPosition: {x: 9.5, y: 1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1846730865}
@@ -22332,7 +22531,7 @@ Transform:
   - {fileID: 653389182}
   - {fileID: 995996566}
   m_Father: {fileID: 1461364008}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185541311
 GameObject:
@@ -23416,6 +23615,7 @@ GameObject:
   - component: {fileID: 1239406438}
   - component: {fileID: 1239406437}
   - component: {fileID: 1239406439}
+  - component: {fileID: 1239406440}
   m_Layer: 0
   m_Name: Charger_001_Interior_001_Default (3)
   m_TagString: Untagged
@@ -23492,6 +23692,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargingAmount: 1
   chargingType: 1
+--- !u!65 &1239406440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1239406435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9130566, y: 1.2960457, z: 1.8468188}
+  m_Center: {x: 0.5, y: 0.64418525, z: -1.010354}
 --- !u!1001 &1240377698
 Prefab:
   m_ObjectHideFlags: 0
@@ -25419,7 +25631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099e8cb7caa13974086b0ed725a31908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputDebugSphere: {fileID: 0}
+  inputDebugSphere: {fileID: 1103887269}
   controller: 1
   movementSpeed: 10
 --- !u!114 &1324133527
@@ -28242,6 +28454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481476415}
+  - {fileID: 2085495939}
   - {fileID: 344615264}
   - {fileID: 1171731688}
   m_Father: {fileID: 1450213880}
@@ -29087,7 +29300,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4832829422903874, guid: 0b254a7152b6a2a49bc0e5b0e98110ab, type: 2}
       propertyPath: m_RootOrder
-      value: 132
+      value: 136
       objectReference: {fileID: 0}
     - target: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab, type: 2}
       propertyPath: m_Name
@@ -30505,6 +30718,7 @@ GameObject:
   - component: {fileID: 1571146004}
   - component: {fileID: 1571146003}
   - component: {fileID: 1571146005}
+  - component: {fileID: 1571146006}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (10)
   m_TagString: Untagged
@@ -30579,6 +30793,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1571146006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571146001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &1573081462 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
@@ -35133,6 +35359,7 @@ GameObject:
   - component: {fileID: 1844700555}
   - component: {fileID: 1844700554}
   - component: {fileID: 1844700556}
+  - component: {fileID: 1844700557}
   m_Layer: 0
   m_Name: Systems_003_Interior_001_Shield (4)
   m_TagString: Untagged
@@ -35218,6 +35445,18 @@ MonoBehaviour:
     canisterConnected: 0
   usageAmount: 0
   reductionAmount: 0
+--- !u!65 &1844700557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844700552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337953, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.9999998, y: 0.70517325, z: -1.0024494}
 --- !u!1 &1846095650
 GameObject:
   m_ObjectHideFlags: 0
@@ -37316,6 +37555,7 @@ GameObject:
   - component: {fileID: 1904810674}
   - component: {fileID: 1904810673}
   - component: {fileID: 1904810675}
+  - component: {fileID: 1904810676}
   m_Layer: 0
   m_Name: Systems_003_Interior_001_Shield (3)
   m_TagString: Untagged
@@ -37401,6 +37641,18 @@ MonoBehaviour:
     canisterConnected: 0
   usageAmount: 0
   reductionAmount: 0
+--- !u!65 &1904810676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904810671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337953, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.9999998, y: 0.70517325, z: -1.0024494}
 --- !u!1 &1905934564
 GameObject:
   m_ObjectHideFlags: 0
@@ -37949,6 +38201,7 @@ GameObject:
   - component: {fileID: 1924615526}
   - component: {fileID: 1924615525}
   - component: {fileID: 1924615527}
+  - component: {fileID: 1924615528}
   m_Layer: 0
   m_Name: Power_001_Interior_001_Core (1)
   m_TagString: Power_Core
@@ -38024,6 +38277,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipHealth: 5.15
   slider: {fileID: 572252534}
+--- !u!65 &1924615528
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924615523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.9746298, z: 2}
+  m_Center: {x: 1, y: 0.9873144, z: -1}
 --- !u!1001 &1928341329
 Prefab:
   m_ObjectHideFlags: 0
@@ -38149,6 +38414,7 @@ GameObject:
   - component: {fileID: 1938515890}
   - component: {fileID: 1938515889}
   - component: {fileID: 1938515891}
+  - component: {fileID: 1938515892}
   m_Layer: 0
   m_Name: Systems_001_Interior_001_Oxygen (3)
   m_TagString: Untagged
@@ -38233,6 +38499,18 @@ MonoBehaviour:
     canisterSlot: {fileID: 1571146001}
     canisterConnected: 0
   oxygenLevel: 0
+--- !u!65 &1938515892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938515887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337957, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.99999964, y: 0.70517325, z: -1.0024494}
 --- !u!1 &1945007085
 GameObject:
   m_ObjectHideFlags: 0
@@ -38980,6 +39258,7 @@ GameObject:
   - component: {fileID: 1986298978}
   - component: {fileID: 1986298977}
   - component: {fileID: 1986298979}
+  - component: {fileID: 1986298980}
   m_Layer: 0
   m_Name: Systems_003_Interior_001_Shield (2)
   m_TagString: Untagged
@@ -39065,6 +39344,18 @@ MonoBehaviour:
     canisterConnected: 0
   usageAmount: 0
   reductionAmount: 0
+--- !u!65 &1986298980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986298975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9337953, y: 1.4103467, z: 1.9386951}
+  m_Center: {x: 0.9999998, y: 0.70517325, z: -1.0024494}
 --- !u!1 &1990676390
 GameObject:
   m_ObjectHideFlags: 0
@@ -41305,6 +41596,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0, z: 2}
   m_Center: {x: 1, y: 0, z: -1}
+--- !u!1 &2085495938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2085495939}
+  - component: {fileID: 2085495940}
+  m_Layer: 0
+  m_Name: Event System Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: -6431860639581277017, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085495939
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085495938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.54, z: -6.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1461364008}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085495940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085495938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe6c4316666d804aab0efccc64efd29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - name: 2nd
+    type: 1
+    direction: 6
+    timeStamp: 8
+  - name: 1st
+    type: 2
+    direction: 4
+    timeStamp: 4
+  - name: 3rd
+    type: 2
+    direction: 4
+    timeStamp: 12
+  - name: 4th
+    type: 2
+    direction: 4
+    timeStamp: 16
+  - name: 5th
+    type: 2
+    direction: 4
+    timeStamp: 32
 --- !u!1001 &2086173311
 Prefab:
   m_ObjectHideFlags: 0
@@ -41811,6 +42163,7 @@ GameObject:
   - component: {fileID: 2117476356}
   - component: {fileID: 2117476355}
   - component: {fileID: 2117476357}
+  - component: {fileID: 2117476358}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (1)
   m_TagString: Untagged
@@ -41885,6 +42238,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2117476358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117476353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &2119177864
 GameObject:
   m_ObjectHideFlags: 0
@@ -42178,6 +42543,7 @@ GameObject:
   - component: {fileID: 2127345692}
   - component: {fileID: 2127345691}
   - component: {fileID: 2127345693}
+  - component: {fileID: 2127345694}
   m_Layer: 0
   m_Name: CanisterSlot_001_Interior_001_Default (2)
   m_TagString: Untagged
@@ -42252,6 +42618,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2660258be4efb9940a830480b5698b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2127345694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2127345689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.068562, y: 0.78080654, z: 1.6300732}
+  m_Center: {x: 0.3932373, y: 0.39040327, z: -0.99999815}
 --- !u!1 &2128768837
 GameObject:
   m_ObjectHideFlags: 0
