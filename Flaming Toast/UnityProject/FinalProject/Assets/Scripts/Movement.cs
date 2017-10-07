@@ -93,7 +93,7 @@ public class Movement : MonoBehaviour {
         if (inputDebugSphere != null)
         {
             //Displays the current input from the contoller
-            inputDebugSphere.transform.position  = rigidBody.position + inputDirection * 1.5f;	
+            inputDebugSphere.transform.position = rigidBody.position + inputDirection * 1.5f;	
         }
 
         ////If the gravity has been depleted and the gravUsed has not been used yet. 

@@ -76,6 +76,18 @@ public class Shield_System : MonoBehaviour
         //The asteriod that collides with the shield parses it self as a game object to the shield system and from there
         //The shield system will grab the value from the game object and use that for the damage calculations
         //Asteriod Damage Random (1||2) - Shield Reduction value [reductionAmount](1,10) if Shields are up
+
+        if (currentSystem.IsActive)
+        {
+            Debug.Log("Shields are UP!");
+        }
+        else
+        {
+           // Debug.Log("Shields are DOWN!");
+        }
+
+
+
     }
 
     //Animations || !Important

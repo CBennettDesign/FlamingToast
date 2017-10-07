@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*- Alex Scicluna -*/
 public class Power_Core : MonoBehaviour
 {
     //Ships health

@@ -21227,7 +21227,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1103887269}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -41637,26 +41637,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - name: 2nd
+  - name: Event Name
     type: 1
     direction: 6
-    timeStamp: 8
-  - name: 1st
+    timeStamp: 47
+  - name: 
     type: 2
-    direction: 4
-    timeStamp: 4
-  - name: 3rd
+    direction: 3
+    timeStamp: 123
+  - name: 
+    type: 1
+    direction: 2
+    timeStamp: 58
+  - name: 
     type: 2
-    direction: 4
-    timeStamp: 12
-  - name: 4th
-    type: 2
-    direction: 4
-    timeStamp: 16
-  - name: 5th
-    type: 2
-    direction: 4
-    timeStamp: 32
+    direction: 8
+    timeStamp: 223
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 108
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 50
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 94
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 278
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 227
+  - name: 
+    type: 1
+    direction: 5
+    timeStamp: 300
 --- !u!1001 &2086173311
 Prefab:
   m_ObjectHideFlags: 0
