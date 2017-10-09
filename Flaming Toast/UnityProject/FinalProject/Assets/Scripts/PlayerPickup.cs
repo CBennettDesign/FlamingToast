@@ -9,7 +9,7 @@ public class PlayerPickup : MonoBehaviour {
     public float pickUpDistance;
     //In hands variable
     private GameObject inHands = null;
-
+    public XboxController Controlers;
 	// Use this for initialization
 	void Start ()
     {
@@ -20,7 +20,7 @@ public class PlayerPickup : MonoBehaviour {
 	void Update ()
     {
         // XBOX control
-		if (XCI.GetButtonDown(XboxButton.A))
+		if (XCI.GetButtonDown(XboxButton.A, Controlers))
         {
             if (inHands == null)
             {
@@ -30,7 +30,7 @@ public class PlayerPickup : MonoBehaviour {
                 int layermask = 1 << LayerMask.NameToLayer("Cap");
 
                 
-                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
+                if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out info, pickUpDistance, layermask))
                 {
                     // Capsule ingame
                     GameObject obj = info.collider.gameObject;
@@ -38,13 +38,12 @@ public class PlayerPickup : MonoBehaviour {
                     // Set capsule infront of player
                     obj.transform.parent = transform.transform;
                     obj.transform.localPosition = new Vector3(0, 50, 80.0f);
-                    //obj.GetComponent<Collider>().enabled = true;
-
+                    obj.transform.localRotation = Quaternion.Euler(0, 90.0f, 0f);
                     //Gets the rigidbody of capsule and sets Kenetic on and velocity off
                     Rigidbody cap = obj.GetComponent<Rigidbody>();
                     Destroy(cap);
                     
-                    obj.transform.localRotation = Quaternion.identity;
+                    //obj.transform.localRotation = Quaternion.identity;
                     inHands = obj;
                     return;
                 }

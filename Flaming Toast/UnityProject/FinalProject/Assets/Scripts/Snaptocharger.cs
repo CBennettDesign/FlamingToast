@@ -52,7 +52,7 @@ public class Snaptocharger : MonoBehaviour
         {
             //Lerping colors when snaped
             lerptime += speed * Time.deltaTime;
-            canister.GetComponent<Renderer>().material.color = Color.Lerp(Startcolor, Endcolor, lerptime);
+            canister.GetComponent<Renderer>().materials[1].color = Color.Lerp(Startcolor, Endcolor, lerptime);
         }
     }
 

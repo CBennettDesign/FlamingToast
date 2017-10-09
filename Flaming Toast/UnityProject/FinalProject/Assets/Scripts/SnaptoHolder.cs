@@ -52,7 +52,7 @@ public class SnaptoHolder : MonoBehaviour
         {
             //Lerping colors when snaped
             lerptime += speed * Time.deltaTime;
-            canister.GetComponent<Renderer>().material.color = Color.Lerp(Startcolor, Endcolor, lerptime);
+            canister.GetComponent<Renderer>().materials[1].color = Color.Lerp(Startcolor, Endcolor, lerptime);
         }
     }
 
@@ -63,7 +63,8 @@ public class SnaptoHolder : MonoBehaviour
 
         //Sets to public local positions
         GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
-        GiveCanister.transform.localRotation = Quaternion.identity;
+        GiveCanister.transform.localRotation = Quaternion.identity;// transform.parent.rotation;
+        //transform.parent.rotation
 
         //creates rigidbody component
         Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
