@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 23860051790544834}
   - component: {fileID: 54432948651868262}
   - component: {fileID: 65915796958005404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canister_001_Interior_001_Default
-  m_TagString: Untagged
+  m_TagString: Canister
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

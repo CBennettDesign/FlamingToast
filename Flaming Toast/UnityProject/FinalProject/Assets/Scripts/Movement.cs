@@ -53,24 +53,24 @@ public class Movement : MonoBehaviour {
             this.gameObject.AddComponent<CapsuleCollider>();
         }
 
-        //If the player object does not have a rigid body component add one
-        if (this.gameObject.GetComponent<Rigidbody>() == null)
-        {
-            //Add the rigid body
-            rigidBody = this.gameObject.AddComponent<Rigidbody>();
-            //Set the constaints
-            rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
-        }
-        else
-        {
-            //Get the rigidBody Component
-	    	rigidBody = GetComponent<Rigidbody>();
-            //Set the constaints - anyways
-            rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
-        }
-	}
+        //  //If the player object does not have a rigid body component add one
+        //  if (this.gameObject.GetComponent<Rigidbody>() == null)
+        //  {
+        //      //Add the rigid body
+        //      rigidBody = this.gameObject.AddComponent<Rigidbody>();
+        //      //Set the constaints
+        //      rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
+        //  }
+        //  else
+        //  {
+        //Get the rigidBody Component
+        rigidBody = GetComponent<Rigidbody>();
+        //Set the constaints - anyways
+        rigidBody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+        //  }
+    }
 
-	private void FixedUpdate ()
+    private void FixedUpdate ()
 	{
         //Left Stick input
 		inputDirection = new Vector3(XCI.GetAxisRaw(XboxAxis.LeftStickX, controller), 0, XCI.GetAxisRaw(XboxAxis.LeftStickY, controller));

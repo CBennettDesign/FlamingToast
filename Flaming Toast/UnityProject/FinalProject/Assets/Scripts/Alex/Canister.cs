@@ -41,29 +41,11 @@ public class Canister : MonoBehaviour
         canisterType = FluxType.NONE;
 
         //Every canister starts with the charge of Zero || 1
-        Charge = 1;
+        Charge = 0;
     }
 
-    //Main-Initialisation
-    private void Start()
-    {
 
-    }
-
-    //Physics
-    private void FixedUpdate()
-    {
-
-    }
-
-    //User Input || !Physics
     private void Update()
-    {
- 
-    }
-
-    //Animations || !Important
-    private void LateUpdate()
     {
 
     }

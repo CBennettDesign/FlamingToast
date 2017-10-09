@@ -83,7 +83,7 @@ public class Shield_System : MonoBehaviour
         }
         else
         {
-           // Debug.Log("Shields are DOWN!");
+            //Debug.Log("Shields are DOWN!");
         }
 
 
@@ -119,15 +119,15 @@ public class Shield_System : MonoBehaviour
             //Set the current system to be active;
             currentSystem.IsActive = true;
             //Allows the canister slot to drain the connected canister
-            canisterSlot.CanDrainCanister = true;
+            //canisterSlot.CanDrainCanister = true;
         }
-        //Either one is false
+        //Either one is false then the system wont be active / running
         else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
         {
             //Set the current system IN ACTIVE;
             currentSystem.IsActive = false;
             //Denies the canister slot from draining the connected canister
-            canisterSlot.CanDrainCanister = false;
+            //canisterSlot.CanDrainCanister = false;
         }
 
         ////Debuging the canister slot state.
@@ -135,5 +135,12 @@ public class Shield_System : MonoBehaviour
         //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
     }
 
+
+
+    //Current state being the core power bool being passed around
+    private void Toggle(bool currentState)
+    {
+        currentSystem.CorePower = currentState;
+    }
 
 }

@@ -119,12 +119,12 @@ public class Event_
         NONE,
         TOP,
         BOTTOM,
-        RIGHT,
         LEFT,
-        TOP_RIGHT,
-        TOP_LEFT,
-        BOTTOM_RIGHT,
-        BOTTOM_LEFT
+        RIGHT,
+       // TOP_RIGHT,
+       // TOP_LEFT,
+       // BOTTOM_RIGHT,
+       // BOTTOM_LEFT
     }
     public EventDirection direction;
 

@@ -15,7 +15,10 @@ public class System_RayCast : MonoBehaviour
     private Canister currentCanister;
     //System Access point
     public Canister CurrentCanister
-    { get { return currentCanister; } }
+    {
+        get { return currentCanister; }
+        set { currentCanister = value; }
+    }
 
     //Pre-Initialisation
     private void Awake()
@@ -24,40 +27,23 @@ public class System_RayCast : MonoBehaviour
         rayCast = new Ray(transform.position, Vector3.up);
     }
 
-    //Main-Initialisation
-    private void Start()
-    {
-
-    }
-
-    //Physics
-    private void FixedUpdate()
-    {
-
-    }
-
-    //User Input || !Physics
     private void Update()
     {
 
     }
 
-    //Animations || !Important
-    private void LateUpdate()
-    {
-
-    }
 
     public bool CheckForCanister()
     {
-        /*Logic for checking if the canister is connected. - Add later for the layer masking*/
-        if (Physics.Raycast(rayCast, out hitInfo, 0.5f))
+        ///*Logic for checking if the canister is connected. - Add later for the layer masking*/
+        if (Physics.Raycast(rayCast, out hitInfo, 1.5f))
         {
-            if (hitInfo.collider.tag == "Canister") // - Rework for layer masking as this inner if statement would just result in true 
+            if (hitInfo.collider.tag == "Canister") // - Rework for layer masking as this inner if statement would just result in true ?
             {
                 //Assign the hitInfo obj to the internal currentCanister and drain the charge from that when connected.
                 //In drain the current canister only when the cannister is connected
                 currentCanister = hitInfo.collider.gameObject.GetComponent<Canister>();
+
 
                 //Found a canister
                 return true;
@@ -65,7 +51,7 @@ public class System_RayCast : MonoBehaviour
             else
             {
                 //Reset current Canister to null - safe gaurd
-                currentCanister = null;
+                //currentCanister = null;
                 //Something other than a canister
                 return false;
             }
@@ -73,17 +59,21 @@ public class System_RayCast : MonoBehaviour
         else
         {
             //Reset current Canister to null - safe gaurd
-            currentCanister = null;
+            //currentCanister = null;
             //No canister
             return false;
         }
+ 
+
+
+
     }
 
     //Debug Visuals
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z));
         Gizmos.color = Color.white;
         Gizmos.DrawSphere(transform.position, 0.1f);
     }

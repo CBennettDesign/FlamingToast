@@ -12,24 +12,27 @@ public class Canister_Slot : MonoBehaviour
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer;
 
-    //Current Canister Connected
-    private Canister currentCanister;
-
     //System RayCast 
     private System_RayCast system_Ray;
+
+    //Current Canister Connected
+    //private Canister currentCanister;
+
     //System Access point
     public Canister CurrentCanister
-    { get { return currentCanister; } }
+    { get { return system_Ray.CurrentCanister; } }
+
+    
 
     //Is the canister slot allowed to drain the canister that is connected
     //Only when the system that this is attached to has a canister connected and power from the core.
-    private bool canDrainCanister;
-    //System Access point
-    public bool CanDrainCanister
-    {
-        get { return canDrainCanister; }
-        set { canDrainCanister = value; }
-    }
+    //private bool canDrainCanister;
+    ////System Access point
+    //public bool CanDrainCanister
+    //{
+    //    get { return canDrainCanister; }
+    //    set { canDrainCanister = value; }
+    //}
 
     //Pre-Initialisation
     private void Awake()
@@ -44,7 +47,7 @@ public class Canister_Slot : MonoBehaviour
         system_Ray = this.transform.GetChild(0).GetComponent<System_RayCast>();
 
         //Default value for the currentCanister
-        currentCanister = null;
+        //currentCanister = null;
     }
 
     //Main-Initialisation
@@ -53,66 +56,52 @@ public class Canister_Slot : MonoBehaviour
         //Starting point for the timer, planned every 1 second it deplete the currentCanister
         timer = 0.0f;
     }
- 
 
-    //Physics
-    private void FixedUpdate()
-    {
-
-    }
-
-    //User Input || !Physics
     private void Update()
     {
 
-    }
-
-    //Animations || !Important
-    private void LateUpdate()
-    {
-         
     }
 
     public void DrainCanister()
     {
         //Canister is in the canister slot for the system
         //And it is allowed to drain the canister - Given the all clear from the current system
-        if (currentCanister != null && canDrainCanister)
+        if (system_Ray.CurrentCanister != null)
         {
-            //updtae the status of the canister
+            //update the status of the canister
             system.IsCanisterConnected = true;
 
             //Has charge in the cansiter
-            if (currentCanister.Charge > 0)
+            if (system_Ray.CurrentCanister.Charge > 0)
             {
                 //Depletion timer
                 timer += Time.deltaTime;
                 //Approx 1 second and while it is above Zero
-                if (timer >= 1.0f && currentCanister.Charge > 0)
+                if (timer >= 1.0f && system_Ray.CurrentCanister.Charge > 0)
                 {
                     //Drain the connected canister by the base system depletion rate
-                    currentCanister.Charge -= system.DepletionRate;
+                    system_Ray.CurrentCanister.Charge -= system.DepletionRate;
 
                     //if negative number
-                    if (currentCanister.Charge < 0)
+                    if (system_Ray.CurrentCanister.Charge < 0)
                     {
                         //Clean up - No negative numbers
-                        currentCanister.Charge = 0;
+                        system_Ray.CurrentCanister.Charge = 0;
                     }
 
                     //Timer reset
                     timer = 0.0f;
 
                     //Cue for the canister to explode!
-                    if (currentCanister.Charge == 0)
+                    if (system_Ray.CurrentCanister.Charge == 0)
                     {
                         //Particle cue
                         //Here
                         //Destroy the current canister
-                        currentCanister.Destroy();
+                        system_Ray.CurrentCanister.Destroy();
                         //Destroy(currentCanister.gameObject);
                         //Double check, set it to null. 
-                        currentCanister = null;
+                        system_Ray.CurrentCanister = null;
                     }
                 }
 
@@ -136,12 +125,14 @@ public class Canister_Slot : MonoBehaviour
         if (system_Ray.CheckForCanister())
         {
             //Found a canister
-            currentCanister = system_Ray.CurrentCanister;
+            system_Ray.CurrentCanister = system_Ray.CurrentCanister;
+            //system.IsCanisterConnected = true;
             return true;
         }
         else
         {
-            currentCanister = null;
+            //system.IsCanisterConnected = false;
+            system_Ray.CurrentCanister = null;
             return false;
         }
 

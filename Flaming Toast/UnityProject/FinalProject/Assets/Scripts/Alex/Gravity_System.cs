@@ -150,7 +150,7 @@ public class Gravity_System : MonoBehaviour
             currentSystem.IsActive = true;
             gravityStatus = true;
             //Allows the canister slot to drain the connected canister
-            canisterSlot.CanDrainCanister = true;
+            //canisterSlot.CanDrainCanister = true;
         }
         //Either one is false
         else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
@@ -159,12 +159,18 @@ public class Gravity_System : MonoBehaviour
             currentSystem.IsActive = false;
             gravityStatus = false;
             //Denies the canister slot from draining the connected canister
-            canisterSlot.CanDrainCanister = false;
+            //canisterSlot.CanDrainCanister = false;
         }
 
         //Debuging the canister slot state.
         //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
         //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
+    }
+
+    //Current state being the core power bool being passed around
+    private void Toggle(bool currentState)
+    {
+        currentSystem.CorePower = currentState;
     }
 
 }

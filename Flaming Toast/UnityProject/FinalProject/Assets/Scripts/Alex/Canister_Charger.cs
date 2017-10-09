@@ -98,6 +98,14 @@ public class Canister_Charger : MonoBehaviour
         {
             //When a canister leaves or there is none connected to this set it to false
             isValidCanister = false;
+
+            if (system_Ray.CurrentCanister != null)
+            {
+                Debug.Log("Charge in canister: " + system_Ray.CurrentCanister.Charge);
+            }
+
+            system_Ray.CurrentCanister = null;
+
         }
         
     }
@@ -106,8 +114,8 @@ public class Canister_Charger : MonoBehaviour
     private void LateUpdate()
     {
            
-            
     }
+            
 
     public bool ValidateCanister()
     {
@@ -141,6 +149,7 @@ public class Canister_Charger : MonoBehaviour
         }
 
         //Return the current state after going through the loop
+        Debug.Log("Is a valid canister: " + isValidCanister);
         return isValidCanister;
     }
  
@@ -172,6 +181,7 @@ public class Canister_Charger : MonoBehaviour
             //Approx 1 second and while it is below max charge (100%)
             if (timer >= 1.0f && system_Ray.CurrentCanister.Charge < 100)
             {
+                Debug.Log("Charging the canister");
                 //Charge the connected canister by the chargeAmount
                 system_Ray.CurrentCanister.Charge += chargingAmount;
 
@@ -216,7 +226,7 @@ public class Canister_Charger : MonoBehaviour
     //            //Assign the hitInfo obj to the internal currentCanister and drain the charge from that when connected.
     //            //In drain the current canister only when the cannister is connected
     //            currentCanister = hitInfo.collider.gameObject.GetComponent<Canister>();
-
+    //
     //            //Found a canister
     //            return true;
     //        }
