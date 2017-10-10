@@ -5,6 +5,10 @@ using UnityEngine;
 //[ExecuteInEditMode] - The name of the element in the list equals the name of the name element
 public class Event_System_Manager : MonoBehaviour
 {
+    [Header("Relative to the direction of the event.")]
+    public GameObject[] spawnLocation; 
+
+
     public List<Event_> events = new List<Event_>();
 
     private float timer;
