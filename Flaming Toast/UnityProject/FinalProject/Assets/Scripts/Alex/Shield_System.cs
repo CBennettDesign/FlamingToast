@@ -44,7 +44,7 @@ public class Shield_System : MonoBehaviour
         //Grab the base usage amount
         usageAmount = system.Shield_UsageAmount;
         //Canister slot
-        canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
+        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
     }
        
     
@@ -81,6 +81,7 @@ public class Shield_System : MonoBehaviour
         if (currentSystem.IsActive)
         {
             Debug.Log("Shields are UP!");
+            //get the direction and affect the direction on the shield shader visibility
         }
         else
         {
@@ -94,10 +95,6 @@ public class Shield_System : MonoBehaviour
     //Animations || !Important
     private void LateUpdate()
     {
-
-
-
-
         //Does the canisterSlot have a canister?
         if (canisterSlot.CheckForCanister())
         {

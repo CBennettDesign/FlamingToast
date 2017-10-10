@@ -31,7 +31,7 @@ public class Gravity_System : MonoBehaviour
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
         //Canister slot
-        canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
+        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
 
 
         //currentSystem.WireSet.GetComponent<WireStatus>().status;

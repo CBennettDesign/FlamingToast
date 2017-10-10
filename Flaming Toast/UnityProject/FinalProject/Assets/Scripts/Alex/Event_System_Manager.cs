@@ -66,7 +66,7 @@ public class Event_System_Manager : MonoBehaviour
 
                 if (timer >= ev.timeStamp && !ev.BeenUsed)
                 {
-                    Debug.Log("Incoming: " + ev.name + " : " + ev.type + " from: " + ev.direction + " : " + ev.timeStamp);
+                    //Debug.Log("Incoming: " + ev.name + " : " + ev.type + " from: " + ev.direction + " : " + ev.timeStamp);
                     ev.BeenUsed = true;
                 }
                 else if(ev.BeenUsed)

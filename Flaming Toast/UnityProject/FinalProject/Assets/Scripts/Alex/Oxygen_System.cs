@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Oxygen_System : MonoBehaviour
 {
-    public GameObject Doorset2;
+    public GameObject DoorSet_2;
+
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -32,7 +33,8 @@ public class Oxygen_System : MonoBehaviour
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
         //Canister slot
-        canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
+        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
+        
     }
          
 
@@ -65,50 +67,55 @@ public class Oxygen_System : MonoBehaviour
     {
 
         //When the current System is active then it can run the following
-        if (currentSystem.IsActive)//When not active drain the oxygen??
+        if (currentSystem.IsActive)//When not active drain the oxygen?? - yea
         {
-            //While the oxygen hasn't been depleted.
-            //When exactly 0 it won't step into it - Good
-            if (oxygenLevel > 0)//!system.OxygenDepleted
+            //Open the other set of doors
+            if (DoorSet_2 != null)
             {
-                //Depletion timer
-                timer += Time.deltaTime;
-
-                //Approx 1 second and while it is above Zero
-                if (timer >= 1.0f && oxygenLevel > 0) 
-                {
-                    //Decrease the oxygen level - Balance the numbers later
-                    oxygenLevel -= system.DepletionRate / 2.0f;
-
-                    if (Doorset2 != null)
-                    {
-                        Doorset2.SetActive(false);
-                    }
-
-                    //if negative number
-                    if (oxygenLevel < 0)
-                    {
-                        //Clean up - No negative numbers
-                        oxygenLevel = 0;
-                    }
-   
-                    //Timer reset
-                    timer = 0.0f;
-
-                }
-            
-                if (oxygenLevel == 0)
-                {
-                    //Exit point
-                    system.OxygenDepleted = true;
-                }
+                DoorSet_2.SetActive(false);
             }
+
+            Debug.Log("Oxygen System Active");
+
+            ////While the oxygen hasn't been depleted.
+            ////When exactly 0 it won't step into it - Good
+            //if (oxygenLevel > 0)//!system.OxygenDepleted
+            //{
+            //    //Depletion timer
+            //    timer += Time.deltaTime;
+
+            //    //Approx 1 second and while it is above Zero
+            //    if (timer >= 1.0f && oxygenLevel > 0) 
+            //    {
+            //        //Decrease the oxygen level - Balance the numbers later
+            //        oxygenLevel -= system.DepletionRate / 2.0f;
+
+            //        //if negative number
+            //        if (oxygenLevel < 0)
+            //        {
+            //            //Clean up - No negative numbers
+            //            oxygenLevel = 0;
+            //        }
+
+            //        //Timer reset
+            //        timer = 0.0f;
+
+
+            //    }
+
+            //    if (oxygenLevel == 0)
+            //    {
+            //        //Exit point
+            //        system.OxygenDepleted = true;
+            //    }
+            //}
         }
    
  
 
 
     }
+
 
     //Animations || !Important
     private void LateUpdate()
@@ -140,7 +147,7 @@ public class Oxygen_System : MonoBehaviour
             //Allows the canister slot to drain the connected canister
             //canisterSlot.CanDrainCanister = true;
         }
-        //Either one is false
+        //Either one is false then the system wont be active / running
         else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
         {
             //Set the current system IN ACTIVE;
@@ -149,10 +156,12 @@ public class Oxygen_System : MonoBehaviour
             //canisterSlot.CanDrainCanister = false;
         }
 
-        //Debuging the canister slot state.
+        ////Debuging the canister slot state.
         //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
         //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
     }
+
+
 
     //Current state being the core power bool being passed around
     private void Toggle(bool currentState)

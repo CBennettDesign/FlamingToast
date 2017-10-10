@@ -117,7 +117,6 @@ public class Base_System : MonoBehaviour
 
 }//End of Base_System
 
-
 public enum SystemType
 {
     SHIELD,
@@ -134,9 +133,6 @@ public enum FluxType
     BLUE
 }
 
-/// <summary>
-/// Everything to do with a ship system.
-/// </summary>
 [System.Serializable]
 public class Current_System
 {
@@ -202,12 +198,12 @@ public class Current_System
 
     [Tooltip("Canister of the current system.")]
     [SerializeField]
-    private GameObject canisterSlot;
+    private GameObject systemCanisterSlot;
 
-    public GameObject CanisterSlot
+    public GameObject SystemCanisterSlot
     {
-        get { return canisterSlot; }
-        set { canisterSlot = value; }
+        get { return systemCanisterSlot; }
+        set { systemCanisterSlot = value; }
     }
 
     [Tooltip("Canister connected TRUE || FALSE")]
@@ -229,10 +225,8 @@ public class Current_System
         NONE
     }
 
+
 }
-
-
-
 
 
 

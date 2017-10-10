@@ -25,6 +25,9 @@ public class System_RayCast : MonoBehaviour
     {
         //Raycast Line Check - Rework to a sphere cast.?
         rayCast = new Ray(transform.position, Vector3.up);
+
+        //Default starting value
+        currentCanister = null;
     }
 
     private void Update()
@@ -44,6 +47,7 @@ public class System_RayCast : MonoBehaviour
                 //In drain the current canister only when the cannister is connected
                 currentCanister = hitInfo.collider.gameObject.GetComponent<Canister>();
 
+                Debug.Log("Canister found! " + hitInfo.collider.gameObject.name);
 
                 //Found a canister
                 return true;
@@ -51,17 +55,30 @@ public class System_RayCast : MonoBehaviour
             else
             {
                 //Reset current Canister to null - safe gaurd
-                //currentCanister = null;
+                currentCanister = null;
+            
                 //Something other than a canister
                 return false;
             }
         }
         else
         {
-            //Reset current Canister to null - safe gaurd
-            //currentCanister = null;
-            //No canister
-            return false;
+            if (this.transform.childCount > 0 && this.transform.GetChild(0).GetComponent<Canister>() != null)
+            {
+                //As the canister is snapped to the position it becomes a child of this game object.
+                currentCanister = this.transform.GetChild(0).GetComponent<Canister>();
+                //Found a canister
+                return true;
+            }
+            else
+            {
+                //Reset current Canister to null - safe gaurd
+                currentCanister = null;
+                //No canister
+                return false;
+            }
+
+
         }
  
 

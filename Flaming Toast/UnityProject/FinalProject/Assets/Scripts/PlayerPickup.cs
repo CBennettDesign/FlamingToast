@@ -42,6 +42,7 @@ public class PlayerPickup : MonoBehaviour {
                     //Gets the rigidbody of capsule and sets Kenetic on and velocity off
                     Rigidbody cap = obj.GetComponent<Rigidbody>();
                     Destroy(cap);
+
                     
                     //obj.transform.localRotation = Quaternion.identity;
                     inHands = obj;
@@ -79,4 +80,5 @@ public class PlayerPickup : MonoBehaviour {
             }
         }
 	}
+
 }

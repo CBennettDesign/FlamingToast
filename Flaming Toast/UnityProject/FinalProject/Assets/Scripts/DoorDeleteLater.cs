@@ -14,7 +14,7 @@ public class DoorDeleteLater : MonoBehaviour {
     void Start ()
     {
         //Canister slot
-        canisterSlot = currentSystem.CanisterSlot.GetComponent<Canister_Slot>();
+        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
     }
 	
 	// Update is called once per frame
