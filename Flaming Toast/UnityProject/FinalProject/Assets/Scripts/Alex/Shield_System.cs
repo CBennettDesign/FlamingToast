@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Shield_System : MonoBehaviour
 {
+
     //Ship Core
     Power_Core shipCore;
 
@@ -93,7 +94,10 @@ public class Shield_System : MonoBehaviour
     //Animations || !Important
     private void LateUpdate()
     {
- 
+
+
+
+
         //Does the canisterSlot have a canister?
         if (canisterSlot.CheckForCanister())
         {

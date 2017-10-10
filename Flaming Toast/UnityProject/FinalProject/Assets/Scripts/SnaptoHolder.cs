@@ -5,6 +5,11 @@ using XboxCtrlrInput;
 
 public class SnaptoHolder : MonoBehaviour
 {
+
+
+    public GameObject doorTest;
+
+
     //Distance to pickup    
     public float pickUpDistance = 0.5f;
     
@@ -15,6 +20,12 @@ public class SnaptoHolder : MonoBehaviour
 
     //Inhands object
     private GameObject inHands = null;
+
+    //Destroy passed in item
+    public GameObject Snapped;
+
+    //Static canister
+    public GameObject StaticObject;
 
     // Lerp Speed
     public float speed = 0.2f;
@@ -61,6 +72,10 @@ public class SnaptoHolder : MonoBehaviour
         //sets position to parents position
         GiveCanister.transform.parent = transform.transform;
 
+        doorTest.SetActive(false);
+
+        this.transform.GetComponent<PowercoreIllumination>().enabled = true;
+       
         //Sets to public local positions
         GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
         GiveCanister.transform.localRotation = Quaternion.identity;// transform.parent.rotation;
