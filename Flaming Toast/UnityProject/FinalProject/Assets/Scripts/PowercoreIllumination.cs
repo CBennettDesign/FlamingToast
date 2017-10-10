@@ -31,10 +31,14 @@ public class PowercoreIllumination : MonoBehaviour {
 
     void setIlluminated(int Wire, bool state)
     {
+        //creates new color
+        Color myColor = new Color();
+        ColorUtility.TryParseHtmlString("#042F04FF", out myColor);
         if (state)
         {
             foreach (Transform child in Wires[Wire].transform)
             {
+                child.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
                 child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.green);
                 child.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Oxygen_System : MonoBehaviour
 {
-
+    public GameObject Doorset2;
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -79,6 +79,11 @@ public class Oxygen_System : MonoBehaviour
                 {
                     //Decrease the oxygen level - Balance the numbers later
                     oxygenLevel -= system.DepletionRate / 2.0f;
+
+                    if (Doorset2 != null)
+                    {
+                        Doorset2.SetActive(false);
+                    }
 
                     //if negative number
                     if (oxygenLevel < 0)

@@ -75,7 +75,7 @@ public class System_RayCast : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z));
         Gizmos.color = Color.white;
-        Gizmos.DrawSphere(transform.position, 0.1f);
+        Gizmos.DrawSphere(transform.position, 0.2f);
     }
 
 }

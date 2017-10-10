@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XboxCtrlrInput;
 
-public class SnaptoHolder : MonoBehaviour
-{
+public class FirstSnap : MonoBehaviour {
 
 
- 
+
+    public GameObject doorTest;
 
 
     //Distance to pickup    
     public float pickUpDistance = 0.5f;
-    
+
     //Snapping positions x, y, z
     public float xPosition;
     public float yPosition;
@@ -29,7 +28,7 @@ public class SnaptoHolder : MonoBehaviour
 
     //Lerp Time
     float lerptime;
-    
+
     //Start and end colors to lerp between
     public Color Startcolor;
     public Color Endcolor;
@@ -54,7 +53,7 @@ public class SnaptoHolder : MonoBehaviour
 
         if (!canister)
         {
-            
+
         }
         else
         {
@@ -69,6 +68,11 @@ public class SnaptoHolder : MonoBehaviour
 
         //sets position to parents position
         GiveCanister.transform.parent = transform.transform;
+
+        // ISSUE HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        doorTest.SetActive(false);
+
+        this.transform.GetComponent<PowercoreIllumination>().enabled = true;
 
         //Sets to public local positions
         GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
