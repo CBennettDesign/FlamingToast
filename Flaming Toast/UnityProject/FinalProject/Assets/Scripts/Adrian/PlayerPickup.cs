@@ -29,27 +29,57 @@ public class PlayerPickup : MonoBehaviour {
                 //Layermask set to Cap
                 int layermask = 1 << LayerMask.NameToLayer("Cap");
 
-                
-                if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.forward, out info, pickUpDistance, layermask))
+                //PICKUP OBJECT 
+
+                //Testing for all nearby canisters within the sphere around the player
+                Collider[] nearbyCanisters = Physics.OverlapSphere(transform.position, pickUpDistance, layermask);
+                GameObject closeCannister = null;
+                float closeDistance = 999999.0f;
+
+                for (int i = 0; i < nearbyCanisters.Length; i++)
                 {
-                    // Capsule ingame
-                    GameObject obj = info.collider.gameObject;
+                    //Raycasting to check there is no walls in the way
+                    Vector3 Dir = nearbyCanisters[i].transform.position - (transform.position + Vector3.up * 0.5f);
+                    Dir.Normalize();
 
+                    layermask = 1 << LayerMask.NameToLayer("Holder");
+                    layermask = ~layermask;
+
+                    if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Dir, out info, pickUpDistance, layermask))
+                    {
+                        //If the object that is hit is the correct canister
+                        if(nearbyCanisters[i].gameObject == info.collider.gameObject)
+                        {
+                            //todo: check if can be picked up
+
+                            //Checking if it is the closest canister
+                            float distance = Vector3.Distance(transform.position, nearbyCanisters[i].transform.position);
+                            if (distance < closeDistance)
+                            {
+                                closeCannister = nearbyCanisters[i].gameObject;
+                                closeDistance = distance;
+                            }
+                        }
+                    }
+                }
+
+                //Pick up closest canister
+                if (closeCannister)
+                {
                     // Set capsule infront of player
-                    obj.transform.parent = transform.transform;
-                    obj.transform.localPosition = new Vector3(0, .50f, .30f);
-                    obj.transform.localRotation = Quaternion.Euler(0, 90.0f, 0f);
+                    closeCannister.transform.parent = transform.transform;
+                    closeCannister.transform.localPosition = new Vector3(0, .50f, .30f);
+                    closeCannister.transform.localRotation = Quaternion.Euler(0, 90.0f, 0f);
                     //Gets the rigidbody of capsule and sets Kenetic on and velocity off
-                    Rigidbody cap = obj.GetComponent<Rigidbody>();
+                    Rigidbody cap = closeCannister.GetComponent<Rigidbody>();
                     Destroy(cap);
-
-                    
-                    //obj.transform.localRotation = Quaternion.identity;
-                    inHands = obj;
+                    inHands = closeCannister;
                     return;
                 }
 
+                // USE JUNCTION
                 layermask = 1 << LayerMask.NameToLayer("Junction");
+
                 if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
                 {
                     GameObject obj = info.collider.gameObject;
@@ -59,8 +89,7 @@ public class PlayerPickup : MonoBehaviour {
             }
             else
             {
-                
-
+                //USE OBJECT ON HOLDER
                 RaycastHit info;
                 int layermask = 1 << LayerMask.NameToLayer("Holder");
                 if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
@@ -70,9 +99,8 @@ public class PlayerPickup : MonoBehaviour {
                     holder.BroadcastMessage("giveCanister", inHands, SendMessageOptions.DontRequireReceiver);
                     inHands = null;
                 }
-                else
+                else //drop
                 {
-
                     inHands.transform.parent = null;
                     inHands.AddComponent<Rigidbody>();
                     inHands = null;
@@ -80,5 +108,4 @@ public class PlayerPickup : MonoBehaviour {
             }
         }
 	}
-
 }

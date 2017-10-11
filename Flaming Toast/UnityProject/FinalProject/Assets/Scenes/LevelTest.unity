@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43994915, g: 0.48842132, b: 0.56862366, a: 1}
+  m_IndirectSpecularColor: {r: 0.43994957, g: 0.48842204, b: 0.5686245, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1728,11 +1728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 1, g: 1, b: 1, a: 0}
-  Endcolor: {r: 0, g: 0, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &92038955
 MonoBehaviour:
@@ -5210,11 +5207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!1 &247206416
 GameObject:
@@ -5544,17 +5538,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 256339098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!4 &257426616 stripped
 Transform:
@@ -12714,17 +12704,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 556437504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &556437507
 MonoBehaviour:
@@ -14700,17 +14686,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 638396199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &638396202
 MonoBehaviour:
@@ -18976,7 +18958,6 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1904810671}
   - {fileID: 825526232}
-  Systems: []
   startsIlluminated: 0
 --- !u!1 &818438156
 GameObject:
@@ -19168,7 +19149,6 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1986298975}
   - {fileID: 24501016}
-  Systems: []
   startsIlluminated: -1
 --- !u!1 &831669546
 GameObject:
@@ -22277,6 +22257,7 @@ GameObject:
   - component: {fileID: 950652408}
   - component: {fileID: 950652409}
   - component: {fileID: 950652407}
+  - component: {fileID: 950652410}
   m_Layer: 9
   m_Name: RayCast_Canister
   m_TagString: Untagged
@@ -22308,15 +22289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b26388b51306147b3f7ab28db7e49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorTest: {fileID: 786729547}
+  doorSet1: {fileID: 786729547}
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 0, g: 0.4392157, b: 0.11372549, a: 1}
-  Endcolor: {r: 0, g: 0.4392157, b: 0.11372549, a: 1}
   RadiusOfRayCast: 2
 --- !u!114 &950652408
 MonoBehaviour:
@@ -22340,10 +22317,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e773a9fb108e814bbc68b30ec181ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &950652410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950652405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80a8e4b70f18d84c9e0791e9bd4384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Wires:
   - {fileID: 2056777140}
   - {fileID: 1543408926}
   - {fileID: 1596244553}
+  NextJunction:
+  - {fileID: 1820685555}
+  - {fileID: 817733398}
+  - {fileID: 1992517291}
+  startsIlluminated: -1
 --- !u!1 &951807667
 GameObject:
   m_ObjectHideFlags: 0
@@ -23032,17 +23025,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 989123805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &989123808
 MonoBehaviour:
@@ -26960,17 +26949,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1149983583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!1 &1151818687
 GameObject:
@@ -30381,17 +30366,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1303019819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!1 &1306482949
 GameObject:
@@ -32527,7 +32508,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.40405917
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -32535,7 +32516,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16.66172
+      value: 12.66
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -32543,15 +32524,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_RootOrder
@@ -32562,6 +32543,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 6e308caf78e147e4eaefbb09a23b1a2c, type: 2}
+    - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
   m_IsPrefabParent: 0
@@ -33218,7 +33203,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.40751147
+      value: -12.1
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -33226,7 +33211,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 12.891413
+      value: 11.305
       objectReference: {fileID: 0}
     - target: {fileID: 4036532468168320, guid: 48b5b182c110b65428a74da0db8bdac5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -39286,11 +39271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &1659449037
 MonoBehaviour:
@@ -40304,11 +40286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 1, g: 1, b: 1, a: 0}
-  Endcolor: {r: 0, g: 0, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &1709480367
 MonoBehaviour:
@@ -42693,7 +42672,6 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1844700552}
   - {fileID: 1938515887}
-  Systems: []
   startsIlluminated: -1
 --- !u!65 &1820685560
 BoxCollider:
@@ -43876,17 +43854,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865414084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35b01f5519e0a743a376e6e81adaa9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  ParticlesToSwitch: {fileID: 0}
-  speed: 0.2
-  Startcolor: {r: 1, g: 0, b: 0, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &1865414087
 MonoBehaviour:
@@ -46953,11 +46927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 1, g: 1, b: 1, a: 0}
-  Endcolor: {r: 0, g: 0, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &1957912776
 MonoBehaviour:
@@ -47398,11 +47369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!1 &1981085729
 GameObject:
@@ -47824,7 +47792,6 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 958239930}
   - {fileID: 219352339}
-  Systems: []
   startsIlluminated: 0
 --- !u!1001 &1995588788
 Prefab:
@@ -48215,11 +48182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &2018059891
 MonoBehaviour:
@@ -48710,11 +48674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 0.5
   xPosition: 0
-  yPosition: 0.5
+  yPosition: 0.28
   zPosition: 0
-  speed: 0.2
-  Startcolor: {r: 0, g: 0, b: 1, a: 0}
-  Endcolor: {r: 1, g: 1, b: 1, a: 0}
   RadiusOfRayCast: 2
 --- !u!114 &2032098600
 MonoBehaviour:

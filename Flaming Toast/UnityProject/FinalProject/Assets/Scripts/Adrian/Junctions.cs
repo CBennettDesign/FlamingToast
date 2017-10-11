@@ -6,29 +6,30 @@ using XboxCtrlrInput;
 public class Junctions : MonoBehaviour {
     public GameObject[] Wires;
     public GameObject[] NextJunction;
-    public GameObject[] Systems;
-    public int startsIlluminated;
+    //public GameObject[] Systems;
+    public int startsIlluminated = -1;
     private int selectedIndex = 0;
     //public bool SystemSide_A;
     //public bool SystemSide_B;
     //public bool ConnectedJunction;
-    private Material mat;
+    //private Material mat;
 
    
 
-    private bool isPowered = true;
+    private bool isPowered = false;
  
 
     // Use this for initialization
     void Start ()
     {
         //grabs the original material of the object that it starts with.
-        mat = Wires[0].transform.GetChild(0).GetComponent<Renderer>().material;
+        //mat = Wires[0].transform.GetChild(0).GetComponent<Renderer>().material;
         
         if (startsIlluminated >= 0)
         {
             setIlluminated(startsIlluminated, true);
             selectedIndex = startsIlluminated;
+            isPowered = true;
         }
         selectedIndex = startsIlluminated;
     }
@@ -70,7 +71,7 @@ public class Junctions : MonoBehaviour {
         setIlluminated(selectedIndex, true);
     }
 
-    void setIlluminated(int Wire, bool state)
+    public void setIlluminated(int Wire, bool state)
     {
         //creates new color
         Color myColor = new Color();
@@ -79,18 +80,18 @@ public class Junctions : MonoBehaviour {
         if (state)
         {
             foreach (Transform child in Wires[Wire].transform)
-
             {
+                //Turns on emissions and Changes colors
                 child.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
                 child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.green);
                 child.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             }
-
         }
         else
         {
             foreach (Transform child in Wires[Wire].transform)
             {
+                //Turns off emissions and resets colors
                 child.GetComponent<Renderer>().material.SetColor("_Color", myColor);
                 child.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
                 child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.white);
@@ -104,7 +105,7 @@ public class Junctions : MonoBehaviour {
     {
         isPowered = state;
 
-        if (selectedIndex < NextJunction.Length)
+        if (selectedIndex < NextJunction.Length && selectedIndex >= 0)
         {
             NextJunction[selectedIndex].SendMessage("Toggle", state, SendMessageOptions.DontRequireReceiver);
         }

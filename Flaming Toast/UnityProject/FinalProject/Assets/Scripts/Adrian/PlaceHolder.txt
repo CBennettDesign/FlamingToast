@@ -1,6 +1,6 @@
 PlaceHolder
 
 // PICKUP SYSTEM
-// Wire Startsb Illuminated
-// Shader acess to turn off flashing
+// Wire system issue and Wires Start Illuminated
+// Shader access to turn off flashing
 // snapping scripts
