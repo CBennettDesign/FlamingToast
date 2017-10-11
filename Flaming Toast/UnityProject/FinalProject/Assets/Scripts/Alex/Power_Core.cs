@@ -8,7 +8,7 @@ public class Power_Core : MonoBehaviour
     //Ships health
     //Also use the property for taking damage
     [SerializeField]
-    [Range(0,10)]
+    [Range(0,100)]
     private float shipHealth;
     public float ShipHealth
     {
@@ -28,7 +28,7 @@ public class Power_Core : MonoBehaviour
 
 
         //Ship Health at default 100%
-        shipHealth = 10;
+        shipHealth = 100;
         
     }
 

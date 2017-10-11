@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*- Alex Scicluna -*/
 
@@ -23,6 +24,7 @@ public class Base_System : MonoBehaviour
     private int shield_UsageAmount;
 
 
+
     [SerializeField]
     [Tooltip("Canister Depot System")]
     [Range(1, 10)]
@@ -37,6 +39,34 @@ public class Base_System : MonoBehaviour
         set { currentCanisterCount = value; }
     }
 
+
+    [SerializeField]
+    [Header("*Current Oxygen level: Default starting amount 100%")]
+    [Range(0, 100)]
+    private float oxygenLevel;
+
+    public float OxygenLevel
+    {
+        get { return oxygenLevel; }
+        set { oxygenLevel = value; }
+    }
+
+
+    //Ships health
+    //Also use the property for taking damage
+    [SerializeField]
+    [Range(0, 100)]
+    private float shipHealth;
+    
+    public float ShipHealth
+    {
+        get { return shipHealth; }
+        set { shipHealth = value; }
+    }
+
+    //UI Slider
+    public Slider HealthSlider;
+    public Slider OxygenSlider;
 
     public bool IsPowered
     {
@@ -70,7 +100,6 @@ public class Base_System : MonoBehaviour
 
 
 
-
     //Oxygen System 
     private bool oxygenDepleted;
 
@@ -87,6 +116,10 @@ public class Base_System : MonoBehaviour
     {
         //Makes Sure that this tag exists and then applies it to this object
         this.gameObject.tag = "Base_System";
+
+
+        shipHealth = 100;
+        oxygenLevel = 100;
     }
 
     private void Update()
@@ -112,6 +145,9 @@ public class Base_System : MonoBehaviour
             Debug.Log("Oxygen Depleted!!");
         }
 
+
+        HealthSlider.value = shipHealth;
+        OxygenSlider.value = oxygenLevel;
     }
 
 

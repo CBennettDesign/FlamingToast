@@ -512,7 +512,6 @@ MonoBehaviour:
     wireSet: {fileID: 387190762}
     systemCanisterSlot: {fileID: 1247745595}
     canisterConnected: 0
-  oxygenLevel: 0
 --- !u!65 &24501021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5695,7 +5694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.8068962, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7449,8 +7448,12 @@ MonoBehaviour:
   - {fileID: 657431642}
   - {fileID: 2000401626}
   baseDepletionRate: 1
-  shield_UsageAmount: 36
+  shield_UsageAmount: 26
   maxCanisterCount: 10
+  oxygenLevel: 25.5
+  shipHealth: 25.5
+  HealthSlider: {fileID: 1723207742}
+  OxygenSlider: {fileID: 1205003546}
 --- !u!1 &344655298 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1787844809943446, guid: 0b254a7152b6a2a49bc0e5b0e98110ab,
@@ -8670,8 +8673,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -0.089, y: 0}
+  m_SizeDelta: {x: -10.178, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &403371527
 GameObject:
@@ -8704,8 +8707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -0.273, y: 0}
+  m_SizeDelta: {x: -10.546, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &404592837
 GameObject:
@@ -24376,7 +24379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1055337414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27941,7 +27944,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 75.9
+  m_Value: 59.9
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -40847,7 +40850,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 75.9
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -42741,6 +42744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829423468}
   - component: {fileID: 1829423469}
+  - component: {fileID: 1829423470}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -42754,7 +42758,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829423467}
-  m_LocalRotation: {x: -0.49999946, y: -0.5000006, z: 0.49999905, w: -0.500001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.093}
   m_LocalScale: {x: 0.0016200023, y: 0.0016200035, z: 0.0016200031}
   m_Children:
@@ -42766,8 +42770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.003, y: -0.024}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: 0.0000059814192, y: 0.0000020749867}
+  m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829423469
 MonoBehaviour:
@@ -42809,14 +42813,25 @@ MonoBehaviour:
   m_HandleRect: {fileID: 664964390}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 53.8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1829423470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829423467}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef163ca1cbe2fe740bf48662a1e36505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1834910614
 GameObject:
   m_ObjectHideFlags: 0
@@ -45961,7 +45976,6 @@ GameObject:
   - component: {fileID: 1924615524}
   - component: {fileID: 1924615526}
   - component: {fileID: 1924615525}
-  - component: {fileID: 1924615527}
   - component: {fileID: 1924615528}
   - component: {fileID: 1924615531}
   m_Layer: 0
@@ -46027,19 +46041,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1924615523}
   m_Mesh: {fileID: 4300000, guid: 2403556a8bad6a74d8ee009a745540ad, type: 3}
---- !u!114 &1924615527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1924615523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf7731055f857540a49dbb1002c387e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipHealth: 5.15
-  slider: {fileID: 572252534}
 --- !u!65 &1924615528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46160,17 +46161,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931226480}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.49999997, y: -0.50000006, z: 0.49999854, w: 0.50000155}
+  m_LocalPosition: {x: 0, y: 0, z: 0.016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829423468}
   m_Father: {fileID: 1400941323}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 90.00001}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.256}
+  m_AnchoredPosition: {x: 0, y: 0.349}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931226482
@@ -46503,7 +46504,6 @@ MonoBehaviour:
     wireSet: {fileID: 1596244553}
     systemCanisterSlot: {fileID: 2028903900}
     canisterConnected: 0
-  oxygenLevel: 0
 --- !u!65 &1938515892
 BoxCollider:
   m_ObjectHideFlags: 0

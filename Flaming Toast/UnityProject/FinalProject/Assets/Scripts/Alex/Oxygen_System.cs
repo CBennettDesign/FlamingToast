@@ -19,9 +19,7 @@ public class Oxygen_System : MonoBehaviour
     //Current Systems canister slot
     private Canister_Slot canisterSlot;
 
-    [Header("*Current Oxygen level: Default starting amount 100%")]
-    [Range(0, 100)]
-    public float oxygenLevel;
+
     
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
@@ -52,7 +50,7 @@ public class Oxygen_System : MonoBehaviour
         currentSystem.IsActive = system.IsActive;
 
         //Start with 100%
-        oxygenLevel = 100;
+        system.OxygenLevel = 100;
     }
 
     //Physics

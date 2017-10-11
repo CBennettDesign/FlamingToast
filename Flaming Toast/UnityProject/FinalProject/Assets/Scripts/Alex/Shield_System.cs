@@ -8,7 +8,7 @@ public class Shield_System : MonoBehaviour
 {
 
     //Ship Core
-    Power_Core shipCore;
+    //Power_Core shipCore;
 
     //Base System
     private Base_System system;
@@ -38,7 +38,7 @@ public class Shield_System : MonoBehaviour
     private void Awake()
     {
         //Reference to the ship core.
-        shipCore = GameObject.FindGameObjectWithTag("Power_Core").GetComponent<Power_Core>();
+        //shipCore = GameObject.FindGameObjectWithTag("Power_Core").GetComponent<Power_Core>();
         //Get the system manager
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         //Grab the base usage amount
@@ -73,7 +73,7 @@ public class Shield_System : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-        shipCore.ShipHealth = shipCore.ShipHealth;
+        system.ShipHealth = system.ShipHealth;
         //The asteriod that collides with the shield parses it self as a game object to the shield system and from there
         //The shield system will grab the value from the game object and use that for the damage calculations
         //Asteriod Damage Random (1||2) - Shield Reduction value [reductionAmount](1,10) if Shields are up
