@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23860051790544834}
   - component: {fileID: 54432948651868262}
   - component: {fileID: 65915796958005404}
+  - component: {fileID: 136783185629992572}
   m_Layer: 8
   m_Name: Canister_001_Interior_001_Default
   m_TagString: Canister
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382054643968772}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.7336473, y: 1.0100002, z: -2.1985216}
+  m_LocalPosition: {x: 6.2359486, y: 9.3657465, z: 10.434579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+  - {fileID: 2100000, guid: 617ee721b98314f4a98e9767e08c09dd, type: 2}
   - {fileID: 2100000, guid: 617ee721b98314f4a98e9767e08c09dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -105,7 +107,20 @@ BoxCollider:
   m_GameObject: {fileID: 1382054643968772}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.79999995, y: 1.5999999, z: 0.79999995}
   m_Center: {x: 0, y: 0.79999995, z: 0}
+--- !u!136 &136783185629992572
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382054643968772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 1.22
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}

@@ -168,6 +168,7 @@
     <Compile Include="Assets\Scripts\Alex\ShaderTest.cs" />
     <Compile Include="Assets\Scripts\Alex\Shield_System.cs" />
     <Compile Include="Assets\Scripts\Alex\System_RayCast.cs" />
+    <Compile Include="Assets\Scripts\CameraLookAt.cs" />
     <Compile Include="Assets\Scripts\DoorDeleteLater.cs" />
     <Compile Include="Assets\Scripts\FirstSnap.cs" />
     <Compile Include="Assets\Scripts\Junctions.cs" />
