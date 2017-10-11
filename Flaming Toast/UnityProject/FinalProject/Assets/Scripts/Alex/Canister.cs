@@ -1,11 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 /*- Alex Scicluna -*/
 
 public class Canister : MonoBehaviour
 {
+
+    //When the player is holding the canister.
+    private bool isBeingHeld;
+    public bool IsBeingHeld
+    {
+        get { return isBeingHeld; }
+        set { isBeingHeld = value; }
+    }
+
+
+
+
+    public Slider chargeSlider;
+    public Image sliderFill;
+
 
     private Base_System system;
 
@@ -28,7 +45,9 @@ public class Canister : MonoBehaviour
         get { return charge; }
         set { charge = value; }
     }
-        
+
+    private bool onlyCheckOnce;
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -41,13 +60,36 @@ public class Canister : MonoBehaviour
         canisterType = FluxType.NONE;
 
         //Every canister starts with the charge of Zero || 1
-        Charge = 0;
+        charge = 0;
+
+        //Start Colour
+        sliderFill.color = Color.white;
+        //
+        onlyCheckOnce = false;
     }
 
 
     private void Update()
     {
+        chargeSlider.value = charge;
 
+        if (charge > 0 && !onlyCheckOnce)
+        {
+            //chargeSlider.fillRect.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+            if (canisterType == FluxType.RED)
+            {
+                sliderFill.color = Color.red;
+            }
+            else if (canisterType == FluxType.BLUE)
+            {
+                sliderFill.color = Color.cyan;
+            }
+            else
+            {
+                sliderFill.color = Color.green;
+            }
+
+        }
     }
 
     public void Destroy()
