@@ -60,103 +60,102 @@ public class Oxygen_System : MonoBehaviour
 
     }
 
+
     //User Input || !Physics
     private void Update()
     {
 
-        //When the current System is active then it can run the following
-        if (currentSystem.IsActive)//When not active drain the oxygen?? - yea
+        //If there is power from the core going into the current system
+        if (currentSystem.CorePower)
         {
-            //Open the other set of doors
-            if (DoorSet_2 != null)
+            //only check if a canister is there when the system has power.
+            //When it has a canister and core power
+            if (canisterSlot.CheckForCanister())
             {
-                DoorSet_2.SetActive(false);
+                //Update value
+                currentSystem.CanisterConnected = true;
+                //validate the canister that it has found.
+                if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+                {
+                    //only when the previous 3 checks are true.
+                    currentSystem.IsActive = true;
+                }
+            }
+            else
+            {
+                //Reset
+                currentSystem.CanisterConnected = false;
+                currentSystem.IsActive = false;
+                canisterSlot.CanDrainCanister = false;
+            }
+        }
+        else
+        {            
+            currentSystem.IsActive = false;
+        }
+
+
+
+
+        // timer
+        timer += Time.deltaTime;
+
+        //Once per second, check if the current system is active
+        if (timer >= 1.0f)
+        {
+            //Is Active - Running - Charging the oxygen back up - else decrease oxygen levels
+            if (currentSystem.IsActive)
+            {
+                //Tutorial doors - Rest of the ship opens
+                if (DoorSet_2 != null)
+                {
+                    DoorSet_2.SetActive(false);
+                }
+
+                //Drains connected canister - can only happen if the system is active, when it has a cansiter
+                canisterSlot.CanDrainCanister = true; 
+
+                //Increase the oxygen levels
+                system.OxygenLevel += system.DepletionRate;
+
+                //Clean up. nothing above 100
+                if (system.OxygenLevel > 100)
+                {
+                    system.OxygenLevel = 100;
+                }
+
+            }
+            else
+            {
+                //Decrease the oxygen level - Balance the numbers later
+                system.OxygenLevel -= system.DepletionRate / 2.0f;
+
+                //if negative number
+                if (system.OxygenLevel < 0)
+                {
+                    //Clean up - No negative numbers
+                    system.OxygenLevel = 0;
+
+                    system.OxygenDepleted = true;
+                }
             }
 
-            Debug.Log("Oxygen System Active");
+            Debug.Log("<color=cyan>Oxygen System Online</color>");
 
-            ////While the oxygen hasn't been depleted.
-            ////When exactly 0 it won't step into it - Good
-            //if (oxygenLevel > 0)//!system.OxygenDepleted
-            //{
-            //    //Depletion timer
-            //    timer += Time.deltaTime;
-
-            //    //Approx 1 second and while it is above Zero
-            //    if (timer >= 1.0f && oxygenLevel > 0) 
-            //    {
-            //        //Decrease the oxygen level - Balance the numbers later
-            //        oxygenLevel -= system.DepletionRate / 2.0f;
-
-            //        //if negative number
-            //        if (oxygenLevel < 0)
-            //        {
-            //            //Clean up - No negative numbers
-            //            oxygenLevel = 0;
-            //        }
-
-            //        //Timer reset
-            //        timer = 0.0f;
-
-
-            //    }
-
-            //    if (oxygenLevel == 0)
-            //    {
-            //        //Exit point
-            //        system.OxygenDepleted = true;
-            //    }
-            //}
+            //timer reset - regarless of what code block executed.
+            timer = 0.0f;
         }
-   
- 
-
+       
 
     }
 
 
     //Animations || !Important
     private void LateUpdate()
-    {
-        //Does the canisterSlot have a canister?
-        if (canisterSlot.CheckForCanister())
-        {
-            //Update the current systems canister status
-            currentSystem.CanisterConnected = true;
+    {  
+       
 
-            //Only Drain when the canister matches the Flux Type of this system AND the system is running
-            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType && currentSystem.IsActive)
-            {
-                canisterSlot.DrainCanister();
-            }
 
-        }
-        else
-        {
-            //Reset the canister status
-            currentSystem.CanisterConnected = false;
-        }
-
-        //If Both the canister is there (with charge) AND it has power from the core then the current system is active.
-        if (currentSystem.CanisterConnected && currentSystem.CorePower)
-        {
-            //Set the current system to be active;
-            currentSystem.IsActive = true;
-            //Allows the canister slot to drain the connected canister
-            //canisterSlot.CanDrainCanister = true;
-        }
-        //Either one is false then the system wont be active / running
-        else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
-        {
-            //Set the current system IN ACTIVE;
-            currentSystem.IsActive = false;
-            //Denies the canister slot from draining the connected canister
-            //canisterSlot.CanDrainCanister = false;
-        }
-
-        ////Debuging the canister slot state.
-        //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
-        //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
     }
 
 

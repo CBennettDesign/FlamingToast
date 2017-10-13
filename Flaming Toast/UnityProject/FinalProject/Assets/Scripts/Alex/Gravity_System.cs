@@ -68,18 +68,61 @@ public class Gravity_System : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
+        /* 
+         * Order
+         * Core Power check
+         *      Is a canister there
+         *          Is it the right type - matches the current system
+         *              currentSystem.IsActive = true;
+         * else not core power
+         *      currentSystem.IsActive = false;
+         *      
+         *      
+         */
 
- 
-        //While the oxygen is not depleted 
+        //If there is power from the core going into the current system
+        if (currentSystem.CorePower)
+        {
+            //only check if a canister is there when the system has power.
+            //When it has a canister and core power
+            if (canisterSlot.CheckForCanister())
+            {
+                //Update value
+                currentSystem.CanisterConnected = true;
+                //validate the canister that it has found.
+                if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+                {
+                    //only when the previous 3 checks are true.
+                    currentSystem.IsActive = true;
+                }
+            }
+            else
+            {
+                //Reset
+                currentSystem.CanisterConnected = false;
+                currentSystem.IsActive = false;
+                canisterSlot.CanDrainCanister = false;
+            }
+        }
+        else
+        {
+            currentSystem.IsActive = false;
+        }
+
+        //The status of the gravity, is on or off depending on the above code
+        gravityStatus = currentSystem.IsActive;
+
+
+        //While the oxygen is not depleted  - other wise the player movement speed would be reset back to half speed.
         //  And the current system is active (Canister connected and Core Power)
         if (!system.OxygenDepleted)
         {
-            
+
             //General timer
             timer += Time.deltaTime;
 
             //If gravity is on. Full Player speed every 1 second
-            if (currentSystem.IsActive && timer >= 1.0f)
+            if (timer >= 1.0f && currentSystem.IsActive)
             {
                 //For every player in the players array
                 foreach (GameObject p in system.player)
@@ -92,11 +135,14 @@ public class Gravity_System : MonoBehaviour
                         Debug.Log("Gravity ON : Put at default speed: " + p.name);
                     }
                 }
-                    
+
+                //Drains connected canister - can only happen if the system is active, when it has a cansiter
+                canisterSlot.CanDrainCanister = true;
+
                 //Timer reset
                 timer = 0.0f;
             }
-            
+
             //if Gravity is off
             if (!currentSystem.IsActive && timer >= 1.0f)
             {
@@ -108,7 +154,7 @@ public class Gravity_System : MonoBehaviour
                     {
                         //Players speed is slowed
                         p.GetComponent<Movement>().movementSpeed = (p.GetComponent<Movement>().DefaultSpeed / 2.0f);
-                        Debug.Log("Gravity OFF : Slowed: " + p.name);
+                        Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
                     }
                 }
 
@@ -118,56 +164,20 @@ public class Gravity_System : MonoBehaviour
 
         }
 
+
     }
 
     //Animations || !Important
     private void LateUpdate()
     {
-        //Does the canisterSlot have a canister?
-        if (canisterSlot.CheckForCanister())
-        {
-            //Update the current systems canister status
-            currentSystem.CanisterConnected = true;
-
-            //Only Drain when the canister matches the Flux Type of this system AND the system is running
-            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType && currentSystem.IsActive)
-            {
-                canisterSlot.DrainCanister();
-            }
-
-        }
-        else
-        {
-            //Reset the canister status
-            currentSystem.CanisterConnected = false;
-        }
 
 
-        //If Both the canister is there (with charge) AND it has power from the core then the current system is active.
-        if (currentSystem.CanisterConnected && currentSystem.CorePower)
-        {
-            //Set the current system to be active;
-            currentSystem.IsActive = true;
-            gravityStatus = true;
-            //Allows the canister slot to drain the connected canister
-            //canisterSlot.CanDrainCanister = true;
-        }
-        //Either one is false
-        else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
-        {
-            //Set the current system IN ACTIVE;
-            currentSystem.IsActive = false;
-            gravityStatus = false;
-            //Denies the canister slot from draining the connected canister
-            //canisterSlot.CanDrainCanister = false;
-        }
 
-        //Debuging the canister slot state.
-        //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
-        //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
+       
     }
 
-    //Current state being the core power bool being passed around
+
+    //Current state being the core power bool being passed around from the junction boxes
     private void Toggle(bool currentState)
     {
         currentSystem.CorePower = currentState;

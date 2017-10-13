@@ -22,17 +22,17 @@ public class Canister_Slot : MonoBehaviour
     public Canister CurrentCanister
     { get { return system_Ray.CurrentCanister; } }
 
-    
+
 
     //Is the canister slot allowed to drain the canister that is connected
     //Only when the system that this is attached to has a canister connected and power from the core.
-    //private bool canDrainCanister;
-    ////System Access point
-    //public bool CanDrainCanister
-    //{
-    //    get { return canDrainCanister; }
-    //    set { canDrainCanister = value; }
-    //}
+    private bool canDrainCanister;
+    //System Access point
+    public bool CanDrainCanister
+    {
+        get { return canDrainCanister; }
+        set { canDrainCanister = value; }
+    }
 
     //Pre-Initialisation
     private void Awake()
@@ -59,10 +59,13 @@ public class Canister_Slot : MonoBehaviour
 
     private void Update()
     {
-
+        if (canDrainCanister)
+        {
+            DrainCanister();
+        }
     }
 
-    public void DrainCanister()
+    private void DrainCanister()
     {
         //Canister is in the canister slot for the system
         //And it is allowed to drain the canister - Given the all clear from the current system
@@ -77,7 +80,7 @@ public class Canister_Slot : MonoBehaviour
                 //Depletion timer
                 timer += Time.deltaTime;
                 //Approx 1 second and while it is above Zero
-                if (timer >= 1.0f && system_Ray.CurrentCanister.Charge > 0)
+                if (timer >= 1.0f)
                 {
                     //Drain the connected canister by the base system depletion rate
                     system_Ray.CurrentCanister.Charge -= system.DepletionRate;
@@ -122,6 +125,7 @@ public class Canister_Slot : MonoBehaviour
     /// <returns> The Connected Canister TRUE || FALSE </returns>
     public bool CheckForCanister()
     {
+        
         if (system_Ray.CheckForCanister())
         {
             //Found a canister

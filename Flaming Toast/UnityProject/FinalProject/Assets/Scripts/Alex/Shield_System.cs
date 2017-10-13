@@ -34,6 +34,8 @@ public class Shield_System : MonoBehaviour
     public int reductionAmount;
 
 
+    private float timer;
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -73,6 +75,39 @@ public class Shield_System : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
+
+
+
+        //If there is power from the core going into the current system
+        if (currentSystem.CorePower)
+        {
+            //only check if a canister is there when the system has power.
+            //When it has a canister and core power
+            if (canisterSlot.CheckForCanister())
+            {
+                //Update value
+                currentSystem.CanisterConnected = true;
+                //validate the canister that it has found.
+                if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType)
+                {
+                    //only when the previous 3 checks are true.
+                    currentSystem.IsActive = true;
+                }
+            }
+            else
+            {
+                //Reset
+                currentSystem.CanisterConnected = false;
+                currentSystem.IsActive = false;
+                canisterSlot.CanDrainCanister = false;
+            }
+        }
+        else
+        {
+            currentSystem.IsActive = false;
+        }
+
+
         system.ShipHealth = system.ShipHealth;
         //The asteriod that collides with the shield parses it self as a game object to the shield system and from there
         //The shield system will grab the value from the game object and use that for the damage calculations
@@ -80,14 +115,28 @@ public class Shield_System : MonoBehaviour
 
         if (currentSystem.IsActive)
         {
-            Debug.Log("Shields are UP!");
-            //get the direction and affect the direction on the shield shader visibility
+            timer += Time.deltaTime;
+            if (timer >= 1.0f)
+            {
+                Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
+                //get the direction and affect the direction on the shield shader visibility
+
+                //Drains connected canister - can only happen if the system is active, when it has a cansiter
+                canisterSlot.CanDrainCanister = true;
+
+
+                //timer reset
+                timer = 0.0f;
+            }
+            
+
         }
         else
         {
             //Debug.Log("Shields are DOWN!");
         }
 
+ 
 
 
     }
@@ -95,45 +144,8 @@ public class Shield_System : MonoBehaviour
     //Animations || !Important
     private void LateUpdate()
     {
-        //Does the canisterSlot have a canister?
-        if (canisterSlot.CheckForCanister())
-        {
-            //Update the current systems canister status
-            currentSystem.CanisterConnected = true;
 
-            //Only Drain when the canister matches the Flux Type of this system AND the system is running
-            if (canisterSlot.CurrentCanister.Type == currentSystem.FluxType && currentSystem.IsActive)
-            {
-                canisterSlot.DrainCanister();
-            }
-
-        }
-        else
-        {
-            //Reset the canister status
-            currentSystem.CanisterConnected = false;
-        }
-
-        //If Both the canister is there (with charge) AND it has power from the core then the current system is active.
-        if (currentSystem.CanisterConnected && currentSystem.CorePower)
-        {
-            //Set the current system to be active;
-            currentSystem.IsActive = true;
-            //Allows the canister slot to drain the connected canister
-            //canisterSlot.CanDrainCanister = true;
-        }
-        //Either one is false then the system wont be active / running
-        else if (!currentSystem.CanisterConnected || !currentSystem.CorePower)
-        {
-            //Set the current system IN ACTIVE;
-            currentSystem.IsActive = false;
-            //Denies the canister slot from draining the connected canister
-            //canisterSlot.CanDrainCanister = false;
-        }
-
-        ////Debuging the canister slot state.
-        //string canisterStatus = (canisterSlot.CheckForCanister()) ? "Connected" : "Not Connected";
-        //Debug.Log(transform.parent.name + "|| Canister Slot: Canister[" + canisterStatus + "]", this);
+        
     }
 
 

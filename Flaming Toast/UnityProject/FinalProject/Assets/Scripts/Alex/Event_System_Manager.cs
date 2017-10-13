@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 /*- Alex Scicluna -*/
-//[ExecuteInEditMode] - The name of the element in the list equals the name of the name element
+
 public class Event_System_Manager : MonoBehaviour
 {
     [Header("Relative to the direction of the event.")]
-    public GameObject[] spawnLocation; 
+    public Image[] warningImageLocation;
+    [Header("Warning Image Location child")]
+    public Sprite[] eventimage;
+    public GameObject[] spawnLocation;
 
+    private Event_.EventType currentEventType;
+    private Event_.EventDirection currentEventDirection;
 
     public List<Event_> events = new List<Event_>();
 
@@ -18,11 +25,26 @@ public class Event_System_Manager : MonoBehaviour
     //Pre-Initialisation
     private void Awake()
     {
+
         //Timer for all events
         timer = 0.0f;
 
         countOfUsed = 0;
         runEventTimer = true;
+        
+
+        //Hide all warning images
+        foreach (var warningImage in warningImageLocation)
+        {
+            warningImage.gameObject.SetActive(false);
+        }
+
+        //test block
+        //foreach (var warningImage in warningImageLocation)
+        //{
+        //    warningImage.transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+        //    warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+        //}
     }
 
 
@@ -51,6 +73,10 @@ public class Event_System_Manager : MonoBehaviour
     }
 
 
+
+
+
+
     //Physics
     private void FixedUpdate()
     {
@@ -65,15 +91,133 @@ public class Event_System_Manager : MonoBehaviour
 
             timer += Time.deltaTime;
 
-            foreach (var ev in events)
+            foreach (var activeEvent in events)
             {
 
-                if (timer >= ev.timeStamp && !ev.BeenUsed)
+                if (timer >= activeEvent.timeStamp && !activeEvent.BeenUsed)
                 {
                     //Debug.Log("Incoming: " + ev.name + " : " + ev.type + " from: " + ev.direction + " : " + ev.timeStamp);
-                    ev.BeenUsed = true;
+
+                    //Run the event launcher
+
+                    //turn of every warning image before displaying the next
+                    foreach (var imageLocation in warningImageLocation)
+                    {
+                        imageLocation.gameObject.SetActive(false);
+                    }
+                    
+
+                    //Grab the type, store it
+                    if (activeEvent.type != Event_.EventType.NONE)
+                    {
+                        currentEventType = activeEvent.type;
+                    }
+                    else
+                    {
+                        currentEventType = Event_.EventType.NONE;
+                    }
+
+                    //Grab the direction, store it
+                    if (activeEvent.direction != Event_.EventDirection.NONE)
+                    {
+                        currentEventDirection = activeEvent.direction;
+                    }
+                    else
+                    {
+                        currentEventDirection = Event_.EventDirection.NONE;
+                    }
+                       
+
+
+
+                    switch (currentEventType)
+                    {
+                        case Event_.EventType.NONE:
+                            //do nothing - Debug message
+                            Debug.Log("<color=red>Critical Error:</color> Event Name: " + activeEvent.name + " did not have a valid event type.");
+                            break;
+                        case Event_.EventType.ENEMY_SHIP:
+                            //Where on screen to place the warning image
+                            switch (currentEventDirection)
+                            {
+                                case Event_.EventDirection.NONE:
+                                    //do nothing - Debug message
+                                    Debug.Log("<color=red>Critical Error:</color> Event Name: " + activeEvent.name + " did not have a valid event direction.");
+                                    break;
+                                case Event_.EventDirection.TOP:
+                                    {
+                                        warningImageLocation[0].gameObject.SetActive(true);
+                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        break;
+                                    }
+                                case Event_.EventDirection.BOTTOM:
+                                    {
+                                        warningImageLocation[1].gameObject.SetActive(true);
+                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        break;
+                                    }
+                                case Event_.EventDirection.LEFT:
+                                    {
+                                        warningImageLocation[2].gameObject.SetActive(true);
+                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        break;
+                                    }
+                                case Event_.EventDirection.RIGHT:
+                                    {
+                                        warningImageLocation[3].gameObject.SetActive(true);
+                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        break;
+                                    }
+                                default:
+                                    break;
+                            }
+                            break;
+                        case Event_.EventType.ASTEROID:
+                            //Where on screen to place the warning image
+                            switch (currentEventDirection)
+                            {
+                                case Event_.EventDirection.NONE:
+                                    //do nothing - Debug message
+                                    Debug.Log("<color=red>Critical Error: Event Name: " + activeEvent.name + " did not have a valid event direction.</color>");
+                                    break;
+                                case Event_.EventDirection.TOP:
+                                    {
+                                        warningImageLocation[0].gameObject.SetActive(true);
+                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        break;
+                                    }
+                                case Event_.EventDirection.BOTTOM:
+                                    {
+                                        warningImageLocation[1].gameObject.SetActive(true);
+                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        break;
+                                    }
+                                case Event_.EventDirection.LEFT:
+                                    {
+                                        warningImageLocation[2].gameObject.SetActive(true);
+                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        break;
+                                    }
+                                case Event_.EventDirection.RIGHT:
+                                    {
+                                        warningImageLocation[3].gameObject.SetActive(true);
+                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        break;
+                                    }
+                                default:
+                                    break;
+                            }
+                            break;
+
+                        default:
+                            break;
+
+                    }
+
+
+                    activeEvent.BeenUsed = true;
                 }
-                else if(ev.BeenUsed)
+                else if(activeEvent.BeenUsed)
                 {
                     countOfUsed++;
                 }
@@ -82,15 +226,20 @@ public class Event_System_Manager : MonoBehaviour
                 if (countOfUsed >= events.Count)
                 {
                     runEventTimer = false;
-                    Debug.Log("Stopped the event timer.");
+                    Debug.Log("<color=white>Stopped the event timer.</color>");
                 }
             }
+
 
             //Reset count after each pass
             countOfUsed = 0;
         }
-                 
-                
+
+        //warningImage[0].transform.position;
+
+
+
+
 
 
     }

@@ -4,12 +4,18 @@ using UnityEngine;
 /*- Alex Scicluna -*/
 public class Canister_Depot : MonoBehaviour
 {
-    //Debug
-    public bool spawnCanister;
 
+    //Inpector access - manual overrides
+    [SerializeField]
+    private bool canSpawnCansiter;
+    public bool CanSpawnCansiter
+    {
+        get { return canSpawnCansiter; }
+        set { canSpawnCansiter = value; }
+    }
     [SerializeField]
     [Tooltip("How long it will take to spawn a canister")]
-    [Range(0, 10)]
+    [Range(0, 5)]
     public float spawnInterval;
 
 
@@ -44,7 +50,7 @@ public class Canister_Depot : MonoBehaviour
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         
         //Default check
-        spawnCanister = false;
+        canSpawnCansiter = false;
 
 
         //get the max canister count
@@ -65,63 +71,68 @@ public class Canister_Depot : MonoBehaviour
         canisterSpawnLocation = transform.GetChild(0).gameObject;
     }
 
-
-    //Physics
-    private void FixedUpdate()
-    {
-
-    }
-
     //User Input || !Physics
     private void Update()
     {
-        //Inspector checkbox - User Input / Interaction
-        if (spawnCanister)
+
+        if (canisterSpawnLocation != null)
         {
-            //increase timer
-            timer += Time.deltaTime;
-
-            //At 1 second AND less or equal to the max count of canisters
-            if (timer >= spawnInterval && system.CurrentCanisterCount < system.MaxCanisterCount)
+            //Inspector checkbox - User Input / Interaction
+            if (canSpawnCansiter)
             {
-                //There is a prefab gameobject to use.
-                if (canisterPreFab != null)
+                //increase timer
+                timer += Time.deltaTime;
+
+                //At 1 second AND less or equal to the max count of canisters
+                if (timer >= spawnInterval && system.CurrentCanisterCount < system.MaxCanisterCount)
                 {
- 
-                    //Create a canister at a location Rotated by 90 on the Z axis
-                    Instantiate(canisterPreFab, canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
-
-                    //Increase the count.
-                    system.CurrentCanisterCount++;
-
-                    //Update the local canister count
-                    canisterCountOnScene = system.CurrentCanisterCount;
-
-                    //Reset Timer
-                    timer = 0.0f;
-
-                    //Reset the spawn canister check box.
-                    spawnCanister = false;
+                    SpawnCanister();
                 }
-                else
+                else if (system.CurrentCanisterCount >= system.MaxCanisterCount)
                 {
-                    Debug.Log("Canister not found!");
-                    //Debug Cube
-                    Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), canisterSpawnLocation.transform.position, Quaternion.Euler(new Vector3(0,0,90)));
+                    Debug.Log("<color=yellow>Max Canisters on scene</color>");
                 }
             }
-            else if (system.CurrentCanisterCount >= system.MaxCanisterCount)
-            {
-                Debug.Log("Max Canisters on scene");
-            }
-
-
+        
         }
-    }
+        else
+        {
+            Debug.Log("<color=red>Critical Error: No canister spawn location.</color>");
+        }
 
-    //Animations || !Important
-    private void LateUpdate()
+
+    }
+     
+    private void SpawnCanister()
     {
+        //There is a prefab gameobject to use.
+        if (canisterPreFab != null)
+        {
 
+            //Create a canister at a location Rotated by 90 on the Z axis
+            Instantiate(canisterPreFab, canisterSpawnLocation.transform.position, Quaternion.identity/* Quaternion.Euler(new Vector3(0,0,90))*/);
+
+            //Increase the count.
+            system.CurrentCanisterCount++;
+
+            //Update the local canister count
+            canisterCountOnScene = system.CurrentCanisterCount;
+        }
+        else
+        {
+            Debug.Log("<color=red>Critical Error: Canister Prefab not found!</color>");
+            //Debug Cube
+            GameObject debugCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            debugCube.name = "Debug Cube!";
+            debugCube.AddComponent<Rigidbody>();
+            Instantiate(debugCube, canisterSpawnLocation.transform.position, Quaternion.identity);
+        }
+
+        //Reset Timer
+        timer = 0.0f;
+
+        //Reset the spawn canister check box.
+        canSpawnCansiter = false;
     }
+
 }

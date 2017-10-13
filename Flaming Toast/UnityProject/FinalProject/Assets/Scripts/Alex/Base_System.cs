@@ -41,7 +41,6 @@ public class Base_System : MonoBehaviour
 
 
     [SerializeField]
-    [Header("*Current Oxygen level: Default starting amount 100%")]
     [Range(0, 100)]
     private float oxygenLevel;
 
@@ -148,6 +147,7 @@ public class Base_System : MonoBehaviour
 
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
+
     }
 
 
