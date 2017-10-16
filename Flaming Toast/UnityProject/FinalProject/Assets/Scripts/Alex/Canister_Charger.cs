@@ -19,8 +19,8 @@ public class Canister_Charger : MonoBehaviour
 
     //System RayCast 
     private System_RayCast system_Ray;
- 
 
+    public bool holdingCanister;
     //Ray Casting - Change to sphere cast, maybe?
     //private RaycastHit hitInfo;
     //private Ray rayCast;
@@ -74,8 +74,10 @@ public class Canister_Charger : MonoBehaviour
     private void Update()
     {
         //Have a canister connected
-        if (system_Ray.CheckForCanister())
+        if (system_Ray.CheckForCanister() /*&& !holdingCanister*/)
         {
+            //holdingCanister = true;
+
             //If the Flux type of the canister is NONE change it
             if (system_Ray.CurrentCanister.Type == FluxType.NONE)
             {
@@ -87,12 +89,17 @@ public class Canister_Charger : MonoBehaviour
             if (system_Ray.CurrentCanister != null && system_Ray.CurrentCanister.Type == chargingType)
             {
                 //Only charge the canister when it is a valid canister (not on the list)
-                if (ValidateCanister())
+                if (ValidateCanister()/* && holdingCanister*/)
                 {
                     ChargeCanister();
                 }
-
+                //else
+                //{
+                //    Debug.Log("No canister or not a valid canister");
+                //}
             }
+
+        
         }
         else
         {
@@ -106,8 +113,11 @@ public class Canister_Charger : MonoBehaviour
 
             system_Ray.CurrentCanister = null;
 
+            //
+            //holdingCanister = false;
         }
         
+
     }
 
     //Animations || !Important
@@ -115,7 +125,7 @@ public class Canister_Charger : MonoBehaviour
     {
            
     }
-            
+
 
     public bool ValidateCanister()
     {
@@ -136,7 +146,7 @@ public class Canister_Charger : MonoBehaviour
                     //Matches an element in the list
                     isValidCanister = false;
                 }
-
+ 
 
             }
 
@@ -152,7 +162,7 @@ public class Canister_Charger : MonoBehaviour
         //Debug.Log("Is a valid canister: " + isValidCanister);
         return isValidCanister;
     }
- 
+
     public void ChargeCanister()
     {
         /*- Can only charge the canister once!

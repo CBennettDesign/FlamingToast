@@ -67,6 +67,10 @@ public class Base_System : MonoBehaviour
     public Slider HealthSlider;
     public Slider OxygenSlider;
 
+
+    //public GameObject shieldCol;
+
+
     public bool IsPowered
     {
         get { return isPowered; }
@@ -137,6 +141,8 @@ public class Base_System : MonoBehaviour
                     //Set the players movement speed to 0.0f
                     p.GetComponent<Movement>().movementSpeed = 0.0f;
                     Debug.Log("Stopped: " + p.name);
+
+                    //game over screen
                 }
             }
 

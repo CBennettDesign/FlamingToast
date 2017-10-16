@@ -7,10 +7,17 @@ using UnityEngine.UI;
 
 public class Event_System_Manager : MonoBehaviour
 {
+    //Progress slider
+    [SerializeField]
+    private Slider progressSlider;
+
+    [Range(0, 10)]
+    public int eventDisplayTime;
+
     [Header("Relative to the direction of the event.")]
     public Image[] warningImageLocation;
     [Header("Warning Image Location child")]
-    public Sprite[] eventimage;
+    public Sprite[] eventImage;
     public GameObject[] spawnLocation;
 
     private Event_.EventType currentEventType;
@@ -86,6 +93,9 @@ public class Event_System_Manager : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
+        //progress slider value is equal to the timer value
+        progressSlider.value = timer;
+
         if (runEventTimer)
         {
 
@@ -96,16 +106,6 @@ public class Event_System_Manager : MonoBehaviour
 
                 if (timer >= activeEvent.timeStamp && !activeEvent.BeenUsed)
                 {
-                    //Debug.Log("Incoming: " + ev.name + " : " + ev.type + " from: " + ev.direction + " : " + ev.timeStamp);
-
-                    //Run the event launcher
-
-                    //turn of every warning image before displaying the next
-                    foreach (var imageLocation in warningImageLocation)
-                    {
-                        imageLocation.gameObject.SetActive(false);
-                    }
-                    
 
                     //Grab the type, store it
                     if (activeEvent.type != Event_.EventType.NONE)
@@ -127,9 +127,6 @@ public class Event_System_Manager : MonoBehaviour
                         currentEventDirection = Event_.EventDirection.NONE;
                     }
                        
-
-
-
                     switch (currentEventType)
                     {
                         case Event_.EventType.NONE:
@@ -144,28 +141,41 @@ public class Event_System_Manager : MonoBehaviour
                                     //do nothing - Debug message
                                     Debug.Log("<color=red>Critical Error:</color> Event Name: " + activeEvent.name + " did not have a valid event direction.");
                                     break;
+                                      
                                 case Event_.EventDirection.TOP:
                                     {
                                         warningImageLocation[0].gameObject.SetActive(true);
-                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
+                                        //Run the event launcher
+                                        warningImageLocation[0].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.BOTTOM:
                                     {
                                         warningImageLocation[1].gameObject.SetActive(true);
-                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
+                                        //Run the event launcher
+                                        warningImageLocation[1].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.LEFT:
                                     {
                                         warningImageLocation[2].gameObject.SetActive(true);
-                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
+                                        //Run the event launcher
+                                        warningImageLocation[2].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.RIGHT:
                                     {
                                         warningImageLocation[3].gameObject.SetActive(true);
-                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[0];
+                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
+                                        //Run the event launcher
+                                        warningImageLocation[3].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 default:
@@ -183,25 +193,37 @@ public class Event_System_Manager : MonoBehaviour
                                 case Event_.EventDirection.TOP:
                                     {
                                         warningImageLocation[0].gameObject.SetActive(true);
-                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
+                                        //Run the event launcher
+                                        warningImageLocation[0].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.BOTTOM:
                                     {
                                         warningImageLocation[1].gameObject.SetActive(true);
-                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
+                                        //Run the event launcher
+                                        warningImageLocation[1].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.LEFT:
                                     {
                                         warningImageLocation[2].gameObject.SetActive(true);
-                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
+                                        //Run the event launcher
+                                        warningImageLocation[2].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 case Event_.EventDirection.RIGHT:
                                     {
                                         warningImageLocation[3].gameObject.SetActive(true);
-                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventimage[1];
+                                        warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
+                                        //Run the event launcher
+                                        warningImageLocation[3].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
+                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType);
                                         break;
                                     }
                                 default:
@@ -214,6 +236,7 @@ public class Event_System_Manager : MonoBehaviour
 
                     }
 
+                    Debug.Log("<color=white> "+ "Current Event: "+ activeEvent.type +" </color>");
 
                     activeEvent.BeenUsed = true;
                 }
@@ -222,6 +245,8 @@ public class Event_System_Manager : MonoBehaviour
                     countOfUsed++;
                 }
 
+       
+
                 //Stop the timer when all events have been used
                 if (countOfUsed >= events.Count)
                 {
@@ -229,7 +254,7 @@ public class Event_System_Manager : MonoBehaviour
                     Debug.Log("<color=white>Stopped the event timer.</color>");
                 }
             }
-
+ 
 
             //Reset count after each pass
             countOfUsed = 0;
@@ -257,7 +282,7 @@ public class Event_
 {
     //Name of the event
     public string name;
-
+    
     public enum EventType
     {
         NONE,

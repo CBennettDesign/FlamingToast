@@ -62,7 +62,23 @@ public class Shield_System : MonoBehaviour
 
         //If it it active
         currentSystem.IsActive = system.IsActive;
+             
 
+        switch (currentSystem.Direction)
+        {
+            case Current_System.SystemDirection.LEFT:
+                break;
+            case Current_System.SystemDirection.RIGHT:
+                break;
+            case Current_System.SystemDirection.TOP:
+                break;
+            case Current_System.SystemDirection.BOTTOM:
+                break;
+            case Current_System.SystemDirection.NONE:
+                break;
+            default:
+                break;
+        }
     }
  
 

@@ -10,6 +10,7 @@ TagManager:
   - Cap
   - Power_Core
   - CCM
+  - Event_System_Manager
   layers:
   - Default
   - TransparentFX
