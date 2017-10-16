@@ -68,8 +68,11 @@ public class Base_System : MonoBehaviour
     public Slider OxygenSlider;
 
 
-    //public GameObject shieldCol;
-
+    public GameObject shipShield;
+    public GameObject shieldCol_TOP;
+    public GameObject shieldCol_LEFT;
+    public GameObject shieldCol_RIGHT;
+    public GameObject shieldCol_BOTTOM;
 
     public bool IsPowered
     {
@@ -120,6 +123,14 @@ public class Base_System : MonoBehaviour
         //Makes Sure that this tag exists and then applies it to this object
         this.gameObject.tag = "Base_System";
 
+        Material mat  = shipShield.GetComponent<Renderer>().material;
+
+        mat.SetFloat("_Shield_Top", 0.0f);
+        mat.SetFloat("_Shield_Left", 0.0f);
+        mat.SetFloat("_Shield_Right", 0.0f);
+        mat.SetFloat("_Shield_Bottom", 0.0f);
+ 
+        
 
         shipHealth = 100;
         oxygenLevel = 100;

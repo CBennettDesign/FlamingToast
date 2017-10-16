@@ -33,8 +33,10 @@ public class Shield_System : MonoBehaviour
     [Range(1, 10)]
     public int reductionAmount;
 
-
     private float timer;
+
+    private GameObject currentColGroup;
+    private Material currentShieldMaterial;
 
     //Pre-Initialisation
     private void Awake()
@@ -62,23 +64,34 @@ public class Shield_System : MonoBehaviour
 
         //If it it active
         currentSystem.IsActive = system.IsActive;
-             
 
+        currentShieldMaterial = system.shipShield.GetComponent<Renderer>().material;
+                
         switch (currentSystem.Direction)
         {
             case Current_System.SystemDirection.LEFT:
+                currentColGroup = system.shieldCol_LEFT;
                 break;
+
             case Current_System.SystemDirection.RIGHT:
+                currentColGroup = system.shieldCol_RIGHT;
                 break;
+                
             case Current_System.SystemDirection.TOP:
+                currentColGroup = system.shieldCol_TOP;
                 break;
+
             case Current_System.SystemDirection.BOTTOM:
+                currentColGroup = system.shieldCol_BOTTOM;
                 break;
+                
             case Current_System.SystemDirection.NONE:
                 break;
             default:
                 break;
         }
+                
+
     }
  
 
@@ -132,7 +145,7 @@ public class Shield_System : MonoBehaviour
         if (currentSystem.IsActive)
         {
             timer += Time.deltaTime;
-            if (timer >= 1.0f)
+            if (timer >= 0.0f)
             {
                 Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
                 //get the direction and affect the direction on the shield shader visibility
@@ -140,6 +153,27 @@ public class Shield_System : MonoBehaviour
                 //Drains connected canister - can only happen if the system is active, when it has a cansiter
                 canisterSlot.CanDrainCanister = true;
 
+                switch (currentSystem.Direction)
+                {
+                    case Current_System.SystemDirection.LEFT:
+                        currentShieldMaterial.SetFloat("_Shield_Left", 1.0f);
+                        break;
+                    case Current_System.SystemDirection.RIGHT:
+                        currentShieldMaterial.SetFloat("_Shield_Right", 1.0f);
+                        break;
+                    case Current_System.SystemDirection.TOP:
+                        currentShieldMaterial.SetFloat("_Shield_Top", 1.0f);
+                        break;
+                    case Current_System.SystemDirection.BOTTOM:
+                        currentShieldMaterial.SetFloat("_Shield_Bottom", 1.0f);
+                        break;
+                    case Current_System.SystemDirection.NONE:
+                        break;
+                    default:
+                        break;
+                }
+
+                currentColGroup.SetActive(true);
 
                 //timer reset
                 timer = 0.0f;
@@ -149,6 +183,27 @@ public class Shield_System : MonoBehaviour
         }
         else
         {
+            switch (currentSystem.Direction)
+            {
+                case Current_System.SystemDirection.LEFT:
+                    currentShieldMaterial.SetFloat("_Shield_Left", 0.0f);
+                    break;
+                case Current_System.SystemDirection.RIGHT:
+                    currentShieldMaterial.SetFloat("_Shield_Right", 0.0f);
+                    break;
+                case Current_System.SystemDirection.TOP:
+                    currentShieldMaterial.SetFloat("_Shield_Top", 0.0f);
+                    break;
+                case Current_System.SystemDirection.BOTTOM:
+                    currentShieldMaterial.SetFloat("_Shield_Bottom", 0.0f);
+                    break;
+                case Current_System.SystemDirection.NONE:
+                    break;
+                default:
+                    break;
+            }
+
+            currentColGroup.SetActive(false);
             //Debug.Log("Shields are DOWN!");
         }
 

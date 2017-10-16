@@ -91,10 +91,14 @@ Material:
     - _OverallTransparency: 0.92
     - _Parallax: 0.02
     - _PatternTileAmount: 112.48
-    - _Shield_1: 0
-    - _Shield_2: 0
-    - _Shield_3: 0
-    - _Shield_4: 0
+    - _Shield_1: 1
+    - _Shield_2: 0.03
+    - _Shield_3: 0.35
+    - _Shield_4: 1
+    - _Shield_Bottom: 1
+    - _Shield_Left: 1
+    - _Shield_Right: 1
+    - _Shield_Top: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
