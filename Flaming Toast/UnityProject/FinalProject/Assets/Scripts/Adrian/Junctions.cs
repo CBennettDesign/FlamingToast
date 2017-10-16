@@ -6,13 +6,9 @@ using XboxCtrlrInput;
 public class Junctions : MonoBehaviour {
     public GameObject[] Wires;
     public GameObject[] NextJunction;
-    //public GameObject[] Systems;
     public int startsIlluminated = -1;
     private int selectedIndex = 0;
-    //public bool SystemSide_A;
-    //public bool SystemSide_B;
-    //public bool ConnectedJunction;
-    //private Material mat;
+
 
    
 
@@ -22,8 +18,6 @@ public class Junctions : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        //grabs the original material of the object that it starts with.
-        //mat = Wires[0].transform.GetChild(0).GetComponent<Renderer>().material;
         
         if (startsIlluminated >= 0)
         {

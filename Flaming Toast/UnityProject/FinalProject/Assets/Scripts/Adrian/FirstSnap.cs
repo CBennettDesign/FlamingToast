@@ -17,10 +17,6 @@ public class FirstSnap : MonoBehaviour {
     public float yPosition = 0.28f;
     public float zPosition;
 
-
-    //Canister game object
-    //GameObject canister = null;
-
     //Radius of sphere cast
     public float RadiusOfRayCast = 2;
 
@@ -60,7 +56,5 @@ public class FirstSnap : MonoBehaviour {
         //creates rigidbody component
         Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
         Destroy(cap);
-
-        //canister = GiveCanister;
     }
 }
