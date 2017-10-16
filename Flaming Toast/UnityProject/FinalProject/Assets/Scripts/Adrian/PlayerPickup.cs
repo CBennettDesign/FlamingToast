@@ -80,10 +80,38 @@ public class PlayerPickup : MonoBehaviour {
                 // USE JUNCTION
                 layermask = 1 << LayerMask.NameToLayer("Junction");
 
-                if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
+                //Testing for all nearby Junctions within the sphere around the player
+                Collider[] nearbyJuction = Physics.OverlapSphere(transform.position, pickUpDistance, layermask);
+                GameObject closeJunction = null;
+                float closeDistanceJunction = 999999.0f;
+
+                for (int i = 0; i < nearbyJuction.Length; i++)
                 {
-                    GameObject obj = info.collider.gameObject;
-                    Junctions CurrentJunction = obj.GetComponent<Junctions>();
+                    //Raycasting to check there is no walls in the way
+                    Vector3 Dir = nearbyJuction[i].transform.position - (transform.position + Vector3.up * 0.5f);
+                    Dir.Normalize();
+
+                    if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Dir, out info, pickUpDistance, layermask))
+                    {
+                        //If the object that is hit is the correct Junction
+                        if (nearbyJuction[i].gameObject == info.collider.gameObject)
+                        {
+                            //todo: check if can be picked up
+
+                            //Checking if it is the closest Junction
+                            float distance = Vector3.Distance(transform.position, nearbyJuction[i].transform.position);
+                            if (distance < closeDistanceJunction)
+                            {
+                                closeJunction = nearbyJuction[i].gameObject;
+                                closeDistanceJunction = distance;
+                            }
+                        }
+                    }
+                }
+                //Action to be used when interacting with Junctions
+                if (closeJunction)
+                {
+                    Junctions CurrentJunction = closeJunction.GetComponent<Junctions>();
                     CurrentJunction.ToggleJunction();
                 }
             }
