@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 2403556a8bad6a74d8ee009a745540ad
-timeCreated: 1505965606
+guid: 509c94f197a0ac646bad0df43df67438
+timeCreated: 1508115974
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Power_001_Interior_001_Core
     400000: //RootNode
-    400002: Power_001_Interior_001_Core
     2300000: //RootNode
-    2300002: Power_001_Interior_001_Core
     3300000: //RootNode
-    3300002: Power_001_Interior_001_Core
-    4300000: Power_001_Interior_001_Core
-    4300002: Power_001_Interior_001_Core1
+    4300000: Power_001_Interior_001_Core_Effect_001
   materials:
     importMaterials: 1
     materialName: 0
