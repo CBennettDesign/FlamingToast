@@ -30,7 +30,7 @@ public class Shield_System : MonoBehaviour
 
     [Header("*Damage reduction amount when the shield are on.")]
     //[Tooltip("")]
-    [Range(1, 10)]
+    [Range(1, 100)]
     public int reductionAmount;
 
     private float timer;
@@ -227,4 +227,29 @@ public class Shield_System : MonoBehaviour
         currentSystem.CorePower = currentState;
     }
 
+    private void Top(bool currentEventHit)
+    {
+        TakeDamage(currentEventHit);
+    }
+
+    private void Left(bool currentEventHit)
+    {
+        TakeDamage(currentEventHit);
+    }
+    private void Right(bool currentEventHit)
+    {
+        TakeDamage(currentEventHit);
+    }
+    private void Bottom(bool currentEventHit)
+    {
+        TakeDamage(currentEventHit);
+    }
+
+    private void TakeDamage(bool currentEventHit)
+    {
+        if (currentEventHit)
+        {
+            system.ShipHealth -= usageAmount - reductionAmount;
+        }
+    }
 }

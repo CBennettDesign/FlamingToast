@@ -17,27 +17,7 @@ public class Event_Spawner : MonoBehaviour
     private bool currentState;
 
     private Event_.EventType currentEventType;
-
-
-    //Pre-Initialisation
-    private void Awake()
-    {
-         
-    }
-
-    //Main-Initialisation
-    private void Start()
-    {
-
-    }
-
-
-    //Physics
-    private void FixedUpdate()
-    {
-
-    }
-
+    public Event_.EventDirection currentEventDirection;
 
 
     //User Input || !Physics
@@ -79,10 +59,11 @@ public class Event_Spawner : MonoBehaviour
     }
 
  
-    public void SpawnEvent(bool state, Event_.EventType eventType)
+    public void SpawnEvent(bool state, Event_.EventType eventType, Event_.EventDirection eventDirection)
     {
         currentState = state;
         currentEventType = eventType;
+        currentEventDirection = eventDirection;
     }
 }
 

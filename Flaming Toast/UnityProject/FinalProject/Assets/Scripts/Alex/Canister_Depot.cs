@@ -135,4 +135,10 @@ public class Canister_Depot : MonoBehaviour
         canSpawnCansiter = false;
     }
 
+
+    private void CanSpawnCanister(bool status)
+    {
+        //When the player is looking at the depot
+        canSpawnCansiter = status;
+    }
 }

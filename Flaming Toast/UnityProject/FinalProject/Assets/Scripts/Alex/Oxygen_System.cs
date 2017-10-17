@@ -50,7 +50,7 @@ public class Oxygen_System : MonoBehaviour
         currentSystem.IsActive = system.IsActive;
 
         //Start with 100%
-        system.OxygenLevel = 100;
+        //system.OxygenLevel = 100;
     }
 
     //Physics
@@ -129,7 +129,7 @@ public class Oxygen_System : MonoBehaviour
             {
                 //Decrease the oxygen level - Balance the numbers later
                 system.OxygenLevel -= system.DepletionRate / 2.0f;
-
+               // Debug.Log("Oxygen Level in OxygenSystem: " + system.OxygenLevel, system);
                 //if negative number
                 if (system.OxygenLevel < 0)
                 {

@@ -29,7 +29,7 @@ public class Canister_Charger : MonoBehaviour
     //Allows it not to be charged again when put back onto the charger
     //Move to a single location Canister Charger Manager 
     //public List<int> usedCanisterID = new List<int>();
-    private Canister_Charger_Manager CCM;
+    //private Canister_Charger_Manager CCM;
 
     //Default value, if it has not found a valid canister
     private bool isValidCanister = false;
@@ -41,13 +41,13 @@ public class Canister_Charger : MonoBehaviour
         ////Raycast Line Check - Rework to a sphere cast.?
         //rayCast = new Ray(transform.position, Vector3.up);
 
-        CCM = GameObject.FindGameObjectWithTag("CCM").GetComponent<Canister_Charger_Manager>();
+        //CCM = GameObject.FindGameObjectWithTag("CCM").GetComponent<Canister_Charger_Manager>();
 
         //Current systems ray casting object, first child of this
         system_Ray = this.transform.GetChild(0).GetComponent<System_RayCast>();
        
         //So that it has something to check against
-        CCM.usedCanisterID.Add(0);
+        //CCM.usedCanisterID.Add(0);
 
     }
 
@@ -89,10 +89,10 @@ public class Canister_Charger : MonoBehaviour
             if (system_Ray.CurrentCanister != null && system_Ray.CurrentCanister.Type == chargingType)
             {
                 //Only charge the canister when it is a valid canister (not on the list)
-                if (ValidateCanister()/* && holdingCanister*/)
-                {
+                //if (ValidateCanister()/* && holdingCanister*/)
+                //{
                     ChargeCanister();
-                }
+                //}
                 //else
                 //{
                 //    Debug.Log("No canister or not a valid canister");
@@ -127,41 +127,41 @@ public class Canister_Charger : MonoBehaviour
     }
 
 
-    public bool ValidateCanister()
-    {
-        //A valid canister has not been found
-        if (!isValidCanister)
-        {
-            //Check for canisterID match
-            for (int canisterID_index = 0; canisterID_index < CCM.usedCanisterID.Count; canisterID_index++)
-            {
-                //Canister ID does not match the currentCanister ID
-                if (CCM.usedCanisterID[canisterID_index] != system_Ray.CurrentCanister.GetInstanceID())
-                {
-                    //Doesn't match
-                    isValidCanister = true;
-                }
-                else
-                {
-                    //Matches an element in the list
-                    isValidCanister = false;
-                }
+    //public bool ValidateCanister()
+    //{
+    //    //A valid canister has not been found
+    //    if (!isValidCanister)
+    //    {
+    //        //Check for canisterID match
+    //        for (int canisterID_index = 0; canisterID_index < CCM.usedCanisterID.Count; canisterID_index++)
+    //        {
+    //            //Canister ID does not match the currentCanister ID
+    //            if (CCM.usedCanisterID[canisterID_index] != system_Ray.CurrentCanister.GetInstanceID())
+    //            {
+    //                //Doesn't match
+    //                isValidCanister = true;
+    //            }
+    //            else
+    //            {
+    //                //Matches an element in the list
+    //                isValidCanister = false;
+    //            }
  
 
-            }
+    //        }
 
-            //isValidCanister and Zero charge
-            if (isValidCanister && system_Ray.CurrentCanister.Charge == 0)
-            {
-                //Add it to the list of canister ID's so that it can not be used again.
-                CCM.usedCanisterID.Add(system_Ray.CurrentCanister.GetInstanceID());
-            }
-        }
+    //        //isValidCanister and Zero charge
+    //        if (isValidCanister && system_Ray.CurrentCanister.Charge == 0)
+    //        {
+    //            //Add it to the list of canister ID's so that it can not be used again.
+    //            CCM.usedCanisterID.Add(system_Ray.CurrentCanister.GetInstanceID());
+    //        }
+    //    }
 
-        //Return the current state after going through the loop
-        //Debug.Log("Is a valid canister: " + isValidCanister);
-        return isValidCanister;
-    }
+    //    //Return the current state after going through the loop
+    //    //Debug.Log("Is a valid canister: " + isValidCanister);
+    //    return isValidCanister;
+    //}
 
     public void ChargeCanister()
     {
@@ -183,8 +183,8 @@ public class Canister_Charger : MonoBehaviour
 
 
         //Found a valid canister and now charging it.
-        if (isValidCanister)
-        {
+        //if (isValidCanister)
+        //{
             //Depletion timer
             timer += Time.deltaTime;
 
@@ -220,7 +220,7 @@ public class Canister_Charger : MonoBehaviour
 
 
 
-        }
+        //}
              
 
     }

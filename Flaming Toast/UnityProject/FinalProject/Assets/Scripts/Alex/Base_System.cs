@@ -132,10 +132,12 @@ public class Base_System : MonoBehaviour
  
         
 
-        shipHealth = 100;
-        oxygenLevel = 100;
+        //shipHealth = 100;
+        //oxygenLevel = 100;
     }
 
+
+    //Main loop for base system
     private void Update()
     {
         //If the oxygen has been depleted and the oxyUsed has not been used yet. 
@@ -161,10 +163,11 @@ public class Base_System : MonoBehaviour
             Debug.Log("Oxygen Depleted!!");
         }
 
+        // Debug.Log("OxygenLevel in Base_System before slider: " + oxygenLevel);
 
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
-
+       // Debug.Log("OxygenLevel in Base_System: " + oxygenLevel);
     }
 
 

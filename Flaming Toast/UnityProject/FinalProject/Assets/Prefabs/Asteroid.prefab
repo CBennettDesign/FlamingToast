@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65798648327528894}
   - component: {fileID: 23320273073259970}
   - component: {fileID: 114000745935775578}
+  - component: {fileID: 114895750515464590}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261371896174472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7332587, y: 12.030357, z: 8.819086}
+  m_LocalPosition: {x: 30.82, y: 11.52, z: 0.7012453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,4 +106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbca3518de54c0d4b87f0d22df1fad2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerCore: {fileID: 0}
+--- !u!114 &114895750515464590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261371896174472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592e09931910f344f94acd3bed0b7c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

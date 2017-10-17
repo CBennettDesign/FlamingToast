@@ -56,6 +56,8 @@ public class Gravity_System : MonoBehaviour
 
         //Off by default
         gravityStatus = false;
+   
+
     }
 
     //Physics

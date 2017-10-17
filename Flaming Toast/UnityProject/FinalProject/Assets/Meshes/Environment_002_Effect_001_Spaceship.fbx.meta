@@ -1,21 +1,15 @@
 fileFormatVersion: 2
-guid: 62b4d8d3d2c47f646875ba5e745320f2
-timeCreated: 1506984063
+guid: c44d9a7862d06994bb00681993059ef7
+timeCreated: 1508216325
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: ShipWall_005_Interior_005_EndCap
     400000: //RootNode
-    400002: ShipWall_005_Interior_005_EndCap
     2300000: //RootNode
-    2300002: ShipWall_005_Interior_005_EndCap
     3300000: //RootNode
-    3300002: ShipWall_005_Interior_005_EndCap
-    4300000: ShipWall_005_Interior_005_EndCap
-    4300002: Door_001_Main_001_Sliding
-    9500000: //RootNode
+    4300000: Environment_002_Effect_001_Spaceship
   materials:
     importMaterials: 1
     materialName: 0
@@ -85,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
