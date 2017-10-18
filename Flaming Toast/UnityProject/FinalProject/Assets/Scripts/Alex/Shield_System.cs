@@ -144,41 +144,42 @@ public class Shield_System : MonoBehaviour
 
         if (currentSystem.IsActive)
         {
+            //Drains connected canister - can only happen if the system is active, when it has a cansiter
+            canisterSlot.CanDrainCanister = true;
+
+            //get the direction and affect the direction on the shield shader visibility
+            switch (currentSystem.Direction)
+            {
+                case Current_System.SystemDirection.LEFT:
+                    currentShieldMaterial.SetFloat("_Shield_Left", 1.0f);
+                    break;
+                case Current_System.SystemDirection.RIGHT:
+                    currentShieldMaterial.SetFloat("_Shield_Right", 1.0f);
+                    break;
+                case Current_System.SystemDirection.TOP:
+                    currentShieldMaterial.SetFloat("_Shield_Top", 1.0f);
+                    break;
+                case Current_System.SystemDirection.BOTTOM:
+                    currentShieldMaterial.SetFloat("_Shield_Bottom", 1.0f);
+                    break;
+                case Current_System.SystemDirection.NONE:
+                    break;
+                default:
+                    break;
+            }
+
+            currentColGroup.SetActive(true);
+
             timer += Time.deltaTime;
-            if (timer >= 0.0f)
+
+            if (timer >= 1.0f)
             {
                 Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
-                //get the direction and affect the direction on the shield shader visibility
-
-                //Drains connected canister - can only happen if the system is active, when it has a cansiter
-                canisterSlot.CanDrainCanister = true;
-
-                switch (currentSystem.Direction)
-                {
-                    case Current_System.SystemDirection.LEFT:
-                        currentShieldMaterial.SetFloat("_Shield_Left", 1.0f);
-                        break;
-                    case Current_System.SystemDirection.RIGHT:
-                        currentShieldMaterial.SetFloat("_Shield_Right", 1.0f);
-                        break;
-                    case Current_System.SystemDirection.TOP:
-                        currentShieldMaterial.SetFloat("_Shield_Top", 1.0f);
-                        break;
-                    case Current_System.SystemDirection.BOTTOM:
-                        currentShieldMaterial.SetFloat("_Shield_Bottom", 1.0f);
-                        break;
-                    case Current_System.SystemDirection.NONE:
-                        break;
-                    default:
-                        break;
-                }
-
-                currentColGroup.SetActive(true);
 
                 //timer reset
                 timer = 0.0f;
             }
-            
+
 
         }
         else

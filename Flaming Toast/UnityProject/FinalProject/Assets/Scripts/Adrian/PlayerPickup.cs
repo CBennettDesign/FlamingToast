@@ -74,6 +74,10 @@ public class PlayerPickup : MonoBehaviour {
                     Rigidbody cap = closeCannister.GetComponent<Rigidbody>();
                     Destroy(cap);
                     inHands = closeCannister;
+
+                    closeCannister.GetComponent<Collider>().isTrigger = true;//Alex Edit
+
+
                     return;
                 }
 
@@ -129,10 +133,12 @@ public class PlayerPickup : MonoBehaviour {
                 }
                 else //drop
                 {
+                    inHands.GetComponent<Collider>().isTrigger = false;//Alex Edit
                     inHands.transform.parent = null;
                     inHands.AddComponent<Rigidbody>();
                     inHands = null;
                 }
+
             }
         }
 	}

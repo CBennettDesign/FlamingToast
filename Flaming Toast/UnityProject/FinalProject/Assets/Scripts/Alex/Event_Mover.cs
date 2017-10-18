@@ -66,57 +66,58 @@ public class Event_Mover : MonoBehaviour
 
         //shield_System.SendMessage(colObj.gameObject.name, true, SendMessageOptions.DontRequireReceiver);
 
+        powerCore.ShipHealth -= 5;//Temp amount
 
         //TakeDamage();
 
         Destroy(this.gameObject);
     }
 
-    private void TakeDamage()
-    {
- 
-        //powerCore.HealthSlider.value -= 5;
+    //private void TakeDamage()
+    //{
 
-        
-        if (shield_System.currentSystem.Direction == Current_System.SystemDirection.TOP && event_Spawner.currentEventDirection == Event_.EventDirection.TOP)
-        {
-            powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-        }
-        else
-        {
-            powerCore.ShipHealth -= shield_System.usageAmount;
-        }
-
-        if (shield_System.currentSystem.Direction == Current_System.SystemDirection.LEFT && event_Spawner.currentEventDirection == Event_.EventDirection.LEFT)
-        {
-            powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-        }
-        else
-        {
-            powerCore.ShipHealth -= shield_System.usageAmount;
-        }
-
-        if (shield_System.currentSystem.Direction == Current_System.SystemDirection.RIGHT && event_Spawner.currentEventDirection == Event_.EventDirection.RIGHT)
-        {
-            powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-        }
-        else
-        {
-            powerCore.ShipHealth -= shield_System.usageAmount;
-        }
-
-        if (shield_System.currentSystem.Direction == Current_System.SystemDirection.BOTTOM && event_Spawner.currentEventDirection == Event_.EventDirection.BOTTOM)
-        {
-            powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-        }
-        else
-        {
-            powerCore.ShipHealth -= shield_System.usageAmount;
-        }
+    //    powerCore.ShipHealth -= 5;//Temp amount
 
 
+    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.TOP && event_Spawner.currentEventDirection == Event_.EventDirection.TOP)
+    //    {
+    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
+    //    }
+    //    else
+    //    {
+    //        powerCore.ShipHealth -= shield_System.usageAmount;
+    //    }
 
-    }
+    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.LEFT && event_Spawner.currentEventDirection == Event_.EventDirection.LEFT)
+    //    {
+    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
+    //    }
+    //    else
+    //    {
+    //        powerCore.ShipHealth -= shield_System.usageAmount;
+    //    }
+
+    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.RIGHT && event_Spawner.currentEventDirection == Event_.EventDirection.RIGHT)
+    //    {
+    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
+    //    }
+    //    else
+    //    {
+    //        powerCore.ShipHealth -= shield_System.usageAmount;
+    //    }
+
+    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.BOTTOM && event_Spawner.currentEventDirection == Event_.EventDirection.BOTTOM)
+    //    {
+    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
+    //    }
+    //    else
+    //    {
+    //        powerCore.ShipHealth -= shield_System.usageAmount;
+    //    }
+
+
+
+    //}
 
 
 }

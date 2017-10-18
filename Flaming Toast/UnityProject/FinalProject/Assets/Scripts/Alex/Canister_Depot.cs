@@ -110,7 +110,7 @@ public class Canister_Depot : MonoBehaviour
         {
 
             //Create a canister at a location Rotated by 90 on the Z axis
-            Instantiate(canisterPreFab, canisterSpawnLocation.transform.position, Quaternion.identity/* Quaternion.Euler(new Vector3(0,0,90))*/);
+            Instantiate(canisterPreFab, canisterSpawnLocation.transform.position,/* Quaternion.identity*/ Quaternion.Euler(new Vector3(0, 90, 0)));
 
             //Increase the count.
             system.CurrentCanisterCount++;
