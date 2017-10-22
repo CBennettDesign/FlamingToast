@@ -47,6 +47,8 @@ public class Shield_System : MonoBehaviour
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         //Grab the base usage amount
         usageAmount = system.Shield_UsageAmount;
+
+        reductionAmount = system.Shield_ReductionAmount;
         //Canister slot
         canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
     }

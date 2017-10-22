@@ -9,20 +9,63 @@ public class Base_System : MonoBehaviour
 {
     public GameObject[] player;
 
+
+
     private bool isPowered = false;
+    public bool IsPowered
+    {
+        get { return isPowered; }
+        set { isPowered = value; }
+    }
+
+
     private bool isCanisterConnected = false;
+    public bool IsCanisterConnected
+    {
+        get { return isCanisterConnected; }
+        set { isCanisterConnected = value; }
+    }
+
+
     private bool isActive = false;
+    public bool IsActive
+    {
+        get { return isActive; }
+        set { isActive = value; }
+    }
+
 
     [SerializeField]
     [Range(0, 5)]
     //[Tooltip("")]
     private int baseDepletionRate;
 
+    public int DepletionRate
+    {
+        get { return baseDepletionRate; }
+        set { baseDepletionRate = value; }
+    }
+
     [SerializeField]
     [Tooltip("Shield System usage amount per hit - amount taken away from connected canisters")]
-    [Range(1, 100)]
+    [Range(1, 50)]
     private int shield_UsageAmount;
 
+    public int Shield_UsageAmount
+    {
+        get { return shield_UsageAmount; }
+        set { shield_UsageAmount = value; }
+    }
+
+    [SerializeField]
+    [Tooltip("Shield System reduction amount per hit - (shield usasge amount - this value")]
+    [Range(1, 50)]
+    private int shield_ReductionAmount;
+    public int Shield_ReductionAmount
+    {
+        get { return shield_ReductionAmount; }
+        set { shield_ReductionAmount = value; }
+    }
 
 
     [SerializeField]
@@ -74,35 +117,8 @@ public class Base_System : MonoBehaviour
     public GameObject shieldCol_RIGHT;
     public GameObject shieldCol_BOTTOM;
 
-    public bool IsPowered
-    {
-        get { return isPowered; }
-        set { isPowered = value; }
-    }
 
-    public bool IsActive
-    {
-        get { return isActive; }
-        set { isActive = value; }
-    }
 
-    public bool IsCanisterConnected
-    {
-        get { return isCanisterConnected; }
-        set { isCanisterConnected = value; }
-    }
-
-    public int DepletionRate
-    {
-        get { return baseDepletionRate; }
-        set { baseDepletionRate = value; }
-    }
-
-    public int Shield_UsageAmount
-    {
-        get { return shield_UsageAmount; }
-        set { shield_UsageAmount = value; }
-    }
 
 
 
@@ -117,6 +133,7 @@ public class Base_System : MonoBehaviour
     //Oxygen Trigger
     private bool oxyUsed = false;
 
+    private bool shipHealthDepleted = false;
 
     private void Awake()
     {
@@ -153,7 +170,7 @@ public class Base_System : MonoBehaviour
                 {
                     //Set the players movement speed to 0.0f
                     p.GetComponent<Movement>().movementSpeed = 0.0f;
-                    Debug.Log("Stopped: " + p.name);
+                    Debug.Log("Killed: " + p.name);
 
                     //game over screen
                 }
@@ -163,11 +180,28 @@ public class Base_System : MonoBehaviour
             Debug.Log("Oxygen Depleted!!");
         }
 
-        // Debug.Log("OxygenLevel in Base_System before slider: " + oxygenLevel);
+        if (shipHealth == 0 && !shipHealthDepleted)
+        {
+            Debug.Log("<color=red>Ship health is 0, game over!</color>");
+            //For every player in the players array
+            foreach (GameObject p in player)
+            {
+                //safe gaurd - double check for null values
+                if (p != null)
+                {
+                    //Set the players movement speed to 0.0f
+                    p.GetComponent<Movement>().movementSpeed = 0.0f;
+                    Debug.Log("Killed: " + p.name);
+
+                    //game over screen
+                }
+            }
+            shipHealthDepleted = true;
+        }
 
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
-       // Debug.Log("OxygenLevel in Base_System: " + oxygenLevel);
+        
     }
 
 

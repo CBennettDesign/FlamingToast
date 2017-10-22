@@ -11,6 +11,7 @@ TagManager:
   - Power_Core
   - CCM
   - Event_System_Manager
+  - ShipHitLocation
   layers:
   - Default
   - TransparentFX

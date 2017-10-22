@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Event_Mover : MonoBehaviour
 {
-
+    public GameObject targetLocationToHit;
 
     private Base_System powerCore;
 
@@ -32,11 +32,36 @@ public class Event_Mover : MonoBehaviour
         //Get the rigidBody Component
         rigidBody = GetComponent<Rigidbody>();
         rigidBody.useGravity = false;
+
         powerCore = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
+        targetLocationToHit = GameObject.FindGameObjectWithTag("ShipHitLocation");
+
         //FIND OBJECTS BY TAGS?
-        shield_System = GetComponent<Shield_System>();
-        event_Spawner = GetComponent<Event_Spawner>();
+        event_Spawner = this.transform.parent.GetComponent<Event_Spawner>();
+
+        switch (event_Spawner.currentEventDirection)
+        {
+            case Event_.EventDirection.TOP:
+                shield_System = GameObject.Find("Shield - Top").transform.GetChild(0).GetComponent<Shield_System>();
+                //Debug.Log("Found the top Shield component");
+                break;
+            case Event_.EventDirection.LEFT:
+                shield_System = GameObject.Find("Shield - Left").transform.GetChild(0).GetComponent<Shield_System>();
+                //Debug.Log("Found the left Shield component");
+                break;
+            case Event_.EventDirection.RIGHT:
+                shield_System = GameObject.Find("Shield - Right").transform.GetChild(0).GetComponent<Shield_System>();
+                //Debug.Log("Found the right Shield component");
+                break;
+            case Event_.EventDirection.BOTTOM:
+                shield_System = GameObject.Find("Shield - Bottom").transform.GetChild(0).GetComponent<Shield_System>();
+                //Debug.Log("Found the bottom Shield component");
+                break;
+            default:
+                break;
+        }
+        
 
     }
 
@@ -44,7 +69,7 @@ public class Event_Mover : MonoBehaviour
     //Physics
     private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(1.5f,1.0f, 15.0f), 4.0f * Time.fixedDeltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetLocationToHit.transform.position, eventMoveSpeed * Time.fixedDeltaTime);
         //rigidBody.MovePosition(rigidBody.position + (powerCore.transform.position - transform.position) * Time.fixedDeltaTime);
     }
 
@@ -62,62 +87,33 @@ public class Event_Mover : MonoBehaviour
 
     private void OnCollisionEnter(Collision colObj)
     {
-        //Debug.Log(colObj.gameObject.name);
-
-        //shield_System.SendMessage(colObj.gameObject.name, true, SendMessageOptions.DontRequireReceiver);
-
-        powerCore.ShipHealth -= 5;//Temp amount
-
-        //TakeDamage();
+        DealDamageToShip();
 
         Destroy(this.gameObject);
     }
 
-    //private void TakeDamage()
-    //{
-
-    //    powerCore.ShipHealth -= 5;//Temp amount
-
-
-    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.TOP && event_Spawner.currentEventDirection == Event_.EventDirection.TOP)
-    //    {
-    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-    //    }
-    //    else
-    //    {
-    //        powerCore.ShipHealth -= shield_System.usageAmount;
-    //    }
-
-    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.LEFT && event_Spawner.currentEventDirection == Event_.EventDirection.LEFT)
-    //    {
-    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-    //    }
-    //    else
-    //    {
-    //        powerCore.ShipHealth -= shield_System.usageAmount;
-    //    }
-
-    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.RIGHT && event_Spawner.currentEventDirection == Event_.EventDirection.RIGHT)
-    //    {
-    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-    //    }
-    //    else
-    //    {
-    //        powerCore.ShipHealth -= shield_System.usageAmount;
-    //    }
-
-    //    if (shield_System.currentSystem.Direction == Current_System.SystemDirection.BOTTOM && event_Spawner.currentEventDirection == Event_.EventDirection.BOTTOM)
-    //    {
-    //        powerCore.ShipHealth -= (shield_System.usageAmount - shield_System.reductionAmount);
-    //    }
-    //    else
-    //    {
-    //        powerCore.ShipHealth -= shield_System.usageAmount;
-    //    }
+    private void DealDamageToShip()
+    { 
+               
+        //Current Shield system that it is connected to is NOT active
+        if (!shield_System.currentSystem.IsActive)
+        {
+            //Full Damage
+            Debug.Log("<color=orange>Full Damage</color>");
+            powerCore.ShipHealth -= shield_System.usageAmount;
+            Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
 
 
-
-    //}
+        }
+        else
+        {
+            //Partial Damage
+            Debug.Log("<color=yellow>Partial Damage</color>");
+            powerCore.ShipHealth -= Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+        }
+        
+         
+    }
 
 
 }

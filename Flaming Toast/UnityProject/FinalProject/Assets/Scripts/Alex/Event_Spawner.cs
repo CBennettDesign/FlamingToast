@@ -38,12 +38,12 @@ public class Event_Spawner : MonoBehaviour
                         break;
                     case Event_.EventType.ENEMY_SHIP:
                         {
-                            Instantiate(enemyShip, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                            Instantiate(enemyShip, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
                         }
                         break;
                     case Event_.EventType.ASTEROID:
                         {
-                            Instantiate(asteroid, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                            Instantiate(asteroid, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
                         }
                         break;
                     default:

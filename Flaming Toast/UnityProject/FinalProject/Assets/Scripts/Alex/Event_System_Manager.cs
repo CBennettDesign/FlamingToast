@@ -146,7 +146,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.BOTTOM:
+                                case Event_.EventDirection.LEFT:
                                     {
                                         warningImageLocation[1].gameObject.SetActive(true);
                                         warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
@@ -155,7 +155,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.LEFT:
+                                case Event_.EventDirection.RIGHT:
                                     {
                                         warningImageLocation[2].gameObject.SetActive(true);
                                         warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
@@ -164,7 +164,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.RIGHT:
+                                case Event_.EventDirection.BOTTOM:
                                     {
                                         warningImageLocation[3].gameObject.SetActive(true);
                                         warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
@@ -194,7 +194,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.BOTTOM:
+                                case Event_.EventDirection.LEFT:
                                     {
                                         warningImageLocation[1].gameObject.SetActive(true);
                                         warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
@@ -203,7 +203,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.LEFT:
+                                case Event_.EventDirection.RIGHT:
                                     {
                                         warningImageLocation[2].gameObject.SetActive(true);
                                         warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
@@ -212,7 +212,7 @@ public class Event_System_Manager : MonoBehaviour
                                         spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
                                         break;
                                     }
-                                case Event_.EventDirection.RIGHT:
+                                case Event_.EventDirection.BOTTOM:
                                     {
                                         warningImageLocation[3].gameObject.SetActive(true);
                                         warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
@@ -231,7 +231,7 @@ public class Event_System_Manager : MonoBehaviour
 
                     }
 
-                    Debug.Log("<color=white> "+ "Current Event: "+ activeEvent.type +" </color>");
+                    Debug.Log("<color=white> "+ "Current Event: "+ activeEvent.type + " : " + activeEvent.direction + " </color>");
 
                     activeEvent.BeenUsed = true;
                 }
