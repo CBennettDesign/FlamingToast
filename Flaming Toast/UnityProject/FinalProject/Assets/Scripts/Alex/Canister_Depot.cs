@@ -37,8 +37,9 @@ public class Canister_Depot : MonoBehaviour
     [SerializeField]
     [Tooltip("Current cansiters in the scene - Stored in the system manager")]
     private int canisterCountOnScene;
- 
-    
+
+    //Has given warning to console
+    private bool warningGiven;
     
     //Spawn Timer
     private float timer;
@@ -88,9 +89,10 @@ public class Canister_Depot : MonoBehaviour
                 {
                     SpawnCanister();
                 }
-                else if (system.CurrentCanisterCount >= system.MaxCanisterCount)
+                else if (system.CurrentCanisterCount >= system.MaxCanisterCount && !warningGiven)
                 {
                     Debug.Log("<color=yellow>Max Canisters on scene</color>");
+                    warningGiven = true;
                 }
             }
         
