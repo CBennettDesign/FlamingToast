@@ -17,7 +17,7 @@ public class Event_System_Manager : MonoBehaviour
     [Range(0, 15)]
     public float spawnDelayTimer;
 
-    [Range(0, 10)]
+    [Range(0, 20)]
     public int fullDamageValue;
 
     [Range(0, 10)]

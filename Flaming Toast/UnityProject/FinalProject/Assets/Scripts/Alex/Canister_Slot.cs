@@ -12,11 +12,11 @@ public class Canister_Slot : MonoBehaviour
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer;
 
-    //System RayCast 
-    private System_RayCast system_Ray;
-
     //Current Canister Connected
     //private Canister currentCanister;
+
+    //System RayCast 
+    private System_RayCast system_Ray;
 
     //System Access point
     public Canister CurrentCanister

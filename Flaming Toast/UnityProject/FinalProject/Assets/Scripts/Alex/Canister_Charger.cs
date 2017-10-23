@@ -22,10 +22,10 @@ public class Canister_Charger : MonoBehaviour
     //System RayCast 
     private System_RayCast system_Ray;
 
-    public bool holdingCanister;
-    //Ray Casting - Change to sphere cast, maybe?
-    //private RaycastHit hitInfo;
-    //private Ray rayCast;
+
+    //System Access point
+    public Canister CurrentCanister
+    { get { return system_Ray.CurrentCanister; } }
 
     //Instance ID's of all the cansiters used.
     //Allows it not to be charged again when put back onto the charger
