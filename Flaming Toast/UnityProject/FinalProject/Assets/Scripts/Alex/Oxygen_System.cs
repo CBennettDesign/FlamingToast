@@ -90,7 +90,8 @@ public class Oxygen_System : MonoBehaviour
             }
         }
         else
-        {            
+        {
+            canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }
 

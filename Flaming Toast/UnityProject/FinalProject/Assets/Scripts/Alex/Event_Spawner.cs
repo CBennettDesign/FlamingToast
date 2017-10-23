@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Event_Spawner : MonoBehaviour
 {
-    [Range(0,15)]
-    public float delayTimer;
+
 
     private float timer;
+    private float spawnDelayTimer;
 
     public GameObject asteroid;
     public GameObject enemyShip;
@@ -19,6 +19,15 @@ public class Event_Spawner : MonoBehaviour
     private Event_.EventType currentEventType;
     public Event_.EventDirection currentEventDirection;
 
+    private void Awake()
+    {
+        //When zero, set to something large so when an event happens this value is changed.
+        //If no events spawn, its because this value was not changed.
+        if (spawnDelayTimer == 0.0f)
+        {
+            spawnDelayTimer = 1000.0f;
+        }
+    }
 
     //User Input || !Physics
     private void Update()
@@ -26,7 +35,7 @@ public class Event_Spawner : MonoBehaviour
         if (currentState)
         {
             timer += Time.deltaTime;
-            if (timer >= delayTimer)
+            if (timer >= spawnDelayTimer)
             {
                 //What event to spawn from the spawn location (here)
                 switch (currentEventType)
@@ -34,22 +43,23 @@ public class Event_Spawner : MonoBehaviour
                     case Event_.EventType.NONE:
                         {
                             Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                            break;
                         }
-                        break;
                     case Event_.EventType.ENEMY_SHIP:
                         {
                             Instantiate(enemyShip, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            break;
                         }
-                        break;
                     case Event_.EventType.ASTEROID:
                         {
                             Instantiate(asteroid, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            break;
                         }
-                        break;
                     default:
                         break;
                 }
 
+                timer = 0.0f;
                 currentState = false;
             }
         }
@@ -59,11 +69,12 @@ public class Event_Spawner : MonoBehaviour
     }
 
  
-    public void SpawnEvent(bool state, Event_.EventType eventType, Event_.EventDirection eventDirection)
+    public void SpawnEvent(bool state, Event_.EventType eventType, Event_.EventDirection eventDirection, float delayTimer)
     {
         currentState = state;
         currentEventType = eventType;
         currentEventDirection = eventDirection;
+        spawnDelayTimer = delayTimer;
     }
 }
 

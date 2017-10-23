@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Canister_Charger : MonoBehaviour
 {
+    public GameObject chargingParticle;
+
     [Tooltip("Charging amount per second")]
     [Range(0,10)]
     public int chargingAmount;
@@ -97,6 +99,7 @@ public class Canister_Charger : MonoBehaviour
                 //{
                 //    Debug.Log("No canister or not a valid canister");
                 //}
+                chargingParticle.SetActive(true);
             }
 
         
@@ -112,6 +115,8 @@ public class Canister_Charger : MonoBehaviour
             }
 
             system_Ray.CurrentCanister = null;
+
+            chargingParticle.SetActive(false);
 
             //
             //holdingCanister = false;
@@ -165,23 +170,6 @@ public class Canister_Charger : MonoBehaviour
 
     public void ChargeCanister()
     {
-        /*- Can only charge the canister once!
-         * How do I know its not the same canister??
-         * Maybe
-         * check before charging that it hasn't been charged before via a private list of Instance ID's
-         * If it is not on the list then it is a VALID canister 
-         * Add the instance ID of the canister to a private list 
-         * If it is on the list - DO NOTHING -*/
-
-        //Example
-        //int canisterID = currentCanister.GetInstanceID();
-
-
-
-                
-
-
-
         //Found a valid canister and now charging it.
         //if (isValidCanister)
         //{
@@ -194,11 +182,6 @@ public class Canister_Charger : MonoBehaviour
                 Debug.Log("<color=white>Charging the canister</color>");
                 //Charge the connected canister by the chargeAmount
                 system_Ray.CurrentCanister.Charge += chargingAmount;
-
-                ////if above 100%
-                //if (system_Ray.CurrentCanister.Charge > 100)
-                //{
-                //}
 
 
                 //Canister is charged
@@ -218,49 +201,11 @@ public class Canister_Charger : MonoBehaviour
 
             }
 
-
-
         //}
-             
-
     }
 
 
-    //public bool CheckForCanister()
-    //{
-    //    /*Logic for checking if the canister is connected. - Add later for the layer masking*/
-    //    if (Physics.Raycast(rayCast, out hitInfo, 1.5f))
-    //    {
-    //        if (hitInfo.collider.tag == "Canister") // - Rework for layer masking as this inner if statement would just result in true 
-    //        {
-    //            //Assign the hitInfo obj to the internal currentCanister and drain the charge from that when connected.
-    //            //In drain the current canister only when the cannister is connected
-    //            currentCanister = hitInfo.collider.gameObject.GetComponent<Canister>();
-    //
-    //            //Found a canister
-    //            return true;
-    //        }
-    //        else
-    //        {
-    //            //Reset current Canister to null - safe gaurd
-    //            currentCanister = null;
-    //            //Something other than a canister
-    //            return false;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        //Reset current Canister to null - safe gaurd
-    //        currentCanister = null;
-    //        //No canister
-    //        return false;
-    //    }
-    //}
+             
 
-    ////Debug Visuals
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.yellow;
-    //    Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z));
-    //}
+ 
 }

@@ -135,6 +135,7 @@ public class Shield_System : MonoBehaviour
         }
         else
         {
+            canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }
 

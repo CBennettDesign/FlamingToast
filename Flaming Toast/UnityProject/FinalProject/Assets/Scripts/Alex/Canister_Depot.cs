@@ -88,14 +88,29 @@ public class Canister_Depot : MonoBehaviour
                 if (timer >= spawnInterval && system.CurrentCanisterCount < system.MaxCanisterCount)
                 {
                     SpawnCanister();
+                    warningGiven = false;
+
+                    //Reset the spawn canister check box. - Regardless if the canister coount reached the maximum or not
+                    canSpawnCansiter = false;
                 }
                 else if (system.CurrentCanisterCount >= system.MaxCanisterCount && !warningGiven)
                 {
                     Debug.Log("<color=yellow>Max Canisters on scene</color>");
                     warningGiven = true;
+                  
+                    //Reset the spawn canister check box. - Regardless if the canister coount reached the maximum or not
+                    canSpawnCansiter = false;
                 }
+
             }
-        
+            else
+            {
+                warningGiven = false;
+            }
+
+
+            //Update the local canister count
+            canisterCountOnScene = system.CurrentCanisterCount;
         }
         else
         {
@@ -117,8 +132,7 @@ public class Canister_Depot : MonoBehaviour
             //Increase the count.
             system.CurrentCanisterCount++;
 
-            //Update the local canister count
-            canisterCountOnScene = system.CurrentCanisterCount;
+
         }
         else
         {
@@ -133,8 +147,7 @@ public class Canister_Depot : MonoBehaviour
         //Reset Timer
         timer = 0.0f;
 
-        //Reset the spawn canister check box.
-        canSpawnCansiter = false;
+
     }
 
 

@@ -14,6 +14,15 @@ public class Event_System_Manager : MonoBehaviour
     [Range(0, 10)]
     public int eventDisplayTime;
 
+    [Range(0, 15)]
+    public float spawnDelayTimer;
+
+    [Range(0, 10)]
+    public int fullDamageValue;
+
+    [Range(0, 10)]
+    public int partialDamageValue;
+
     [Header("Relative to the direction of the event.")]
     public Image[] warningImageLocation;
     [Header("Warning Image Location child")]
@@ -28,6 +37,7 @@ public class Event_System_Manager : MonoBehaviour
     private float timer;
     private int countOfUsed;
     private bool runEventTimer;
+    private bool endOfEvent;
 
     //Pre-Initialisation
     private void Awake()
@@ -72,17 +82,6 @@ public class Event_System_Manager : MonoBehaviour
                 }
             }
         }
-    }
-
-
-
-
-
-
-    //Physics
-    private void FixedUpdate()
-    {
-
     }
 
     //User Input || !Physics
@@ -143,7 +142,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
                                         //Run the event launcher
                                         warningImageLocation[0].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.LEFT:
@@ -152,7 +151,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
                                         //Run the event launcher
                                         warningImageLocation[1].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.RIGHT:
@@ -161,7 +160,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
                                         //Run the event launcher
                                         warningImageLocation[2].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.BOTTOM:
@@ -170,13 +169,14 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[0];
                                         //Run the event launcher
                                         warningImageLocation[3].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 default:
                                     break;
                             }
                             break;
+
                         case Event_.EventType.ASTEROID:
                             //Where on screen to place the warning image
                             switch (currentEventDirection)
@@ -191,7 +191,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[0].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
                                         //Run the event launcher
                                         warningImageLocation[0].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[0].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.LEFT:
@@ -200,7 +200,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[1].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
                                         //Run the event launcher
                                         warningImageLocation[1].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[1].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.RIGHT:
@@ -209,7 +209,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[2].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
                                         //Run the event launcher
                                         warningImageLocation[2].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[2].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 case Event_.EventDirection.BOTTOM:
@@ -218,7 +218,7 @@ public class Event_System_Manager : MonoBehaviour
                                         warningImageLocation[3].transform.GetChild(0).GetComponent<Image>().sprite = eventImage[1];
                                         //Run the event launcher
                                         warningImageLocation[3].BroadcastMessage("RunEvent", true, SendMessageOptions.DontRequireReceiver);
-                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection);
+                                        spawnLocation[3].GetComponent<Event_Spawner>().SpawnEvent(true, currentEventType, currentEventDirection, spawnDelayTimer);
                                         break;
                                     }
                                 default:
@@ -254,6 +254,18 @@ public class Event_System_Manager : MonoBehaviour
             //Reset count after each pass
             countOfUsed = 0;
         }
+        else
+        {
+            
+            if (!endOfEvent)
+            {
+                timer += Time.deltaTime;
+                if (progressSlider.value >= 300)
+                {
+                    endOfEvent = true;
+                }
+            }
+        }
 
         //warningImage[0].transform.position;
 
@@ -264,12 +276,7 @@ public class Event_System_Manager : MonoBehaviour
 
     }
 
-    //Animations || !Important
-    private void LateUpdate()
-    {
-
-    }
-
+ 
 }//End of ESM Script
 
 [System.Serializable] //- DO NOT REMOVE THIS LINE

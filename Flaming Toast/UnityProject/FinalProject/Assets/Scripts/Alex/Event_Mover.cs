@@ -100,7 +100,8 @@ public class Event_Mover : MonoBehaviour
         {
             //Full Damage
             Debug.Log("<color=orange>Full Damage</color>");
-            powerCore.ShipHealth -= shield_System.usageAmount;
+            powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;//shield_System.usageAmount;
+
             Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
 
 
@@ -109,7 +110,7 @@ public class Event_Mover : MonoBehaviour
         {
             //Partial Damage
             Debug.Log("<color=yellow>Partial Damage</color>");
-            powerCore.ShipHealth -= Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+            powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().partialDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
         }
         
          
