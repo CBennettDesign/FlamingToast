@@ -14,11 +14,13 @@ public class CanisterSnapping : MonoBehaviour
     public float zPosition;
 
     //Canister game object
-    //GameObject canister = null;
+    GameObject canister = null;
 
     //Radius of sphere cast
     public float RadiusOfRayCast = 2;
 
+    //Bool to keep snapped
+    public bool keepSnapped;
 
     // Use this for initialization
     void Start()
@@ -31,21 +33,25 @@ public class CanisterSnapping : MonoBehaviour
         
     }
 
-    public void giveCanister(GameObject GiveCanister)
+    public bool giveCanister(GameObject GiveCanister)
     {
-        //sets position to parents position
-        GiveCanister.transform.parent = transform.transform;
+        if (canister == null)
+        {
+            //sets position to parents position
+            GiveCanister.transform.parent = transform.transform;
 
-       //GiveCanister.BroadcastMessage("CanisterIsSnapped", true, SendMessageOptions.DontRequireReceiver);
+            //Sets to public local positions
+            GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
+            GiveCanister.transform.localRotation = Quaternion.identity;
 
-        //Sets to public local positions
-        GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
-        GiveCanister.transform.localRotation = Quaternion.identity;
-
-        //creates rigidbody component
-        Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
-        Destroy(cap);
-
-        //canister = GiveCanister;
+            //creates rigidbody component
+            Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
+            Destroy(cap);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -625,7 +625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3137cdb61e29d47af2fcbbe710986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorSet_2: {fileID: 737181265}
   currentSystem:
     isActive: 0
     type: 1
@@ -2163,6 +2162,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &92038955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4992,7 +4992,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.294
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6251,6 +6251,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!1 &247206416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,6 +6588,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!1 &257124407
 GameObject:
   m_ObjectHideFlags: 0
@@ -14413,6 +14415,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &556437507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14918,7 +14921,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -16564,6 +16567,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &638396202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18036,11 +18040,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696215510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.532, y: 1.679, z: 7.518}
+  m_LocalPosition: {x: -7.47, y: 1.679, z: 7.518}
   m_LocalScale: {x: 1.5263119, y: 1.8816117, z: 0.4537664}
   m_Children: []
-  m_Father: {fileID: 737181266}
-  m_RootOrder: 0
+  m_Father: {fileID: 786729548}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &696215512
 MeshRenderer:
@@ -19016,37 +19020,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 727323891}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &737181265
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 737181266}
-  m_Layer: 0
-  m_Name: DoorSet2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &737181266
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 737181265}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 696215511}
-  - {fileID: 1064605563}
-  - {fileID: 1834910615}
-  m_Father: {fileID: 1102338623}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737692162
 GameObject:
   m_ObjectHideFlags: 0
@@ -19745,8 +19718,11 @@ Transform:
   m_Children:
   - {fileID: 535068316}
   - {fileID: 558812353}
+  - {fileID: 696215511}
+  - {fileID: 1064605563}
+  - {fileID: 1834910615}
   m_Father: {fileID: 1102338623}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &790189035
 GameObject:
@@ -24981,6 +24957,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &989123808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27056,8 +27033,8 @@ Transform:
   m_LocalPosition: {x: -4.97, y: 1.679, z: 11.01}
   m_LocalScale: {x: 1.52631, y: 1.8816099, z: 0.45376998}
   m_Children: []
-  m_Father: {fileID: 737181266}
-  m_RootOrder: 1
+  m_Father: {fileID: 786729548}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!23 &1064605564
 MeshRenderer:
@@ -27804,7 +27781,6 @@ Transform:
   - {fileID: 649803883}
   - {fileID: 1119962639}
   - {fileID: 1103587423}
-  - {fileID: 737181266}
   - {fileID: 786729548}
   m_Father: {fileID: 1450213880}
   m_RootOrder: 2
@@ -29143,6 +29119,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!1 &1151818687
 GameObject:
   m_ObjectHideFlags: 0
@@ -29642,7 +29619,6 @@ MonoBehaviour:
   chargingParticle: {fileID: 921931212}
   chargingAmount: 5
   chargingType: 2
-  holdingCanister: 0
 --- !u!23 &1180566478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30951,7 +30927,6 @@ MonoBehaviour:
   chargingParticle: {fileID: 18790114}
   chargingAmount: 5
   chargingType: 1
-  holdingCanister: 0
 --- !u!65 &1239406440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32401,6 +32376,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!1 &1306482949
 GameObject:
   m_ObjectHideFlags: 0
@@ -33507,7 +33483,6 @@ MonoBehaviour:
   chargingParticle: {fileID: 1152495837}
   chargingAmount: 5
   chargingType: 2
-  holdingCanister: 0
 --- !u!23 &1337583877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38961,7 +38936,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -41994,6 +41969,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &1659449037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42213,7 +42189,6 @@ MonoBehaviour:
   chargingParticle: {fileID: 2146727054}
   chargingAmount: 5
   chargingType: 2
-  holdingCanister: 0
 --- !u!23 &1682281522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43199,6 +43174,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &1709480367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45681,8 +45657,8 @@ Transform:
   m_LocalPosition: {x: -10.47, y: 1.679, z: 13.52}
   m_LocalScale: {x: 1.52631, y: 1.8816099, z: 0.45376998}
   m_Children: []
-  m_Father: {fileID: 737181266}
-  m_RootOrder: 2
+  m_Father: {fileID: 786729548}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1834910616
 MeshRenderer:
@@ -46756,6 +46732,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &1865414087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49103,7 +49080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3137cdb61e29d47af2fcbbe710986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorSet_2: {fileID: 0}
   currentSystem:
     isActive: 0
     type: 1
@@ -49235,6 +49211,7 @@ GameObject:
   - component: {fileID: 1945007086}
   - component: {fileID: 1945007088}
   - component: {fileID: 1945007087}
+  - component: {fileID: 1945007089}
   m_Layer: 0
   m_Name: Wire_003_Interior_001_Cap (5)
   m_TagString: Untagged
@@ -49297,6 +49274,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1945007085}
   m_Mesh: {fileID: 4300000, guid: 1798e557245533346bd28bfcdae0d059, type: 3}
+--- !u!114 &1945007089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945007085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b866499e5591ee54bb343b5c3c524236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Systems:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1945364750
 GameObject:
   m_ObjectHideFlags: 0
@@ -49638,6 +49629,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &1957912776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50024,6 +50016,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!1 &1981085729
 GameObject:
   m_ObjectHideFlags: 0
@@ -50457,8 +50450,8 @@ MonoBehaviour:
   - {fileID: 1590383273}
   - {fileID: 989707293}
   NextJunction:
-  - {fileID: 219352339}
-  - {fileID: 958239930}
+  - {fileID: 0}
+  - {fileID: 0}
   startsIlluminated: -1
 --- !u!1001 &1995588788
 Prefab:
@@ -51027,6 +51020,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &2018059891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51592,6 +51586,7 @@ MonoBehaviour:
   yPosition: 0.28
   zPosition: 0
   RadiusOfRayCast: 2
+  keepSnapped: 0
 --- !u!114 &2032098600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53474,7 +53469,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4081837873635188, guid: 6890e0ebcac6d954f9df7bd9b095979b, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 4081837873635188, guid: 6890e0ebcac6d954f9df7bd9b095979b, type: 2}
       propertyPath: m_LocalRotation.y
@@ -53482,7 +53477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4081837873635188, guid: 6890e0ebcac6d954f9df7bd9b095979b, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.49999973
+      value: -0.4999997
       objectReference: {fileID: 0}
     - target: {fileID: 4081837873635188, guid: 6890e0ebcac6d954f9df7bd9b095979b, type: 2}
       propertyPath: m_LocalRotation.w
@@ -53832,7 +53827,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4032919166654412, guid: a14072010565dac47ab7416a01de8bbe, type: 2}
       propertyPath: m_LocalPosition.y

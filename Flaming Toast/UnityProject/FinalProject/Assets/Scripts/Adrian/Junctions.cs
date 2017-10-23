@@ -7,25 +7,22 @@ public class Junctions : MonoBehaviour {
     public GameObject[] Wires;
     public GameObject[] NextJunction;
     public int startsIlluminated = -1;
-    private int selectedIndex = 0;
-
-
-   
-
+    private int selectedIndex = -1;
     private bool isPowered = false;
- 
+
+    private void Awake()
+    {
+        selectedIndex = startsIlluminated;
+    }
 
     // Use this for initialization
     void Start ()
     {
-        
         if (startsIlluminated >= 0)
         {
             setIlluminated(startsIlluminated, true);
-            selectedIndex = startsIlluminated;
             isPowered = true;
         }
-        selectedIndex = startsIlluminated;
     }
 	
 	// Update is called once per frame

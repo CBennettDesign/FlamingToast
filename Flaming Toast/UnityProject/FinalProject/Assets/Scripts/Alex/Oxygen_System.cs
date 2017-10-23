@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Oxygen_System : MonoBehaviour
 {
-    public GameObject DoorSet_2;
-
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -107,12 +105,6 @@ public class Oxygen_System : MonoBehaviour
             //Is Active - Running - Charging the oxygen back up - else decrease oxygen levels
             if (currentSystem.IsActive)
             {
-                //Tutorial doors - Rest of the ship opens
-                if (DoorSet_2 != null)
-                {
-                    DoorSet_2.SetActive(false);
-                }
-
                 //Drains connected canister - can only happen if the system is active, when it has a cansiter
                 canisterSlot.CanDrainCanister = true; 
 
