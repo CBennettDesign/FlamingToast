@@ -25,7 +25,7 @@ public class Request_Canister : MonoBehaviour
             
         if (XCI.GetButtonDown(XboxButton.A, Controlers))
         {
-            if (Physics.Raycast(rayCast, out hitInfo, 0.5f))
+            if (Physics.Raycast(rayCast, out hitInfo, 1.0f))
             {
                 if (hitInfo.collider.tag == "Canister_Depot") // - Rework for layer masking as this inner if statement would just result in true ?
                 {
@@ -41,7 +41,7 @@ public class Request_Canister : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position + Vector3.up * 1.0f, transform.position + Vector3.up * 1.0f + transform.forward * 0.5f);
+        Gizmos.DrawLine(transform.position + Vector3.up * 1.0f, transform.position + Vector3.up * 1.0f + transform.forward * 1.0f);
         Gizmos.color = Color.white;
         Gizmos.DrawSphere(transform.position + Vector3.up * 1.0f, 0.2f);
     }
