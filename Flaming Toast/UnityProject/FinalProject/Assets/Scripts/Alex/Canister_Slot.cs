@@ -6,6 +6,10 @@ using UnityEngine;
  
 public class Canister_Slot : MonoBehaviour
 {
+
+    public GameObject lowChargeWarning;
+
+
     //Base System
     private Base_System system;
 
@@ -53,6 +57,17 @@ public class Canister_Slot : MonoBehaviour
     //Main-Initialisation
     private void Start()
     {
+
+        if (lowChargeWarning != null)
+        {
+            //Warning Indicator
+            lowChargeWarning.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+        }
+
         //Starting point for the timer, planned every 1 second it deplete the currentCanister
         timer = 0.0f;
     }
@@ -95,11 +110,37 @@ public class Canister_Slot : MonoBehaviour
                     //Timer reset
                     timer = 0.0f;
 
+                    //Cue for warning indicator.
+                    if (system_Ray.CurrentCanister.Charge <= 15)
+                    {
+                        if (lowChargeWarning != null)
+                        {
+                            lowChargeWarning.SetActive(true);
+                        }
+                        else
+                        {
+                            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                        }
+
+                    }
+
+                  
                     //Cue for the canister to explode!
                     if (system_Ray.CurrentCanister.Charge == 0)
                     {
+                        if (lowChargeWarning != null)
+                        {
+                            //Warning Indicator
+                            lowChargeWarning.SetActive(false);
+                        }
+                        else
+                        {
+                            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                        }
+
                         //Particle cue
                         //Here
+
                         //Destroy the current canister
                         system_Ray.CurrentCanister.Destroy();
                         //Destroy(currentCanister.gameObject);
@@ -112,6 +153,7 @@ public class Canister_Slot : MonoBehaviour
         }
         else
         {
+
             //Reset the canister status
             system.IsCanisterConnected = false;
         }
@@ -135,6 +177,16 @@ public class Canister_Slot : MonoBehaviour
         }
         else
         {
+            if (lowChargeWarning != null)
+            {
+                //Warning Indicator
+                lowChargeWarning.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+            }
+
             //system.IsCanisterConnected = false;
             system_Ray.CurrentCanister = null;
             return false;
