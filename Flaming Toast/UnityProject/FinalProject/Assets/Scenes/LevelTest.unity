@@ -3471,6 +3471,7 @@ RectTransform:
   m_LocalScale: {x: 0.0015981911, y: 0.0015981912, z: 0.25890717}
   m_Children:
   - {fileID: 1657461862}
+  - {fileID: 1385303527}
   m_Father: {fileID: 2000401625}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
@@ -16453,6 +16454,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &615622139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615622135}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAwayFromJunctionBox: 1
+  junctionBoxes: []
+  aButtonToolTip: {fileID: 0}
 --- !u!114 &615622141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17590,6 +17605,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &657431646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657431642}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAwayFromJunctionBox: 1
+  junctionBoxes: []
+  aButtonToolTip: {fileID: 0}
 --- !u!114 &657431648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21101,11 +21130,11 @@ GameObject:
   - component: {fileID: 817733399}
   - component: {fileID: 817733401}
   - component: {fileID: 817733400}
-  - component: {fileID: 817733402}
   - component: {fileID: 817733403}
+  - component: {fileID: 817733402}
   m_Layer: 10
   m_Name: JunctionBox_001_Interior_001_Box (4)
-  m_TagString: Untagged
+  m_TagString: jBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -21175,8 +21204,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79999995, y: 0.6, z: 0.8000002}
-  m_Center: {x: 0, y: 0.3, z: -0.000000044703484}
+  m_Size: {x: 0.7798108, y: 0.31835026, z: 0.7798108}
+  m_Center: {x: 0, y: 0.15917513, z: 0}
 --- !u!114 &817733403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21292,11 +21321,11 @@ GameObject:
   - component: {fileID: 825526233}
   - component: {fileID: 825526235}
   - component: {fileID: 825526234}
-  - component: {fileID: 825526236}
   - component: {fileID: 825526237}
+  - component: {fileID: 825526236}
   m_Layer: 10
   m_Name: JunctionBox_001_Interior_001_Box (9)
-  m_TagString: Untagged
+  m_TagString: jBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -21366,8 +21395,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79999995, y: 0.6, z: 0.8000002}
-  m_Center: {x: 0, y: 0.3, z: -0.000000044703484}
+  m_Size: {x: 0.7798108, y: 0.31835026, z: 0.7798108}
+  m_Center: {x: 0, y: 0.15917513, z: 0}
 --- !u!114 &825526237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33320,6 +33349,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1324133529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324133525}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAwayFromJunctionBox: 1
+  junctionBoxes: []
+  aButtonToolTip: {fileID: 0}
 --- !u!114 &1324133531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35107,6 +35150,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385240527}
+--- !u!1 &1385303526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1385303527}
+  - component: {fileID: 1385303529}
+  - component: {fileID: 1385303528}
+  - component: {fileID: 1385303530}
+  m_Layer: 0
+  m_Name: AButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1385303527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385303526}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 148120945}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 600}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1385303528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385303526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 84d09d5a84c87ea478f7cc7e4dcdee3c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1385303529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385303526}
+--- !u!114 &1385303530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385303526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145aa5b5c09a992458b9a824dff3134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389519678
 GameObject:
   m_ObjectHideFlags: 0
@@ -40863,7 +40986,7 @@ GameObject:
   - component: {fileID: 1598242883}
   m_Layer: 0
   m_Name: JunctionBox_001_Interior_001_Box
-  m_TagString: Untagged
+  m_TagString: jBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -46061,11 +46184,11 @@ GameObject:
   - component: {fileID: 1820685556}
   - component: {fileID: 1820685558}
   - component: {fileID: 1820685557}
-  - component: {fileID: 1820685560}
   - component: {fileID: 1820685559}
+  - component: {fileID: 1820685560}
   m_Layer: 10
   m_Name: JunctionBox_001_Interior_001_Box (6)
-  m_TagString: Untagged
+  m_TagString: jBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -46153,8 +46276,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79999995, y: 0.6, z: 0.8000002}
-  m_Center: {x: 0, y: 0.3, z: -0.000000044703484}
+  m_Size: {x: 0.7798108, y: 0.31835026, z: 0.7798108}
+  m_Center: {x: 0, y: 0.15917513, z: 0}
 --- !u!1001 &1828836679
 Prefab:
   m_ObjectHideFlags: 0
@@ -51119,11 +51242,11 @@ GameObject:
   - component: {fileID: 1992517292}
   - component: {fileID: 1992517294}
   - component: {fileID: 1992517293}
-  - component: {fileID: 1992517295}
   - component: {fileID: 1992517296}
+  - component: {fileID: 1992517295}
   m_Layer: 10
   m_Name: JunctionBox_001_Interior_001_Box (1)
-  m_TagString: Untagged
+  m_TagString: jBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -51193,8 +51316,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79999995, y: 0.6, z: 0.8000002}
-  m_Center: {x: 0, y: 0.3, z: -0.000000044703484}
+  m_Size: {x: 0.7798108, y: 0.31835026, z: 0.7798108}
+  m_Center: {x: 0, y: 0.15917513, z: 0}
 --- !u!114 &1992517296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51464,6 +51587,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2000401630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000401626}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAwayFromJunctionBox: 1
+  junctionBoxes: []
+  aButtonToolTip: {fileID: 1385303526}
 --- !u!114 &2000401632
 MonoBehaviour:
   m_ObjectHideFlags: 0

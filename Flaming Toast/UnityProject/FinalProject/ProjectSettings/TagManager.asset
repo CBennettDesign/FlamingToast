@@ -12,6 +12,7 @@ TagManager:
   - CCM
   - Event_System_Manager
   - ShipHitLocation
+  - jBox
   layers:
   - Default
   - TransparentFX
