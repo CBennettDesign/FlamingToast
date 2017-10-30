@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -9,7 +10,8 @@ using UnityEngine.UI;
 public class UI_Menu_Manager : MonoBehaviour
 {
     //Current State that the menu is on.
-    private CurrentMenuPanel currentPanel;
+    [HideInInspector]
+    public CurrentMenuPanel currentPanel;
 
 
 
@@ -24,12 +26,18 @@ public class UI_Menu_Manager : MonoBehaviour
 
     private void Awake()
     {
-        //Default Panel to be on
-        currentPanel = CurrentMenuPanel.MAIN_MENU;
+        //ClearPanels();
+
+
+        ////Default Panel to be on
+        //currentPanel = CurrentMenuPanel.MAIN_MENU;
+
+
+        //UpdateButtonCount(currentPanel);
+
     }
 
 
- 
     //Turn off all menu panels
     public void ClearPanels()
     {

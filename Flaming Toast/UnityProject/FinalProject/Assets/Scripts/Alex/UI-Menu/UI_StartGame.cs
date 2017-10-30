@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class UI_StartGame : MonoBehaviour
 {
-
-	private int sceneIndexToLoad = 1;
-
-	
-	public void StartScene()
+    
+	public void StartScene(int a_buildIndex)
 	{
-		SceneManager.LoadScene(sceneIndexToLoad);
+        //get the current scene and unload it
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(currentScene.buildIndex);
+
+        //Load the new scene
+		SceneManager.LoadScene(a_buildIndex);
+
+        //Clear all ui panels
+        GameObject.Find("UI - System").GetComponent<UI_Menu_Manager>().ClearPanels();
+
+        //Set time.timescale to 1
+        Time.timeScale = 1;
 	} 
 	
  
