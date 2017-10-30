@@ -62,13 +62,18 @@ public class Menu_Selection_Manager : MonoBehaviour
     //User input via the controller D-Pad Button && A.Button for selection B.Button to go to the previous menu
     private void Update ()
     {
+        //Re-enable the first child
+        transform.GetChild(0).gameObject.SetActive(true);
 
-
+        Debug.Log(currentMenuIndex);
 
         if (XCI.GetButtonDown(XboxButton.A, controller))
         {
             //Call all functions on the button that is currently selected
             menuButtons[currentMenuIndex].GetComponent<Button>().onClick.Invoke();
+
+            //set the current active to false 
+            menuButtons[currentMenuIndex].GetComponent<Image>().color = buttonInactiveTint;
 
             //re populate the array of buttons with the new set of active objects
             PopulateMenuButtons();
@@ -129,7 +134,7 @@ public class Menu_Selection_Manager : MonoBehaviour
         //{
         //    button.SetActive(false);
         //}
-        menuButtons[0].transform.parent.transform.parent.gameObject.SetActive(false);
+        //menuButtons[0].transform.parent.parent.gameObject.SetActive(false);
 
         //empty the list of active buttons
         menuButtons.Clear();
@@ -155,5 +160,5 @@ public class Menu_Selection_Manager : MonoBehaviour
         currentMenuIndex = 0;
     }
 
-
+   
 }
