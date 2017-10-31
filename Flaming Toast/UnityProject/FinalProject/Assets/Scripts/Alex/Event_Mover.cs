@@ -17,6 +17,9 @@ public class Event_Mover : MonoBehaviour
 
     private Event_Spawner event_Spawner;
 
+    private VignetteFlash vignetteFlash;
+
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -28,7 +31,7 @@ public class Event_Mover : MonoBehaviour
     //Main-Initialisation
     private void Start()
     {
-
+        vignetteFlash = GameObject.FindGameObjectWithTag("vFlash").GetComponent<VignetteFlash>();
         //Get the rigidBody Component
         rigidBody = GetComponent<Rigidbody>();
         rigidBody.useGravity = false;
@@ -102,8 +105,9 @@ public class Event_Mover : MonoBehaviour
             Debug.Log("<color=orange>Full Damage</color>");
             powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;//shield_System.usageAmount;
 
-            Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
+            //Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
 
+            vignetteFlash.ShipHit(true, false);
 
         }
         else
@@ -111,6 +115,9 @@ public class Event_Mover : MonoBehaviour
             //Partial Damage
             Debug.Log("<color=yellow>Partial Damage</color>");
             powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().partialDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+
+            vignetteFlash.ShipHit(true, true);
+
         }
         
          

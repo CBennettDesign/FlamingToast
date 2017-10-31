@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 /*- Alex Scicluna -*/
+
 public class Canister_Depot : MonoBehaviour
 {
+
+    public Text depotCanisterCountText;
 
     //Inpector access - manual overrides
     [SerializeField]
@@ -34,9 +39,9 @@ public class Canister_Depot : MonoBehaviour
     [Tooltip("This value will be overriden by the base system canister count")]
     public int canisterCountMax;
     //Current Canister Count
-    [SerializeField]
+    //[SerializeField]
     [Tooltip("Current cansiters in the scene - Stored in the system manager")]
-    private int canisterCountOnScene;
+    public int canisterCountOnScene;
 
     //Has given warning to console
     private bool warningGiven;
@@ -68,6 +73,7 @@ public class Canister_Depot : MonoBehaviour
     //Main-Initialisation
     private void Start()
     {
+        
         //Canister Depot's first child - "Canister Spawn Location"
         canisterSpawnLocation = transform.GetChild(0).gameObject;
     }
@@ -75,7 +81,8 @@ public class Canister_Depot : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-
+        depotCanisterCountText.text = (canisterCountMax - canisterCountOnScene).ToString();
+        Debug.Log((canisterCountMax - canisterCountOnScene).ToString());
         if (canisterSpawnLocation != null)
         {
             //Inspector checkbox - User Input / Interaction

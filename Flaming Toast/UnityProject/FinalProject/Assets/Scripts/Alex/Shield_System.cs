@@ -215,15 +215,7 @@ public class Shield_System : MonoBehaviour
 
 
     }
-
-    //Animations || !Important
-    private void LateUpdate()
-    {
-
-        
-    }
-
-
+     
 
     //Current state being the core power bool being passed around
     private void Toggle(bool currentState)
@@ -253,7 +245,8 @@ public class Shield_System : MonoBehaviour
     {
         if (currentEventHit)
         {
-            system.ShipHealth -= usageAmount - reductionAmount;
+            system.ShipHealth -= usageAmount - reductionAmount;//need to fix using the event system damage
+            //Usage amount is meant for the canister charge if the shield was up or not take a set amount of charge or not.
         }
     }
 }

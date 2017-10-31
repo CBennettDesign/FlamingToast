@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 /*- Alex Scicluna -*/
 
 public class Oxygen_System : MonoBehaviour
 {
+    //public Text oxygenText;
+
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -30,7 +34,8 @@ public class Oxygen_System : MonoBehaviour
 
         //Canister slot
         canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
-        
+
+        //oxygenText.text = "Oxygen Systems: Offline";
     }
          
 
@@ -66,6 +71,7 @@ public class Oxygen_System : MonoBehaviour
         //If there is power from the core going into the current system
         if (currentSystem.CorePower)
         {
+            //oxygenText.text = "Oxygen Systems: Online";
             //only check if a canister is there when the system has power.
             //When it has a canister and core power
             if (canisterSlot.CheckForCanister())
@@ -85,10 +91,12 @@ public class Oxygen_System : MonoBehaviour
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
                 canisterSlot.CanDrainCanister = false;
+                //oxygenText.text = "Oxygen Systems: Offline";
             }
         }
         else
         {
+            //oxygenText.text = "Oxygen Systems: Offline";
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }

@@ -12,7 +12,7 @@ public class Event_System_Manager : MonoBehaviour
     private Slider progressSlider;
 
     [Range(0, 10)]
-    public int eventDisplayTime;
+    public float eventDisplayTime;
 
     [Range(0, 15)]
     public float spawnDelayTimer;
@@ -56,13 +56,6 @@ public class Event_System_Manager : MonoBehaviour
             warningImage.gameObject.SetActive(false);
         }
 
- 
-    }
-
-
-    //Main-Initialisation
-    private void Start()
-    {
         //Bubble sort
         for (int outerIndex = 0; outerIndex < events.Count; outerIndex++)
         {
@@ -82,6 +75,13 @@ public class Event_System_Manager : MonoBehaviour
                 }
             }
         }
+ 
+    }
+
+
+    //Main-Initialisation
+    private void Start()
+    {
     }
 
     //User Input || !Physics

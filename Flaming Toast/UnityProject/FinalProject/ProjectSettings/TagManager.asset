@@ -13,6 +13,7 @@ TagManager:
   - Event_System_Manager
   - ShipHitLocation
   - jBox
+  - vFlash
   layers:
   - Default
   - TransparentFX

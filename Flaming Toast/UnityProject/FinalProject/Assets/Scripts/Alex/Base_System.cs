@@ -46,7 +46,7 @@ public class Base_System : MonoBehaviour
         set { baseDepletionRate = value; }
     }
 
-    [SerializeField]
+    //[SerializeField]
     [Tooltip("Shield System usage amount per hit - amount taken away from connected canisters")]
     [Range(1, 50)]
     private int shield_UsageAmount;
@@ -57,7 +57,7 @@ public class Base_System : MonoBehaviour
         set { shield_UsageAmount = value; }
     }
 
-    [SerializeField]
+    //[SerializeField]
     [Tooltip("Shield System reduction amount per hit - (shield usasge amount - this value")]
     [Range(1, 50)]
     private int shield_ReductionAmount;
