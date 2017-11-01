@@ -22729,7 +22729,7 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1904810671}
   - {fileID: 825526232}
-  startsIlluminated: -1
+  startsIlluminated: 0
 --- !u!1 &818438156
 GameObject:
   m_ObjectHideFlags: 0
@@ -22920,7 +22920,7 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 666479346}
   - {fileID: 24501016}
-  startsIlluminated: -1
+  startsIlluminated: 1
 --- !u!1 &825869742
 GameObject:
   m_ObjectHideFlags: 0

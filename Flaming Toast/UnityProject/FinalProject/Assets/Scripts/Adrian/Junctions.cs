@@ -20,8 +20,7 @@ public class Junctions : MonoBehaviour {
     {
         if (startsIlluminated >= 0)
         {
-            setIlluminated(startsIlluminated, true);
-            isPowered = true;
+            selectedIndex = startsIlluminated;
         }
     }
 	
