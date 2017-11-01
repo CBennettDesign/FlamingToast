@@ -3562,6 +3562,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.66
       objectReference: {fileID: 0}
+    - target: {fileID: 114573275209472782, guid: 03cdd8c82f4ab8940b7854d46b74183c,
+        type: 2}
+      propertyPath: depotCanisterCountText
+      value: 
+      objectReference: {fileID: 1576669205}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03cdd8c82f4ab8940b7854d46b74183c, type: 2}
   m_IsPrefabParent: 0
@@ -8429,8 +8434,8 @@ MonoBehaviour:
   maxCanisterCount: 10
   oxygenLevel: 100
   shipHealth: 100
-  HealthSlider: {fileID: 0}
-  OxygenSlider: {fileID: 0}
+  HealthSlider: {fileID: 789802467}
+  OxygenSlider: {fileID: 1167808266}
   shipShield: {fileID: 1037128631}
   shieldCol_TOP: {fileID: 515262605}
   shieldCol_LEFT: {fileID: 1394953561}
@@ -8449,7 +8454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectsToEnableAtRuntime:
   - {fileID: 1037128631}
-  - {fileID: 0}
+  - {fileID: 460084173}
 --- !u!1 &346104637
 GameObject:
   m_ObjectHideFlags: 0
@@ -10532,6 +10537,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 418754253}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!114 &420100568 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114639447102283188, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &420810161
 GameObject:
   m_ObjectHideFlags: 0
@@ -11485,6 +11496,11 @@ MonoBehaviour:
   asteroid: {fileID: 1261371896174472, guid: 95e3e330549084f49829147d3ad874a1, type: 2}
   enemyShip: {fileID: 1725018623212628, guid: 5cd19ba142ccf2a41a9276d7abdc0fb6, type: 2}
   currentEventDirection: 3
+--- !u!1 &460084173 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1808801962813170, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
 --- !u!1 &462027606
 GameObject:
   m_ObjectHideFlags: 0
@@ -17143,6 +17159,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 650564397}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!114 &651887586 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114470546163768756, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &657431640
 Prefab:
   m_ObjectHideFlags: 0
@@ -20300,6 +20322,12 @@ Transform:
   m_Father: {fileID: 1102338623}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &789802467 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114349646383999034, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &792094480
 GameObject:
   m_ObjectHideFlags: 0
@@ -27626,6 +27654,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1041672366}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!114 &1041909355 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114727214938809528, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1044226841
 GameObject:
   m_ObjectHideFlags: 0
@@ -29813,6 +29847,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1116584097}
   m_Mesh: {fileID: 4300000, guid: 67b67418b2db4894bac3c511f8c93adc, type: 3}
+--- !u!114 &1118115778 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114429370218276614, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1121325040
 GameObject:
   m_ObjectHideFlags: 0
@@ -30599,6 +30639,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1159363886}
   m_Mesh: {fileID: 4300000, guid: c96e654c454acba4bbc1913e07ef0e10, type: 3}
+--- !u!114 &1167808266 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114289265433001434, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1168068783
 GameObject:
   m_ObjectHideFlags: 0
@@ -36388,7 +36434,7 @@ MonoBehaviour:
   - {fileID: 1590383273}
   - {fileID: 989707293}
   NextJunction:
-  - {fileID: 0}
+  - {fileID: 958239930}
   - {fileID: 1708488891}
   startsIlluminated: -1
 --- !u!23 &1396973298
@@ -40668,6 +40714,12 @@ Transform:
   m_Father: {fileID: 1266573368}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576669205 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114106939138977530, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1589314616
 GameObject:
   m_ObjectHideFlags: 0
@@ -41083,6 +41135,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1606365154}
   m_Mesh: {fileID: 4300000, guid: 03d734dac4796ed4990f32f4dc0b3a07, type: 3}
+--- !u!114 &1606931460 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114110712843948870, guid: d3d59ffbe523eb847bed0f487646c35f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1677116926}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1614679900
 GameObject:
   m_ObjectHideFlags: 0
@@ -54482,17 +54540,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe6c4316666d804aab0efccc64efd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressSlider: {fileID: 0}
+  progressSlider: {fileID: 420100568}
   eventDisplayTime: 4
   spawnDelayTimer: 10
   fullDamageValue: 10
   halfDamageValue: 0
-  partialDamageValue: 2
+  minimumDamageValue: 0
   warningImageLocation:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1041909355}
+  - {fileID: 1606931460}
+  - {fileID: 651887586}
+  - {fileID: 1118115778}
   eventImage:
   - {fileID: 21300000, guid: bf70075e2e7dff5458e58eff5f167af7, type: 3}
   - {fileID: 21300000, guid: e60f815607abf1f4da96354fae8e4717, type: 3}

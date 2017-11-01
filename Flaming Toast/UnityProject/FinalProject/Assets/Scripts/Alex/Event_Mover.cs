@@ -15,6 +15,8 @@ public class Event_Mover : MonoBehaviour
 
     private Shield_System shield_System;
 
+    private Weapon_System weapon_System;
+
     private Event_Spawner event_Spawner;
 
     private VignetteFlash vignetteFlash;
@@ -49,19 +51,27 @@ public class Event_Mover : MonoBehaviour
         {
             case Event_.EventDirection.TOP:
                 shield_System = GameObject.Find("Shield - Top").transform.GetChild(0).GetComponent<Shield_System>();
-                //Debug.Log("Found the top Shield component");
+
+                weapon_System = GameObject.Find("Weapon - Top").transform.GetChild(0).GetComponent<Weapon_System>();
+                Debug.Log("Found the top Shield component");
                 break;
             case Event_.EventDirection.LEFT:
                 shield_System = GameObject.Find("Shield - Left").transform.GetChild(0).GetComponent<Shield_System>();
-                //Debug.Log("Found the left Shield component");
+
+                weapon_System = GameObject.Find("Weapon - Left").transform.GetChild(0).GetComponent<Weapon_System>();
+                Debug.Log("Found the left Shield component");
                 break;
             case Event_.EventDirection.RIGHT:
                 shield_System = GameObject.Find("Shield - Right").transform.GetChild(0).GetComponent<Shield_System>();
-                //Debug.Log("Found the right Shield component");
+
+                weapon_System = GameObject.Find("Weapon - Right").transform.GetChild(0).GetComponent<Weapon_System>();
+                Debug.Log("Found the right Shield component");
                 break;
             case Event_.EventDirection.BOTTOM:
                 shield_System = GameObject.Find("Shield - Bottom").transform.GetChild(0).GetComponent<Shield_System>();
-                //Debug.Log("Found the bottom Shield component");
+
+                weapon_System = GameObject.Find("Weapon - Bottom").transform.GetChild(0).GetComponent<Weapon_System>();
+                Debug.Log("Found the bottom Shield component");
                 break;
             default:
                 break;
@@ -109,6 +119,34 @@ public class Event_Mover : MonoBehaviour
              * 
              */
 
+            //Full damage - no system is active
+            if (!weapon_System.currentSystem.IsActive && !shield_System.currentSystem.IsActive)
+            {
+                Debug.Log("<color=orange>Full Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;
+
+               
+                vignetteFlash.ShipHit(true, false);
+            }
+            //Half damage - one of the systems is active
+            else if (weapon_System.currentSystem.IsActive || shield_System.currentSystem.IsActive)
+            {
+                //Half Damage
+                Debug.Log("<color=yellow>Half Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().halfDamageValue;
+
+                vignetteFlash.ShipHit(true, true);
+            }
+            //Minimal damage - Both systems on
+            else if (weapon_System.currentSystem.IsActive && shield_System.currentSystem.IsActive)
+            {
+                //Partial Damage
+                Debug.Log("<color=yellow>Minimum Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;
+
+                vignetteFlash.ShipHit(true, true);
+            }
+
         }
         else // Asteroid
         {
@@ -127,8 +165,8 @@ public class Event_Mover : MonoBehaviour
             else
             {
                 //Partial Damage
-                Debug.Log("<color=yellow>Partial Damage</color>");
-                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().partialDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+                Debug.Log("<color=yellow>Minimum Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
 
                 vignetteFlash.ShipHit(true, true);
 

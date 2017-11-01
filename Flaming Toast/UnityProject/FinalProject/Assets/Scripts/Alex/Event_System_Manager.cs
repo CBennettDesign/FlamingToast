@@ -24,7 +24,7 @@ public class Event_System_Manager : MonoBehaviour
     public int halfDamageValue;
 
     [Range(0, 20)]
-    public int partialDamageValue;
+    public int minimumDamageValue;
 
 
 
