@@ -72,6 +72,8 @@ public class Canister_Slot : MonoBehaviour
         timer = 0.0f;
     }
 
+
+
     private void Update()
     {
         if (canDrainCanister)
@@ -153,6 +155,15 @@ public class Canister_Slot : MonoBehaviour
         }
         else
         {
+            if (lowChargeWarning != null)
+            {
+                //Warning Indicator
+                lowChargeWarning.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+            }
 
             //Reset the canister status
             system.IsCanisterConnected = false;
@@ -165,6 +176,7 @@ public class Canister_Slot : MonoBehaviour
     /// need direct access to the system_Ray object as it is a child of the canister slot.
     /// </summary>
     /// <returns> The Connected Canister TRUE || FALSE </returns>
+
     public bool CheckForCanister()
     {
         
@@ -173,6 +185,8 @@ public class Canister_Slot : MonoBehaviour
             //Found a canister
             system_Ray.CurrentCanister = system_Ray.CurrentCanister;
             //system.IsCanisterConnected = true;
+
+
             return true;
         }
         else

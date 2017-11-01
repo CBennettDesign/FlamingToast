@@ -20,8 +20,13 @@ public class Event_System_Manager : MonoBehaviour
     [Range(0, 20)]
     public int fullDamageValue;
 
-    [Range(0, 10)]
+    [Range(0, 20)]
+    public int halfDamageValue;
+
+    [Range(0, 20)]
     public int partialDamageValue;
+
+
 
     [Header("Relative to the direction of the event.")]
     public Image[] warningImageLocation;

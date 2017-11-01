@@ -10,7 +10,7 @@ public class System_RayCast : MonoBehaviour
     //Ray Casting - Change to sphere cast, maybe?
     private RaycastHit hitInfo;
     private Ray rayCast;
-
+    private bool greenCanisterFound = false;
     //Current Canister Connected
     private Canister currentCanister;
     //System Access point
@@ -47,8 +47,13 @@ public class System_RayCast : MonoBehaviour
                 //In drain the current canister only when the cannister is connected
                 currentCanister = hitInfo.collider.gameObject.GetComponent<Canister>();
 
-                Debug.Log("Canister found! " + hitInfo.collider.gameObject.name);
-
+                //Debug.Log("Canister found! " + hitInfo.collider.gameObject.name);
+                //if (currentCanister.Charge == 100 && currentCanister.Type == FluxType.NONE)
+                //{
+                //    hitInfo.collider.tag = "Untagged";
+                //    greenCanisterFound = true;
+                //}
+ 
                 //Found a canister
                 return true;
             }
@@ -67,6 +72,15 @@ public class System_RayCast : MonoBehaviour
             {
                 //As the canister is snapped to the position it becomes a child of this game object.
                 currentCanister = this.transform.GetChild(0).GetComponent<Canister>();
+
+
+                //Debug.Log("Canister found! " + hitInfo.collider.gameObject.name);
+                //if (currentCanister.Charge == 100 && currentCanister.Type == FluxType.NONE)
+                //{
+                //    hitInfo.collider.tag = "Untagged";
+                //    greenCanisterFound = true;
+                //}
+                
                 //Found a canister
                 return true;
             }

@@ -37,22 +37,29 @@ public class Event_Spawner : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= spawnDelayTimer)
             {
+
+                //local GameObject instance to send it information
+                GameObject objectSpawned = null;
+
                 //What event to spawn from the spawn location (here)
                 switch (currentEventType)
                 {
                     case Event_.EventType.NONE:
                         {
-                            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                            objectSpawned = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                            //objectSpawned.SendMessage("blarg", true);
                             break;
                         }
                     case Event_.EventType.ENEMY_SHIP:
                         {
-                            Instantiate(enemyShip, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            objectSpawned = Instantiate(enemyShip, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            objectSpawned.SendMessage("IsEnemy", true, SendMessageOptions.DontRequireReceiver);
                             break;
                         }
                     case Event_.EventType.ASTEROID:
                         {
-                            Instantiate(asteroid, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            objectSpawned = Instantiate(asteroid, transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform);
+                            objectSpawned.SendMessage("IsEnemy", false, SendMessageOptions.DontRequireReceiver);
                             break;
                         }
                     default:

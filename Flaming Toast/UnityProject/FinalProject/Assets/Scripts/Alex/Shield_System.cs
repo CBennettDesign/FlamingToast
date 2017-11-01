@@ -45,12 +45,12 @@ public class Shield_System : MonoBehaviour
         //shipCore = GameObject.FindGameObjectWithTag("Power_Core").GetComponent<Power_Core>();
         //Get the system manager
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
+        //Canister slot
+        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
         //Grab the base usage amount
         usageAmount = system.Shield_UsageAmount;
 
         reductionAmount = system.Shield_ReductionAmount;
-        //Canister slot
-        canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
     }
        
     
@@ -182,7 +182,7 @@ public class Shield_System : MonoBehaviour
                 //timer reset
                 timer = 0.0f;
             }
-
+            
 
         }
         else
@@ -215,38 +215,43 @@ public class Shield_System : MonoBehaviour
 
 
     }
-     
 
+
+
+
+    /// <summary>
+    /// Not sure if needed, testing requried, if it doesnt break the game remove this section of code. 
+    /// </summary>
     //Current state being the core power bool being passed around
     private void Toggle(bool currentState)
     {
         currentSystem.CorePower = currentState;
     }
 
-    private void Top(bool currentEventHit)
-    {
-        TakeDamage(currentEventHit);
-    }
+    //private void Top(bool currentEventHit)
+    //{
+    //    TakeDamage(currentEventHit);
+    //}
 
-    private void Left(bool currentEventHit)
-    {
-        TakeDamage(currentEventHit);
-    }
-    private void Right(bool currentEventHit)
-    {
-        TakeDamage(currentEventHit);
-    }
-    private void Bottom(bool currentEventHit)
-    {
-        TakeDamage(currentEventHit);
-    }
+    //private void Left(bool currentEventHit)
+    //{
+    //    TakeDamage(currentEventHit);
+    //}
+    //private void Right(bool currentEventHit)
+    //{
+    //    TakeDamage(currentEventHit);
+    //}
+    //private void Bottom(bool currentEventHit)
+    //{
+    //    TakeDamage(currentEventHit);
+    //}
 
-    private void TakeDamage(bool currentEventHit)
-    {
-        if (currentEventHit)
-        {
-            system.ShipHealth -= usageAmount - reductionAmount;//need to fix using the event system damage
-            //Usage amount is meant for the canister charge if the shield was up or not take a set amount of charge or not.
-        }
-    }
+    //private void TakeDamage(bool currentEventHit)
+    //{
+    //    if (currentEventHit)
+    //    {
+    //        system.ShipHealth -= usageAmount - reductionAmount;//need to fix using the event system damage
+    //        //Usage amount is meant for the canister charge if the shield was up or not take a set amount of charge or not.
+    //    }
+    //}
 }

@@ -20,6 +20,8 @@ public class Event_Mover : MonoBehaviour
     private VignetteFlash vignetteFlash;
 
 
+    private bool isEnemy;
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -64,7 +66,7 @@ public class Event_Mover : MonoBehaviour
             default:
                 break;
         }
-        
+
 
     }
 
@@ -96,33 +98,58 @@ public class Event_Mover : MonoBehaviour
     }
 
     private void DealDamageToShip()
-    { 
-               
-        //Current Shield system that it is connected to is NOT active
-        if (!shield_System.currentSystem.IsActive)
+    {
+        if (isEnemy)
         {
-            //Full Damage
-            Debug.Log("<color=orange>Full Damage</color>");
-            powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;//shield_System.usageAmount;
-
-            //Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
-
-            vignetteFlash.ShipHit(true, false);
+            /* 3 cases of damage
+             * 
+             * 1. Full damage - NO shield or weapon ON
+             * 2. Half damage - 1 not both of shield or weapon ON
+             * 3. Partial / Minimal damage - both shield and weapon ON
+             * 
+             */
 
         }
-        else
+        else // Asteroid
         {
-            //Partial Damage
-            Debug.Log("<color=yellow>Partial Damage</color>");
-            powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().partialDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+            //Current Shield system that it is connected to is NOT active
+            if (!shield_System.currentSystem.IsActive)
+            {
+                //Full Damage
+                Debug.Log("<color=orange>Full Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;//shield_System.usageAmount;
 
-            vignetteFlash.ShipHit(true, true);
+                //Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
+
+                vignetteFlash.ShipHit(true, false);
+
+            }
+            else
+            {
+                //Partial Damage
+                Debug.Log("<color=yellow>Partial Damage</color>");
+                powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().partialDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
+
+                vignetteFlash.ShipHit(true, true);
+
+            }
 
         }
-        
-         
+
+
     }
 
 
+    /// <summary>
+    /// If returns true then it is an enemy
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    private void IsEnemy(bool type)
+    {
+        isEnemy = type;     
+    }
+
+    
 }
 
