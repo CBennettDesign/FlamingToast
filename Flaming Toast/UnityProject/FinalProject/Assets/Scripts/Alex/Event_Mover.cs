@@ -52,26 +52,30 @@ public class Event_Mover : MonoBehaviour
             case Event_.EventDirection.TOP:
                 shield_System = GameObject.Find("Shield - Top").transform.GetChild(0).GetComponent<Shield_System>();
 
-                weapon_System = GameObject.Find("Weapon - Top").transform.GetChild(0).GetComponent<Weapon_System>();
-                Debug.Log("Found the top Shield component");
+                weapon_System = GameObject.FindGameObjectWithTag("wTOP").GetComponent<Weapon_System>();
+                //weapon_System = GameObject.Find("Weapon - Top").transform.GetChild(0).GetComponent<Weapon_System>();
+                //Debug.Log("Found the top Shield component");
                 break;
             case Event_.EventDirection.LEFT:
                 shield_System = GameObject.Find("Shield - Left").transform.GetChild(0).GetComponent<Shield_System>();
 
-                weapon_System = GameObject.Find("Weapon - Left").transform.GetChild(0).GetComponent<Weapon_System>();
-                Debug.Log("Found the left Shield component");
+                weapon_System = GameObject.FindGameObjectWithTag("wLEFT").GetComponent<Weapon_System>();
+                //weapon_System = GameObject.Find("Weapon - Left").transform.GetChild(0).GetComponent<Weapon_System>();
+                //Debug.Log("Found the left Shield component");
                 break;
             case Event_.EventDirection.RIGHT:
                 shield_System = GameObject.Find("Shield - Right").transform.GetChild(0).GetComponent<Shield_System>();
 
-                weapon_System = GameObject.Find("Weapon - Right").transform.GetChild(0).GetComponent<Weapon_System>();
-                Debug.Log("Found the right Shield component");
+                weapon_System = GameObject.FindGameObjectWithTag("wRIGHT").GetComponent<Weapon_System>();
+                //weapon_System = GameObject.Find("Weapon - Right").transform.GetChild(0).GetComponent<Weapon_System>();
+                //Debug.Log("Found the right Shield component");
                 break;
             case Event_.EventDirection.BOTTOM:
                 shield_System = GameObject.Find("Shield - Bottom").transform.GetChild(0).GetComponent<Shield_System>();
 
-                weapon_System = GameObject.Find("Weapon - Bottom").transform.GetChild(0).GetComponent<Weapon_System>();
-                Debug.Log("Found the bottom Shield component");
+                weapon_System = GameObject.FindGameObjectWithTag("wBOTTOM").GetComponent<Weapon_System>();
+                //weapon_System = GameObject.Find("Weapon - Bottom").transform.GetChild(0).GetComponent<Weapon_System>();
+                //Debug.Log("Found the bottom Shield component");
                 break;
             default:
                 break;
@@ -88,18 +92,7 @@ public class Event_Mover : MonoBehaviour
         //rigidBody.MovePosition(rigidBody.position + (powerCore.transform.position - transform.position) * Time.fixedDeltaTime);
     }
 
-    //User Input || !Physics
-    private void Update()
-    {
-
-    }
-
-    //Animations || !Important
-    private void LateUpdate()
-    {
-
-    }
-
+  
     private void OnCollisionEnter(Collision colObj)
     {
         DealDamageToShip();

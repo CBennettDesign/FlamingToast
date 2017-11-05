@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JunctionBoxNear : MonoBehaviour {
 
-	[Range(1,10)]
-	public int distanceAwayFromJunctionBox;
+	[Range(0,5)]
+	public float toolTipDistance;
 
     public List<GameObject> junctionBoxes;
 
     public GameObject aButtonToolTip;
- 
+
+
 	void Start ()
 	{
         GameObject[] tempJbox = GameObject.FindGameObjectsWithTag("jBox");
@@ -21,24 +23,47 @@ public class JunctionBoxNear : MonoBehaviour {
             junctionBoxes.Add(jBox);
         }
 
+        //aButtonToolTip.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 	
  
 	void Update ()
 	{
-        aButtonToolTip.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        GameObject closestGO = null;
+        float closestDist = float.MaxValue;
+
+
         foreach (var jBoxLoc in junctionBoxes)
         {
-            Vector3 vecBetween = (jBoxLoc.transform.position - this.transform.position).normalized;
+            Vector3 vecBetween = (jBoxLoc.transform.position - this.transform.position);
 
-            if (vecBetween.magnitude < distanceAwayFromJunctionBox)
+            float distance = vecBetween.magnitude;
+
+            if(distance < closestDist)
             {
-                aButtonToolTip.SetActive(true);
+                closestDist = distance;
+                closestGO = jBoxLoc;
             }
-            else
-            {
-                aButtonToolTip.SetActive(false);
-            }
+
         }
+
+        if (closestDist < toolTipDistance)
+        {
+            aButtonToolTip.GetComponent<Image>().enabled = true;
+        }
+        else
+        {
+            aButtonToolTip.GetComponent<Image>().enabled = false;
+        }
+        //    foreach (var jBoxLoc in junctionBoxes)
+        //{
+        //    Vector3 vecBetween = (jBoxLoc.transform.position - this.transform.position);
+
+        //    float distance = vecBetween.magnitude;
+
+
+
+        //    Debug.Log(distance);
+        //}
 	}
 }
