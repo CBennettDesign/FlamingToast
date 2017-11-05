@@ -14,6 +14,7 @@ ModelImporter:
     3300000: //RootNode
     3300002: Floor_003_Main_003_Tiny
     4300000: Floor_003_Main_003_Tiny
+    4300002: Floor_001_Main_001_Big
   materials:
     importMaterials: 1
     materialName: 0
