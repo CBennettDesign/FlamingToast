@@ -500,6 +500,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &92038955
@@ -1991,6 +1992,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &256339098
@@ -2049,6 +2051,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!4 &257426616 stripped
@@ -2556,12 +2559,15 @@ MonoBehaviour:
   - {fileID: 1324133525}
   - {fileID: 615622135}
   - {fileID: 657431642}
+  winState: {fileID: 0}
+  lossState: {fileID: 0}
   baseDepletionRate: 1
   maxCanisterCount: 10
   oxygenLevel: 100
   shipHealth: 100
   HealthSlider: {fileID: 0}
   OxygenSlider: {fileID: 0}
+  ProgressSlider: {fileID: 0}
   shipShield: {fileID: 1037128631}
   shieldCol_TOP: {fileID: 515262605}
   shieldCol_LEFT: {fileID: 1394953561}
@@ -4038,6 +4044,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &556437507
@@ -4422,6 +4429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 1.5
+  inHands: {fileID: 0}
   Controlers: 3
 --- !u!54 &615622138
 Rigidbody:
@@ -4449,7 +4457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAwayFromJunctionBox: 1
+  toolTipDistance: 0
   junctionBoxes: []
   aButtonToolTip: {fileID: 0}
 --- !u!114 &615622141
@@ -4560,6 +4568,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &638396202
@@ -4676,6 +4685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 1.5
+  inHands: {fileID: 0}
   Controlers: 4
 --- !u!54 &657431645
 Rigidbody:
@@ -4703,7 +4713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAwayFromJunctionBox: 1
+  toolTipDistance: 0
   junctionBoxes: []
   aButtonToolTip: {fileID: 0}
 --- !u!114 &657431648
@@ -6362,6 +6372,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &989123808
@@ -6977,6 +6988,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1150421451 stripped
@@ -7818,6 +7830,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1312466074
@@ -8011,6 +8024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 1.5
+  inHands: {fileID: 0}
   Controlers: 2
 --- !u!54 &1324133528
 Rigidbody:
@@ -8038,7 +8052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAwayFromJunctionBox: 1
+  toolTipDistance: 0
   junctionBoxes: []
   aButtonToolTip: {fileID: 0}
 --- !u!114 &1324133531
@@ -10149,12 +10163,12 @@ Prefab:
     - target: {fileID: 224397501044078254, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224397501044078254, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1808801962813170, guid: d3d59ffbe523eb847bed0f487646c35f, type: 2}
       propertyPath: m_IsActive
@@ -10163,42 +10177,42 @@ Prefab:
     - target: {fileID: 224449311871227862, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224449311871227862, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224301207145819202, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224301207145819202, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224301207145819202, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224141633029679800, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224141633029679800, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224141633029679800, guid: d3d59ffbe523eb847bed0f487646c35f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3d59ffbe523eb847bed0f487646c35f, type: 2}
@@ -10532,6 +10546,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1659449037
@@ -11110,6 +11125,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1709480367
@@ -12073,6 +12089,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1865414087
@@ -12917,6 +12934,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1957912776
@@ -12986,6 +13004,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1986298975
@@ -13335,6 +13354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpDistance: 1.5
+  inHands: {fileID: 0}
   Controlers: 1
 --- !u!54 &2000401629
 Rigidbody:
@@ -13362,7 +13382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0cc0b1bc49697d42bb0817108a1b1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAwayFromJunctionBox: 1
+  toolTipDistance: 0
   junctionBoxes: []
   aButtonToolTip: {fileID: 1385303526}
 --- !u!114 &2000401632
@@ -13422,6 +13442,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &2018059891
@@ -13662,6 +13683,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &2032098600
@@ -14051,7 +14073,7 @@ MonoBehaviour:
   spawnDelayTimer: 10
   fullDamageValue: 10
   halfDamageValue: 0
-  partialDamageValue: 2
+  minimumDamageValue: 0
   warningImageLocation:
   - {fileID: 0}
   - {fileID: 0}
