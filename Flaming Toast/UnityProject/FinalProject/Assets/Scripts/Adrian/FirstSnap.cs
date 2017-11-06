@@ -53,8 +53,9 @@ public class FirstSnap : MonoBehaviour {
         GiveCanister.transform.localPosition = new Vector3(-xPosition, yPosition, -zPosition);
         GiveCanister.transform.localRotation = Quaternion.identity;// transform.parent.rotation;
 
-        //creates rigidbody component
+        //Prevent core canister from being pick up after entry
         Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
         Destroy(cap);
+        GiveCanister.layer = 0;
     }
 }

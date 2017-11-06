@@ -36,6 +36,36 @@ public class PlayerPickup : MonoBehaviour {
                 GameObject closeCannister = null;
                 float closeDistance = 999999.0f;
 
+
+
+                GameObject closeHolder = null;
+                float maxHolderDistance = 99999f;
+                int holderLayerMask = 1 << LayerMask.NameToLayer("Holder");
+                Collider[] nearbyHolders = Physics.OverlapSphere(transform.position, pickUpDistance, holderLayerMask);
+                for (int i = 0; i < nearbyHolders.Length; i++)
+                {
+                    Vector3 vecBetween = transform.position - nearbyHolders[i].transform.position;
+
+                    float holderDistance = vecBetween.magnitude;
+
+                    //float holderDistance = Vector3.Distance(transform.position, nearbyHolders[i].transform.position);
+                    if (holderDistance < maxHolderDistance)
+                    {
+                        closeHolder = nearbyHolders[i].gameObject;
+                        maxHolderDistance = holderDistance;
+                    }
+                
+                }
+                if (closeHolder != null)
+                {
+                    Debug.Log(closeHolder);
+                    if (closeHolder.GetComponentInChildren<CanisterSnapping>() != null)
+                    {
+                        closeHolder.GetComponentInChildren<CanisterSnapping>().SetCanisterEmpty();
+                    }
+                }
+
+
                 for (int i = 0; i < nearbyCanisters.Length; i++)
                 {
                     //Raycasting to check there is no walls in the way
@@ -128,7 +158,14 @@ public class PlayerPickup : MonoBehaviour {
                 {
                     GameObject holder = info.collider.gameObject;
                     inHands.transform.parent = null;
-                    holder.BroadcastMessage("giveCanister", inHands, SendMessageOptions.DontRequireReceiver);
+                    if (holder.GetComponentInChildren<FirstSnap>() != null)
+                    {
+                        holder.GetComponentInChildren<FirstSnap>().giveCanister(inHands);
+                    } else if (holder.GetComponentInChildren<CanisterSnapping>() != null)
+                    {
+                        holder.GetComponentInChildren<CanisterSnapping>().giveCanister(inHands);
+                    }
+                    //holder.BroadcastMessage("giveCanister", inHands, SendMessageOptions.DontRequireReceiver);
                     inHands = null;
                 }
                 else //drop

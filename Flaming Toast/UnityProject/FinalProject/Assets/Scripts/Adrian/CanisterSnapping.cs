@@ -14,7 +14,7 @@ public class CanisterSnapping : MonoBehaviour
     public float zPosition;
 
     //Canister game object
-    GameObject canister = null;
+    public GameObject canister = null;
 
     //Radius of sphere cast
     public float RadiusOfRayCast = 2;
@@ -30,7 +30,7 @@ public class CanisterSnapping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+                
     }
 
     public bool giveCanister(GameObject GiveCanister)
@@ -47,11 +47,18 @@ public class CanisterSnapping : MonoBehaviour
             //creates rigidbody component
             Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
             Destroy(cap);
+            canister = GiveCanister;
             return true;
         }
         else
         {
             return false;
         }
+    }
+
+    public void SetCanisterEmpty()
+    {
+        canister = null;
+        Debug.Log("WOW");
     }
 }

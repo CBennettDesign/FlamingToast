@@ -2522,6 +2522,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &92038955
@@ -7309,6 +7310,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &247206416
@@ -7720,6 +7722,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &257124407
@@ -16440,6 +16443,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &556437507
@@ -18721,6 +18725,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &638396202
@@ -23771,7 +23776,7 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1904810671}
   - {fileID: 825526232}
-  startsIlluminated: 0
+  startsIlluminated: 1
 --- !u!1 &818438156
 GameObject:
   m_ObjectHideFlags: 0
@@ -28490,6 +28495,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &989123808
@@ -32800,6 +32806,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1150421451 stripped
@@ -36539,6 +36546,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1306482949
@@ -47764,6 +47772,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1659449037
@@ -49210,6 +49219,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1709480367
@@ -51596,7 +51606,7 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 760431422}
   - {fileID: 918342618}
-  startsIlluminated: -1
+  startsIlluminated: 1
 --- !u!65 &1820685560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53165,6 +53175,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1865414087
@@ -56264,6 +56275,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &1957912776
@@ -56750,6 +56762,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!1 &1981085729
@@ -57187,7 +57200,7 @@ MonoBehaviour:
   NextJunction:
   - {fileID: 1945007085}
   - {fileID: 219352339}
-  startsIlluminated: -1
+  startsIlluminated: 1
 --- !u!1001 &1995588788
 Prefab:
   m_ObjectHideFlags: 0
@@ -57768,6 +57781,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &2018059891
@@ -58419,6 +58433,7 @@ MonoBehaviour:
   xPosition: 0
   yPosition: 0.28
   zPosition: 0
+  canister: {fileID: 0}
   RadiusOfRayCast: 2
   keepSnapped: 0
 --- !u!114 &2032098600
