@@ -9,7 +9,8 @@ public class Base_System : MonoBehaviour
 {
     public GameObject[] player;
 
-
+    public GameObject winState;
+    public GameObject lossState;
 
     private bool isPowered = false;
     public bool IsPowered
@@ -109,7 +110,7 @@ public class Base_System : MonoBehaviour
     //UI Slider
     public Slider HealthSlider;
     public Slider OxygenSlider;
-
+    public Slider ProgressSlider;
 
     public GameObject shipShield;
     public GameObject shieldCol_TOP;
@@ -173,6 +174,8 @@ public class Base_System : MonoBehaviour
                     Debug.Log("Killed: " + p.name);
 
                     //game over screen
+                    lossState.GetComponent<Image>().enabled = true;
+                    Time.timeScale = 0.2f;
                 }
             }
 
@@ -194,6 +197,8 @@ public class Base_System : MonoBehaviour
                     Debug.Log("Killed: " + p.name);
 
                     //game over screen
+                    lossState.GetComponent<Image>().enabled = true;
+                    Time.timeScale = 0.2f;
                 }
             }
             shipHealthDepleted = true;
@@ -201,7 +206,11 @@ public class Base_System : MonoBehaviour
 
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
-        
+
+        if (ProgressSlider.value == ProgressSlider.maxValue)
+        {
+            winState.GetComponent<Image>().enabled = true;
+        }
     }
 
 

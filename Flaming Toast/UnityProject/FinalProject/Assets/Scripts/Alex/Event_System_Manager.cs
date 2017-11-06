@@ -44,6 +44,12 @@ public class Event_System_Manager : MonoBehaviour
     private bool runEventTimer;
     private bool endOfEvent;
 
+    public bool RunEvents
+    {
+        get { return runEventTimer; }
+        set { runEventTimer = value; }
+    }
+
     //Pre-Initialisation
     private void Awake()
     {

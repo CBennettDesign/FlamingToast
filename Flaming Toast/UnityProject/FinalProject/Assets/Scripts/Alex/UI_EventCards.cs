@@ -20,14 +20,16 @@ public class UI_EventCards : MonoBehaviour
     public Text[] eventCard_DIRECTION;
     public Text[] eventCard_TIME;
 
+    private Event_System_Manager evm;
 
     private	void Start ()
     {
         //Reference NOT COPY
         //events = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>().events;
 
+        evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
         //Store a temp reference to the list
-        List<Event_> tempEventCollection = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>().events;
+        List<Event_> tempEventCollection = evm.events;
 
         //for every event in that temp reference add it to the local list of events
         foreach (var ev in tempEventCollection)
@@ -57,6 +59,17 @@ public class UI_EventCards : MonoBehaviour
 	
     private	void Update ()
     {
+        //if this is false dont run the following
+        if (!evm.RunEvents)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
 
         //if we have no events, just return
         if (events.Count == 0)

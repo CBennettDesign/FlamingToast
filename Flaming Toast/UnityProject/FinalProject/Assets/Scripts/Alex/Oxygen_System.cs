@@ -141,7 +141,7 @@ public class Oxygen_System : MonoBehaviour
                 }
             }
 
-            Debug.Log("<color=cyan>Oxygen System Online</color>");
+            //Debug.Log("<color=cyan>Oxygen System Online</color>");
 
             //timer reset - regarless of what code block executed.
             timer = 0.0f;

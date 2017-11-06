@@ -82,7 +82,7 @@ public class Canister_Depot : MonoBehaviour
     private void Update()
     {
         depotCanisterCountText.text = (canisterCountMax - canisterCountOnScene).ToString();
-        Debug.Log((canisterCountMax - canisterCountOnScene).ToString());
+        //Debug.Log((canisterCountMax - canisterCountOnScene).ToString());
         if (canisterSpawnLocation != null)
         {
             //Inspector checkbox - User Input / Interaction

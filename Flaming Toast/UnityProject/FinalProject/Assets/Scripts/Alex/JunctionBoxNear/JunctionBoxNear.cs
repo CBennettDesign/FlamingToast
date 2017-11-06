@@ -23,12 +23,13 @@ public class JunctionBoxNear : MonoBehaviour {
             junctionBoxes.Add(jBox);
         }
 
-        //aButtonToolTip.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 	
  
 	void Update ()
 	{
+        aButtonToolTip.transform.rotation = Quaternion.Euler(new Vector3(90, 90, 90));
+
         GameObject closestGO = null;
         float closestDist = float.MaxValue;
 
@@ -55,15 +56,6 @@ public class JunctionBoxNear : MonoBehaviour {
         {
             aButtonToolTip.GetComponent<Image>().enabled = false;
         }
-        //    foreach (var jBoxLoc in junctionBoxes)
-        //{
-        //    Vector3 vecBetween = (jBoxLoc.transform.position - this.transform.position);
-
-        //    float distance = vecBetween.magnitude;
-
-
-
-        //    Debug.Log(distance);
-        //}
+        
 	}
 }

@@ -135,7 +135,7 @@ public class Gravity_System : MonoBehaviour
                     {
                         //Players speed is equal to what the starting speed was when the game starts
                         p.GetComponent<Movement>().movementSpeed = p.GetComponent<Movement>().DefaultSpeed;
-                        Debug.Log("Gravity ON : Put at default speed: " + p.name);
+                        //Debug.Log("Gravity ON : Put at default speed: " + p.name);
                     }
                 }
 
@@ -157,7 +157,7 @@ public class Gravity_System : MonoBehaviour
                     {
                         //Players speed is slowed
                         p.GetComponent<Movement>().movementSpeed = (p.GetComponent<Movement>().DefaultSpeed / 2.0f);
-                        Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
+                        //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
                     }
                 }
 

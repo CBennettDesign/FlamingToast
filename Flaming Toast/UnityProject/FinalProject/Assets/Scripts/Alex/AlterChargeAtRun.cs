@@ -14,7 +14,7 @@ public class AlterChargeAtRun : MonoBehaviour
     {
         cansiter = this.transform.GetComponent<Canister>();
         cansiter.Charge = 100;
-        Debug.Log("<color=green>Set the green cansiter to 100 charge.</color>");
+        //Debug.Log("<color=green>Set the green cansiter to 100 charge.</color>");
     }
 
  

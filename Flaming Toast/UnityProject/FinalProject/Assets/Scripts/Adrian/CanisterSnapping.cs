@@ -46,21 +46,26 @@ public class CanisterSnapping : MonoBehaviour
 
             //creates rigidbody component
             Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
-            Destroy(cap);
+
+            //Destroy(cap);
             canister = GiveCanister;
+            Debug.Log("RETURNED TRUE DID BAD STUFF");
             return true;
         }
         else
         {
+            GiveCanister.AddComponent<Rigidbody>();
+            GiveCanister.GetComponent<Collider>().isTrigger = false;//Alex Edit
+            GiveCanister.transform.parent = null;
             return false;
         }
     }
     //Called in PlayerPickup to run Change
     public void SetCanisterEmpty()
     {
-        Invoke("Change", 0.5f);
-        //canister = null;
-        Debug.Log("WOW");
+        //Invoke("Change", 0.5f);
+        canister = null;
+        Debug.Log("ITS A EMPTY");
     }
 
     //Delayed function to avoid overwritting null value
