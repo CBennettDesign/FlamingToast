@@ -55,10 +55,17 @@ public class CanisterSnapping : MonoBehaviour
             return false;
         }
     }
-
+    //Called in PlayerPickup to run Change
     public void SetCanisterEmpty()
     {
-        canister = null;
+        Invoke("Change", 0.5f);
+        //canister = null;
         Debug.Log("WOW");
+    }
+
+    //Delayed function to avoid overwritting null value
+    public void Change()
+    {
+        canister = null;
     }
 }
