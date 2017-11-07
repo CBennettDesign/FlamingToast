@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-public class CanisterSnapping : MonoBehaviour
+public class CanisterSnapping : BaseCanisterSnapper
 {
     //Distance to pickup    
     public float pickUpDistance = 0.5f;
@@ -33,7 +33,7 @@ public class CanisterSnapping : MonoBehaviour
                 
     }
 
-    public bool giveCanister(GameObject GiveCanister)
+    public override bool giveCanister(GameObject GiveCanister)
     {
         if (canister == null)
         {
@@ -49,7 +49,7 @@ public class CanisterSnapping : MonoBehaviour
 
             //Destroy(cap);
             canister = GiveCanister;
-            Debug.Log("RETURNED TRUE DID BAD STUFF");
+            //Debug.Log("RETURNED TRUE DID BAD STUFF");
             return true;
         }
         else
@@ -65,7 +65,7 @@ public class CanisterSnapping : MonoBehaviour
     {
         //Invoke("Change", 0.5f);
         canister = null;
-        Debug.Log("ITS A EMPTY");
+        //Debug.Log("ITS A EMPTY");
     }
 
     //Delayed function to avoid overwritting null value
@@ -73,4 +73,5 @@ public class CanisterSnapping : MonoBehaviour
     {
         canister = null;
     }
+
 }

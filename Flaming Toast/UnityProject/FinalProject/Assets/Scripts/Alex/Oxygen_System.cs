@@ -21,7 +21,7 @@ public class Oxygen_System : MonoBehaviour
     //Current Systems canister slot
     private Canister_Slot canisterSlot;
 
-
+    private Event_System_Manager evm;
     
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
@@ -34,6 +34,8 @@ public class Oxygen_System : MonoBehaviour
 
         //Canister slot
         canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
+
+        evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
 
         //oxygenText.text = "Oxygen Systems: Offline";
     }
@@ -103,9 +105,12 @@ public class Oxygen_System : MonoBehaviour
 
 
 
+        if (evm.RunEvents)
+        {
+            // timer
+            timer += Time.deltaTime;
 
-        // timer
-        timer += Time.deltaTime;
+        }
 
         //Once per second, check if the current system is active
         if (timer >= 1.0f)

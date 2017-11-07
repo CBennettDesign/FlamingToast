@@ -84,6 +84,32 @@ public class Canister_Slot : MonoBehaviour
 
     private void DrainCanister()
     {
+
+        if (transform.parent.GetComponent<Weapon_System>() != null)
+        {
+            //not active
+            if(!transform.parent.GetComponent<Weapon_System>().currentSystem.IsActive)
+            {
+                return;
+            }
+        }
+        if (transform.parent.GetComponent<Oxygen_System>() != null)
+        {
+            //not active
+            if (!transform.parent.GetComponent<Oxygen_System>().currentSystem.IsActive)
+            {
+                return;
+            }
+        }
+        if (transform.parent.GetComponent<Shield_System>() != null)
+        {
+            //not active
+            if (!transform.parent.GetComponent<Shield_System>().currentSystem.IsActive)
+            {
+                return;
+            }
+        }
+
         //Canister is in the canister slot for the system
         //And it is allowed to drain the canister - Given the all clear from the current system
         if (system_Ray.CurrentCanister != null)
@@ -112,7 +138,7 @@ public class Canister_Slot : MonoBehaviour
                     //Timer reset
                     timer = 0.0f;
 
-                    //Cue for warning indicator.
+                    ////Cue for warning indicator.
                     if (system_Ray.CurrentCanister.Charge <= 15)
                     {
                         if (lowChargeWarning != null)
@@ -126,7 +152,7 @@ public class Canister_Slot : MonoBehaviour
 
                     }
 
-                  
+
                     //Cue for the canister to explode!
                     if (system_Ray.CurrentCanister.Charge == 0)
                     {
@@ -191,15 +217,15 @@ public class Canister_Slot : MonoBehaviour
         }
         else
         {
-            if (lowChargeWarning != null)
-            {
-                //Warning Indicator
-                lowChargeWarning.SetActive(false);
-            }
-            else
-            {
-                Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
-            }
+            //if (lowChargeWarning != null)
+            //{
+            //    //Warning Indicator
+            //    lowChargeWarning.SetActive(false);
+            //}
+            //else
+            //{
+            //    Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+            //}
 
             //system.IsCanisterConnected = false;
             system_Ray.CurrentCanister = null;

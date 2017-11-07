@@ -44,6 +44,7 @@ public class Event_System_Manager : MonoBehaviour
     private bool runEventTimer;
     private bool endOfEvent;
 
+    //When true the events runs
     public bool RunEvents
     {
         get { return runEventTimer; }
@@ -58,7 +59,7 @@ public class Event_System_Manager : MonoBehaviour
         timer = 0.0f;
 
         countOfUsed = 0;
-        runEventTimer = true;
+        runEventTimer = false;
         
 
         //Hide all warning images
@@ -98,13 +99,14 @@ public class Event_System_Manager : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-        //progress slider value is equal to the timer value
-        progressSlider.value = timer;
-
+        //If true then run the events
         if (runEventTimer)
         {
-
+             
             timer += Time.deltaTime;
+            
+            //progress slider value is equal to the timer value
+            progressSlider.value = timer;
 
             foreach (var activeEvent in events)
             {
@@ -270,7 +272,7 @@ public class Event_System_Manager : MonoBehaviour
             
             if (!endOfEvent)
             {
-                timer += Time.deltaTime;
+                
                 if (progressSlider.value >= 300)
                 {
                     endOfEvent = true;

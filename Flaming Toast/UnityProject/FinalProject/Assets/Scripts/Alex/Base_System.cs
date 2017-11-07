@@ -229,7 +229,8 @@ public enum FluxType
 {
     NONE,
     RED,
-    BLUE
+    BLUE,
+    GREEN
 }
 
 [System.Serializable]

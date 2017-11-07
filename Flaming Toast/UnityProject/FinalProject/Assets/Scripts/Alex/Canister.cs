@@ -84,9 +84,13 @@ public class Canister : MonoBehaviour
             {
                 sliderFill.color = Color.cyan;
             }
-            else
+            else if (canisterType == FluxType.GREEN)
             {
                 sliderFill.color = Color.green;
+            }
+            else
+            {
+                sliderFill.color = Color.magenta;
             }
 
         }
@@ -100,4 +104,11 @@ public class Canister : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void Drop()
+    {
+      GetComponent<Collider>().isTrigger = false;//Alex Edit
+      transform.parent = null;
+      gameObject.AddComponent<Rigidbody>();
+     
+    }
 }

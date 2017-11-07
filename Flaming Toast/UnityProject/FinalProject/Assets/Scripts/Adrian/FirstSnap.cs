@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstSnap : MonoBehaviour {
+public class FirstSnap : BaseCanisterSnapper {
 
 
     //Door set 1
     public GameObject doorSet1;
 
+    public Event_System_Manager evm;
 
     //Distance to pickup    
     public float pickUpDistance = 0.5f;
@@ -24,6 +25,7 @@ public class FirstSnap : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class FirstSnap : MonoBehaviour {
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * RadiusOfRayCast);
     }
 
-    public void giveCanister(GameObject GiveCanister)
+    public override bool giveCanister(GameObject GiveCanister)
     {
 
         //sets position to parents position
@@ -57,5 +59,9 @@ public class FirstSnap : MonoBehaviour {
         Rigidbody cap = GiveCanister.GetComponent<Rigidbody>();
         Destroy(cap);
         GiveCanister.layer = 0;
+
+        evm.RunEvents = true;
+
+        return true;
     }
 }

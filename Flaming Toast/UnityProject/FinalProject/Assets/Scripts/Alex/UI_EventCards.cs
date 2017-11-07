@@ -59,27 +59,19 @@ public class UI_EventCards : MonoBehaviour
 	
     private	void Update ()
     {
-        //if this is false dont run the following
-        if (!evm.RunEvents)
+        if (evm.RunEvents)
         {
-            gameObject.SetActive(false);
-            return;
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
+            GameObject tempObject = null;
+            for (int index = 0; index < transform.childCount; index++)
+            {
+                tempObject = transform.GetChild(index).gameObject;
+                if (!tempObject.active)
+                {
+                    tempObject.SetActive(true);
+                }
 
+            }
 
-        //if we have no events, just return
-        if (events.Count == 0)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-
-        
             currentTimer += Time.deltaTime;
 
             //reached the soonest event
@@ -129,6 +121,29 @@ public class UI_EventCards : MonoBehaviour
             {
                 eventCards[2].SetActive(false);
             }
+        }
+        else
+        {
+            GameObject tempObject = null;
+            for (int index = 0; index < transform.childCount; index++)
+            {
+                tempObject = transform.GetChild(index).gameObject;
+                tempObject.SetActive(false);
+            }
+            //return;
+        }
+
+
+
+        //if we have no events, just return
+        if (events.Count == 0)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+
+        
  
         
 

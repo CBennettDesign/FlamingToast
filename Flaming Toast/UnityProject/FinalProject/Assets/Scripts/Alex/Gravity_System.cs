@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Gravity_System : MonoBehaviour
 {
-
+    public GameObject lowChargeWarning;
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -33,6 +33,15 @@ public class Gravity_System : MonoBehaviour
         //Canister slot
         canisterSlot = currentSystem.SystemCanisterSlot.GetComponent<Canister_Slot>();
 
+        if (lowChargeWarning != null)
+        {
+            //Warning Indicator
+            lowChargeWarning.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+        }
 
         //currentSystem.WireSet.GetComponent<WireStatus>().status;
 
@@ -108,6 +117,7 @@ public class Gravity_System : MonoBehaviour
         }
         else
         {
+            lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }
@@ -124,6 +134,34 @@ public class Gravity_System : MonoBehaviour
             //General timer
             timer += Time.deltaTime;
 
+            if (currentSystem.IsActive)
+            {
+                if (canisterSlot.CurrentCanister.Charge <= 15)
+                {
+                    if (lowChargeWarning != null)
+                    {
+                        lowChargeWarning.SetActive(true);
+                    }
+                    else
+                    {
+                        Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                    }
+
+                }
+
+                if (canisterSlot.CurrentCanister.Charge == 0)
+                {
+                    if (lowChargeWarning != null)
+                    {
+                        //Warning Indicator
+                        lowChargeWarning.SetActive(false);
+                    }
+                    else
+                    {
+                        Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                    }
+                }
+            }
             //If gravity is on. Full Player speed every 1 second
             if (timer >= 1.0f && currentSystem.IsActive)
             {
@@ -170,15 +208,7 @@ public class Gravity_System : MonoBehaviour
 
     }
 
-    //Animations || !Important
-    private void LateUpdate()
-    {
-
-
-
-       
-    }
-
+ 
 
     //Current state being the core power bool being passed around from the junction boxes
     private void Toggle(bool currentState)

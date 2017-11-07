@@ -29,7 +29,7 @@ public class Request_Canister : MonoBehaviour
             {
                 if (hitInfo.collider.tag == "Canister_Depot") // - Rework for layer masking as this inner if statement would just result in true ?
                 {
-                    Debug.Log("Canister Depot found! " + hitInfo.collider.gameObject.name);
+                    //Debug.Log("Canister Depot found! " + hitInfo.collider.gameObject.name);
                     hitInfo.collider.gameObject.GetComponent<Canister_Depot>().CanSpawnCansiter = true;
                 }
  

@@ -2518,6 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 0000000002000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -3651,7 +3652,7 @@ Prefab:
     - target: {fileID: 198096687464099324, guid: 3062857b1cc0dda4e980b402f1e40ced,
         type: 2}
       propertyPath: randomSeed
-      value: -638091861
+      value: 1892768059
       objectReference: {fileID: 0}
     - target: {fileID: 1746486467549062, guid: 3062857b1cc0dda4e980b402f1e40ced, type: 2}
       propertyPath: m_Name
@@ -3660,12 +3661,12 @@ Prefab:
     - target: {fileID: 198927503063081580, guid: 3062857b1cc0dda4e980b402f1e40ced,
         type: 2}
       propertyPath: randomSeed
-      value: -400938354
+      value: -1983398272
       objectReference: {fileID: 0}
     - target: {fileID: 198329865232651630, guid: 3062857b1cc0dda4e980b402f1e40ced,
         type: 2}
       propertyPath: randomSeed
-      value: 1046182069
+      value: 1474071018
       objectReference: {fileID: 0}
     - target: {fileID: 4987155991372324, guid: 3062857b1cc0dda4e980b402f1e40ced, type: 2}
       propertyPath: m_LocalScale.y
@@ -5910,6 +5911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a144133ac334d84a95da30a1505afd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowChargeWarning: {fileID: 139547943}
   currentSystem:
     isActive: 0
     type: 2
@@ -6464,8 +6466,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.16480367
-  m_Height: 0.96315527
+  m_Radius: 0.16616166
+  m_Height: 1.0562861
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &234124566
@@ -6482,7 +6484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeSlider: {fileID: 1829257218}
   sliderFill: {fileID: 289667776}
-  canisterType: 0
+  canisterType: 3
   charge: 0
 --- !u!54 &234124567
 Rigidbody:
@@ -7321,6 +7323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 0000000001000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -7733,6 +7736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 01000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -16680,6 +16684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 01000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -18968,6 +18973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 01000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -28905,6 +28911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 01000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -33266,6 +33273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -37066,6 +37074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -37895,7 +37904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b26388b51306147b3f7ab28db7e49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 03000000
   doorSet1: {fileID: 786729547}
+  evm: {fileID: 0}
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -48470,6 +48481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -49921,6 +49933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 0000000002000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -53966,6 +53979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 01000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -57162,6 +57176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 0000000002000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -57649,6 +57664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -58679,6 +58695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28
@@ -59331,6 +59348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6b68a7cc51d040a8933d219454dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compatibleTypes: 02000000
   pickUpDistance: 0.5
   xPosition: 0
   yPosition: 0.28

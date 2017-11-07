@@ -93,7 +93,7 @@ public class PlayerPickup : MonoBehaviour {
                 //Pick up canister if one is in slot
                 if (closeHolder != null)
                 {
-                    Debug.Log("Hello");
+                    //Debug.Log("Hello");
                     if (closeHolder.GetComponentInChildren<CanisterSnapping>() != null && closeHolder.GetComponentInChildren<CanisterSnapping>().canister != null)
                     {
                         inHands = closeHolder.GetComponentInChildren<CanisterSnapping>().canister;
@@ -108,13 +108,13 @@ public class PlayerPickup : MonoBehaviour {
                         //inHands = closeCannister;
                         inHands.GetComponent<Collider>().isTrigger = true;//Alex Edit
 
-                        Debug.Log("WE HERE");
+                        //Debug.Log("WE HERE");
                         closeHolder.GetComponentInChildren<CanisterSnapping>().SetCanisterEmpty();
                         return;
                     }
                     else
                     {
-                        Debug.Log("WTF");
+                       // Debug.Log("WTF");
                     }
                 }
 
@@ -132,7 +132,7 @@ public class PlayerPickup : MonoBehaviour {
 
                     closeCannister.GetComponent<Collider>().isTrigger = true;//Alex Edit
 
-                    Debug.Log("WE GOTTA GO BACK");
+                   // Debug.Log("WE GOTTA GO BACK");
                     return;
                 }
 
@@ -183,21 +183,58 @@ public class PlayerPickup : MonoBehaviour {
                 {
                     GameObject holder = info.collider.gameObject;
                     inHands.transform.parent = null;
-                    if (holder.GetComponentInChildren<FirstSnap>() != null)
+
+
+                    if(holder.GetComponentInChildren<BaseCanisterSnapper>().IsCompatibleCanister( inHands.GetComponent<Canister>() ) )
                     {
-                        holder.GetComponentInChildren<FirstSnap>().giveCanister(inHands);
-                    } else if (holder.GetComponentInChildren<CanisterSnapping>() != null)
-                    {
-                        holder.GetComponentInChildren<CanisterSnapping>().giveCanister(inHands);
+                        holder.GetComponentInChildren<BaseCanisterSnapper>().giveCanister(inHands);
                     }
+                    else
+                    {
+                        inHands.GetComponent<Canister>().Drop();
+                    }
+
+                    inHands = null;
+
+                    ////Green Canister Slot
+                    //if (holder.GetComponentInChildren<FirstSnap>() != null)
+                    //{
+                    //    if (inHands.GetComponent<Canister>().Type == FluxType.GREEN)//Only green Canister
+                    //    {
+                    //        holder.GetComponentInChildren<FirstSnap>().giveCanister(inHands);
+                    //    }
+
+                    //}
+                    ////normal Canister slots
+                    //else if (holder.GetComponentInChildren<CanisterSnapping>() != null)
+                    //{
+                    //    if (inHands.GetComponent<Canister>().Type != FluxType.GREEN /*&& inHands.GetComponent<Canister>().Type != FluxType.NONE*/)//not green
+                    //    {
+                    //        holder.GetComponentInChildren<CanisterSnapping>().giveCanister(inHands);
+                    //    }
+                    //}
+                    ////Chargers
+                    //else if (holder.GetComponent<Canister_Charger>() != null)
+                    //{
+                    //    if (holder.GetComponent<Canister_Charger>().chargingType == FluxType.RED && inHands.GetComponent<Canister>().Type != FluxType.BLUE)
+                    //    {
+                    //        holder.GetComponentInChildren<CanisterSnapping>().giveCanister(inHands);
+                    //    }
+                    //    else if (holder.GetComponent<Canister_Charger>().chargingType == FluxType.BLUE && inHands.GetComponent<Canister>().Type != FluxType.RED)
+                    //    {
+                    //        holder.GetComponentInChildren<CanisterSnapping>().giveCanister(inHands);
+                    //    }
+                    //}
+
+
+
+
                     //holder.BroadcastMessage("giveCanister", inHands, SendMessageOptions.DontRequireReceiver);
                     inHands = null;
                 }
                 else //drop
                 {
-                    inHands.GetComponent<Collider>().isTrigger = false;//Alex Edit
-                    inHands.transform.parent = null;
-                    inHands.AddComponent<Rigidbody>();
+                    inHands.GetComponent<Canister>().Drop();
                     inHands = null;
                 }
 
