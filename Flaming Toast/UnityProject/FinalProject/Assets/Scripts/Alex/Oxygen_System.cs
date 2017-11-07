@@ -90,6 +90,7 @@ public class Oxygen_System : MonoBehaviour
             else
             {
                 //Reset
+                canisterSlot.lowChargeWarning.SetActive(false);
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
                 canisterSlot.CanDrainCanister = false;
@@ -99,6 +100,7 @@ public class Oxygen_System : MonoBehaviour
         else
         {
             //oxygenText.text = "Oxygen Systems: Offline";
+            canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }
