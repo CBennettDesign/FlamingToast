@@ -128,7 +128,6 @@ public class Shield_System : MonoBehaviour
             else
             {
                 //Reset
-                canisterSlot.lowChargeWarning.SetActive(false);
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
                 canisterSlot.CanDrainCanister = false;
@@ -136,7 +135,6 @@ public class Shield_System : MonoBehaviour
         }
         else
         {
-            canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
         }
@@ -179,7 +177,7 @@ public class Shield_System : MonoBehaviour
 
             if (timer >= 1.0f)
             {
-                //Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
+                Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
 
                 //timer reset
                 timer = 0.0f;
