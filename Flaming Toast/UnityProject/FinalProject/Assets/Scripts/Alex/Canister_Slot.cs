@@ -20,8 +20,10 @@ public class Canister_Slot : MonoBehaviour
     //private Canister currentCanister;
 
     //System RayCast 
-    private System_RayCast system_Ray;
+    [HideInInspector]
+    public System_RayCast system_Ray;
 
+ 
     //System Access point
     public Canister CurrentCanister
     { get { return system_Ray.CurrentCanister; } }

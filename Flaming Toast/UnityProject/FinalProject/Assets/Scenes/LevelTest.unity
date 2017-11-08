@@ -1340,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 716982865}
+  system_Ray: {fileID: 0}
 --- !u!23 &42520105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3261,6 +3262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 1420547998}
+  system_Ray: {fileID: 0}
 --- !u!23 &131587739
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6516,7 +6518,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 6e308caf78e147e4eaefbb09a23b1a2c, type: 2}
-  - {fileID: 2100000, guid: 6e308caf78e147e4eaefbb09a23b1a2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9529,6 +9530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 1814297681}
+  system_Ray: {fileID: 0}
 --- !u!65 &338783573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16330,6 +16332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 139547943}
+  system_Ray: {fileID: 0}
 --- !u!65 &551010830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25917,6 +25920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 2023042143}
+  system_Ray: {fileID: 0}
 --- !u!65 &901195616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36980,6 +36984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 220256998}
+  system_Ray: {fileID: 0}
 --- !u!23 &1302495478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46292,6 +46297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 1150421451}
+  system_Ray: {fileID: 0}
 --- !u!23 &1589314620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51250,6 +51256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 46949846}
+  system_Ray: {fileID: 0}
 --- !u!23 &1765798641
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55178,6 +55185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 694179728}
+  system_Ray: {fileID: 0}
 --- !u!23 &1899287262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56597,6 +56605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 455520719}
+  system_Ray: {fileID: 0}
 --- !u!23 &1940134107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59183,6 +59192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 1851358360}
+  system_Ray: {fileID: 0}
 --- !u!23 &2028903904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62207,6 +62217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowChargeWarning: {fileID: 598126470}
+  system_Ray: {fileID: 0}
 --- !u!65 &2117476358
 BoxCollider:
   m_ObjectHideFlags: 0

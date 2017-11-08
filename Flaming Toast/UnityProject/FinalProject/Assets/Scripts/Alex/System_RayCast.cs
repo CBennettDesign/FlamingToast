@@ -19,6 +19,7 @@ public class System_RayCast : MonoBehaviour
         get { return currentCanister; }
         set { currentCanister = value; }
     }
+ 
 
     //Pre-Initialisation
     private void Awake()
@@ -28,6 +29,8 @@ public class System_RayCast : MonoBehaviour
 
         //Default starting value
         currentCanister = null;
+
+         
     }
 
     private void Update()
@@ -53,7 +56,7 @@ public class System_RayCast : MonoBehaviour
                 //    hitInfo.collider.tag = "Untagged";
                 //    greenCanisterFound = true;
                 //}
- 
+
                 //Found a canister
                 return true;
             }
