@@ -8,6 +8,7 @@ public class FirstSnap : BaseCanisterSnapper {
     //Door set 1
     public GameObject doorSet1;
 
+    [HideInInspector]
     public Event_System_Manager evm;
 
     //Distance to pickup    
@@ -61,6 +62,10 @@ public class FirstSnap : BaseCanisterSnapper {
         GiveCanister.layer = 0;
 
         evm.RunEvents = true;
+
+        //Debug.Log("P: " + transform.parent.gameObject.GetComponent<Canister_Slot>().CurrentCanister.gameObject.name);
+        transform.parent.gameObject.GetComponent<Renderer>().material.SetFloat("_FlashSwitch", 0.0f);
+        //Debug.Log(transform.parent.gameObject.GetComponent<Canister_Slot>().CurrentCanister.GetComponent<Canister>().gameObject);//.GetComponent<Renderer>().material.SetFloat("_FlashSwitch", 0.0f);
 
         return true;
     }

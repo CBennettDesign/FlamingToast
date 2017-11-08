@@ -78,6 +78,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 0
+    - __SwitchGlow: 1
+    - _node_4727: 0
     m_Colors:
     - _Color: {r: 0.19999981, g: 0.597, b: 1, a: 0.153}
     - _Colour: {r: 0.2688149, g: 0.8308824, b: 0.3424652, a: 1}

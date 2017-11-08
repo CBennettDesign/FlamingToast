@@ -1,7 +1,7 @@
 // Shader created with Shader Forge v1.38 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-9772-OUT,spec-358-OUT,gloss-1813-OUT,emission-9939-OUT;n:type:ShaderForge.SFN_Slider,id:358,x:32197,y:32797,ptovrint:False,ptlb:Metallic,ptin:_Metallic,varname:node_358,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Slider,id:1813,x:32197,y:32899,ptovrint:False,ptlb:Gloss,ptin:_Gloss,varname:_Metallic_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0.6632479,max:1;n:type:ShaderForge.SFN_SwitchProperty,id:9939,x:32382,y:32626,ptovrint:False,ptlb:EmissionSwitch,ptin:_EmissionSwitch,varname:_node_6033_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,on:True|A-7756-OUT,B-7751-OUT;n:type:ShaderForge.SFN_Time,id:6653,x:31256,y:32507,varname:node_6653,prsc:2;n:type:ShaderForge.SFN_Sin,id:7128,x:31694,y:32560,varname:node_7128,prsc:2|IN-4258-OUT;n:type:ShaderForge.SFN_Color,id:6134,x:31589,y:32220,ptovrint:False,ptlb:Colour,ptin:_Colour,varname:node_6134,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.2688149,c2:0.8308824,c3:0.3424652,c4:1;n:type:ShaderForge.SFN_Multiply,id:9772,x:32144,y:32284,varname:node_9772,prsc:2|A-6134-RGB,B-5615-OUT;n:type:ShaderForge.SFN_ConstantClamp,id:5615,x:31923,y:32416,varname:node_5615,prsc:2,min:0.3,max:1|IN-7128-OUT;n:type:ShaderForge.SFN_Vector1,id:7756,x:32150,y:32515,varname:node_7756,prsc:2,v1:0;n:type:ShaderForge.SFN_Multiply,id:1729,x:31969,y:32573,varname:node_1729,prsc:2|A-6134-RGB,B-7128-OUT;n:type:ShaderForge.SFN_Clamp01,id:7751,x:32150,y:32591,varname:node_7751,prsc:2|IN-1729-OUT;n:type:ShaderForge.SFN_SwitchProperty,id:4258,x:31507,y:32507,ptovrint:False,ptlb:FlashSwitch,ptin:_FlashSwitch,varname:node_4258,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,on:False|A-1841-OUT,B-6653-TTR;n:type:ShaderForge.SFN_Vector1,id:1841,x:31271,y:32395,varname:node_1841,prsc:2,v1:0;proporder:6134-358-1813-9939-4258;pass:END;sub:END;*/
+/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-9772-OUT,spec-358-OUT,gloss-1813-OUT,emission-9939-OUT;n:type:ShaderForge.SFN_Slider,id:358,x:32197,y:32797,ptovrint:False,ptlb:Metallic,ptin:_Metallic,varname:node_358,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0,max:1;n:type:ShaderForge.SFN_Slider,id:1813,x:32197,y:32899,ptovrint:False,ptlb:Gloss,ptin:_Gloss,varname:_Metallic_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0.6632479,max:1;n:type:ShaderForge.SFN_SwitchProperty,id:9939,x:32382,y:32626,ptovrint:False,ptlb:EmissionSwitch,ptin:_EmissionSwitch,varname:_node_6033_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,on:True|A-7756-OUT,B-7751-OUT;n:type:ShaderForge.SFN_Time,id:6653,x:31332,y:32539,varname:node_6653,prsc:2;n:type:ShaderForge.SFN_Sin,id:7128,x:31694,y:32560,varname:node_7128,prsc:2|IN-8039-OUT;n:type:ShaderForge.SFN_Color,id:6134,x:31589,y:32220,ptovrint:False,ptlb:Colour,ptin:_Colour,varname:node_6134,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.2688149,c2:0.8308824,c3:0.3424652,c4:1;n:type:ShaderForge.SFN_Multiply,id:9772,x:32144,y:32284,varname:node_9772,prsc:2|A-6134-RGB,B-5615-OUT;n:type:ShaderForge.SFN_ConstantClamp,id:5615,x:31923,y:32416,varname:node_5615,prsc:2,min:0.3,max:1|IN-7128-OUT;n:type:ShaderForge.SFN_Vector1,id:7756,x:32150,y:32514,varname:node_7756,prsc:2,v1:0;n:type:ShaderForge.SFN_Multiply,id:1729,x:31969,y:32573,varname:node_1729,prsc:2|A-6134-RGB,B-7128-OUT;n:type:ShaderForge.SFN_Clamp01,id:7751,x:32150,y:32591,varname:node_7751,prsc:2|IN-1729-OUT;n:type:ShaderForge.SFN_ValueProperty,id:4727,x:31332,y:32434,ptovrint:False,ptlb:FlashSwitch,ptin:_FlashSwitch,varname:node_4727,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;n:type:ShaderForge.SFN_Multiply,id:8039,x:31542,y:32525,varname:node_8039,prsc:2|A-4727-OUT,B-6653-TTR;n:type:ShaderForge.SFN_Vector1,id:4304,x:32214,y:32578,varname:node_4304,prsc:2,v1:0;proporder:6134-358-1813-9939-4727;pass:END;sub:END;*/
 
 Shader "Shader Forge/CoreTest" {
     Properties {
@@ -9,7 +9,7 @@ Shader "Shader Forge/CoreTest" {
         _Metallic ("Metallic", Range(0, 1)) = 0
         _Gloss ("Gloss", Range(0, 1)) = 0.6632479
         [MaterialToggle] _EmissionSwitch ("EmissionSwitch", Float ) = 0
-        [MaterialToggle] _FlashSwitch ("FlashSwitch", Float ) = 0
+        _FlashSwitch ("FlashSwitch", Float ) = 0
     }
     SubShader {
         Tags {
@@ -44,7 +44,7 @@ Shader "Shader Forge/CoreTest" {
             uniform float _Gloss;
             uniform fixed _EmissionSwitch;
             uniform float4 _Colour;
-            uniform fixed _FlashSwitch;
+            uniform float _FlashSwitch;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -153,9 +153,8 @@ Shader "Shader Forge/CoreTest" {
                 float3 specularColor = _Metallic;
                 float specularMonochrome;
                 float4 node_6653 = _Time;
-                float node_7128 = sin(lerp( 0.0, node_6653.a, _FlashSwitch ));
-                float3 node_9772 = (_Colour.rgb*clamp(node_7128,0.3,1));
-                float3 diffuseColor = node_9772; // Need this for specular when using metallic
+                float node_7128 = sin((_FlashSwitch*node_6653.a));
+                float3 diffuseColor = (_Colour.rgb*clamp(node_7128,0.3,1)); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -233,7 +232,7 @@ Shader "Shader Forge/CoreTest" {
             uniform float _Gloss;
             uniform fixed _EmissionSwitch;
             uniform float4 _Colour;
-            uniform fixed _FlashSwitch;
+            uniform float _FlashSwitch;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -290,9 +289,8 @@ Shader "Shader Forge/CoreTest" {
                 float3 specularColor = _Metallic;
                 float specularMonochrome;
                 float4 node_6653 = _Time;
-                float node_7128 = sin(lerp( 0.0, node_6653.a, _FlashSwitch ));
-                float3 node_9772 = (_Colour.rgb*clamp(node_7128,0.3,1));
-                float3 diffuseColor = node_9772; // Need this for specular when using metallic
+                float node_7128 = sin((_FlashSwitch*node_6653.a));
+                float3 diffuseColor = (_Colour.rgb*clamp(node_7128,0.3,1)); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -356,7 +354,7 @@ Shader "Shader Forge/CoreTest" {
             uniform float _Gloss;
             uniform fixed _EmissionSwitch;
             uniform float4 _Colour;
-            uniform fixed _FlashSwitch;
+            uniform float _FlashSwitch;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float2 texcoord1 : TEXCOORD1;
@@ -382,11 +380,10 @@ Shader "Shader Forge/CoreTest" {
                 UNITY_INITIALIZE_OUTPUT( UnityMetaInput, o );
                 
                 float4 node_6653 = _Time;
-                float node_7128 = sin(lerp( 0.0, node_6653.a, _FlashSwitch ));
+                float node_7128 = sin((_FlashSwitch*node_6653.a));
                 o.Emission = lerp( 0.0, saturate((_Colour.rgb*node_7128)), _EmissionSwitch );
                 
-                float3 node_9772 = (_Colour.rgb*clamp(node_7128,0.3,1));
-                float3 diffColor = node_9772;
+                float3 diffColor = (_Colour.rgb*clamp(node_7128,0.3,1));
                 float specularMonochrome;
                 float3 specColor;
                 diffColor = DiffuseAndSpecularFromMetallic( diffColor, _Metallic, specColor, specularMonochrome );
