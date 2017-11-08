@@ -75,14 +75,7 @@ public class Junctions : MonoBehaviour {
         {
             foreach (Transform child in Wires[Wire].transform)
             {
-                float lerpingEmissions = 0;
-                
-                if (lerpingEmissions <= 1)
-                {
-                    lerpingEmissions = Mathf.Lerp(0.1f, 1, 1);
-                }
-                //Turns on emissions and Changes colors
-                child.GetComponent<Renderer>().material.SetFloat("_wireonoff", lerpingEmissions);
+                child.SendMessage("SetWiresOn", true, SendMessageOptions.DontRequireReceiver);
             }
         }
         else
@@ -90,7 +83,7 @@ public class Junctions : MonoBehaviour {
             foreach (Transform child in Wires[Wire].transform)
             {
                 //Turns off emissions and resets colors
-                child.GetComponent<Renderer>().material.SetFloat("_wireonoff", 0);
+                child.SendMessage("SetWiresOn", false, SendMessageOptions.DontRequireReceiver);
             }
         }
         if(Wire < NextJunction.Length)
