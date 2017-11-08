@@ -10,6 +10,9 @@ public class Junctions : MonoBehaviour {
     private int selectedIndex = -1;
     private bool isPowered = false;
 
+
+
+
     private void Awake()
     {
         selectedIndex = startsIlluminated;
@@ -40,7 +43,8 @@ public class Junctions : MonoBehaviour {
         {
             setIlluminated(selectedIndex, false);
         }
-	}
+        
+    }
 
     public void ToggleJunction()
     {
@@ -71,10 +75,14 @@ public class Junctions : MonoBehaviour {
         {
             foreach (Transform child in Wires[Wire].transform)
             {
+                float lerpingEmissions = 0;
+                
+                if (lerpingEmissions <= 1)
+                {
+                    lerpingEmissions = Mathf.Lerp(0.1f, 1, 1);
+                }
                 //Turns on emissions and Changes colors
-                child.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-                child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.green);
-                child.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                child.GetComponent<Renderer>().material.SetFloat("_wireonoff", lerpingEmissions);
             }
         }
         else
@@ -82,9 +90,7 @@ public class Junctions : MonoBehaviour {
             foreach (Transform child in Wires[Wire].transform)
             {
                 //Turns off emissions and resets colors
-                child.GetComponent<Renderer>().material.SetColor("_Color", myColor);
-                child.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
-                child.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.white);
+                child.GetComponent<Renderer>().material.SetFloat("_wireonoff", 0);
             }
         }
         if(Wire < NextJunction.Length)
