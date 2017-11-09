@@ -34,7 +34,7 @@ public class UI_Interation : MonoBehaviour
         //Debug.Log(currentScene.buildIndex);
 
         //Is in main game
-        if (currentScene.buildIndex == 1)
+        if (currentScene.buildIndex != 0)
         {
             //Start button OR Escape AND not paused and it's not in the main menu
             if (XCI.GetButtonDown(XboxButton.Start, contoller) || Input.GetKeyDown(KeyCode.Escape) && !isPaused && displayPanel.currentPanel != UI_Menu_Manager.CurrentMenuPanel.MAIN_MENU)

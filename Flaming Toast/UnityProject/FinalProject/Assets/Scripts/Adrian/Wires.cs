@@ -7,6 +7,10 @@ public class Wires : MonoBehaviour {
     Renderer meshRenderer;
     float lerping = 0;
 
+    //Adjusts the speed of the wires illuminating
+    [Range(0.0f, 10.0f)]
+    public float speedMultiplyer;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -18,7 +22,7 @@ public class Wires : MonoBehaviour {
     {
         if (isOn)
         {
-            lerping += Time.deltaTime * 2;
+            lerping += Time.deltaTime * speedMultiplyer;
             if (lerping >= 1)
             {
                 lerping = 1;
@@ -28,7 +32,7 @@ public class Wires : MonoBehaviour {
         }
         else
         {
-            lerping -= Time.deltaTime * 2 ;
+            lerping -= Time.deltaTime * speedMultiplyer;
             if (lerping <= 0)
             {
                 lerping = 0;
