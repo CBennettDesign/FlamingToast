@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskClouds:
         m_Texture: {fileID: 2800000, guid: e4f7a21d5bf3e884db45800c9b75e52e, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -31,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureStars:
-        m_Texture: {fileID: 2800000, guid: 5ac8fb6a4f096e948b9b4a365d0e8da0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 930a73848f3a9c943a0a222bca4f3961, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _node_2058:
@@ -39,9 +43,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _node_4231:
+        m_Texture: {fileID: 2800000, guid: 930a73848f3a9c943a0a222bca4f3961, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_4810:
+        m_Texture: {fileID: 2800000, guid: e4f7a21d5bf3e884db45800c9b75e52e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_4810_copy:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_8319:
         m_Texture: {fileID: 2800000, guid: e4f7a21d5bf3e884db45800c9b75e52e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Speed: 0.2
-    m_Colors: []
+    - _Speed: 1.5
+    m_Colors:
+    - _node_3609: {r: 1, g: 0.9310346, b: 0, a: 1}

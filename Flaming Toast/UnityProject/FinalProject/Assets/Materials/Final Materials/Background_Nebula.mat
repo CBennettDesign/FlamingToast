@@ -31,9 +31,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Brightness: 1
+    - _Brightness: 1.34
+    - _Cutoff: 0.5
     - _ParallaxDepth: 0.05
-    - _depth: 0.1
+    - _depth: -0.11
+    - _imax: 0.3
+    - _imin: 0
+    - _omax: 4
+    - _omin: -0.36
+    - _opacityamount: 3.28
     - _ref: 2.27
     m_Colors:
     - _Color: {r: 0.07843138, g: 0.3921569, b: 0.7843137, a: 1}
