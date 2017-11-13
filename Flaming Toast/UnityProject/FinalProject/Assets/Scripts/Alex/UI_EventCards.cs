@@ -14,6 +14,10 @@ public class UI_EventCards : MonoBehaviour
     public List<Event_> events = new List<Event_>();
     private int currentEventIndex;
 
+    [HideInInspector]
+    [Range(0, 10)]
+    public float hitOffset;
+
     //UI Elements
     public GameObject[] eventCards;
     public Text[] eventCard_TYPE;
@@ -75,7 +79,7 @@ public class UI_EventCards : MonoBehaviour
             currentTimer += Time.deltaTime;
 
             //reached the soonest event
-            if (currentTimer >= events[currentEventIndex].timeStamp)
+            if (currentTimer >= events[currentEventIndex].timeStamp + hitOffset)
             {
                 //TempSwitchCard();
                 //currentEventIndex++;
@@ -87,7 +91,7 @@ public class UI_EventCards : MonoBehaviour
             {
                 eventCard_TYPE[currentEventIndex].text = events[currentEventIndex].type.ToString();
                 eventCard_DIRECTION[currentEventIndex].text = events[currentEventIndex].direction.ToString();
-                eventCard_TIME[currentEventIndex].text = (events[currentEventIndex].timeStamp - currentTimer).ToString("0.00");
+                eventCard_TIME[currentEventIndex].text = (events[currentEventIndex].timeStamp - currentTimer + hitOffset).ToString("0.00");
             }
             else
             {
@@ -101,7 +105,7 @@ public class UI_EventCards : MonoBehaviour
                 //Second card
                 eventCard_TYPE[1].text = events[currentEventIndex + 1].type.ToString();
                 eventCard_DIRECTION[1].text = events[currentEventIndex + 1].direction.ToString();
-                eventCard_TIME[1].text = (events[currentEventIndex + 1].timeStamp - currentTimer).ToString("0.00");
+                eventCard_TIME[1].text = (events[currentEventIndex + 1].timeStamp - currentTimer + hitOffset).ToString("0.00");
             }
             else
             {
@@ -114,7 +118,7 @@ public class UI_EventCards : MonoBehaviour
                 //Third card
                 eventCard_TYPE[2].text = events[currentEventIndex + 2].type.ToString();
                 eventCard_DIRECTION[2].text = events[currentEventIndex + 2].direction.ToString();
-                eventCard_TIME[2].text = (events[currentEventIndex + 2].timeStamp - currentTimer).ToString("0.00");
+                eventCard_TIME[2].text = (events[currentEventIndex + 2].timeStamp - currentTimer + hitOffset).ToString("0.00");
 
             }
             else

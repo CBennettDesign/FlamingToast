@@ -23,6 +23,7 @@ public class Canister_Depot : MonoBehaviour
     [Range(0, 5)]
     public float spawnInterval;
 
+    private Event_System_Manager evm;
 
     //Canister Spawn location
     [Tooltip("Spawn Point of the canister")]
@@ -58,6 +59,7 @@ public class Canister_Depot : MonoBehaviour
         //Default check
         canSpawnCansiter = false;
 
+        evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
 
         //get the max canister count
         if (system != null)
@@ -86,7 +88,7 @@ public class Canister_Depot : MonoBehaviour
         if (canisterSpawnLocation != null)
         {
             //Inspector checkbox - User Input / Interaction
-            if (canSpawnCansiter)
+            if (canSpawnCansiter && evm.RunEvents)
             {
                 //increase timer
                 timer += Time.deltaTime;

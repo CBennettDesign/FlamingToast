@@ -43,7 +43,7 @@ public class tutorialTrigger : MonoBehaviour {
         CanvasGroup canvasGroup = canvas.GetComponent<CanvasGroup>();
         while (canvasGroup.alpha < 1)
         {
-            canvasGroup.alpha += Time.deltaTime / 2;
+            canvasGroup.alpha += Time.deltaTime / 3;
             yield return null;
         }
         canvasGroup.interactable = false;
@@ -54,7 +54,7 @@ public class tutorialTrigger : MonoBehaviour {
         CanvasGroup canvasGroup = canvas.GetComponent<CanvasGroup>();
         while (canvasGroup.alpha > 0)
         {
-            canvasGroup.alpha -= Time.deltaTime / 2;
+            canvasGroup.alpha -= Time.deltaTime / 3;
             yield return null;
         }
         canvasGroup.interactable = false;
