@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 
 /*- Alex Scicluna -*/
 
@@ -13,7 +13,10 @@ public class UI_Menu_Manager : MonoBehaviour
     [HideInInspector]
     public CurrentMenuPanel currentPanel;
 
-
+    public GameObject startButton;
+    public GameObject backButton;
+    public GameObject resumeButton;
+    public GameObject EventSystemRef;
 
     public GameObject mainMenu_Panel;
     public GameObject optionsMenu_Panel;
@@ -50,6 +53,7 @@ public class UI_Menu_Manager : MonoBehaviour
     public void ShowMainMenuPanel()
     {
         currentPanel = CurrentMenuPanel.MAIN_MENU;
+        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(startButton);
         UpdateButtonCount(currentPanel);
     }
 
@@ -57,14 +61,16 @@ public class UI_Menu_Manager : MonoBehaviour
     public void ShowOptionsPanel()
     {
         currentPanel = CurrentMenuPanel.OPTIONS_MENU;
+        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(backButton);
         UpdateButtonCount(currentPanel);
     }
-
+        
 
 
     public void ShowPausePanel()
     {
         currentPanel = CurrentMenuPanel.PAUSE_MENU;
+        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
     }
 

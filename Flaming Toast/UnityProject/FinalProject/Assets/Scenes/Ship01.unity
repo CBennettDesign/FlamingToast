@@ -48797,6 +48797,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPanel: 0
+  startButton: {fileID: 194900536}
+  backButton: {fileID: 779549075}
+  resumeButton: {fileID: 1174379092}
+  EventSystemRef: {fileID: 462027606}
   mainMenu_Panel: {fileID: 61278238}
   optionsMenu_Panel: {fileID: 743101740}
   pauseMenu_Panel: {fileID: 1086596315}

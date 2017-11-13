@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
@@ -39,6 +41,9 @@ public class UI_Interation : MonoBehaviour
             //Start button OR Escape AND not paused and it's not in the main menu
             if (XCI.GetButtonDown(XboxButton.Start, contoller) || Input.GetKeyDown(KeyCode.Escape) && !isPaused && displayPanel.currentPanel != UI_Menu_Manager.CurrentMenuPanel.MAIN_MENU)
             {
+                    
+                displayPanel.EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Resume"));
+               
                 //pause the game
                 PauseGame();
             }
