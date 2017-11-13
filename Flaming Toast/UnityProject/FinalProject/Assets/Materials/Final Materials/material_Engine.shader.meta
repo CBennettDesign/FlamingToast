@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 25eaaef063805054791364ea2578fdda
-timeCreated: 1510291520
-licenseType: Free
+timeCreated: 1510545207
+licenseType: Pro
 ShaderImporter:
   defaultTextures:
   - _Colour: {fileID: 2800000, guid: 6924833d88264974f9f3a5a48f6efc0d, type: 3}

@@ -11,6 +11,7 @@ public class PlayerPickup : MonoBehaviour {
     public GameObject inHands = null;
     private Transform thisPlayer;
     public XboxController Controlers;
+    public AudioClip pickUpSound;
 	// Use this for initialization
 	void Start ()
     {
@@ -122,6 +123,7 @@ public class PlayerPickup : MonoBehaviour {
                 if (closeCannister != null )
                 {
                     // Set capsule infront of player
+                    PlayerAudio.instance.PlaySound(pickUpSound);
                     closeCannister.transform.parent = transform.transform;
                     closeCannister.transform.localPosition = new Vector3(0, .50f, .30f);
                     closeCannister.transform.localRotation = Quaternion.Euler(0, 90.0f, 0f);
