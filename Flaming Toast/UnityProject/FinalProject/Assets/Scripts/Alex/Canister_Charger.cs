@@ -85,6 +85,7 @@ public class Canister_Charger : MonoBehaviour
             {
                 //Set the currentCanister Type to match the charging type of this charger
                 system_Ray.CurrentCanister.Type = chargingType;
+                system_Ray.CurrentCanister.Charge = 1;
             }
  
             //Safe Gaurd AND validation
