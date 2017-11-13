@@ -1,15 +1,91 @@
 fileFormatVersion: 2
-guid: 35e8c1de31162354aadbf52790ea60d8
-timeCreated: 1510578224
-licenseType: Free
+guid: b5ee0f4e06dcf514e8f04f287d6eb364
+timeCreated: 1510613416
+licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: System_003_Interior_001_ShieldDisplay
+    100000: Canister_Attach_Point
+    100002: CTRL_Global
+    100004: Head
+    100006: L_Ankle
+    100008: L_Clavicle1
+    100010: L_Elbow
+    100012: L_Fingers1
+    100014: L_Fingers2
+    100016: L_Hand
+    100018: L_Hip
+    100020: L_Knee
+    100022: L_Sholder
+    100024: L_Thumb1
+    100026: L_Thumb2
+    100028: L_Toes
+    100030: Neck1
+    100032: Neck2
+    100034: Player_001_Main_001_Default
+    100036: //RootNode
+    100038: R_Ankle
+    100040: R_Clavicle1
+    100042: R_Elbow
+    100044: R_Fingers1
+    100046: R_Fingers2
+    100048: R_Hand
+    100050: R_Hip
+    100052: R_Knee
+    100054: R_Sholder
+    100056: R_Thumb1
+    100058: R_Thumb2
+    100060: R_Toes
+    100062: Root
+    100064: Spine1
+    100066: Spine2
+    100068: Spine3
+    100070: Spine4
+    400000: Canister_Attach_Point
+    400002: CTRL_Global
+    400004: Head
+    400006: L_Ankle
+    400008: L_Clavicle1
+    400010: L_Elbow
+    400012: L_Fingers1
+    400014: L_Fingers2
+    400016: L_Hand
+    400018: L_Hip
+    400020: L_Knee
+    400022: L_Sholder
+    400024: L_Thumb1
+    400026: L_Thumb2
+    400028: L_Toes
+    400030: Neck1
+    400032: Neck2
+    400034: Player_001_Main_001_Default
+    400036: //RootNode
+    400038: R_Ankle
+    400040: R_Clavicle1
+    400042: R_Elbow
+    400044: R_Fingers1
+    400046: R_Fingers2
+    400048: R_Hand
+    400050: R_Hip
+    400052: R_Knee
+    400054: R_Sholder
+    400056: R_Thumb1
+    400058: R_Thumb2
+    400060: R_Toes
+    400062: Root
+    400064: Spine1
+    400066: Spine2
+    400068: Spine3
+    400070: Spine4
+    4300000: Player_001_Main_001_Default
+    7400000: Idle
+    7400002: Walking
+    7400004: Walking_C
+    7400006: Idle_C
+    7400008: Running
+    7400010: Running_C
+    9500000: //RootNode
+    13700000: Player_001_Main_001_Default
   materials:
     importMaterials: 1
     materialName: 0
@@ -79,7 +155,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
