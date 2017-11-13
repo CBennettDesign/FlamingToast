@@ -207,7 +207,7 @@ public class Base_System : MonoBehaviour
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
 
-        if (ProgressSlider.value == ProgressSlider.maxValue)
+        if (ProgressSlider.value >= ProgressSlider.maxValue)
         {
             winState.GetComponent<Image>().enabled = true;
         }

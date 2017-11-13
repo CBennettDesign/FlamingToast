@@ -270,13 +270,14 @@ public class Event_System_Manager : MonoBehaviour
         else
         {
             
-            if (!endOfEvent)
-            {
+        }
+
+        if (!endOfEvent)
+        {
                 
-                if (progressSlider.value >= 300)
-                {
-                    endOfEvent = true;
-                }
+            if (progressSlider.value >= progressSlider.maxValue)
+            {
+                endOfEvent = true;
             }
         }
 
