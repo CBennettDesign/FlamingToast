@@ -56,11 +56,23 @@ public class Gravity_System : MonoBehaviour
 
         //Off by default
         gravityStatus = false;
-   
+
+
+        //For every player in the players array
+        foreach (GameObject p in system.player)
+        {
+            //safe gaurd - double check for null values
+            if (p != null)
+            {
+                //Players speed is slowed
+                p.GetComponent<Movement>().movementSpeed = (p.GetComponent<Movement>().DefaultSpeed / 2.0f);
+                //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
+            }
+        }
 
     }
 
- 
+
 
     //User Input || !Physics
     private void Update()

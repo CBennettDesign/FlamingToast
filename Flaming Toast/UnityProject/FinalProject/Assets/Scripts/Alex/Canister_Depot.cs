@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Canister_Depot : MonoBehaviour
 {
-
+    public Light depotLight;
     public Text depotCanisterCountText;
 
     //Inpector access - manual overrides
@@ -50,6 +50,9 @@ public class Canister_Depot : MonoBehaviour
     //Spawn Timer
     private float timer;
 
+    //canister spawned
+    private bool canisterSpawning;
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -87,11 +90,27 @@ public class Canister_Depot : MonoBehaviour
         //Debug.Log((canisterCountMax - canisterCountOnScene).ToString());
         if (canisterSpawnLocation != null)
         {
+
+
+            if (system.CurrentCanisterCount < system.MaxCanisterCount && !canisterSpawning)
+            {
+                depotLight.color = Color.green;
+            }
+            if (!evm.RunEvents)
+            {
+                depotLight.color = Color.red;
+            }
+      
             //Inspector checkbox - User Input / Interaction
             if (canSpawnCansiter && evm.RunEvents)
             {
+
+                canisterSpawning = true;
+                depotLight.color = Color.red;
+                
                 //increase timer
                 timer += Time.deltaTime;
+
 
                 //At 1 second AND less or equal to the max count of canisters
                 if (timer >= spawnInterval && system.CurrentCanisterCount < system.MaxCanisterCount)
@@ -106,7 +125,9 @@ public class Canister_Depot : MonoBehaviour
                 {
                     Debug.Log("<color=yellow>Max Canisters on scene</color>");
                     warningGiven = true;
-                  
+
+                    depotLight.color = Color.red;
+
                     //Reset the spawn canister check box. - Regardless if the canister coount reached the maximum or not
                     canSpawnCansiter = false;
                 }
@@ -156,7 +177,7 @@ public class Canister_Depot : MonoBehaviour
         //Reset Timer
         timer = 0.0f;
 
-
+        canisterSpawning = false;
     }
 
 
