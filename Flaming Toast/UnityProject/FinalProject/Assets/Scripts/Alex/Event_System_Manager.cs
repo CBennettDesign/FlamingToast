@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class Event_System_Manager : MonoBehaviour
 {
+    //Particle
+    public GameObject particle;
+
+
     //Progress slider
     [SerializeField]
     private Slider progressSlider;

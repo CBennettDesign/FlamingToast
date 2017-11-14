@@ -21,13 +21,21 @@ public class Event_Mover : MonoBehaviour
 
     private VignetteFlash vignetteFlash;
 
+    private Event_System_Manager evm;
 
     private bool isEnemy;
+
+    private float timer;
+
+    private bool particleDestroy;
+
 
     //Pre-Initialisation
     private void Awake()
     {
         eventMoveSpeed = 4.0f;
+
+        evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
 
         this.gameObject.AddComponent<Rigidbody>();
     }
@@ -90,12 +98,31 @@ public class Event_Mover : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetLocationToHit.transform.position, eventMoveSpeed * Time.fixedDeltaTime);
         //rigidBody.MovePosition(rigidBody.position + (powerCore.transform.position - transform.position) * Time.fixedDeltaTime);
+
+        //if (particleDestroy)
+        //{
+        //    timer += Time.deltaTime;
+        //}
+
+
+
+        //if (timer >= 1.0f && particleDestroy)
+        //{
+        //    //Destroy(evm.particle.gameObject);
+
+        //    Destroy(this.gameObject);
+        //}
+
     }
 
   
     private void OnCollisionEnter(Collision colObj)
     {
         DealDamageToShip();
+           
+        Instantiate(evm.particle, transform.position, Quaternion.identity);
+
+        particleDestroy = true;
 
         Destroy(this.gameObject);
     }

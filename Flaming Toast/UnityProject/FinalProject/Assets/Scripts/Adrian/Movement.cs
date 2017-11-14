@@ -5,6 +5,11 @@ using XboxCtrlrInput;
 
 public class Movement : MonoBehaviour {
 
+
+    private Animator playerAnimator;
+ 
+
+
     //For testing only
     public GameObject inputDebugSphere;
  
@@ -31,6 +36,11 @@ public class Movement : MonoBehaviour {
 
     private void Awake()
 	{
+        playerAnimator = GetComponent<Animator>();
+
+ 
+
+
         //Get a copy of the movement speed value
         defaultSpeed = movementSpeed;
 
@@ -51,6 +61,8 @@ public class Movement : MonoBehaviour {
         //Left Stick input
 		inputDirection = new Vector3(XCI.GetAxisRaw(XboxAxis.LeftStickX, controller), 0, XCI.GetAxisRaw(XboxAxis.LeftStickY, controller));
 
+        
+
         if (inputDirection != Vector3.zero)
         {
             //Vector between the end from the start. targetDestination from the current position
@@ -60,10 +72,33 @@ public class Movement : MonoBehaviour {
             //Lerp the rotation from its current rotation to its new rotation
             rigidBody.rotation = Quaternion.Slerp(rigidBody.rotation, targetRotation,  movementSpeed * Time.fixedDeltaTime);
         }
-        
-        //Moves the player towards the inputDirection, multiplied by the speed and smoothed with Time.fixedDeltaTime.
-        rigidBody.MovePosition(rigidBody.position + inputDirection * movementSpeed * Time.fixedDeltaTime);
 
+        //Velocity of the player.
+        Vector3 velocity = inputDirection * movementSpeed * Time.fixedDeltaTime;
+        //playerAnimator.speed = velocity.magnitude * 8.0f;
+
+
+
+        //
+        playerAnimator.SetFloat("Speed", velocity.magnitude);
+        //if (velocity.magnitude > 0.08f)
+        //{
+        //    playerAnimator.speed = velocity.magnitude * 8.0f;
+        //}
+        //else if (velocity.magnitude < 0.08f && velocity.magnitude > 0.01f)
+        //{
+        //    playerAnimator.speed = velocity.magnitude * 17.0f;
+        //}
+        //else if (velocity.magnitude <= 0.01f)
+        //{
+        //    playerAnimator.speed = 0.0f;
+        //}
+
+
+        //Moves the player towards the inputDirection, multiplied by the speed and smoothed with Time.fixedDeltaTime.
+        rigidBody.MovePosition(rigidBody.position + velocity);
+
+        //Debug.Log("Velocity: " + velocity * 1.0f);
 
         //While the debug sphere is attached to the player.
         if (inputDebugSphere != null)
@@ -76,4 +111,10 @@ public class Movement : MonoBehaviour {
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
     }
+
+ 
 }
+
+        
+
+ 

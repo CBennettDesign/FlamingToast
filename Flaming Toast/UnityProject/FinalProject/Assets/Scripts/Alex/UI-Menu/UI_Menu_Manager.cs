@@ -41,6 +41,11 @@ public class UI_Menu_Manager : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+
+    }
+
     //Turn off all menu panels
     public void ClearPanels()
     {
