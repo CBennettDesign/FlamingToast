@@ -92,7 +92,7 @@ public class Canister_Depot : MonoBehaviour
         {
 
 
-            if (system.CurrentCanisterCount < system.MaxCanisterCount && !canisterSpawning)
+            if (system.CurrentCanisterCount < system.MaxCanisterCount/* && !canisterSpawning*/)
             {
                 depotLight.color = Color.green;
             }

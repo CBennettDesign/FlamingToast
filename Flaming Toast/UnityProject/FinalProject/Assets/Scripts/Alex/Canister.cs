@@ -94,6 +94,10 @@ public class Canister : MonoBehaviour
             }
 
         }
+        if (transform.position.y < 0.0f)
+        {
+            Destroy();
+        }
     }
 
     public void Destroy()
