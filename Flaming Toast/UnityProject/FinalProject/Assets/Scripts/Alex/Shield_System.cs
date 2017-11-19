@@ -123,6 +123,7 @@ public class Shield_System : MonoBehaviour
                 {
                     //only when the previous 3 checks are true.
                     currentSystem.IsActive = true;
+                    currentSystem.SystemLight.SetActive(true);
                 }
             }
             else
@@ -131,6 +132,7 @@ public class Shield_System : MonoBehaviour
                 canisterSlot.lowChargeWarning.SetActive(false);
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
+                currentSystem.SystemLight.SetActive(false);
                 canisterSlot.CanDrainCanister = false;
             }
         }
@@ -139,6 +141,7 @@ public class Shield_System : MonoBehaviour
             canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
+            currentSystem.SystemLight.SetActive(false);
         }
 
 

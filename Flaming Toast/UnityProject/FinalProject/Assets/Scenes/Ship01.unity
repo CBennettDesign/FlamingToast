@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 1
     fluxType: 2
@@ -2316,7 +2317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.6989994, y: 0}
+  m_AnchoredPosition: {x: -4.6989975, y: 0}
   m_SizeDelta: {x: 0.601, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64397505
@@ -7399,6 +7400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 2
     fluxType: 1
@@ -44019,6 +44021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 0
     fluxType: 2
@@ -52971,7 +52974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.4260006, y: 0}
+  m_AnchoredPosition: {x: -4.4260025, y: 0}
   m_SizeDelta: {x: 1.148, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114254845
@@ -67341,6 +67344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 3
     fluxType: 1
@@ -72143,6 +72147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 3
     fluxType: 1
@@ -73310,6 +73315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 3
     fluxType: 1
@@ -81452,6 +81458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 3
     fluxType: 1
@@ -91253,7 +91260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 0}
+  m_AnchoredPosition: {x: 80.00001, y: 0}
   m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1783747713
@@ -93378,6 +93385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 0
     fluxType: 2
@@ -95410,6 +95418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 0
     fluxType: 2
@@ -98666,6 +98675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSystem:
+    systemLight: {fileID: 0}
     isActive: 0
     type: 0
     fluxType: 2

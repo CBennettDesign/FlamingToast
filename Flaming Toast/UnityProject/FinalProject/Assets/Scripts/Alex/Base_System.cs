@@ -211,6 +211,7 @@ public class Base_System : MonoBehaviour
         {
             winState.GetComponent<Image>().enabled = true;
         }
+
     }
 
 
@@ -236,7 +237,16 @@ public enum FluxType
 [System.Serializable]
 public class Current_System
 {
-    [Tooltip("Core_Power AND Canister is connected")]
+    [Header("Core_Power AND Canister is connected")]
+    [SerializeField]
+    private GameObject systemLight;
+    public GameObject SystemLight
+    {
+        get { return systemLight; }
+        set { systemLight = value; }
+    }
+
+    [Header("Core_Power AND Canister is connected")]
     [SerializeField]
     private bool isActive;
 
@@ -246,7 +256,7 @@ public class Current_System
         set { isActive = value; }
     }
 
-    [Tooltip("System Type")]
+    [Header("System Type")]
     [SerializeField]
     private SystemType type;
 
@@ -256,7 +266,7 @@ public class Current_System
         set { type = value; }
     }
 
-    [Tooltip("What the flux type it requires")]
+    [Header("What the flux type it requires")]
     [SerializeField]
     private FluxType fluxType;
 
@@ -266,7 +276,7 @@ public class Current_System
         set { fluxType = value; }
     }
 
-    [Tooltip("System Direction")]
+    [Header("System Direction")]
     [SerializeField]
     private SystemDirection direction;
 
@@ -276,7 +286,7 @@ public class Current_System
         set { direction = value; }
     }
 
-    [Tooltip("Core_Power ON || OFF")]
+    [Header("Core_Power ON || OFF")]
     [SerializeField]
     private bool corePower;
 
@@ -286,7 +296,7 @@ public class Current_System
         set { corePower = value; }
     }
 
-    [Tooltip("Connected wire set to the current system.")]
+    [Header("Connected wire set to the current system.")]
     [SerializeField]
     private GameObject wireSet;
 
@@ -296,7 +306,7 @@ public class Current_System
         set { wireSet = value; }
     }
 
-    [Tooltip("Canister of the current system.")]
+    [Header("Canister of the current system.")]
     [SerializeField]
     private GameObject systemCanisterSlot;
 
@@ -306,7 +316,7 @@ public class Current_System
         set { systemCanisterSlot = value; }
     }
 
-    [Tooltip("Canister connected TRUE || FALSE")]
+    [Header("Canister connected TRUE || FALSE")]
     [SerializeField]
     private bool canisterConnected;
 
