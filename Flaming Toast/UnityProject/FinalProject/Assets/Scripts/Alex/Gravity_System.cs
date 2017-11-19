@@ -103,7 +103,10 @@ public class Gravity_System : MonoBehaviour
                 {
                     //only when the previous 3 checks are true.
                     currentSystem.IsActive = true;
-                    currentSystem.SystemLight.SetActive(true);
+                    if (currentSystem.SystemLight != null)
+                    {
+                        currentSystem.SystemLight.SetActive(true);
+                    }
                 }
             }
             else
@@ -112,7 +115,10 @@ public class Gravity_System : MonoBehaviour
                 canisterSlot.lowChargeWarning.SetActive(false);
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
-                currentSystem.SystemLight.SetActive(false);
+                if (currentSystem.SystemLight != null)
+                {
+                    currentSystem.SystemLight.SetActive(false);
+                }
                 canisterSlot.CanDrainCanister = false;
             }
         }
@@ -121,7 +127,10 @@ public class Gravity_System : MonoBehaviour
             canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
-            currentSystem.SystemLight.SetActive(false);
+            if (currentSystem.SystemLight != null)
+            {
+                currentSystem.SystemLight.SetActive(false);
+            }
         }
 
         //The status of the gravity, is on or off depending on the above code
