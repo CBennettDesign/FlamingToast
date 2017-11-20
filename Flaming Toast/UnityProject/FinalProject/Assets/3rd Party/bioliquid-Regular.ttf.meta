@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4c4e8b061c2fe8b44849001e975986c0
+timeCreated: 1511151860
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: bioliquid
+  fontNames:
+  - bioliquid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

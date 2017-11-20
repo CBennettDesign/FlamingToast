@@ -29,9 +29,9 @@ Material:
     - _texture:
         m_Texture: {fileID: 2800000, guid: 10ade2733722db2478f8dc5cf572bcaa, type: 3}
         m_Scale: {x: 1, y: 4}
-        m_Offset: {x: 0, y: -1.5}
+        m_Offset: {x: 0, y: -3.1}
     m_Floats:
-    - _Brightness: 1.1
+    - _Brightness: 1
     - _Cutoff: 0.5
     - _ParallaxDepth: 0.05
     - _depth: 0.03
