@@ -21,7 +21,7 @@ public class Canister : MonoBehaviour
 
 
     public Slider chargeSlider;
-    public Image sliderFill;
+    public Image sliderFill;//------------------------------------------
 
 
     private Base_System system;
@@ -110,7 +110,7 @@ public class Canister : MonoBehaviour
 
     public void Drop()
     {
-      GetComponent<Collider>().isTrigger = false;//Alex Edit
+      GetComponent<Collider>().isTrigger = false;
       transform.parent = null;
       gameObject.AddComponent<Rigidbody>();
      
