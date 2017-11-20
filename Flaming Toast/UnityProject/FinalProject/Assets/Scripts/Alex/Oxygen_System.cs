@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Oxygen_System : MonoBehaviour
 {
-    //public Text oxygenText;
+    public Text oxygenText;
 
     //Base System
     private Base_System system;
@@ -37,7 +37,7 @@ public class Oxygen_System : MonoBehaviour
 
         evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
 
-        //oxygenText.text = "Oxygen Systems: Offline";
+        oxygenText.text = "Oxygen Systems: Offline";
     }
          
 
@@ -73,7 +73,7 @@ public class Oxygen_System : MonoBehaviour
         //If there is power from the core going into the current system
         if (currentSystem.CorePower)
         {
-            //oxygenText.text = "Oxygen Systems: Online";
+            oxygenText.text = "";//Oxygen Systems: Online
             //only check if a canister is there when the system has power.
             //When it has a canister and core power
             if (canisterSlot.CheckForCanister())
@@ -107,12 +107,12 @@ public class Oxygen_System : MonoBehaviour
                 }
 
                 canisterSlot.CanDrainCanister = false;
-                //oxygenText.text = "Oxygen Systems: Offline";
+                oxygenText.text = "Oxygen Systems: Offline";
             }
         }
         else
         {
-            //oxygenText.text = "Oxygen Systems: Offline";
+            oxygenText.text = "Oxygen Systems: Offline";
             canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
@@ -129,6 +129,10 @@ public class Oxygen_System : MonoBehaviour
             // timer
             timer += Time.deltaTime;
 
+        }
+        else
+        {
+            oxygenText.text = "";
         }
 
         //Once per second, check if the current system is active

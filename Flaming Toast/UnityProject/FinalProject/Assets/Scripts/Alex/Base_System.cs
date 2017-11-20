@@ -183,7 +183,7 @@ public class Base_System : MonoBehaviour
             Debug.Log("Oxygen Depleted!!");
         }
 
-        if (shipHealth == 0 && !shipHealthDepleted)
+        if (shipHealth <= 0 && !shipHealthDepleted)
         {
             Debug.Log("<color=red>Ship health is 0, game over!</color>");
             //For every player in the players array
