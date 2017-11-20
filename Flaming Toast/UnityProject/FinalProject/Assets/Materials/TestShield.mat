@@ -80,7 +80,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EffectTileAmount: 1
-    - _EmissionAmount: 1.99
+    - _EmissionAmount: 1
     - _FresnelMaskExponent: -0.85
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -90,7 +90,8 @@ Material:
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
-    - _OverallTransparency: 0.8
+    - _Opacity: 3
+    - _OverallTransparency: 0.9
     - _Parallax: 0.02
     - _PatternTileAmount: 112.48
     - _Shield_1: 1
