@@ -1,7 +1,7 @@
 // Shader created with Shader Forge v1.38 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:1,uamb:True,mssp:True,bkdf:False,hqlp:False,rprd:False,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:False,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:3138,x:33007,y:32862,varname:node_3138,prsc:2|diff-6092-RGB,spec-3975-R,gloss-7248-R,emission-2303-OUT;n:type:ShaderForge.SFN_Color,id:7241,x:31958,y:32517,ptovrint:False,ptlb:Wire Colour,ptin:_WireColour,varname:node_7241,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:1,c3:0.3793101,c4:1;n:type:ShaderForge.SFN_Tex2d,id:7248,x:32565,y:33162,ptovrint:False,ptlb:rough,ptin:_rough,varname:node_7248,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:3625,x:31958,y:32689,ptovrint:False,ptlb:mask,ptin:_mask,varname:node_3625,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:3975,x:32565,y:32972,ptovrint:False,ptlb:metal,ptin:_metal,varname:node_3975,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:6092,x:32481,y:32608,ptovrint:False,ptlb:colour,ptin:_colour,varname:node_6092,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:3,isnm:False;n:type:ShaderForge.SFN_Multiply,id:2303,x:32291,y:32805,varname:node_2303,prsc:2|A-7241-RGB,B-3625-R,C-8307-OUT;n:type:ShaderForge.SFN_ValueProperty,id:8307,x:31958,y:32879,ptovrint:False,ptlb:wireonoff,ptin:_wireonoff,varname:node_8307,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;proporder:7241-8307-3625-6092-3975-7248;pass:END;sub:END;*/
+/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:1,uamb:True,mssp:True,bkdf:False,hqlp:False,rprd:False,enco:False,rmgx:True,imps:True,rpth:1,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:False,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:3138,x:33007,y:32862,varname:node_3138,prsc:2|diff-6092-RGB,spec-3975-R,gloss-7248-R,emission-2303-OUT;n:type:ShaderForge.SFN_Color,id:7241,x:31958,y:32517,ptovrint:False,ptlb:Wire Colour,ptin:_WireColour,varname:node_7241,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:1,c3:0.3793101,c4:1;n:type:ShaderForge.SFN_Tex2d,id:7248,x:32565,y:33162,ptovrint:False,ptlb:rough,ptin:_rough,varname:node_7248,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:3625,x:31958,y:32689,ptovrint:False,ptlb:mask,ptin:_mask,varname:node_3625,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:3975,x:32565,y:32972,ptovrint:False,ptlb:metal,ptin:_metal,varname:node_3975,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:6092,x:32481,y:32608,ptovrint:False,ptlb:colour,ptin:_colour,varname:node_6092,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:3,isnm:False;n:type:ShaderForge.SFN_Multiply,id:2303,x:32291,y:32805,varname:node_2303,prsc:2|A-7241-RGB,B-3625-R,C-8307-OUT;n:type:ShaderForge.SFN_ValueProperty,id:8307,x:31958,y:32879,ptovrint:False,ptlb:wireonoff,ptin:_wireonoff,varname:node_8307,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;proporder:7241-8307-3625-6092-3975-7248;pass:END;sub:END;*/
 
 Shader "Shader Forge/wiretest" {
     Properties {
@@ -15,6 +15,107 @@ Shader "Shader Forge/wiretest" {
     SubShader {
         Tags {
             "RenderType"="Opaque"
+        }
+        Pass {
+            Name "DEFERRED"
+            Tags {
+                "LightMode"="Deferred"
+            }
+            
+            
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #define UNITY_PASS_DEFERRED
+            #include "UnityCG.cginc"
+            #include "UnityPBSLighting.cginc"
+            #include "UnityStandardBRDF.cginc"
+            #pragma fragmentoption ARB_precision_hint_fastest
+            #pragma multi_compile_shadowcaster
+            #pragma multi_compile ___ UNITY_HDR_ON
+            #pragma only_renderers d3d9 d3d11 glcore gles 
+            #pragma target 3.0
+            uniform float4 _WireColour;
+            uniform sampler2D _rough; uniform float4 _rough_ST;
+            uniform sampler2D _mask; uniform float4 _mask_ST;
+            uniform sampler2D _metal; uniform float4 _metal_ST;
+            uniform sampler2D _colour; uniform float4 _colour_ST;
+            uniform float _wireonoff;
+            struct VertexInput {
+                float4 vertex : POSITION;
+                float3 normal : NORMAL;
+                float2 texcoord0 : TEXCOORD0;
+            };
+            struct VertexOutput {
+                float4 pos : SV_POSITION;
+                float2 uv0 : TEXCOORD0;
+                float4 posWorld : TEXCOORD1;
+                float3 normalDir : TEXCOORD2;
+            };
+            VertexOutput vert (VertexInput v) {
+                VertexOutput o = (VertexOutput)0;
+                o.uv0 = v.texcoord0;
+                o.normalDir = UnityObjectToWorldNormal(v.normal);
+                o.posWorld = mul(unity_ObjectToWorld, v.vertex);
+                o.pos = UnityObjectToClipPos( v.vertex );
+                return o;
+            }
+            void frag(
+                VertexOutput i,
+                out half4 outDiffuse : SV_Target0,
+                out half4 outSpecSmoothness : SV_Target1,
+                out half4 outNormal : SV_Target2,
+                out half4 outEmission : SV_Target3 )
+            {
+                i.normalDir = normalize(i.normalDir);
+                float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
+                float3 normalDirection = i.normalDir;
+                float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
+////// Lighting:
+                float Pi = 3.141592654;
+                float InvPi = 0.31830988618;
+///////// Gloss:
+                float4 _rough_var = tex2D(_rough,TRANSFORM_TEX(i.uv0, _rough));
+                float gloss = 1.0 - _rough_var.r; // Convert roughness to gloss
+                float perceptualRoughness = _rough_var.r;
+                float roughness = perceptualRoughness * perceptualRoughness;
+/////// GI Data:
+                UnityLight light; // Dummy light
+                light.color = 0;
+                light.dir = half3(0,1,0);
+                light.ndotl = max(0,dot(normalDirection,light.dir));
+                UnityGIInput d;
+                d.light = light;
+                d.worldPos = i.posWorld.xyz;
+                d.worldViewDir = viewDirection;
+                d.atten = 1;
+                Unity_GlossyEnvironmentData ugls_en_data;
+                ugls_en_data.roughness = 1.0 - gloss;
+                ugls_en_data.reflUVW = viewReflectDirection;
+                UnityGI gi = UnityGlobalIllumination(d, 1, normalDirection, ugls_en_data );
+////// Specular:
+                float4 _metal_var = tex2D(_metal,TRANSFORM_TEX(i.uv0, _metal));
+                float3 specularColor = _metal_var.r;
+                float specularMonochrome;
+                float4 _colour_var = tex2D(_colour,TRANSFORM_TEX(i.uv0, _colour));
+                float3 diffuseColor = _colour_var.rgb; // Need this for specular when using metallic
+                diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
+                specularMonochrome = 1.0-specularMonochrome;
+                float NdotV = max(0.0,dot( normalDirection, viewDirection ));
+/////// Diffuse:
+////// Emissive:
+                float4 _mask_var = tex2D(_mask,TRANSFORM_TEX(i.uv0, _mask));
+                float3 emissive = (_WireColour.rgb*_mask_var.r*_wireonoff);
+/// Final Color:
+                outDiffuse = half4( diffuseColor, 1 );
+                outSpecSmoothness = half4( specularColor, gloss );
+                outNormal = half4( normalDirection * 0.5 + 0.5, 1 );
+                outEmission = half4( (_WireColour.rgb*_mask_var.r*_wireonoff), 1 );
+                #ifndef UNITY_HDR_ON
+                    outEmission.rgb = exp2(-outEmission.rgb);
+                #endif
+            }
+            ENDCG
         }
         Pass {
             Name "FORWARD"

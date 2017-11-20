@@ -37,7 +37,7 @@ public class Oxygen_System : MonoBehaviour
 
         evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
 
-        oxygenText.text = "Oxygen Systems: Offline";
+        oxygenText.text = "Oxygen Systems Offline";
     }
          
 
@@ -107,12 +107,12 @@ public class Oxygen_System : MonoBehaviour
                 }
 
                 canisterSlot.CanDrainCanister = false;
-                oxygenText.text = "Oxygen Systems: Offline";
+                oxygenText.text = "Oxygen Systems Offline";
             }
         }
         else
         {
-            oxygenText.text = "Oxygen Systems: Offline";
+            oxygenText.text = "Oxygen Systems Offline";
             canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
