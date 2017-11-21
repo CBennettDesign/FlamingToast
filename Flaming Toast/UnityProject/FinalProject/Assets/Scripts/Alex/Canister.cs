@@ -18,7 +18,7 @@ public class Canister : MonoBehaviour
     }
 
 
-
+    private Material canisterMaterial;
 
     public Slider chargeSlider;
     public Image sliderFill;//------------------------------------------
@@ -67,31 +67,43 @@ public class Canister : MonoBehaviour
         sliderFill.color = Color.white;
         //
         onlyCheckOnce = false;
+
+        canisterMaterial = GetComponent<Renderer>().materials[1];
+
+        //canisterMaterial.SetColor("_canisterColour", Color.red);
+        //canisterMaterial.SetFloat("_canisterLevel", 0.5f);
     }
+
 
 
     private void Update()
     {
-        chargeSlider.value = charge;
+        //chargeSlider.value = charge;
+        
+        canisterMaterial.SetFloat("_canisterLevel", (float)charge / 100.0f );
 
         if (charge > 0 && !onlyCheckOnce)
         {
             //chargeSlider.fillRect.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
             if (canisterType == FluxType.RED)
             {
-                sliderFill.color = Color.red;
+                canisterMaterial.SetColor("_canisterColour", Color.red);
+                //sliderFill.color = Color.red;
             }
             else if (canisterType == FluxType.BLUE)
             {
-                sliderFill.color = Color.cyan;
+                canisterMaterial.SetColor("_canisterColour", Color.cyan);
+                //sliderFill.color = Color.cyan;
             }
             else if (canisterType == FluxType.GREEN)
             {
-                sliderFill.color = Color.green;
+                canisterMaterial.SetColor("_canisterColour", Color.green);
+                //sliderFill.color = Color.green;
             }
             else
             {
-                sliderFill.color = Color.magenta;
+                canisterMaterial.SetColor("_canisterColour", Color.magenta);
+                //sliderFill.color = Color.magenta;
             }
 
         }
@@ -105,7 +117,7 @@ public class Canister : MonoBehaviour
     {
         //When deleting canister remove from depot canister count
         system.CurrentCanisterCount--;
-
+        Debug.Log("<color=red>Out of map!</color>");
         Destroy(this.gameObject);
     }
 
