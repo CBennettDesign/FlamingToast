@@ -62,6 +62,7 @@ public class Canister : MonoBehaviour
         //Every canister starts with the charge of Zero || 1
         charge = 0;
 
+        chargeSlider.gameObject.SetActive(false);
         //Start Colour
         sliderFill.color = Color.white;
         //

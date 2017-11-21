@@ -49,6 +49,8 @@ public class Event_System_Manager : MonoBehaviour
     private bool runEventTimer;
     private bool endOfEvent;
 
+    private Base_System baseSystem;
+
     //When true the events runs
     public bool RunEvents
     {
@@ -99,6 +101,7 @@ public class Event_System_Manager : MonoBehaviour
     //Main-Initialisation
     private void Start()
     {
+        baseSystem = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
     }
 
     //User Input || !Physics
@@ -107,7 +110,19 @@ public class Event_System_Manager : MonoBehaviour
         //If true then run the events
         if (runEventTimer)
         {
-             
+
+       
+            if (timer >= 60.0f)
+            {
+                baseSystem.DepletionRate = 2;
+            }
+
+            if (timer >= 180.0f)
+            {
+                baseSystem.DepletionRate = 3;
+            }
+
+
             timer += Time.deltaTime;
             float timMin = (timer / 300) * 100;
 

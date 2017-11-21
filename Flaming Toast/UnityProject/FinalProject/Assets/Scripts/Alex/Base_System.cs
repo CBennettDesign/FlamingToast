@@ -213,6 +213,8 @@ public class Base_System : MonoBehaviour
         int currentValue;
         int.TryParse(ProgressValue.text, out currentValue);
 
+       
+
         if (currentValue >= maxValue)
         {
             winState.GetComponent<Image>().enabled = true;
