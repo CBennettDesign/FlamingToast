@@ -65,7 +65,7 @@ public class Gravity_System : MonoBehaviour
             if (p != null)
             {
                 //Players speed is slowed
-                p.GetComponent<Movement>().movementSpeed = (p.GetComponent<Movement>().DefaultSpeed / 2.0f);
+                p.GetComponent<Movement>().movementSpeed = 5.0f;
                 //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
             }
         }
@@ -178,7 +178,7 @@ public class Gravity_System : MonoBehaviour
                     if (p != null)
                     {
                         //Players speed is slowed
-                        p.GetComponent<Movement>().movementSpeed = (p.GetComponent<Movement>().DefaultSpeed / 2.0f);
+                        p.GetComponent<Movement>().movementSpeed = 5.0f;
                         //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
                     }
                 }

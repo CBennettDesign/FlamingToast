@@ -109,6 +109,7 @@ public class Canister : MonoBehaviour
         }
         if (transform.position.y < 0.0f)
         {
+            Debug.Log("<color=red>Out of map!</color>");
             Destroy();
         }
     }
@@ -117,7 +118,6 @@ public class Canister : MonoBehaviour
     {
         //When deleting canister remove from depot canister count
         system.CurrentCanisterCount--;
-        Debug.Log("<color=red>Out of map!</color>");
         Destroy(this.gameObject);
     }
 
