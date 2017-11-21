@@ -13,7 +13,7 @@ public class Event_System_Manager : MonoBehaviour
 
     //Progress slider
     [SerializeField]
-    private Slider progressSlider;
+    private Text progressText;
 
     [Range(0, 10)]
     public float eventDisplayTime;
@@ -108,10 +108,11 @@ public class Event_System_Manager : MonoBehaviour
         {
              
             timer += Time.deltaTime;
-            
-            //progress slider value is equal to the timer value
-            progressSlider.value = timer;
 
+            //progress slider value is equal to the timer value
+            // timer / minutes in an hour / seconds in a minute * 5 minutes
+            progressText.text = ((timer / 60 / 5 * 2).ToString("0.0") + "%");
+            Debug.Log((timer));
             foreach (var activeEvent in events)
             {
 
@@ -278,8 +279,12 @@ public class Event_System_Manager : MonoBehaviour
 
         if (!endOfEvent)
         {
-                
-            if (progressSlider.value >= progressSlider.maxValue)
+            int maxValue;
+            maxValue = int.Parse("100");
+            int currentValue;
+            currentValue = int.Parse(progressText.text);
+
+            if (currentValue >= maxValue)
             {
                 endOfEvent = true;
             }

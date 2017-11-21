@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class UI_Menu_Manager : MonoBehaviour
 {
+ 
     //Current State that the menu is on.
     [HideInInspector]
     public CurrentMenuPanel currentPanel;
@@ -38,13 +39,13 @@ public class UI_Menu_Manager : MonoBehaviour
 
         //UpdateButtonCount(currentPanel);
 
+
+ 
+ 
     }
 
 
-    private void Update()
-    {
-
-    }
+ 
 
     //Turn off all menu panels
     public void ClearPanels()

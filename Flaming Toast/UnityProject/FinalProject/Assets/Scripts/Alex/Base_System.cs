@@ -110,7 +110,7 @@ public class Base_System : MonoBehaviour
     //UI Slider
     public Slider HealthSlider;
     public Slider OxygenSlider;
-    public Slider ProgressSlider;
+    public Text ProgressValue;
 
     public GameObject shipShield;
     public GameObject shieldCol_TOP;
@@ -207,10 +207,16 @@ public class Base_System : MonoBehaviour
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
 
-        if (ProgressSlider.value >= ProgressSlider.maxValue)
+        int maxValue;
+        maxValue = int.Parse("100");
+        int currentValue;
+        currentValue = int.Parse(ProgressValue.text);
+
+        if (currentValue >= maxValue)
         {
             winState.GetComponent<Image>().enabled = true;
         }
+       
 
     }
 

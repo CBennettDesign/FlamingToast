@@ -42,7 +42,7 @@ public class UI_Interation : MonoBehaviour
             if (XCI.GetButtonDown(XboxButton.Start, contoller) || Input.GetKeyDown(KeyCode.Escape) && !isPaused && displayPanel.currentPanel != UI_Menu_Manager.CurrentMenuPanel.MAIN_MENU)
             {
                     
-                displayPanel.EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Resume"));
+                //displayPanel.EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Resume"));
                
                 //pause the game
                 PauseGame();

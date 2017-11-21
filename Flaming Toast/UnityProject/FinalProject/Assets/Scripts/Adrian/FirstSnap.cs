@@ -5,8 +5,8 @@ using UnityEngine;
 public class FirstSnap : BaseCanisterSnapper {
 
 
-    //Door set 1
-    public GameObject doorSet1;
+    //
+    public GameObject[] objectsTurnOn;
 
     [HideInInspector]
     public Event_System_Manager evm;
@@ -46,8 +46,12 @@ public class FirstSnap : BaseCanisterSnapper {
         //sets position to parents position
         GiveCanister.transform.parent = transform.transform;
 
-        //Opens all doors at on enter of the frist green canister.
-        doorSet1.SetActive(false);
+        //Opens all objects at on enter of the frist green canister.
+        for (int i = 0; i < objectsTurnOn.Length; i++)
+        {
+            objectsTurnOn[i].SetActive(true);
+        }
+
 
         //Turns on PowerIllumination script when green canister is inserted.
         this.transform.GetComponent<PowercoreIllumination>().enabled = true;
