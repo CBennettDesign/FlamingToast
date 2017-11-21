@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 /*- Alex Scicluna -*/
 
@@ -208,9 +209,9 @@ public class Base_System : MonoBehaviour
         OxygenSlider.value = oxygenLevel;
 
         int maxValue;
-        maxValue = int.Parse("100");
+        maxValue = Convert.ToInt32("100");
         int currentValue;
-        currentValue = int.Parse(ProgressValue.text);
+        int.TryParse(ProgressValue.text, out currentValue);
 
         if (currentValue >= maxValue)
         {

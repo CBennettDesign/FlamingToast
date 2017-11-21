@@ -59,7 +59,7 @@ public class UI_Menu_Manager : MonoBehaviour
     public void ShowMainMenuPanel()
     {
         currentPanel = CurrentMenuPanel.MAIN_MENU;
-        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(startButton);
+        //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(startButton);
         UpdateButtonCount(currentPanel);
     }
 
@@ -67,7 +67,7 @@ public class UI_Menu_Manager : MonoBehaviour
     public void ShowOptionsPanel()
     {
         currentPanel = CurrentMenuPanel.OPTIONS_MENU;
-        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(backButton);
+        //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(backButton);
         UpdateButtonCount(currentPanel);
     }
         
@@ -76,8 +76,9 @@ public class UI_Menu_Manager : MonoBehaviour
     public void ShowPausePanel()
     {
         currentPanel = CurrentMenuPanel.PAUSE_MENU;
-        EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
+        //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
 

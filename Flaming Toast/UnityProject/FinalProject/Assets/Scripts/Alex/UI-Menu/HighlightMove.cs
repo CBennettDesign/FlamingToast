@@ -68,8 +68,13 @@ public class HighlightMove : MonoBehaviour {
     
     void Start()
     {
-        buttonPositions[2].SetActive(false);
-        //gameObject.SetActive(false);
+        menuButtonCollection[2].SetActive(false);
+
+        if (currentScene.buildIndex == 1)
+        {
+            gameObject.SetActive(false);
+        }
+
     }
     
     void Update ()
@@ -106,8 +111,18 @@ public class HighlightMove : MonoBehaviour {
             buttonPositions[currentIndex].GetComponent<Button>().onClick.Invoke();
 
             //reset all button Positons
-            
-            buttonPositions.Clear();
+
+
+            if (currentScene.buildIndex == 1)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                buttonPositions.Clear();
+            }
+
+                       
 
             /*
              * for every menu panel
@@ -130,13 +145,11 @@ public class HighlightMove : MonoBehaviour {
 
 
 
-            currentIndex = 0;   
+            currentIndex = 0;
 
 
- 
 
 
-               
 
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 /*- Alex Scicluna -*/
 
@@ -108,11 +109,12 @@ public class Event_System_Manager : MonoBehaviour
         {
              
             timer += Time.deltaTime;
+            float timMin = (timer / 300) * 100;
 
             //progress slider value is equal to the timer value
             // timer / minutes in an hour / seconds in a minute * 5 minutes
-            progressText.text = ((timer / 60 / 5 * 2).ToString("0.0") + "%");
-            Debug.Log((timer));
+            progressText.text = (timMin.ToString("f0") + "%");
+            //Debug.Log((timer));
             foreach (var activeEvent in events)
             {
 
@@ -280,10 +282,10 @@ public class Event_System_Manager : MonoBehaviour
         if (!endOfEvent)
         {
             int maxValue;
-            maxValue = int.Parse("100");
+            maxValue = Convert.ToInt32("100");
             int currentValue;
-            currentValue = int.Parse(progressText.text);
-
+            //currentValue = Convert.ToInt32(progressText.text);
+            int.TryParse(progressText.text, out currentValue);
             if (currentValue >= maxValue)
             {
                 endOfEvent = true;
