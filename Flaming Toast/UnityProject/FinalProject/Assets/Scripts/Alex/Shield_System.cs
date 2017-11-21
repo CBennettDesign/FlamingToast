@@ -38,6 +38,7 @@ public class Shield_System : MonoBehaviour
     private GameObject currentColGroup;
     private Material currentShieldMaterial;
 
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -150,6 +151,7 @@ public class Shield_System : MonoBehaviour
             if (currentSystem.SystemLight != null)
             {
                 currentSystem.SystemLight.SetActive(false);
+
             }
         }
 

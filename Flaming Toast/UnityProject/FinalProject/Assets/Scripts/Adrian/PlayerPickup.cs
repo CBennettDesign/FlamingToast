@@ -11,7 +11,11 @@ public class PlayerPickup : MonoBehaviour {
     public GameObject inHands = null;
     private Transform thisPlayer;
     public XboxController Controlers;
+    //Sound variables
     public AudioClip pickUpSound;
+    public AudioClip putDownSound;
+    public AudioClip useJunctionSound;
+    public AudioClip canisterInSlot;
 	// Use this for initialization
 	void Start ()
     {
@@ -172,8 +176,9 @@ public class PlayerPickup : MonoBehaviour {
                 //Action to be used when interacting with Junctions
                 if (closeJunction)
                 {
+                    
                     Junctions CurrentJunction = closeJunction.GetComponent<Junctions>();
-                    CurrentJunction.ToggleJunction();
+                    CurrentJunction.ToggleJunction(useJunctionSound);
                 }
             }
             else
@@ -183,6 +188,7 @@ public class PlayerPickup : MonoBehaviour {
                 int layermask = 1 << LayerMask.NameToLayer("Holder");
                 if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out info, pickUpDistance, layermask))
                 {
+                    PlayerAudio.instance.PlaySound(canisterInSlot);
                     GameObject holder = info.collider.gameObject;
                     inHands.transform.parent = null;
 
@@ -236,6 +242,7 @@ public class PlayerPickup : MonoBehaviour {
                 }
                 else //drop
                 {
+                    PlayerAudio.instance.PlaySound(putDownSound);
                     inHands.GetComponent<Canister>().Drop();
                     inHands = null;
                 }

@@ -46,12 +46,14 @@ public class Junctions : MonoBehaviour {
         
     }
 
-    public void ToggleJunction()
+    public void ToggleJunction(AudioClip useJunctionSound)
     {
         if (!isPowered)
         {
             return;
         }
+
+        PlayerAudio.instance.PlaySound(useJunctionSound);
 
         if (selectedIndex >= 0)
         {
