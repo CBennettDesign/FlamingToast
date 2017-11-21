@@ -67,9 +67,10 @@ public class FirstSnap : BaseCanisterSnapper {
 
         evm.RunEvents = true;
 
-        //Debug.Log("P: " + transform.parent.gameObject.GetComponent<Canister_Slot>().CurrentCanister.gameObject.name);
+        //Canister Slot - Green
         transform.parent.gameObject.GetComponent<Renderer>().material.SetFloat("_FlashSwitch", 0.0f);
-        transform.GetChild(0).gameObject.GetComponent<Renderer>().material.SetFloat("_FlashSwitch", 0.0f);
+        //Canister - Green
+        transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[1].SetFloat("_FlashSwitch", 0.0f);
 
         return true;
     }
