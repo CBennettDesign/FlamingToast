@@ -80,6 +80,12 @@ public class UI_Menu_Manager : MonoBehaviour
         Highlighter.SetActive(true);
     }
 
+    public void ShowCreditsScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+
 
     public void Quit()
     {

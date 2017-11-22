@@ -6,8 +6,7 @@ using XboxCtrlrInput;
 
 public class Request_Canister : MonoBehaviour
 {
-    
-    //Ray Casting - Change to sphere cast, maybe?
+     
     private RaycastHit hitInfo;
     private Ray rayCast;
     public XboxController Controlers;
@@ -27,14 +26,14 @@ public class Request_Canister : MonoBehaviour
         {
             if (Physics.Raycast(rayCast, out hitInfo, 1.5f))
             {
-                if (hitInfo.collider.tag == "Canister_Depot") // - Rework for layer masking as this inner if statement would just result in true ?
+                if (hitInfo.collider.tag == "Canister_Depot") 
                 {
-                    //Debug.Log("Canister Depot found! " + hitInfo.collider.gameObject.name);
                     hitInfo.collider.gameObject.GetComponent<Canister_Depot>().CanSpawnCansiter = true;
                 }
- 
             }
         }
+ 
+                   
     }
 
     //Debug Visuals

@@ -65,7 +65,7 @@ public class Gravity_System : MonoBehaviour
             if (p != null)
             {
                 //Players speed is slowed
-                p.GetComponent<Movement>().movementSpeed = 5.0f;
+                p.GetComponent<Movement>().movementSpeed = 5.0f;//===================================================================================
                 //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
             }
         }
@@ -83,6 +83,8 @@ public class Gravity_System : MonoBehaviour
          *      Is a canister there
          *          Is it the right type - matches the current system
          *              currentSystem.IsActive = true;
+         *      Not a canister
+         *          currentSystem.IsActive = false;
          * else not core power
          *      currentSystem.IsActive = false;
          *      
@@ -147,7 +149,7 @@ public class Gravity_System : MonoBehaviour
 
  
             //If gravity is on. Full Player speed every 1 second
-            if (timer >= 1.0f && currentSystem.IsActive)
+            if (timer >= 1.0f && currentSystem.IsActive)//Every second set the speed to the normal speed//------------------------------------------------
             {
                 //For every player in the players array
                 foreach (GameObject p in system.player)
@@ -156,7 +158,7 @@ public class Gravity_System : MonoBehaviour
                     if (p != null)
                     {
                         //Players speed is equal to what the starting speed was when the game starts
-                        p.GetComponent<Movement>().movementSpeed = p.GetComponent<Movement>().DefaultSpeed;
+                        p.GetComponent<Movement>().targetMoveSpeed = p.GetComponent<Movement>().DefaultSpeed;//=======================================================
                         //Debug.Log("Gravity ON : Put at default speed: " + p.name);
                     }
                 }
@@ -169,7 +171,7 @@ public class Gravity_System : MonoBehaviour
             }
 
             //if Gravity is off
-            if (!currentSystem.IsActive && timer >= 1.0f)
+            if (timer >= 1.0f && !currentSystem.IsActive)//Every second slow the players//------------------------------------------------------
             {
                 //For every player in the players array
                 foreach (GameObject p in system.player)
@@ -178,7 +180,7 @@ public class Gravity_System : MonoBehaviour
                     if (p != null)
                     {
                         //Players speed is slowed
-                        p.GetComponent<Movement>().movementSpeed = 5.0f;
+                        p.GetComponent<Movement>().targetMoveSpeed = 5.0f;//=======================================================================
                         //Debug.Log("<color=orange>Gravity OFF : Slowed: " + p.name + "</color>");
                     }
                 }

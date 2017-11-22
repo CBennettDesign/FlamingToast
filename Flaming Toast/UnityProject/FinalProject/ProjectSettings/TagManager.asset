@@ -18,6 +18,7 @@ TagManager:
   - wLEFT
   - wRIGHT
   - wBOTTOM
+  - Wall
   layers:
   - Default
   - TransparentFX

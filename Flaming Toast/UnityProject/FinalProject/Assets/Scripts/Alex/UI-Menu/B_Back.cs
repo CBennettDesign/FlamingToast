@@ -25,6 +25,7 @@ public class B_Back : MonoBehaviour {
     {
         if (XCI.GetButtonDown(XboxButton.B, allContollers))
         {
+            UImm.ClearPanels();
             UImm.ShowMainMenuPanel();
         }
 	}
