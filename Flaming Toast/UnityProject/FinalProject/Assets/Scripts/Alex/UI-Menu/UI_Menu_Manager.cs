@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+ 
 
 /*- Alex Scicluna -*/
 
@@ -17,30 +18,25 @@ public class UI_Menu_Manager : MonoBehaviour
     public GameObject startButton;
     public GameObject backButton;
     public GameObject resumeButton;
+    [HideInInspector]
     public GameObject EventSystemRef;
 
     public GameObject mainMenu_Panel;
     public GameObject optionsMenu_Panel;
     public GameObject pauseMenu_Panel;
 
+    public GameObject Highlighter;
+
     //Allows to update the validation checks to have different amounts of buttons, 
     //only changed when the menu panel's change
     private int currentButtonCount_MIN;
     private int currentButtonCount_MAX;
 
-    private void Awake()
+
+
+    private void Update()
     {
-        //ClearPanels();
 
-
-        ////Default Panel to be on
-        //currentPanel = CurrentMenuPanel.MAIN_MENU;
-
-
-        //UpdateButtonCount(currentPanel);
-
-
- 
  
     }
 
@@ -53,7 +49,7 @@ public class UI_Menu_Manager : MonoBehaviour
         mainMenu_Panel.SetActive(false);
         optionsMenu_Panel.SetActive(false);
         pauseMenu_Panel.SetActive(false);
-
+        Highlighter.SetActive(false);
     }
         
     public void ShowMainMenuPanel()
@@ -61,6 +57,7 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.MAIN_MENU;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(startButton);
         UpdateButtonCount(currentPanel);
+        Highlighter.SetActive(true);
     }
 
 
@@ -69,6 +66,7 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.OPTIONS_MENU;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(backButton);
         UpdateButtonCount(currentPanel);
+        Highlighter.SetActive(true);
     }
         
 
@@ -79,6 +77,7 @@ public class UI_Menu_Manager : MonoBehaviour
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
         transform.GetChild(0).gameObject.SetActive(true);
+        Highlighter.SetActive(true);
     }
 
 

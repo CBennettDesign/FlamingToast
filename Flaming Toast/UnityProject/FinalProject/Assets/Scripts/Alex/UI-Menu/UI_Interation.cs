@@ -38,20 +38,21 @@ public class UI_Interation : MonoBehaviour
         //Is in main game
         if (currentScene.buildIndex != 0)
         {
+            //Start button OR Escape AND IS PAUSED and it's not in the main menu
+            if (XCI.GetButtonDown(XboxButton.Start, contoller)  && isPaused)
+            {
+                //UnPause the game
+                UnPauseGame();
+            }
+
             //Start button OR Escape AND not paused and it's not in the main menu
-            if (XCI.GetButtonDown(XboxButton.Start, contoller) || Input.GetKeyDown(KeyCode.Escape) && !isPaused && displayPanel.currentPanel != UI_Menu_Manager.CurrentMenuPanel.MAIN_MENU)
+            else if (XCI.GetButtonDown(XboxButton.Start, contoller)  && !isPaused)
             {
                     
                 //displayPanel.EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Resume"));
                
                 //pause the game
                 PauseGame();
-            }
-            //Start button OR Escape AND IS PAUSED and it's not in the main menu
-            else if ((XCI.GetButtonDown(XboxButton.Start, contoller) || Input.GetKeyDown(KeyCode.Escape) && isPaused && displayPanel.currentPanel != UI_Menu_Manager.CurrentMenuPanel.MAIN_MENU))
-            {
-                //UnPause the game
-                UnPauseGame();
             }
         }
     }
