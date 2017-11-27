@@ -24,6 +24,8 @@ public class UI_Menu_Manager : MonoBehaviour
     public GameObject mainMenu_Panel;
     public GameObject optionsMenu_Panel;
     public GameObject pauseMenu_Panel;
+    public GameObject endGame_LOSS_Panel;
+    public GameObject endGame_WIN_Panel;
 
     public GameObject Highlighter;
 
@@ -49,6 +51,8 @@ public class UI_Menu_Manager : MonoBehaviour
         mainMenu_Panel.SetActive(false);
         optionsMenu_Panel.SetActive(false);
         pauseMenu_Panel.SetActive(false);
+        endGame_LOSS_Panel.SetActive(false);
+        endGame_WIN_Panel.SetActive(false);
         Highlighter.SetActive(false);
     }
         
@@ -79,6 +83,26 @@ public class UI_Menu_Manager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }
+
+    public void ShowEndGame_LOSS_Panel()
+    {
+        currentPanel = CurrentMenuPanel.END_GAME_LOSS;
+        //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
+        UpdateButtonCount(currentPanel);
+        transform.GetChild(0).gameObject.SetActive(true);
+        Highlighter.SetActive(true);
+    }
+
+
+    public void ShowEndGame_WIN_Panel()
+    {
+        currentPanel = CurrentMenuPanel.END_GAME_WIN;
+        //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
+        UpdateButtonCount(currentPanel);
+        transform.GetChild(0).gameObject.SetActive(true);
+        Highlighter.SetActive(true);
+    }
+
 
     public void ShowCreditsScene()
     {
@@ -155,13 +179,32 @@ public class UI_Menu_Manager : MonoBehaviour
  
                     break;
                 }
+            case CurrentMenuPanel.END_GAME_LOSS:
+                {
+                    endGame_LOSS_Panel.SetActive(true);
+                    //Update the current range for the pause menu button count
+                    currentButtonCount_MIN = 0;
+                    currentButtonCount_MAX = buttonCountInChildren.Length;
+                    
+                    break;
+                }
+            case CurrentMenuPanel.END_GAME_WIN:
+                {
+                    endGame_WIN_Panel.SetActive(true);
+                    //Update the current range for the pause menu button count
+                    currentButtonCount_MIN = 0;
+                    currentButtonCount_MAX = buttonCountInChildren.Length;
+
+                    break;
+                }
             default:
                 {
-                    //??NO!!
+                    //??NANI!!!
                     break;
                 }
         }
     }
+
 
 
     public enum CurrentMenuPanel
@@ -169,7 +212,9 @@ public class UI_Menu_Manager : MonoBehaviour
         NONE,
         MAIN_MENU,
         OPTIONS_MENU,
-        PAUSE_MENU
+        PAUSE_MENU,
+        END_GAME_LOSS,
+        END_GAME_WIN
     }
 
 }

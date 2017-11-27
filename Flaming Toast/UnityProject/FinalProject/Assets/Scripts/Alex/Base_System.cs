@@ -122,7 +122,7 @@ public class Base_System : MonoBehaviour
 
 
 
-
+    public UI_Menu_Manager ui_menu;
 
 
     //Oxygen System 
@@ -143,14 +143,14 @@ public class Base_System : MonoBehaviour
         //Makes Sure that this tag exists and then applies it to this object
         this.gameObject.tag = "Base_System";
 
-        Material mat  = shipShield.GetComponent<Renderer>().material;
+        Material mat = shipShield.GetComponent<Renderer>().material;
 
         mat.SetFloat("_Shield_Top", 0.0f);
         mat.SetFloat("_Shield_Left", 0.0f);
         mat.SetFloat("_Shield_Right", 0.0f);
         mat.SetFloat("_Shield_Bottom", 0.0f);
- 
-        
+
+      
 
         //shipHealth = 100;
         //oxygenLevel = 100;
@@ -200,9 +200,9 @@ public class Base_System : MonoBehaviour
 
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;
-                    Time.timeScale = 0.2f;
+                    Invoke("EndGameRestart_LOSS", 2.0f);
+                    //Time.timeScale = 0.2f;
 
-                    Invoke("EndGameRestart", 1.0f);
                 }
             }
             shipHealthDepleted = true;
@@ -221,18 +221,24 @@ public class Base_System : MonoBehaviour
         if (currentValue >= maxValue)
         {
             winState.GetComponent<Image>().enabled = true;
+
+            Invoke("EndGameRestart_WIN", 2.0f);
         }
        
 
     }
 
-    private void EndGameRestart()
+    private void EndGameRestart_LOSS()
     {
-        Time.timeScale = 1.0f;
-
-        SceneManager.LoadScene(0);
+         ui_menu.ShowEndGame_LOSS_Panel();
     }
+        
 
+    private void EndGameRestart_WIN()
+    {
+        ui_menu.ShowEndGame_WIN_Panel();
+    }
+        
 
 }//End of Base_System
 
