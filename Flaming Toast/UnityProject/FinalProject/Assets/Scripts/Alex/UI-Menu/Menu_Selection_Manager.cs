@@ -81,7 +81,6 @@ public class Menu_Selection_Manager : MonoBehaviour
         }
 
 
-
         if (XCI.GetButtonDown(XboxButton.DPadDown, controller))
         {
 
