@@ -86,7 +86,7 @@ public class Canister_Depot : MonoBehaviour
     //User Input || !Physics
     private void Update()
     {
-        depotCanisterCountText.text = (canisterCountMax - canisterCountOnScene).ToString();
+        //depotCanisterCountText.text = (canisterCountMax - canisterCountOnScene).ToString();
         //Debug.Log((canisterCountMax - canisterCountOnScene).ToString());
         if (canisterSpawnLocation != null)
         {

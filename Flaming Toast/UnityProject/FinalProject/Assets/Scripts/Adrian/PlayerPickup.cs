@@ -16,20 +16,32 @@ public class PlayerPickup : MonoBehaviour {
     public AudioClip putDownSound;
     public AudioClip useJunctionSound;
     public AudioClip canisterInSlot;
+
+    private Animator playerAnimator;
+
 	// Use this for initialization
 	void Start ()
     {
+        playerAnimator = GetComponent<Animator>();
         thisPlayer = this.transform;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (inHands == null)
+        {
+            playerAnimator.SetBool("hasCanister", false);
+        }
+        
+        
         // XBOX control
-		if (XCI.GetButtonDown(XboxButton.A, Controlers))
+        if (XCI.GetButtonDown(XboxButton.A, Controlers))
         {
             if (inHands == null)
             {
+                playerAnimator.SetBool("hasCanister", false);
+
                 //Local Raycast variable
                 RaycastHit info;
                 //Layermask set to Cap
@@ -137,6 +149,10 @@ public class PlayerPickup : MonoBehaviour {
                     inHands = closeCannister;
 
                     closeCannister.GetComponent<Collider>().isTrigger = true;//Alex Edit
+
+                    //Animator Stuff when holding a canister
+                    playerAnimator.SetBool("hasCanister", true);
+
 
                    // Debug.Log("WE GOTTA GO BACK");
                     return;

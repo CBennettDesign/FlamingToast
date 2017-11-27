@@ -23,11 +23,14 @@ public class UI_EventCards : MonoBehaviour
     [Range(0, 10)]
     public float hitOffset;
 
+    //Transform positions for the cards to be in.
+    public GameObject[] cardPosition;
+    
     //New Cards
     public UI_Card[] card;
 
     [HideInInspector]
-    public Slider[] cardSlider;
+    //public Slider[] cardSlider;
 
     //UI Elements
     //public GameObject[] eventCards;
@@ -37,6 +40,33 @@ public class UI_EventCards : MonoBehaviour
 
     private Event_System_Manager evm;
     private bool activatedCards;
+
+    private void Awake()
+    {
+        //Iterate over all cards and populate the information.
+        for (int cardIndex = 0; cardIndex < card.Length; cardIndex++)
+        {
+
+            //Incoming Card - First Card
+            card[cardIndex].Card_UI = transform.GetChild(cardIndex).transform.gameObject;
+            //Incoming Card - First Card -> Ship
+            card[cardIndex].EventIcon = transform.GetChild(cardIndex).transform.GetChild(0).gameObject;
+            //Incoming Card - First Card -> Direction - TOP(1), LEFT(2), RIGHT(3), BOTTOM(4)
+            card[cardIndex].Direction = new GameObject[4];
+            card[cardIndex].Direction[0] = transform.GetChild(cardIndex).transform.GetChild(1).gameObject;
+            card[cardIndex].Direction[1] = transform.GetChild(cardIndex).transform.GetChild(2).gameObject;
+            card[cardIndex].Direction[2] = transform.GetChild(cardIndex).transform.GetChild(3).gameObject;
+            card[cardIndex].Direction[3] = transform.GetChild(cardIndex).transform.GetChild(4).gameObject;
+            //Incoming Card - First Card -> Shield Icon
+            card[cardIndex].ShieldIcon = transform.GetChild(cardIndex).transform.GetChild(5).gameObject;
+            //Incoming Card - First Card -> Weapon Icon
+            card[cardIndex].WeaponIcon = transform.GetChild(cardIndex).transform.GetChild(6).gameObject;
+            //Incoming Card - First Card -> Countdown Time
+            card[cardIndex].TimeToHit = transform.GetChild(cardIndex).transform.GetChild(7).gameObject.GetComponent<Text>();
+            
+        }
+        
+    }
 
     private	void Start ()
     {
@@ -53,21 +83,22 @@ public class UI_EventCards : MonoBehaviour
             events.Add(ev);
         }
 
-        //Card Slider ref
-        cardSlider[0] = card[0].TimeToHitSlider.GetComponent<Slider>();
-        cardSlider[1] = card[1].TimeToHitSlider.GetComponent<Slider>();
-        cardSlider[2] = card[2].TimeToHitSlider.GetComponent<Slider>();
-        
- 
+        card[0].Card_UI.gameObject.transform.position = cardPosition[1].transform.position;
+        card[0].Card_UI.gameObject.transform.localScale = new Vector3(1,1,1);
+
+        card[1].Card_UI.gameObject.transform.position = cardPosition[2].transform.position;
+        card[1].Card_UI.gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+             
+        card[2].Card_UI.gameObject.transform.position = cardPosition[3].transform.position;
+        card[2].Card_UI.gameObject.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
 
     }
-    
-    
+
+
     private	void Update ()
     {
         if (evm.RunEvents)
         {
-            
             if (!activatedCards)
             {
                 GameObject tempObject = null;
@@ -97,124 +128,7 @@ public class UI_EventCards : MonoBehaviour
             //FIRST CARD
             if (events.Count >= 1)
             {
-                 
-
-                //Event Type
-                if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    //Disable previous event type
-                    card[0].EventIcon[1].SetActive(false);
-                    //Enable current event type
-                    card[0].EventIcon[0].SetActive(true);
-                }
-                else if (events[currentEventIndex].type == Event_.EventType.ASTEROID)
-                {
-                    //Disable previous event type
-                    card[0].EventIcon[0].SetActive(false);
-                    //Enable current event type
-                    card[0].EventIcon[1].SetActive(true);
-                }
-
-                //Direction
-                switch (events[currentEventIndex].direction)
-                {
-                    case Event_.EventDirection.NONE:
-                        break;
-                    case Event_.EventDirection.TOP:
-                        {
-                            //Disable
-                            card[0].Direction[1].SetActive(false);
-                            card[0].Direction[2].SetActive(false);
-                            card[0].Direction[3].SetActive(false);
-                            //Enable
-                            card[0].Direction[0].SetActive(true);
-
-                            //Disable
-                            incomingEvent[1].SetActive(false);
-                            incomingEvent[2].SetActive(false);
-                            incomingEvent[3].SetActive(false);
-                            //Enable
-                            incomingEvent[0].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.LEFT:
-                        {
-                            //Disable
-                            card[0].Direction[0].SetActive(false);
-                            card[0].Direction[2].SetActive(false);
-                            card[0].Direction[3].SetActive(false);
-                            //Enable
-                            card[0].Direction[1].SetActive(true);
-
-                            //Disable
-                            incomingEvent[0].SetActive(false);
-                            incomingEvent[2].SetActive(false);
-                            incomingEvent[3].SetActive(false);
-                            //Enable
-                            incomingEvent[1].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.RIGHT:
-                        {
-                            //Disable
-                            card[0].Direction[0].SetActive(false);
-                            card[0].Direction[1].SetActive(false);
-                            card[0].Direction[3].SetActive(false);
-                            //Enable
-                            card[0].Direction[2].SetActive(true);
-
-                            //Disable
-                            incomingEvent[0].SetActive(false);
-                            incomingEvent[1].SetActive(false);
-                            incomingEvent[3].SetActive(false);
-                            //Enable
-                            incomingEvent[2].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.BOTTOM:
-                        {
-                            //Disable
-                            card[0].Direction[0].SetActive(false);
-                            card[0].Direction[1].SetActive(false);
-                            card[0].Direction[2].SetActive(false);
-                            //Enable
-                            card[0].Direction[3].SetActive(true);
-
-                            //Disable
-                            incomingEvent[0].SetActive(false);
-                            incomingEvent[1].SetActive(false);
-                            incomingEvent[2].SetActive(false);
-                            //Enable
-                            incomingEvent[3].SetActive(true);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-
-                //Shield Icon
-                if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex].type == Event_.EventType.ASTEROID)
-                {
-                    card[0].ShieldIcon.SetActive(true);
-                }
-                else
-                {
-                    card[0].ShieldIcon.SetActive(false);
-                }
-
-
-                //Weapon Icon
-                if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    card[0].WeaponIcon.SetActive(true);
-                }
-                else if (events[currentEventIndex].type == Event_.EventType.ASTEROID)
-                {
-                    card[0].WeaponIcon.SetActive(false);
-                }
-
-                //Time to hit slider
-                cardSlider[0].value = events[currentEventIndex].timeStamp + hitOffset - currentTimer;
+                FirstCard();
             }
             else
             {
@@ -225,96 +139,7 @@ public class UI_EventCards : MonoBehaviour
             //SECOND CARD
             if (events.Count >= 2)
             {
-
-
-                //Event Type
-                if (events[currentEventIndex + 1].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    //Disable previous event type
-                    card[1].EventIcon[1].SetActive(false);
-                    //Enable current event type
-                    card[1].EventIcon[0].SetActive(true);
-                }
-                else if (events[currentEventIndex + 1].type == Event_.EventType.ASTEROID)
-                {
-                    //Disable previous event type
-                    card[1].EventIcon[0].SetActive(false);
-                    //Enable current event type
-                    card[1].EventIcon[1].SetActive(true);
-                }
-
-                //Direction
-                switch (events[currentEventIndex + 1].direction)
-                {
-                    case Event_.EventDirection.NONE:
-                        break;
-                    case Event_.EventDirection.TOP:
-                        {
-                            //Disable
-                            card[1].Direction[1].SetActive(false);
-                            card[1].Direction[2].SetActive(false);
-                            card[1].Direction[3].SetActive(false);
-                            //Enable
-                            card[1].Direction[0].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.LEFT:
-                        {
-                            //Disable
-                            card[1].Direction[0].SetActive(false);
-                            card[1].Direction[2].SetActive(false);
-                            card[1].Direction[3].SetActive(false);
-                            //Enable
-                            card[1].Direction[1].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.RIGHT:
-                        {
-                            //Disable
-                            card[1].Direction[0].SetActive(false);
-                            card[1].Direction[1].SetActive(false);
-                            card[1].Direction[3].SetActive(false);
-                            //Enable
-                            card[1].Direction[2].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.BOTTOM:
-                        {
-                            //Disable
-                            card[1].Direction[0].SetActive(false);
-                            card[1].Direction[1].SetActive(false);
-                            card[1].Direction[2].SetActive(false);
-                            //Enable
-                            card[1].Direction[3].SetActive(true);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-
-                //Shield Icon
-                if (events[currentEventIndex + 1].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex + 1].type == Event_.EventType.ASTEROID)
-                {
-                    card[1].ShieldIcon.SetActive(true);
-                }
-                else
-                {
-                    card[1].ShieldIcon.SetActive(false);
-                }
-
-
-                //Weapon Icon
-                if (events[currentEventIndex + 1].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    card[1].WeaponIcon.SetActive(true);
-                }
-                else if (events[currentEventIndex + 1].type == Event_.EventType.ASTEROID)
-                {
-                    card[1].WeaponIcon.SetActive(false);
-                }
-
-                //Time to hit slider
-                cardSlider[1].value = events[currentEventIndex + 1].timeStamp + hitOffset - currentTimer;
+                SecondCard();
             }
             else
             {
@@ -325,94 +150,7 @@ public class UI_EventCards : MonoBehaviour
             //THIRD CARD
             if (events.Count >= 3)
             {
-                //Event Type
-                if (events[currentEventIndex + 2].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    //Disable previous event type
-                    card[2].EventIcon[1].SetActive(false);
-                    //Enable current event type
-                    card[2].EventIcon[0].SetActive(true);
-                }
-                else if (events[currentEventIndex + 2].type == Event_.EventType.ASTEROID)
-                {
-                    //Disable previous event type
-                    card[2].EventIcon[0].SetActive(false);
-                    //Enable current event type
-                    card[2].EventIcon[1].SetActive(true);
-                }
-
-                //Direction
-                switch (events[currentEventIndex + 2].direction)
-                {
-                    case Event_.EventDirection.NONE:
-                        break;
-                    case Event_.EventDirection.TOP:
-                        {
-                            //Disable
-                            card[2].Direction[1].SetActive(false);
-                            card[2].Direction[2].SetActive(false);
-                            card[2].Direction[3].SetActive(false);
-                            //Enable
-                            card[2].Direction[0].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.LEFT:
-                        {
-                            //Disable
-                            card[2].Direction[0].SetActive(false);
-                            card[2].Direction[2].SetActive(false);
-                            card[2].Direction[3].SetActive(false);
-                            //Enable
-                            card[2].Direction[1].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.RIGHT:
-                        {
-                            //Disable
-                            card[2].Direction[0].SetActive(false);
-                            card[2].Direction[1].SetActive(false);
-                            card[2].Direction[3].SetActive(false);
-                            //Enable
-                            card[2].Direction[2].SetActive(true);
-                            break;
-                        }
-                    case Event_.EventDirection.BOTTOM:
-                        {
-                            //Disable
-                            card[2].Direction[0].SetActive(false);
-                            card[2].Direction[1].SetActive(false);
-                            card[2].Direction[2].SetActive(false);
-                            //Enable
-                            card[2].Direction[3].SetActive(true);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-
-                //Shield Icon
-                if (events[currentEventIndex + 2].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex + 2].type == Event_.EventType.ASTEROID)
-                {
-                    card[2].ShieldIcon.SetActive(true);
-                }
-                else
-                {
-                    card[2].ShieldIcon.SetActive(false);
-                }
-
-
-                //Weapon Icon
-                if (events[currentEventIndex + 2].type == Event_.EventType.ENEMY_SHIP)
-                {
-                    card[2].WeaponIcon.SetActive(true);
-                }
-                else if (events[currentEventIndex + 2].type == Event_.EventType.ASTEROID)
-                {
-                    card[2].WeaponIcon.SetActive(false);
-                }
-
-                //Time to hit slider
-                cardSlider[2].value = events[currentEventIndex + 2].timeStamp + hitOffset - currentTimer;
+                ThirdCard();
             }
             else
             {
@@ -422,13 +160,13 @@ public class UI_EventCards : MonoBehaviour
         }
         else
         {
+            //Events not running
             GameObject tempObject = null;
             for (int index = 0; index < transform.childCount; index++)
             {
                 tempObject = transform.GetChild(index).gameObject;
                 tempObject.SetActive(false);
             }
-            //return;
         }
 
 
@@ -442,11 +180,274 @@ public class UI_EventCards : MonoBehaviour
 
     }
 
-
-    private void TempSwitchCard()
+    private void FirstCard()
     {
-        currentEventIndex++;
+        //Event Type
+        //Enable current event type
+        card[0].EventIcon.SetActive(true);
+
+        //Direction
+        switch (events[currentEventIndex].direction)
+        {
+            case Event_.EventDirection.NONE:
+                break;
+            case Event_.EventDirection.TOP:
+                {
+                    //Disable
+                    card[0].Direction[1].SetActive(false);
+                    card[0].Direction[2].SetActive(false);
+                    card[0].Direction[3].SetActive(false);
+                    //Enable
+                    card[0].Direction[0].SetActive(true);
+
+                    //Disable
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[0].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.LEFT:
+                {
+                    //Disable
+                    card[0].Direction[0].SetActive(false);
+                    card[0].Direction[2].SetActive(false);
+                    card[0].Direction[3].SetActive(false);
+                    //Enable
+                    card[0].Direction[1].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[1].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.RIGHT:
+                {
+                    //Disable
+                    card[0].Direction[0].SetActive(false);
+                    card[0].Direction[1].SetActive(false);
+                    card[0].Direction[3].SetActive(false);
+                    //Enable
+                    card[0].Direction[2].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[2].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.BOTTOM:
+                {
+                    //Disable
+                    card[0].Direction[0].SetActive(false);
+                    card[0].Direction[1].SetActive(false);
+                    card[0].Direction[2].SetActive(false);
+                    //Enable
+                    card[0].Direction[3].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    //Enable
+                    incomingEvent[3].SetActive(true);
+                    break;
+                }
+            default:
+                break;
+        }
+
+        //Shield Icon
+        if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex].type == Event_.EventType.ASTEROID)
+        {
+            card[0].ShieldIcon.SetActive(true);
+        }
+        else
+        {
+            card[0].ShieldIcon.SetActive(false);
+        }
+
+
+        //Weapon Icon
+        if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP)
+        {
+            card[0].WeaponIcon.SetActive(true);
+        }
+        else if (events[currentEventIndex].type == Event_.EventType.ASTEROID)
+        {
+            card[0].WeaponIcon.SetActive(false);
+        }
+
+        //Time to hit 
+        card[0].TimeToHit.text = (events[currentEventIndex].timeStamp + hitOffset - currentTimer).ToString("0.00");
     }
+
+    private void SecondCard()
+    {
+        //Event Type 
+        //Enable current event type
+        card[1].EventIcon.SetActive(true);
+
+        //Direction
+        switch (events[currentEventIndex + 1].direction)
+        {
+            case Event_.EventDirection.NONE:
+                break;
+            case Event_.EventDirection.TOP:
+                {
+                    //Disable
+                    card[1].Direction[1].SetActive(false);
+                    card[1].Direction[2].SetActive(false);
+                    card[1].Direction[3].SetActive(false);
+                    //Enable
+                    card[1].Direction[0].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.LEFT:
+                {
+                    //Disable
+                    card[1].Direction[0].SetActive(false);
+                    card[1].Direction[2].SetActive(false);
+                    card[1].Direction[3].SetActive(false);
+                    //Enable
+                    card[1].Direction[1].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.RIGHT:
+                {
+                    //Disable
+                    card[1].Direction[0].SetActive(false);
+                    card[1].Direction[1].SetActive(false);
+                    card[1].Direction[3].SetActive(false);
+                    //Enable
+                    card[1].Direction[2].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.BOTTOM:
+                {
+                    //Disable
+                    card[1].Direction[0].SetActive(false);
+                    card[1].Direction[1].SetActive(false);
+                    card[1].Direction[2].SetActive(false);
+                    //Enable
+                    card[1].Direction[3].SetActive(true);
+                    break;
+                }
+            default:
+                break;
+        }
+
+        //Shield Icon
+        if (events[currentEventIndex + 1].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex + 1].type == Event_.EventType.ASTEROID)
+        {
+            card[1].ShieldIcon.SetActive(true);
+        }
+        else
+        {
+            card[1].ShieldIcon.SetActive(false);
+        }
+
+
+        //Weapon Icon
+        if (events[currentEventIndex + 1].type == Event_.EventType.ENEMY_SHIP)
+        {
+            card[1].WeaponIcon.SetActive(true);
+        }
+        else if (events[currentEventIndex + 1].type == Event_.EventType.ASTEROID)
+        {
+            card[1].WeaponIcon.SetActive(false);
+        }
+
+        //Time to hit 
+        card[1].TimeToHit.text = (events[currentEventIndex + 1].timeStamp + hitOffset - currentTimer).ToString("0.00");
+    }
+
+    private void ThirdCard()
+    {
+        //Event Type
+        //Enable current event type
+        card[2].EventIcon.SetActive(true);
+
+        //Direction
+        switch (events[currentEventIndex + 2].direction)
+        {
+            case Event_.EventDirection.NONE:
+                break;
+            case Event_.EventDirection.TOP:
+                {
+                    //Disable
+                    card[2].Direction[1].SetActive(false);
+                    card[2].Direction[2].SetActive(false);
+                    card[2].Direction[3].SetActive(false);
+                    //Enable
+                    card[2].Direction[0].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.LEFT:
+                {
+                    //Disable
+                    card[2].Direction[0].SetActive(false);
+                    card[2].Direction[2].SetActive(false);
+                    card[2].Direction[3].SetActive(false);
+                    //Enable
+                    card[2].Direction[1].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.RIGHT:
+                {
+                    //Disable
+                    card[2].Direction[0].SetActive(false);
+                    card[2].Direction[1].SetActive(false);
+                    card[2].Direction[3].SetActive(false);
+                    //Enable
+                    card[2].Direction[2].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.BOTTOM:
+                {
+                    //Disable
+                    card[2].Direction[0].SetActive(false);
+                    card[2].Direction[1].SetActive(false);
+                    card[2].Direction[2].SetActive(false);
+                    //Enable
+                    card[2].Direction[3].SetActive(true);
+                    break;
+                }
+            default:
+                break;
+        }
+
+        //Shield Icon
+        if (events[currentEventIndex + 2].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex + 2].type == Event_.EventType.ASTEROID)
+        {
+            card[2].ShieldIcon.SetActive(true);
+        }
+        else
+        {
+            card[2].ShieldIcon.SetActive(false);
+        }
+
+
+        //Weapon Icon
+        if (events[currentEventIndex + 2].type == Event_.EventType.ENEMY_SHIP)
+        {
+            card[2].WeaponIcon.SetActive(true);
+        }
+        else if (events[currentEventIndex + 2].type == Event_.EventType.ASTEROID)
+        {
+            card[2].WeaponIcon.SetActive(false);
+        }
+
+        //Time to hit 
+        card[2].TimeToHit.text = (events[currentEventIndex + 2].timeStamp + hitOffset - currentTimer).ToString("0.00");
+    }
+
 }
 
 [System.Serializable]
@@ -455,10 +456,10 @@ public class UI_Card
     public string nameOfCard;
     public GameObject Card_UI;
     [Header("Event Positions : 0 - Enemy Ship, 1 - Asteroid")]
-    public GameObject[] EventIcon;
+    public GameObject EventIcon;
     [Header("Direction Positions : 0 - TOP, 1 - LEFT, 2 - RIGHT, 3 - BOTTOM")]
     public GameObject[] Direction;
     public GameObject ShieldIcon;
     public GameObject WeaponIcon;
-    public GameObject TimeToHitSlider;
+    public Text TimeToHit;
 }

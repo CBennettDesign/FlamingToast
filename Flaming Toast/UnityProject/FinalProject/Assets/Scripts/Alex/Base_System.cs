@@ -213,18 +213,13 @@ public class Base_System : MonoBehaviour
         int currentValue;
         int.TryParse(ProgressValue.text, out currentValue);
 
-        Debug.Log(currentValue + " : " + maxValue + " : " + ProgressValue.text + " : " + ShipHealth);
+       
 
         if (currentValue >= maxValue)
         {
             winState.GetComponent<Image>().enabled = true;
         }
-
-        if (ShipHealth <= 0)
-        {
-            lossState.GetComponent<Image>().enabled = true;
-        }
-               
+       
 
     }
 
