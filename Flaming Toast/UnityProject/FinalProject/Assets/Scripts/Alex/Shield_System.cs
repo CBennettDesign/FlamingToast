@@ -38,6 +38,10 @@ public class Shield_System : MonoBehaviour
     private GameObject currentColGroup;
     private Material currentShieldMaterial;
 
+    //Sound System ADRIAN
+    private bool TurnOnSounds = false;
+    private bool TurnOffSounds = false;
+
 
     //Pre-Initialisation
     private void Awake()
@@ -127,6 +131,18 @@ public class Shield_System : MonoBehaviour
                     if (currentSystem.SystemLight != null)
                     {
                         currentSystem.SystemLight.SetActive(true);
+                        //Sound system check by adrian
+                        /////////////////////////////////////////////
+                        if (!TurnOnSounds)
+                        {
+                            PlayerAudio.instance.PlaySound(system.SheildSoundOn);
+                            TurnOnSounds = true;
+                        }
+                        if (currentSystem.CanisterConnected)
+                        {
+                            TurnOffSounds = true;
+                        }
+                        /////////////////////////////////////////////
                     }
                 }
             }
@@ -139,6 +155,18 @@ public class Shield_System : MonoBehaviour
                 if (currentSystem.SystemLight != null)
                 {
                     currentSystem.SystemLight.SetActive(false);
+                    //Sound system check by adrian
+                    /////////////////////////////////////////////
+                    if (!currentSystem.CanisterConnected)
+                    {
+                        TurnOnSounds = false;
+                    }
+                    if (TurnOffSounds)
+                    {
+                        PlayerAudio.instance.PlaySound(system.SheildSoundOff);
+                        TurnOffSounds = false;
+                    }
+                    /////////////////////////////////////////////
                 }
                 canisterSlot.CanDrainCanister = false;
             }

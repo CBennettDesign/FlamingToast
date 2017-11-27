@@ -130,6 +130,7 @@ public class Canister_Depot : MonoBehaviour
 
                     //Reset the spawn canister check box. - Regardless if the canister coount reached the maximum or not
                     canSpawnCansiter = false;
+                    PlayerAudio.instance.PlaySound(system.MaxCanisterSound);
                 }
 
             }
@@ -158,6 +159,9 @@ public class Canister_Depot : MonoBehaviour
 
             //Create a canister at a location Rotated by 90 on the Z axis
             Instantiate(canisterPreFab, canisterSpawnLocation.transform.position,/* Quaternion.identity*/ Quaternion.Euler(new Vector3(0, 90, 0)));
+
+            //Adrians Sound Create
+            PlayerAudio.instance.PlaySound(system.SpawnCanisterSound);
 
             //Increase the count.
             system.CurrentCanisterCount++;

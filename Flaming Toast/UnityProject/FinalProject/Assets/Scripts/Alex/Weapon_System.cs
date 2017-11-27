@@ -19,6 +19,9 @@ public class Weapon_System : MonoBehaviour
     private Canister_Slot canisterSlot;
 
     private float timer;
+    //Sound System ADRIAN
+    private bool TurnOnSounds = false;
+    private bool TurnOffSounds = false;
 
     //Pre-Initialisation
     private void Awake()
@@ -81,6 +84,18 @@ public class Weapon_System : MonoBehaviour
                 if (currentSystem.SystemLight != null)
                 {
                     currentSystem.SystemLight.SetActive(false);
+                    //Sound system check by adrian
+                    /////////////////////////////////////////////
+                    if (!TurnOnSounds)
+                    {
+                        PlayerAudio.instance.PlaySound(system.WeaponSoundOn);
+                        TurnOnSounds = true;
+                    }
+                    if (currentSystem.CanisterConnected)
+                    {
+                        TurnOffSounds = true;
+                    }
+                    /////////////////////////////////////////////
                 }
                 canisterSlot.CanDrainCanister = false;
             }
@@ -96,6 +111,18 @@ public class Weapon_System : MonoBehaviour
             if (currentSystem.SystemLight != null)
             {
                 currentSystem.SystemLight.SetActive(false);
+                //Sound system check by adrian
+                /////////////////////////////////////////////
+                if (!currentSystem.CanisterConnected)
+                {
+                    TurnOnSounds = false;
+                }
+                if (TurnOffSounds)
+                {
+                    PlayerAudio.instance.PlaySound(system.WeaponSoundOff);
+                    TurnOffSounds = false;
+                }
+                /////////////////////////////////////////////
             }
         }
 

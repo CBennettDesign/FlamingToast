@@ -20,6 +20,13 @@ public class Base_System : MonoBehaviour
         get { return isPowered; }
         set { isPowered = value; }
     }
+    public AudioClip destroyCanisterSound;
+    public AudioClip SheildSoundOn;
+    public AudioClip SheildSoundOff;
+    public AudioClip WeaponSoundOn;
+    public AudioClip WeaponSoundOff;
+    public AudioClip SpawnCanisterSound;
+    public AudioClip MaxCanisterSound;
 
 
     private bool isCanisterConnected = false;

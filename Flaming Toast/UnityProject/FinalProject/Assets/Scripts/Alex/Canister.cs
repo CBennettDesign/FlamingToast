@@ -56,6 +56,7 @@ public class Canister : MonoBehaviour
 
         system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
+
         //None by default as it will be changed later
         canisterType = FluxType.NONE;
 
@@ -117,6 +118,7 @@ public class Canister : MonoBehaviour
     public void Destroy()
     {
         //When deleting canister remove from depot canister count
+        PlayerAudio.instance.PlaySound(system.destroyCanisterSound);
         system.CurrentCanisterCount--;
         Destroy(this.gameObject);
     }
