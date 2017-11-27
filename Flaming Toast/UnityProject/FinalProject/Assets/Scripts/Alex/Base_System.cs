@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 /*- Alex Scicluna -*/
 
@@ -181,7 +182,7 @@ public class Base_System : MonoBehaviour
             }
 
             oxyUsed = true;
-            Debug.Log("Oxygen Depleted!!");
+            Debug.Log("<color=red>Oxygen Depleted!!</color>");
         }
 
         if (shipHealth <= 0 && !shipHealthDepleted)
@@ -200,6 +201,8 @@ public class Base_System : MonoBehaviour
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;
                     Time.timeScale = 0.2f;
+
+                    Invoke("EndGameRestart", 1.0f);
                 }
             }
             shipHealthDepleted = true;
@@ -221,6 +224,13 @@ public class Base_System : MonoBehaviour
         }
        
 
+    }
+
+    private void EndGameRestart()
+    {
+        Time.timeScale = 1.0f;
+
+        SceneManager.LoadScene(0);
     }
 
 

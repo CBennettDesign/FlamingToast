@@ -5,6 +5,8 @@ using UnityEngine;
 public class Weapon_System : MonoBehaviour
 {
 
+    public GameObject weaponParticle;
+
     //Base System
     private Base_System system;
     //[Header("Base System")]
@@ -59,6 +61,9 @@ public class Weapon_System : MonoBehaviour
                 {
                     //only when the previous 3 checks are true.
                     currentSystem.IsActive = true;
+
+                    weaponParticle.SetActive(true);
+
                     if (currentSystem.SystemLight != null)
                     {
                         currentSystem.SystemLight.SetActive(true);
@@ -71,6 +76,8 @@ public class Weapon_System : MonoBehaviour
                 canisterSlot.lowChargeWarning.SetActive(false);
                 currentSystem.CanisterConnected = false;
                 currentSystem.IsActive = false;
+                weaponParticle.SetActive(false);
+
                 if (currentSystem.SystemLight != null)
                 {
                     currentSystem.SystemLight.SetActive(false);
@@ -83,6 +90,9 @@ public class Weapon_System : MonoBehaviour
             canisterSlot.lowChargeWarning.SetActive(false);
             canisterSlot.CanDrainCanister = false;
             currentSystem.IsActive = false;
+
+            weaponParticle.SetActive(false);
+
             if (currentSystem.SystemLight != null)
             {
                 currentSystem.SystemLight.SetActive(false);
