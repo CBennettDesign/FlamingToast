@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Glowing Shader
   m_Shader: {fileID: 4800000, guid: c33ee01d48fc21648a597b5655e24fba, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSIONSWITCH_ON _FLASHSWITCH_ON
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _FLASHSWITCH_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -63,7 +63,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
-    - _EmissionSwitch: 1
+    - _EmissionSwitch: 0
     - _FlashSwitch: 1
     - _Gloss: 0.6632479
     - _GlossMapScale: 1
@@ -82,6 +82,6 @@ Material:
     - _node_4727: 0
     m_Colors:
     - _Color: {r: 0.19999981, g: 0.597, b: 1, a: 0.153}
-    - _Colour: {r: 0.2688149, g: 0.8308824, b: 0.3424652, a: 1}
+    - _Colour: {r: 0.20923445, g: 0.66176474, b: 0.26853156, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

@@ -36,15 +36,7 @@ public class UI_Menu_Manager : MonoBehaviour
 
 
 
-    private void Update()
-    {
-
  
-    }
-
-
- 
-
     //Turn off all menu panels
     public void ClearPanels()
     {
@@ -61,6 +53,8 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.MAIN_MENU;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(startButton);
         UpdateButtonCount(currentPanel);
+        Debug.Log(transform.GetChild(0).name);
+        transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }
 
@@ -70,6 +64,8 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.OPTIONS_MENU;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(backButton);
         UpdateButtonCount(currentPanel);
+        //Debug.Log(transform.GetChild(0).name);
+        transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }
         
@@ -80,6 +76,7 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.PAUSE_MENU;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
+        //Debug.Log(transform.GetChild(0).name);
         transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }
@@ -89,6 +86,7 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.END_GAME_LOSS;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
+        //Debug.Log(transform.GetChild(0).name);
         transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }
@@ -99,6 +97,7 @@ public class UI_Menu_Manager : MonoBehaviour
         currentPanel = CurrentMenuPanel.END_GAME_WIN;
         //EventSystemRef.GetComponent<EventSystem>().SetSelectedGameObject(resumeButton);
         UpdateButtonCount(currentPanel);
+        //Debug.Log(transform.GetChild(0).name);
         transform.GetChild(0).gameObject.SetActive(true);
         Highlighter.SetActive(true);
     }

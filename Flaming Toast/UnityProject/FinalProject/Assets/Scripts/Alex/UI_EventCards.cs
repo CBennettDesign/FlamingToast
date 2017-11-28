@@ -21,30 +21,30 @@ public class UI_EventCards : MonoBehaviour
     //[HideInInspector]
     [Header("Time offset until the actual time it hits")]
     [Range(0, 10)]
+    [HideInInspector]
     public float hitOffset;
 
     //Transform positions for the cards to be in.
-    public GameObject[] cardPosition;
-    
+    //public GameObject[] cardPosition;
+
+    private CardSwitcher cardSwitcher;
+
     //New Cards
     public UI_Card[] card;
 
-    [HideInInspector]
-    //public Slider[] cardSlider;
 
-    //UI Elements
-    //public GameObject[] eventCards;
-    //public GameObject[] eventCard_TYPE;
-    //public GameObject[] eventCard_DIRECTION;
-    //public Slider[] eventCard_TIME;
 
     private Event_System_Manager evm;
     private bool activatedCards;
 
+
+ 
     private void Awake()
     {
+        cardSwitcher = GetComponent<CardSwitcher>();
+
         //Iterate over all cards and populate the information.
-        for (int cardIndex = 0; cardIndex < card.Length; cardIndex++)
+        for (int cardIndex = 0; cardIndex < card.Length - 1; cardIndex++)
         {
 
             //Incoming Card - First Card
@@ -83,17 +83,40 @@ public class UI_EventCards : MonoBehaviour
             events.Add(ev);
         }
 
-        card[0].Card_UI.gameObject.transform.position = cardPosition[1].transform.position;
-        card[0].Card_UI.gameObject.transform.localScale = new Vector3(1,1,1);
-
-        card[1].Card_UI.gameObject.transform.position = cardPosition[2].transform.position;
-        card[1].Card_UI.gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-             
-        card[2].Card_UI.gameObject.transform.position = cardPosition[3].transform.position;
-        card[2].Card_UI.gameObject.transform.localScale = new Vector3(0.8f,0.8f,0.8f);
+       
 
     }
 
+    private void NewCardSetup()
+    {
+
+        //* Load data into the new card.  
+            //Incoming Card - cardPrefab Card
+            card[3].Card_UI = cardSwitcher.tempCard.transform.gameObject; //needs to be set to the new card's gameobjct.
+            //Incoming Card - cardPrefab Card -> Ship
+            card[3].EventIcon = cardSwitcher.tempCard.transform.GetChild(0).gameObject;
+            //Incoming Card - cardPrefab Card -> Direction - TOP(1), LEFT(2), RIGHT(3), BOTTOM(4)
+            card[3].Direction = new GameObject[4];
+            card[3].Direction[0] = cardSwitcher.tempCard.transform.GetChild(1).gameObject;
+            card[3].Direction[1] = cardSwitcher.tempCard.transform.GetChild(2).gameObject;
+            card[3].Direction[2] = cardSwitcher.tempCard.transform.GetChild(3).gameObject;
+            card[3].Direction[3] = cardSwitcher.tempCard.transform.GetChild(4).gameObject;
+            //Incoming Card - cardPrefab Card -> Shield Icon
+            card[3].ShieldIcon = cardSwitcher.tempCard.transform.GetChild(5).gameObject;
+            //Incoming Card - cardPrefab Card -> Weapon Icon
+            card[3].WeaponIcon = cardSwitcher.tempCard.transform.GetChild(6).gameObject;
+            //Incoming Card - cardPrefab Card -> Countdown Time
+            card[3].TimeToHit = cardSwitcher.tempCard.transform.GetChild(7).gameObject.GetComponent<Text>();
+
+
+        cardSwitcher.canMove = true;
+
+        //Ian's reccomendations
+        // split CardSwitcher code into a separate component on Incoming Events - UI Cards object - Card Positions list / []
+        // create CardUIMover on each of the Incoming Card objects to handle the movement from position to position. Move Towards
+        // CardSwitcher will hold (or can access) a list of the CardUIMover scripts and will tell each one where move. 
+
+    }
 
     private	void Update ()
     {
@@ -120,15 +143,20 @@ public class UI_EventCards : MonoBehaviour
             //reached the soonest event
             if (currentTimer >= events[currentEventIndex].timeStamp + hitOffset)
             {
-                //TempSwitchCard();
-                //currentEventIndex++;
+                //Make a new card
+                cardSwitcher.NewCard();
+                //Load in the gameObjects for the new card - icons etc
+                NewCardSetup();
+
                 events.RemoveAt(0);
             }
-
+ 
+ 
             //FIRST CARD
             if (events.Count >= 1)
             {
                 FirstCard();
+                //CurrentCardInfomation(0);
             }
             else
             {
@@ -140,6 +168,7 @@ public class UI_EventCards : MonoBehaviour
             if (events.Count >= 2)
             {
                 SecondCard();
+                //CurrentCardInfomation(1);
             }
             else
             {
@@ -151,6 +180,7 @@ public class UI_EventCards : MonoBehaviour
             if (events.Count >= 3)
             {
                 ThirdCard();
+                //CurrentCardInfomation(2);
             }
             else
             {
@@ -180,6 +210,18 @@ public class UI_EventCards : MonoBehaviour
 
     }
 
+
+    public void DeleteCard()
+    {
+        for (int index = 0; index < card.Length - 1; index++)
+        {
+            card[index] = card[index + 1];
+        }
+        card[card.Length - 1] = new UI_Card();
+    }
+
+
+    //Re-Work for a better solution, less repeating code
     private void FirstCard()
     {
         //Event Type
@@ -446,6 +488,115 @@ public class UI_EventCards : MonoBehaviour
 
         //Time to hit 
         card[2].TimeToHit.text = (events[currentEventIndex + 2].timeStamp + hitOffset - currentTimer).ToString("0.00");
+    }
+
+
+    private void CurrentCardInfomation(int currentCardIndex)
+    {
+        //Event Type
+        //Enable current event type
+        card[currentCardIndex].EventIcon.SetActive(true);
+
+        //Direction
+        switch (events[currentEventIndex].direction)
+        {
+            case Event_.EventDirection.NONE:
+                break;
+            case Event_.EventDirection.TOP:
+                {
+                    //Disable
+                    card[currentCardIndex].Direction[1].SetActive(false);
+                    card[currentCardIndex].Direction[2].SetActive(false);
+                    card[currentCardIndex].Direction[3].SetActive(false);
+                    //Enable
+                    card[currentCardIndex].Direction[0].SetActive(true);
+
+                    //Disable
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[0].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.LEFT:
+                {
+                    //Disable
+                    card[currentCardIndex].Direction[0].SetActive(false);
+                    card[currentCardIndex].Direction[2].SetActive(false);
+                    card[currentCardIndex].Direction[3].SetActive(false);
+                    //Enable
+                    card[currentCardIndex].Direction[1].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[1].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.RIGHT:
+                {
+                    //Disable
+                    card[currentCardIndex].Direction[0].SetActive(false);
+                    card[currentCardIndex].Direction[1].SetActive(false);
+                    card[currentCardIndex].Direction[3].SetActive(false);
+                    //Enable
+                    card[currentCardIndex].Direction[2].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[3].SetActive(false);
+                    //Enable
+                    incomingEvent[2].SetActive(true);
+                    break;
+                }
+            case Event_.EventDirection.BOTTOM:
+                {
+                    //Disable
+                    card[currentCardIndex].Direction[0].SetActive(false);
+                    card[currentCardIndex].Direction[1].SetActive(false);
+                    card[currentCardIndex].Direction[2].SetActive(false);
+                    //Enable
+                    card[0].Direction[3].SetActive(true);
+
+                    //Disable
+                    incomingEvent[0].SetActive(false);
+                    incomingEvent[1].SetActive(false);
+                    incomingEvent[2].SetActive(false);
+                    //Enable
+                    incomingEvent[3].SetActive(true);
+                    break;
+                }
+            default:
+                break;
+        }
+
+        //Shield Icon
+        if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP || events[currentEventIndex].type == Event_.EventType.ASTEROID)
+        {
+            card[currentCardIndex].ShieldIcon.SetActive(true);
+        }
+        else
+        {
+            card[currentCardIndex].ShieldIcon.SetActive(false);
+        }
+
+
+        //Weapon Icon
+        if (events[currentEventIndex].type == Event_.EventType.ENEMY_SHIP)
+        {
+            card[currentCardIndex].WeaponIcon.SetActive(true);
+        }
+        else if (events[currentEventIndex].type == Event_.EventType.ASTEROID)
+        {
+            card[currentCardIndex].WeaponIcon.SetActive(false);
+        }
+
+        //Time to hit 
+        card[currentCardIndex].TimeToHit.text = (events[currentEventIndex].timeStamp + hitOffset - currentTimer).ToString("0.00");
     }
 
 }

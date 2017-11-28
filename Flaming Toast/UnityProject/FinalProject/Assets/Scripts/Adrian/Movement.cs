@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour {
 		{
 			if (hitInfo.collider.tag == "Wall") 
 			{
-				Debug.Log("hit a wall");
+				//Debug.Log("hit a wall");
 				movementSpeed = Mathf.Lerp(movementSpeed, 2.0f, Time.deltaTime);
 			}
 		}
