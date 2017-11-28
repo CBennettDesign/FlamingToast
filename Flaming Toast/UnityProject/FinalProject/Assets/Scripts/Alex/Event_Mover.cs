@@ -146,7 +146,7 @@ public class Event_Mover : MonoBehaviour
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;
 
                
-                vignetteFlash.ShipHit(true, false);
+                vignetteFlash.ShipHit(true, false, true);
             }
             //Minimal damage - Both systems on
             else if (weapon_System.currentSystem.IsActive && shield_System.currentSystem.IsActive)
@@ -155,7 +155,7 @@ public class Event_Mover : MonoBehaviour
                 Debug.Log("<color=yellow>Minimum Damage - Enemy</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;
 
-                vignetteFlash.ShipHit(true, true);
+                vignetteFlash.ShipHit(true, true, true);
             }
             //Half damage - one of the systems is active
             else if (weapon_System.currentSystem.IsActive || shield_System.currentSystem.IsActive)
@@ -164,7 +164,7 @@ public class Event_Mover : MonoBehaviour
                 Debug.Log("<color=yellow>Half Damage</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().halfDamageValue;
 
-                vignetteFlash.ShipHit(true, true);
+                vignetteFlash.ShipHit(true, true, true);
             }
 
         }
@@ -179,7 +179,7 @@ public class Event_Mover : MonoBehaviour
 
                 //Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
 
-                vignetteFlash.ShipHit(true, false);
+                vignetteFlash.ShipHit(true, false, false);
 
             }
             else
@@ -188,7 +188,7 @@ public class Event_Mover : MonoBehaviour
                 Debug.Log("<color=yellow>Minimum Damage - Asteroid</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
 
-                vignetteFlash.ShipHit(true, true);
+                vignetteFlash.ShipHit(true, true, false);
 
             }
 

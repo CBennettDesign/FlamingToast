@@ -19,7 +19,6 @@ public class OxygenLerp : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         oxygen = GetComponent<Oxygen_System>();
     }
 	
@@ -37,7 +36,7 @@ public class OxygenLerp : MonoBehaviour {
         {
             timer = 1 - (system.OxygenLevel - effectEnd) / (effectStart - effectEnd);
         }
-
+        
         VignetteModel.Settings SettingsVignette = ppProfile.vignette.settings;
         SettingsVignette.intensity = Mathf.Lerp(MinIntensity, MaxIntensity, timer);
         ppProfile.vignette.settings = SettingsVignette;

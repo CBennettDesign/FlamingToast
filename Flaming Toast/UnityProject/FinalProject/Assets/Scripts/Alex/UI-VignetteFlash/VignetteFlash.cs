@@ -8,7 +8,8 @@ public class VignetteFlash : MonoBehaviour
 {
 	public GameObject shieldVignette;
 	public GameObject damageVignette;
- 
+    private Base_System system;
+
     private bool onHit;
 	private bool isShieldUp;
 
@@ -20,9 +21,9 @@ public class VignetteFlash : MonoBehaviour
 
 	private	void Start ()
 	{
-		 
+        system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
 
-		if (shieldVignette == null || damageVignette == null)
+        if (shieldVignette == null || damageVignette == null)
 		{
 			Debug.Log("No image attached for the vignette flash");
 		}
@@ -58,9 +59,37 @@ public class VignetteFlash : MonoBehaviour
 		}
 	}
 
-	public void ShipHit(bool newStatus, bool wasShieldUp)
+	public void ShipHit(bool newStatus, bool wasShieldUp, bool isEnemy)
 	{
 		onHit = newStatus;
 		isShieldUp = wasShieldUp;
+
+        //On Ship hit sound
+
+        if (isEnemy)
+        {
+            //Enemy Sound
+            if (isShieldUp)
+            {
+                PlayerAudio.instance.PlaySound(system.ShieldHit);
+            }
+            else
+            {
+                PlayerAudio.instance.PlaySound(system.ShipHit);
+            }
+
+        }
+        else
+        {
+            //Asteroid Sound
+            if (isShieldUp)
+            {
+                PlayerAudio.instance.PlaySound(system.ShieldHit);
+            }
+            else
+            {
+                PlayerAudio.instance.PlaySound(system.ShipHit);
+            }
+        }
 	}
 }

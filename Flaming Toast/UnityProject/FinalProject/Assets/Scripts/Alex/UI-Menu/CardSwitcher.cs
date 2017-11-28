@@ -9,6 +9,7 @@ public class CardSwitcher : MonoBehaviour
 
     public GameObject cardPrefab;
 
+    [HideInInspector]
     public GameObject tempCard = null;
 
     [HideInInspector]
@@ -51,20 +52,20 @@ public class CardSwitcher : MonoBehaviour
     void Start ()
     {
         //First card - Position and Scale
-        cardInfo.card[(int)CardNumber.FIRST].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.FIRST].transform.position;
-        cardInfo.card[(int)CardNumber.FIRST].Card_UI.gameObject.transform.localScale = fullScale;
+        //cardInfo.card[(int)CardNumber.FIRST].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.FIRST].transform.position;
+        //cardInfo.card[(int)CardNumber.FIRST].Card_UI.gameObject.transform.localScale = fullScale;
         cardInfo.card[(int)CardNumber.FIRST].Card_UI.GetComponent<CardMover>().currentPosition = CardPosition.FIRST;
 
 
         //Second Card - Position and Scale
-        cardInfo.card[(int)CardNumber.SECOND].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.SECOND].transform.position;
-        cardInfo.card[(int)CardNumber.SECOND].Card_UI.gameObject.transform.localScale = smallScale;
+        //cardInfo.card[(int)CardNumber.SECOND].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.SECOND].transform.position;
+        //cardInfo.card[(int)CardNumber.SECOND].Card_UI.gameObject.transform.localScale = smallScale;
         cardInfo.card[(int)CardNumber.SECOND].Card_UI.GetComponent<CardMover>().currentPosition = CardPosition.SECOND;
 
 
         //Third Card - Position and Scale
-        cardInfo.card[(int)CardNumber.THIRD].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.THIRD].transform.position;
-        cardInfo.card[(int)CardNumber.THIRD].Card_UI.gameObject.transform.localScale = smallScale;
+        //cardInfo.card[(int)CardNumber.THIRD].Card_UI.gameObject.transform.position = cardPosition[(int)CardPosition.THIRD].transform.position;
+        //cardInfo.card[(int)CardNumber.THIRD].Card_UI.gameObject.transform.localScale = smallScale;
         cardInfo.card[(int)CardNumber.THIRD].Card_UI.GetComponent<CardMover>().currentPosition = CardPosition.THIRD;
     }
 

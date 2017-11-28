@@ -38,9 +38,12 @@ public class CardMover : MonoBehaviour
 			//move towards targetPosition
 			transform.position = Vector3.MoveTowards(transform.position, targetVectorPosition, cardSpeed * Time.deltaTime);
 
-             //once at that position
-            if (transform.position == targetVectorPosition)
+             //once at that position or near
+            if ((transform.position - targetVectorPosition).magnitude < 0.015f)
 			{
+                //snap
+                transform.position = targetVectorPosition;
+
 				//update currentPosition to targetPosition
 				currentPosition = targetPosition;
 

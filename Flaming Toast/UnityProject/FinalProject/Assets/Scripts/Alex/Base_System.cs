@@ -27,6 +27,8 @@ public class Base_System : MonoBehaviour
     public AudioClip WeaponSoundOff;
     public AudioClip SpawnCanisterSound;
     public AudioClip MaxCanisterSound;
+    public AudioClip ShieldHit;
+    public AudioClip ShipHit;
 
 
     private bool isCanisterConnected = false;
@@ -184,7 +186,8 @@ public class Base_System : MonoBehaviour
 
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;
-                    Time.timeScale = 0.2f;
+                    EndGameRestart_LOSS();
+                    //Time.timeScale = 0.2f;
                 }
             }
 
@@ -207,7 +210,8 @@ public class Base_System : MonoBehaviour
 
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;
-                    Invoke("EndGameRestart_LOSS", 2.0f);
+                    EndGameRestart_LOSS();
+                    //Invoke("EndGameRestart_LOSS", 2.0f);
                     //Time.timeScale = 0.2f;
 
                 }
