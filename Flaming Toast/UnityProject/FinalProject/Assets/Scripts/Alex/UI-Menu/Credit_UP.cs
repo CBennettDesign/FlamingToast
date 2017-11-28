@@ -13,6 +13,10 @@ public class Credit_UP : MonoBehaviour {
 	float actualTimer;
 
 	public int sceneNumber;
+	public GameObject endPoint;
+	public Animator fadeToBlack;
+
+	public GameObject particles;
 
 	// Use this for initialization
 	void Start () {
@@ -21,19 +25,29 @@ public class Credit_UP : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + distance, transform.position.z), speed * Time.deltaTime);
+		//transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + distance, transform.position.z), speed * Time.deltaTime);
+		transform.position = Vector3.MoveTowards(transform.position, endPoint.transform.position, speed * Time.deltaTime);
 
 		actualTimer += Time.deltaTime;
 
 		if (actualTimer >= timer) 
 		{
-			SceneManager.LoadScene (sceneNumber);
+			//SceneManager.LoadScene (sceneNumber);
+			particles.SetActive(false);
+			fadeToBlack.Play("FadeToBlack");
+			Invoke("EndCredit",2f);
 		}
 
 		if(XCI.GetButtonDown(XboxButton.B))
 		{
-				SceneManager.LoadScene(sceneNumber);
+			//SceneManager.LoadScene(sceneNumber);
+			particles.SetActive(false);
+			fadeToBlack.Play("FadeToBlack");
+			Invoke("EndCredit",2f);
 		}
 	
+	}
+	public void EndCredit(){
+		SceneManager.LoadScene (sceneNumber);
 	}
 }
