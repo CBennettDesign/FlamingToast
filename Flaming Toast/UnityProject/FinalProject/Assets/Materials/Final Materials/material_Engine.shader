@@ -1,12 +1,12 @@
 // Shader created with Shader Forge v1.38 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:1,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:1,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-9750-RGB,spec-6654-R,gloss-6654-B,normal-5416-RGB,emission-4384-OUT;n:type:ShaderForge.SFN_Tex2d,id:9750,x:32139,y:32438,ptovrint:False,ptlb:Colour,ptin:_Colour,varname:node_9750,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:6924833d88264974f9f3a5a48f6efc0d,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:5416,x:32139,y:33080,ptovrint:False,ptlb:Normal,ptin:_Normal,varname:node_5416,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:e6838334ccb46254a9ce512277eeaa02,ntxv:2,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:6654,x:32139,y:32621,ptovrint:False,ptlb:Atlas,ptin:_Atlas,varname:node_6654,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:115721bbc4343a04ba1832d6a6df8a3f,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:4384,x:32473,y:32802,varname:node_4384,prsc:2|A-6654-G,B-3263-RGB,C-6889-OUT;n:type:ShaderForge.SFN_Color,id:3263,x:32139,y:32807,ptovrint:False,ptlb:Engine Glow Colour,ptin:_EngineGlowColour,varname:node_3263,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:0.8344831,c3:1,c4:1;n:type:ShaderForge.SFN_ValueProperty,id:6889,x:32139,y:32981,ptovrint:False,ptlb:Engine Glow Intensity,ptin:_EngineGlowIntensity,varname:node_6889,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;proporder:9750-5416-6654-3263-6889;pass:END;sub:END;*/
+/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:1,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:1,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-9750-RGB,spec-6654-R,gloss-6654-B,normal-5416-RGB,emission-4384-OUT;n:type:ShaderForge.SFN_Tex2d,id:9750,x:32139,y:32438,ptovrint:False,ptlb:Colour,ptin:_Colour,varname:node_9750,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:6924833d88264974f9f3a5a48f6efc0d,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:5416,x:32139,y:33080,ptovrint:False,ptlb:Normal,ptin:_Normal,varname:node_5416,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:e6838334ccb46254a9ce512277eeaa02,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Tex2d,id:6654,x:32139,y:32621,ptovrint:False,ptlb:Atlas,ptin:_Atlas,varname:node_6654,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:115721bbc4343a04ba1832d6a6df8a3f,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:4384,x:32430,y:32834,varname:node_4384,prsc:2|A-6654-G,B-3263-RGB,C-6889-OUT;n:type:ShaderForge.SFN_Color,id:3263,x:32139,y:32807,ptovrint:False,ptlb:Engine Glow Colour,ptin:_EngineGlowColour,varname:node_3263,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:0.8344831,c3:1,c4:1;n:type:ShaderForge.SFN_ValueProperty,id:6889,x:32139,y:32981,ptovrint:False,ptlb:Engine Glow Intensity,ptin:_EngineGlowIntensity,varname:node_6889,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0;proporder:9750-5416-6654-3263-6889;pass:END;sub:END;*/
 
 Shader "Shader Forge/Systems" {
     Properties {
         _Colour ("Colour", 2D) = "white" {}
-        _Normal ("Normal", 2D) = "black" {}
+        _Normal ("Normal", 2D) = "bump" {}
         _Atlas ("Atlas", 2D) = "white" {}
         _EngineGlowColour ("Engine Glow Colour", Color) = (0,0.8344831,1,1)
         _EngineGlowIntensity ("Engine Glow Intensity", Float ) = 0
@@ -97,7 +97,7 @@ Shader "Shader Forge/Systems" {
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float4 _Normal_var = tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal));
+                float3 _Normal_var = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal)));
                 float3 normalLocal = _Normal_var.rgb;
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
@@ -250,7 +250,7 @@ Shader "Shader Forge/Systems" {
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float4 _Normal_var = tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal));
+                float3 _Normal_var = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal)));
                 float3 normalLocal = _Normal_var.rgb;
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
@@ -432,7 +432,7 @@ Shader "Shader Forge/Systems" {
                 i.normalDir = normalize(i.normalDir);
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.bitangentDir, i.normalDir);
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float4 _Normal_var = tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal));
+                float3 _Normal_var = UnpackNormal(tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal)));
                 float3 normalLocal = _Normal_var.rgb;
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));

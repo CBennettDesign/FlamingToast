@@ -138,7 +138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.400002, y: 2037}
+  m_AnchoredPosition: {x: 17.400002, y: 2267}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &155210308
@@ -7108,8 +7108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1666, y: 937}
+  m_AnchoredPosition: {x: 0, y: 0.000033379}
+  m_SizeDelta: {x: 1666, y: 997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &445650501
 Animator:
@@ -10623,7 +10623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000007750878, y: -470.00018}
+  m_AnchoredPosition: {x: 0.000007750878, y: -518}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981053302
@@ -10695,7 +10695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.400002, y: -315}
+  m_AnchoredPosition: {x: 17.400002, y: -339}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998909111
@@ -10750,7 +10750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   distance: 100
-  timer: 20
+  timer: 21
   sceneNumber: 0
   endPoint: {fileID: 139083288}
   fadeToBlack: {fileID: 445650501}
@@ -10992,8 +10992,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000009536743, y: -232.59998}
-  m_SizeDelta: {x: 519.9, y: 1417.5}
+  m_AnchoredPosition: {x: -0.0000019073, y: -234.5}
+  m_SizeDelta: {x: 760.67, y: 1417.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306789906
 MonoBehaviour:
@@ -11068,11 +11068,13 @@ MonoBehaviour:
 
     3rd Party Tools:
 
-    ProBuilder
+    ProBuilder - Pro Core
 
-    ShaderForge
+    ShaderForge - Joachim Holmer
 
-    Post Processing Stack'
+    Post Processing Stack - Unity Technologies
+
+    XInput - Remi Gillig'
 --- !u!222 &1306789907
 CanvasRenderer:
   m_ObjectHideFlags: 0

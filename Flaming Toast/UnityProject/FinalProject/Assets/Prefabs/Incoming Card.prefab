@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a695d48cea408494a8b2294b4e9aa46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSpeed: 5
+  cardSpeed: 2
   currentPosition: 0
   targetPosition: 0
 --- !u!114 &114206951164417902
@@ -1637,8 +1637,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357394361947432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0006095, y: 1.0006096, z: 1.0006096}
+  m_LocalPosition: {x: 0, y: 0, z: -8.999849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224636664138150202}
   - {fileID: 224668272898845588}
@@ -1653,7 +1653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.999939, y: 173}
+  m_AnchoredPosition: {x: 17.000122, y: -162.7001}
   m_SizeDelta: {x: 265.6, y: 278.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224125811860802764
