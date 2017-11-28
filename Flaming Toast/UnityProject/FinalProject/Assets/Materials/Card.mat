@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d15f693d99e62c439a563b356b6e775, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b9d42ca6eedf7041ba7af314595fe93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureCard:
@@ -50,7 +50,7 @@ Material:
     - _Brightness: 1.1
     - _Cutoff: 0.5
     - _DistortionScale: 1
-    - _Distortionamount: 0.15
+    - _Distortionamount: 0.52
     - _LineAMount: 50
     - _LineAmount: 50
     - _LineTransparency: 0.28
@@ -59,4 +59,4 @@ Material:
     - _node_5390: 0.1
     - _node_9035: 0.5
     m_Colors:
-    - _Color: {r: 0, g: 0.5862067, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}

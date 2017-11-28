@@ -36,7 +36,7 @@ public class PlayerPickup : MonoBehaviour {
         
         
         // XBOX control
-        if (XCI.GetButtonDown(XboxButton.A, Controlers))
+        if (XCI.GetButtonDown(XboxButton.A, Controlers) || XCI.GetButtonDown(XboxButton.RightBumper, Controlers))
         {
             if (inHands == null)
             {
@@ -158,44 +158,7 @@ public class PlayerPickup : MonoBehaviour {
                     return;
                 }
 
-                // USE JUNCTION
-                layermask = 1 << LayerMask.NameToLayer("Junction");
-
-                //Testing for all nearby Junctions within the sphere around the player
-                Collider[] nearbyJuction = Physics.OverlapSphere(transform.position, pickUpDistance, layermask);
-                GameObject closeJunction = null;
-                float closeDistanceJunction = 999999.0f;
-
-                for (int i = 0; i < nearbyJuction.Length; i++)
-                {
-                    //Raycasting to check there is no walls in the way
-                    Vector3 Dir = nearbyJuction[i].transform.position - (transform.position + Vector3.up * 0.5f);
-                    Dir.Normalize();
-
-                    if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Dir, out info, pickUpDistance, layermask))
-                    {
-                        //If the object that is hit is the correct Junction
-                        if (nearbyJuction[i].gameObject == info.collider.gameObject)
-                        {
-                            //todo: check if can be picked up
-
-                            //Checking if it is the closest Junction
-                            float distance = Vector3.Distance(transform.position, nearbyJuction[i].transform.position);
-                            if (distance < closeDistanceJunction)
-                            {
-                                closeJunction = nearbyJuction[i].gameObject;
-                                closeDistanceJunction = distance;
-                            }
-                        }
-                    }
-                }
-                //Action to be used when interacting with Junctions
-                if (closeJunction)
-                {
-                    
-                    Junctions CurrentJunction = closeJunction.GetComponent<Junctions>();
-                    CurrentJunction.ToggleJunction(useJunctionSound);
-                }
+                
             }
             else
             {
@@ -263,6 +226,50 @@ public class PlayerPickup : MonoBehaviour {
                     inHands = null;
                 }
 
+            }
+        }
+        if (XCI.GetButtonDown(XboxButton.X, Controlers) || XCI.GetButtonDown(XboxButton.B, Controlers) || XCI.GetButtonDown(XboxButton.Y, Controlers) || XCI.GetButtonDown(XboxButton.LeftBumper, Controlers))
+        {
+            //Local Raycast variable
+            RaycastHit info;
+
+            // USE JUNCTION
+            int layermask = 1 << LayerMask.NameToLayer("Junction");
+
+            //Testing for all nearby Junctions within the sphere around the player
+            Collider[] nearbyJuction = Physics.OverlapSphere(transform.position, pickUpDistance, layermask);
+            GameObject closeJunction = null;
+            float closeDistanceJunction = 999999.0f;
+
+            for (int i = 0; i < nearbyJuction.Length; i++)
+            {
+                //Raycasting to check there is no walls in the way
+                Vector3 Dir = nearbyJuction[i].transform.position - (transform.position + Vector3.up * 0.5f);
+                Dir.Normalize();
+
+                if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Dir, out info, pickUpDistance, layermask))
+                {
+                    //If the object that is hit is the correct Junction
+                    if (nearbyJuction[i].gameObject == info.collider.gameObject)
+                    {
+                        //todo: check if can be picked up
+
+                        //Checking if it is the closest Junction
+                        float distance = Vector3.Distance(transform.position, nearbyJuction[i].transform.position);
+                        if (distance < closeDistanceJunction)
+                        {
+                            closeJunction = nearbyJuction[i].gameObject;
+                            closeDistanceJunction = distance;
+                        }
+                    }
+                }
+            }
+            //Action to be used when interacting with Junctions
+            if (closeJunction)
+            {
+
+                Junctions CurrentJunction = closeJunction.GetComponent<Junctions>();
+                CurrentJunction.ToggleJunction(useJunctionSound);
             }
         }
 	}

@@ -7,6 +7,13 @@ public class FirstSnap : BaseCanisterSnapper {
 
     //
     public GameObject[] objectsTurnOn;
+    public GameObject[] objectsTurnOff;
+    public Light[] lightsToBeLerped;
+    private float lerping;
+    [Range(0.0f, 10.0f)]
+    public float speedMultiplyer;
+
+    private bool hasLerped = true;
 
     [HideInInspector]
     public Event_System_Manager evm;
@@ -27,6 +34,12 @@ public class FirstSnap : BaseCanisterSnapper {
     void Start()
     {
         evm = GameObject.FindGameObjectWithTag("Event_System_Manager").GetComponent<Event_System_Manager>();
+
+        for (int i = 0; i < lightsToBeLerped.Length; i++)
+        {
+            lightsToBeLerped[i].GetComponent<Light>().intensity = 0;
+        }
+
     }
 
     // Update is called once per frame
@@ -38,6 +51,24 @@ public class FirstSnap : BaseCanisterSnapper {
         Debug.DrawLine(transform.position, transform.position + Vector3.left * RadiusOfRayCast);
         Debug.DrawLine(transform.position, transform.position + Vector3.right * RadiusOfRayCast);
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * RadiusOfRayCast);
+        
+        //Lights to be lerped
+        
+        if (!hasLerped)
+        {
+            lerping += Time.deltaTime * speedMultiplyer;
+            if (lerping >= 1)
+            {
+                lerping = 1;
+            }
+
+            for (int i = 0; i < lightsToBeLerped.Length; i++)
+            {
+
+                lightsToBeLerped[i].GetComponent<Light>().intensity = Mathf.Lerp(0, 2, lerping);
+            }
+        }
+        
     }
 
     public override bool giveCanister(GameObject GiveCanister)
@@ -50,8 +81,13 @@ public class FirstSnap : BaseCanisterSnapper {
         for (int i = 0; i < objectsTurnOn.Length; i++)
         {
             objectsTurnOn[i].SetActive(true);
+            hasLerped = false;
         }
-
+        //Closes all objects at on enter of the frist green canister.
+        for (int i = 0; i < objectsTurnOff.Length; i++)
+        {
+            objectsTurnOff[i].SetActive(false);
+        }
 
         //Turns on PowerIllumination script when green canister is inserted.
         this.transform.GetComponent<PowercoreIllumination>().enabled = true;

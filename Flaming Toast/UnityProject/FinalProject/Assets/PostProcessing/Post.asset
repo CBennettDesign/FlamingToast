@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.5897886
+        intensity: 0.7347586
         threshold: 1.1
         softKnee: 0.5
         radius: 4
@@ -109,7 +109,7 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
         tonemapper: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
         temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 0.225
+        saturation: 1
         contrast: 1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
@@ -293,12 +293,12 @@ MonoBehaviour:
       size: 0.88
       luminanceContribution: 0.614
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0.09558821, g: 0.09558821, b: 0.09558821, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.5
+      intensity: 0
       smoothness: 1
       roundness: 1
       mask: {fileID: 0}

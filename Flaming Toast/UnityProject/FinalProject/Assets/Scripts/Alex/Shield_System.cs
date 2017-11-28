@@ -42,6 +42,12 @@ public class Shield_System : MonoBehaviour
     private bool TurnOnSounds = false;
     private bool TurnOffSounds = false;
 
+    //Lerping adrian
+    [Range(0.0f, 10.0f)]
+    public float speedMultiplyer;
+
+    private float lerping;
+
 
     //Pre-Initialisation
     private void Awake()
@@ -138,10 +144,7 @@ public class Shield_System : MonoBehaviour
                             PlayerAudio.instance.PlaySound(system.SheildSoundOn);
                             TurnOnSounds = true;
                         }
-                        if (currentSystem.CanisterConnected)
-                        {
                             TurnOffSounds = true;
-                        }
                         /////////////////////////////////////////////
                     }
                 }
@@ -157,10 +160,7 @@ public class Shield_System : MonoBehaviour
                     currentSystem.SystemLight.SetActive(false);
                     //Sound system check by adrian
                     /////////////////////////////////////////////
-                    if (!currentSystem.CanisterConnected)
-                    {
-                        TurnOnSounds = false;
-                    }
+                    TurnOnSounds = false;
                     if (TurnOffSounds)
                     {
                         PlayerAudio.instance.PlaySound(system.SheildSoundOff);
@@ -180,6 +180,15 @@ public class Shield_System : MonoBehaviour
             {
                 currentSystem.SystemLight.SetActive(false);
 
+                // Sound system check by adrian
+                    /////////////////////////////////////////////
+                TurnOnSounds = false;
+                if (TurnOffSounds)
+                {
+                    PlayerAudio.instance.PlaySound(system.SheildSoundOff);
+                    TurnOffSounds = false;
+                }
+                /////////////////////////////////////////////
             }
         }
 
@@ -193,21 +202,28 @@ public class Shield_System : MonoBehaviour
         {
             //Drains connected canister - can only happen if the system is active, when it has a cansiter
             canisterSlot.CanDrainCanister = true;
+            
+            //Lerp
+            lerping += Time.deltaTime * speedMultiplyer;
+            if (lerping >= 1)
+            {
+                lerping = 1;
+            }
 
             //get the direction and affect the direction on the shield shader visibility
             switch (currentSystem.Direction)
             {
                 case Current_System.SystemDirection.LEFT:
-                    currentShieldMaterial.SetFloat("_Shield_Left", 1.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Left", lerping);
                     break;
                 case Current_System.SystemDirection.RIGHT:
-                    currentShieldMaterial.SetFloat("_Shield_Right", 1.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Right", lerping);
                     break;
                 case Current_System.SystemDirection.TOP:
-                    currentShieldMaterial.SetFloat("_Shield_Top", 1.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Top", lerping);
                     break;
                 case Current_System.SystemDirection.BOTTOM:
-                    currentShieldMaterial.SetFloat("_Shield_Bottom", 1.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Bottom", lerping);
                     break;
                 case Current_System.SystemDirection.NONE:
                     break;
@@ -231,19 +247,24 @@ public class Shield_System : MonoBehaviour
         }
         else
         {
+            lerping -= Time.deltaTime * speedMultiplyer;
+            if (lerping <= 0)
+            {
+                lerping = 0;
+            }
             switch (currentSystem.Direction)
             {
                 case Current_System.SystemDirection.LEFT:
-                    currentShieldMaterial.SetFloat("_Shield_Left", 0.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Left", lerping);
                     break;
                 case Current_System.SystemDirection.RIGHT:
-                    currentShieldMaterial.SetFloat("_Shield_Right", 0.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Right", lerping);
                     break;
                 case Current_System.SystemDirection.TOP:
-                    currentShieldMaterial.SetFloat("_Shield_Top", 0.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Top", lerping);
                     break;
                 case Current_System.SystemDirection.BOTTOM:
-                    currentShieldMaterial.SetFloat("_Shield_Bottom", 0.0f);
+                    currentShieldMaterial.SetFloat("_Shield_Bottom", lerping);
                     break;
                 case Current_System.SystemDirection.NONE:
                     break;

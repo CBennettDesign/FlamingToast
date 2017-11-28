@@ -70,6 +70,16 @@ public class Weapon_System : MonoBehaviour
                     if (currentSystem.SystemLight != null)
                     {
                         currentSystem.SystemLight.SetActive(true);
+                        //Sound system check by adrian
+                        /////////////////////////////////////////////
+                        if (!TurnOnSounds)
+                        {
+                            PlayerAudio.instance.PlaySound(system.WeaponSoundOn);
+                            this.GetComponent<AudioSource>().enabled = true;
+                            TurnOnSounds = true;
+                        }
+                            TurnOffSounds = true;
+                        /////////////////////////////////////////////
                     }
                 }
             }
@@ -84,16 +94,15 @@ public class Weapon_System : MonoBehaviour
                 if (currentSystem.SystemLight != null)
                 {
                     currentSystem.SystemLight.SetActive(false);
+
                     //Sound system check by adrian
                     /////////////////////////////////////////////
-                    if (!TurnOnSounds)
+                    TurnOnSounds = false;
+                    if (TurnOffSounds)
                     {
-                        PlayerAudio.instance.PlaySound(system.WeaponSoundOn);
-                        TurnOnSounds = true;
-                    }
-                    if (currentSystem.CanisterConnected)
-                    {
-                        TurnOffSounds = true;
+                        PlayerAudio.instance.PlaySound(system.WeaponSoundOff);
+                        this.GetComponent<AudioSource>().enabled = false;
+                        TurnOffSounds = false;
                     }
                     /////////////////////////////////////////////
                 }
@@ -111,15 +120,14 @@ public class Weapon_System : MonoBehaviour
             if (currentSystem.SystemLight != null)
             {
                 currentSystem.SystemLight.SetActive(false);
+
                 //Sound system check by adrian
                 /////////////////////////////////////////////
-                if (!currentSystem.CanisterConnected)
-                {
-                    TurnOnSounds = false;
-                }
+                TurnOnSounds = false;
                 if (TurnOffSounds)
                 {
                     PlayerAudio.instance.PlaySound(system.WeaponSoundOff);
+                    this.GetComponent<AudioSource>().enabled = false;
                     TurnOffSounds = false;
                 }
                 /////////////////////////////////////////////

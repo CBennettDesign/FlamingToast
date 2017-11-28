@@ -25,7 +25,8 @@ public class Oxygen_System : MonoBehaviour
     
     //Depletion Timer - every 1 second it will go down by the depletionRate
     private float timer = 0.0f;
- 
+    
+
     //Pre-Initialisation
     private void Awake()
     {
@@ -122,8 +123,7 @@ public class Oxygen_System : MonoBehaviour
             }
         }
 
-
-
+       
         if (evm.RunEvents)
         {
             // timer
