@@ -29,6 +29,12 @@ public class FirstSnap : BaseCanisterSnapper {
     //Radius of sphere cast
     public float RadiusOfRayCast = 2;
 
+    //Next light to turn on
+    private int nextlight = 0;
+
+    //Next engine to turn on
+    private int nextEngine = 0;
+
 
     // Use this for initialization
     void Start()
@@ -53,22 +59,46 @@ public class FirstSnap : BaseCanisterSnapper {
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * RadiusOfRayCast);
         
         //Lights to be lerped
-        
-        if (!hasLerped)
+        //Lights will flash on
+        if (!hasLerped && nextlight < lightsToBeLerped.Length)
         {
             lerping += Time.deltaTime * speedMultiplyer;
+
+            lightsToBeLerped[nextlight].GetComponent<Light>().intensity = Mathf.Lerp(0, 2, lerping);
+
             if (lerping >= 1)
             {
-                lerping = 1;
-            }
-
-            for (int i = 0; i < lightsToBeLerped.Length; i++)
-            {
-
-                lightsToBeLerped[i].GetComponent<Light>().intensity = Mathf.Lerp(0, 2, lerping);
+                nextlight++;
+                lerping = 0;
             }
         }
-        
+        //Engines particals on
+        if (!hasLerped && nextEngine < objectsTurnOn.Length)
+        {
+            lerping += Time.deltaTime * speedMultiplyer;
+
+            objectsTurnOn[nextEngine].SetActive(true);
+
+            if (lerping >= 1)
+            {
+                nextEngine++;
+                lerping = 0;
+            }
+        }
+        //Flash Effect
+        if (!hasLerped && nextEngine < objectsTurnOn.Length)
+        {
+            lerping += Time.deltaTime * speedMultiplyer;
+
+            objectsTurnOn[nextEngine].SetActive(true);
+
+            if (lerping >= 1)
+            {
+                nextEngine++;
+                lerping = 0;
+            }
+        }
+
     }
 
     public override bool giveCanister(GameObject GiveCanister)
@@ -80,7 +110,7 @@ public class FirstSnap : BaseCanisterSnapper {
         //Opens all objects at on enter of the frist green canister.
         for (int i = 0; i < objectsTurnOn.Length; i++)
         {
-            objectsTurnOn[i].SetActive(true);
+            //objectsTurnOn[i].SetActive(true);
             hasLerped = false;
         }
         //Closes all objects at on enter of the frist green canister.
