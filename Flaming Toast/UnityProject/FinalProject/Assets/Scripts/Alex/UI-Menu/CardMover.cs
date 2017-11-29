@@ -28,16 +28,19 @@ public class CardMover : MonoBehaviour
         targetVectorPosition = cardSwitcherRef.GetCardPositionVector(targetPosition);//returns null..
 
     }
-	
+
+ 
 	
 	void Update ()
 	{
 
 		if(isMoving)
 		{
+
 			//move towards targetPosition
 			transform.position = Vector3.MoveTowards(transform.position, targetVectorPosition, cardSpeed * Time.deltaTime);
 
+ 
              //once at that position or near
             if ((transform.position - targetVectorPosition).magnitude < 0.015f)
 			{
@@ -52,8 +55,8 @@ public class CardMover : MonoBehaviour
 
                 if (currentPosition == CardSwitcher.CardPosition.END)
                 {
-                    Destroy(this.gameObject);
                     GetComponentInParent<UI_EventCards>().DeleteCard();
+                    Destroy(this.gameObject);
                 }
 
                 switch (targetPosition)
@@ -81,6 +84,7 @@ public class CardMover : MonoBehaviour
                 }
 
 				isMoving = false;
+ 
 			}
 
 

@@ -222,19 +222,30 @@ public class Base_System : MonoBehaviour
         HealthSlider.value = shipHealth;
         OxygenSlider.value = oxygenLevel;
 
-        int maxValue;
-        maxValue = Convert.ToInt32("100");
-        int currentValue;
-        int.TryParse(ProgressValue.text, out currentValue);
-
-       
-
-        if (currentValue >= maxValue)
+        //This should be the actual fix
+        if (ProgressValue.text.CompareTo("97%") == 0)
         {
+            ProgressValue.text = "100%";
             winState.GetComponent<Image>().enabled = true;
-
-            Invoke("EndGameRestart_WIN", 2.0f);
+            EndGameRestart_WIN();
+            Debug.Log(ProgressValue.text);
         }
+
+        //int maxValue;
+        //maxValue = 3;//Convert.ToInt32("5");
+        //int currentValue;
+        //String textProg = ProgressValue.text.ToString();
+        //String splitBy = "%";
+        //int.TryParse(ProgressValue.text, out currentValue);
+        //Debug.Log(ProgressValue.text + " : " + currentValue);
+
+        //if (currentValue >= maxValue)
+        //{
+        //    ProgressValue.text = "100%";
+        //    winState.GetComponent<Image>().enabled = true;
+        //    EndGameRestart_WIN();
+        //    //Invoke("EndGameRestart_WIN", 2.0f);
+        //}
        
 
     }
