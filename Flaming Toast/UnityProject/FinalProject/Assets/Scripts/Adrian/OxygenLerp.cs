@@ -19,6 +19,7 @@ public class OxygenLerp : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        system = GameObject.FindGameObjectWithTag("Base_System").GetComponent<Base_System>();
         oxygen = GetComponent<Oxygen_System>();
     }
 	

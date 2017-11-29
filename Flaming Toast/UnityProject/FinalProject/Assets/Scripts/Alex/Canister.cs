@@ -110,7 +110,7 @@ public class Canister : MonoBehaviour
         }
         if (transform.position.y < 0.0f)
         {
-            Debug.Log("<color=red>Out of map!</color>");
+            //Debug.Log("<color=red>Out of map!</color>");
             Destroy();
         }
     }

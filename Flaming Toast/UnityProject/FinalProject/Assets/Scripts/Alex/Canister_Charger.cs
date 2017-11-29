@@ -180,7 +180,7 @@ public class Canister_Charger : MonoBehaviour
             //Approx 1 second and while it is below max charge (100%)
             if (timer >= 1.0f && system_Ray.CurrentCanister.Charge < 100)
             {
-                Debug.Log("<color=white>Charging the canister</color>");
+                //Debug.Log("<color=white>Charging the canister</color>");
                 //Charge the connected canister by the chargeAmount
                 system_Ray.CurrentCanister.Charge += chargingAmount;
 
@@ -192,7 +192,7 @@ public class Canister_Charger : MonoBehaviour
                     system_Ray.CurrentCanister.Charge = 100;
                     //Particle cue
                     //Here
-                    Debug.Log("<color=yellow>Charge complete.</color>");
+                    //Debug.Log("<color=yellow>Charge complete.</color>");
                     //Reset to false as it is done with the currentCanister
                     isValidCanister = false;
                 }

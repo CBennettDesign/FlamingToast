@@ -52,7 +52,8 @@ namespace ProBuilder2.Actions
 			 	}
 			 	catch(System.Exception e)
 			 	{
-			 		Debug.LogError("Failed rebuilding " + pb.name + " shared indices cache.\n" + e.ToString());
+
+                    Debug.LogError("Failed rebuilding " + pb.name + " shared indices cache.\n" + e.ToString());
 			 	}
 			}
 

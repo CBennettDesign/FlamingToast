@@ -182,7 +182,7 @@ public class Base_System : MonoBehaviour
                 {
                     //Set the players movement speed to 0.0f
                     p.GetComponent<Movement>().movementSpeed = 0.0f;
-                    Debug.Log("Killed: " + p.name);
+                   // Debug.Log("Killed: " + p.name);
 
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;
@@ -192,12 +192,12 @@ public class Base_System : MonoBehaviour
             }
 
             oxyUsed = true;
-            Debug.Log("<color=red>Oxygen Depleted!!</color>");
+            //Debug.Log("<color=red>Oxygen Depleted!!</color>");
         }
 
         if (shipHealth <= 0 && !shipHealthDepleted)
         {
-            Debug.Log("<color=red>Ship health is 0, game over!</color>");
+            //Debug.Log("<color=red>Ship health is 0, game over!</color>");
             //For every player in the players array
             foreach (GameObject p in player)
             {
@@ -206,7 +206,7 @@ public class Base_System : MonoBehaviour
                 {
                     //Set the players movement speed to 0.0f
                     p.GetComponent<Movement>().movementSpeed = 0.0f;
-                    Debug.Log("Killed: " + p.name);
+                    //Debug.Log("Killed: " + p.name);
 
                     //game over screen
                     lossState.GetComponent<Image>().enabled = true;

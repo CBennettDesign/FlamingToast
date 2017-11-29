@@ -118,13 +118,26 @@ public class Event_Mover : MonoBehaviour
   
     private void OnCollisionEnter(Collision colObj)
     {
-        DealDamageToShip();
-           
-        Instantiate(evm.particle, transform.position, Quaternion.identity);
+        if (isEnemy)
+        {
+            DealDamageToShip();
 
-        particleDestroy = true;
+            Instantiate(evm.enemyParticle, transform.position, Quaternion.identity);
 
-        Destroy(this.gameObject);
+            particleDestroy = true;
+
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DealDamageToShip();
+
+            Instantiate(evm.asteriodParticle, transform.position, Quaternion.identity);
+
+            particleDestroy = true;
+
+            Destroy(this.gameObject);
+        }
     }
 
     private void DealDamageToShip()
@@ -142,7 +155,7 @@ public class Event_Mover : MonoBehaviour
             //Full damage - no system is active
             if (!weapon_System.currentSystem.IsActive && !shield_System.currentSystem.IsActive)
             {
-                Debug.Log("<color=orange>Full Damage</color>");
+                //Debug.Log("<color=orange>Full Damage</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;
 
                
@@ -152,7 +165,7 @@ public class Event_Mover : MonoBehaviour
             else if (weapon_System.currentSystem.IsActive && shield_System.currentSystem.IsActive)
             {
                 //Partial Damage
-                Debug.Log("<color=yellow>Minimum Damage - Enemy</color>");
+                //Debug.Log("<color=yellow>Minimum Damage - Enemy</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;
 
                 vignetteFlash.ShipHit(true, true, true);
@@ -161,7 +174,7 @@ public class Event_Mover : MonoBehaviour
             else if (weapon_System.currentSystem.IsActive || shield_System.currentSystem.IsActive)
             {
                 //Half Damage
-                Debug.Log("<color=yellow>Half Damage</color>");
+                //Debug.Log("<color=yellow>Half Damage</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().halfDamageValue;
 
                 vignetteFlash.ShipHit(true, true, true);
@@ -174,7 +187,7 @@ public class Event_Mover : MonoBehaviour
             if (!shield_System.currentSystem.IsActive)
             {
                 //Full Damage
-                Debug.Log("<color=orange>Full Damage</color>");
+                //Debug.Log("<color=orange>Full Damage</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().fullDamageValue;//shield_System.usageAmount;
 
                 //Debug.Log("Details: " + event_Spawner.currentEventDirection + " : " + shield_System.currentSystem.Direction);
@@ -185,7 +198,7 @@ public class Event_Mover : MonoBehaviour
             else
             {
                 //Partial Damage
-                Debug.Log("<color=yellow>Minimum Damage - Asteroid</color>");
+                //Debug.Log("<color=yellow>Minimum Damage - Asteroid</color>");
                 powerCore.ShipHealth -= transform.parent.parent.GetComponent<Event_System_Manager>().minimumDamageValue;//Mathf.Abs(shield_System.usageAmount - shield_System.reductionAmount);
 
                 vignetteFlash.ShipHit(true, true, false);

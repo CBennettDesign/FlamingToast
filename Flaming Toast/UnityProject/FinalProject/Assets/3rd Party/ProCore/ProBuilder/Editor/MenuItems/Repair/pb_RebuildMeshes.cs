@@ -85,7 +85,8 @@ namespace ProBuilder2.Actions
 			}
 			catch(System.Exception e)
 			{
-				Debug.LogError("Failed rebuilding ProBuilder mesh: " + e.ToString());
+
+                Debug.LogError("Failed rebuilding ProBuilder mesh: " + e.ToString());
 			}
 		}
 	}

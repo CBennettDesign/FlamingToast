@@ -25,7 +25,7 @@ public class VignetteFlash : MonoBehaviour
 
         if (shieldVignette == null || damageVignette == null)
 		{
-			Debug.Log("No image attached for the vignette flash");
+			//Debug.Log("No image attached for the vignette flash");
 		}
 
         shieldVignette.SetActive(false);

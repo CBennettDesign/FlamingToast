@@ -146,7 +146,7 @@ public class Weapon_System : MonoBehaviour
 
             if (timer >= 1.0f)
             {
-                Debug.Log("<color=cyan>Weapons " + currentSystem.Direction + " are online</color>");
+                //Debug.Log("<color=cyan>Weapons " + currentSystem.Direction + " are online</color>");
 
                 //timer reset
                 timer = 0.0f;

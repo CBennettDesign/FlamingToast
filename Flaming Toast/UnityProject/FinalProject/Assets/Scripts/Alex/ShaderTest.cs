@@ -8,12 +8,12 @@ public class ShaderTest : MonoBehaviour
 
     private void OnCollisionEnter(Collision colObj)
     {
-        Debug.Log("PING! " + colObj.gameObject.name);
+       // Debug.Log("PING! " + colObj.gameObject.name);
 
 
         Material testObjMaterial = colObj.gameObject.GetComponent<Renderer>().material;
 
-        Debug.Log(testObjMaterial.shader.name);
+        //Debug.Log(testObjMaterial.shader.name);
 
         testObjMaterial.color = Color.red;
 
@@ -21,11 +21,11 @@ public class ShaderTest : MonoBehaviour
 
         if (testObjMaterial.GetFloat("_node") > 0.5f)
         {
-            Debug.Log("HELLO!!!!!");
+            //Debug.Log("HELLO!!!!!");
         }
         else
         {
-            Debug.Log("MEME!");
+           // Debug.Log("MEME!");
         }
 
 

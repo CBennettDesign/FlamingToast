@@ -65,7 +65,7 @@ public class Canister_Slot : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+           // Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
         }
 
         //Starting point for the timer, planned every 1 second it deplete the currentCanister
@@ -147,7 +147,7 @@ public class Canister_Slot : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                            //Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
                         }
 
                     }
@@ -163,7 +163,7 @@ public class Canister_Slot : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                            //Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
                         }
 
                         //Particle cue
@@ -188,7 +188,7 @@ public class Canister_Slot : MonoBehaviour
             }
             else
             {
-                Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
+                //Debug.Log("<color=red>Warning indicator was not found in the canister slot.</color>", this);
             }
 
             //Reset the canister status
@@ -202,6 +202,7 @@ public class Canister_Slot : MonoBehaviour
     /// need direct access to the system_Ray object as it is a child of the canister slot.
     /// </summary>
     /// <returns> The Connected Canister TRUE || FALSE </returns>
+    /// 
 
     public bool CheckForCanister()
     {

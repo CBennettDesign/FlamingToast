@@ -31,7 +31,8 @@ namespace ProBuilder2.Actions
 
 			if( ColliderMat == null )
 			{
-				Debug.LogError("ProBuilder cannot find Collider material!  Make sure the Collider material asset is in \"Assets/ProCore/ProBuilder/Resources/Material\" folder.");
+
+                Debug.LogError("ProBuilder cannot find Collider material!  Make sure the Collider material asset is in \"Assets/ProCore/ProBuilder/Resources/Material\" folder.");
 				return;
 			}
 

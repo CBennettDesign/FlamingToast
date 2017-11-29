@@ -123,7 +123,7 @@ public class Canister_Depot : MonoBehaviour
                 }
                 else if (system.CurrentCanisterCount >= system.MaxCanisterCount && !warningGiven)
                 {
-                    Debug.Log("<color=yellow>Max Canisters on scene</color>");
+                    //Debug.Log("<color=yellow>Max Canisters on scene</color>");
                     warningGiven = true;
 
                     depotLight.color = Color.red;

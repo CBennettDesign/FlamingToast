@@ -41,7 +41,8 @@ public class ClearUnusedAttributes : Editor
 		mesh.tangents = null;
 
 		// Print out the mesh attributes in a neatly formatted string.
-		// Debug.Log( pb_MeshUtility.Print(mesh) );
+		// 
+( pb_MeshUtility.Print(mesh) );
 	}
 }
 

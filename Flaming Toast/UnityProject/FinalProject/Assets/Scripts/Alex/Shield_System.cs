@@ -237,6 +237,7 @@ public class Shield_System : MonoBehaviour
 
             if (timer >= 1.0f)
             {
+                //
                 //Debug.Log("<color=cyan>Shield " + currentSystem.Direction + " are online</color>");
 
                 //timer reset

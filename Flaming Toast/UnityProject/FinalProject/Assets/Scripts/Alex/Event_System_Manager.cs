@@ -8,9 +8,11 @@ using System;
 
 public class Event_System_Manager : MonoBehaviour
 {
-    //Particle
-    public GameObject particle;
+    //Enemy Particle
+    public GameObject enemyParticle;
 
+    //Asterid particle
+    public GameObject asteriodParticle;
 
     //Progress slider
     [SerializeField]
@@ -218,7 +220,8 @@ public class Event_System_Manager : MonoBehaviour
                             {
                                 case Event_.EventDirection.NONE:
                                     //do nothing - Debug message
-                                    Debug.Log("<color=red>Critical Error: Event Name: " + activeEvent.name + " did not have a valid event direction.</color>");
+
+                                    //Debug.Log("<color=red>Critical Error: Event Name: " + activeEvent.name + " did not have a valid event direction.</color>");
                                     break;
                                 case Event_.EventDirection.TOP:
                                     {
@@ -266,7 +269,7 @@ public class Event_System_Manager : MonoBehaviour
 
                     }
 
-                    Debug.Log("<color=white> "+ "Current Event: "+ activeEvent.type + " : " + activeEvent.direction + " </color>");
+                    //Debug.Log("<color=white> "+ "Current Event: "+ activeEvent.type + " : " + activeEvent.direction + " </color>");
 
                     activeEvent.BeenUsed = true;
                 }
@@ -281,7 +284,7 @@ public class Event_System_Manager : MonoBehaviour
                 if (countOfUsed >= events.Count)
                 {
                     runEventTimer = false;
-                    Debug.Log("<color=white>Stopped the event timer.</color>");
+                    //Debug.Log("<color=white>Stopped the event timer.</color>");
                 }
             }
  
