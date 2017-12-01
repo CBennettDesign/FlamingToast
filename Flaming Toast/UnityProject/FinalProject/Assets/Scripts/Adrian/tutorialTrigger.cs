@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class tutorialTrigger : MonoBehaviour {
 
+
+    /// <summary>
+    /// NO LONGER USED BUT KEPTS FOR FUTURE UPGRADES 
+    /// </summary>
+    
+
     //Canvas being switched
     public Canvas canvas;
     //Question Mark to be switched

@@ -20,23 +20,8 @@ public class Two_System_Junction : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //sendJunctionMessage(powered);
+        
     }
-
-    //void sendJunctionMessage(bool state)
-    //{
-    //    if (powered)
-    //    {
-    //        for (int i = 0; i < Systems.Length; i++)
-    //        {
-    //            Systems[i].SendMessage("Toggle", state, SendMessageOptions.DontRequireReceiver);
-    //        }
-    //    }
-    //    if (!powered)
-    //    {
-    //        return;
-    //    }
-    //}
 
     private void Toggle(bool currentState)
     {

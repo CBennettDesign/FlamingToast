@@ -131,7 +131,7 @@ public class PlayerPickup : MonoBehaviour {
                     }
                     else
                     {
-                       // Debug.Log("WTF");
+                       
                     }
                 }
 

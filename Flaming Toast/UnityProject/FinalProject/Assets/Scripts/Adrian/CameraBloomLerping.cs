@@ -33,6 +33,7 @@ public class CameraBloomLerping : MonoBehaviour {
 	void Update ()
     {
         BloomModel.Settings bloomSettings = ppProfile.bloom.settings;
+        //Timer for bloom Lerp
         if (isFadeingIn)
         {
             timer += Time.deltaTime;
@@ -54,6 +55,7 @@ public class CameraBloomLerping : MonoBehaviour {
             }
         }
 
+        //Adjusting bloom values
         bloomSettings.bloom.intensity = Mathf.Lerp(MinBloom, MaxBloom, timer);
 
         ppProfile.bloom.settings = bloomSettings;

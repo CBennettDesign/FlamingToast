@@ -20,6 +20,7 @@ public class Wires : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //Lerping for all wire systems
         if (isOn)
         {
             lerping += Time.deltaTime * speedMultiplyer;
@@ -40,7 +41,10 @@ public class Wires : MonoBehaviour {
             meshRenderer.material.SetFloat("_wireonoff", lerping);
         }
 	}
-
+    /// <summary>
+    /// Bool check for wire system
+    /// </summary>
+    /// <param name="on"></param>
     void SetWiresOn(bool on)
     {
         isOn = on;

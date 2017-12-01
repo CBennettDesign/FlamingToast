@@ -8,7 +8,7 @@ public class PowercoreIllumination : MonoBehaviour {
 	void Start ()
     {
         Junctions junc = GetComponent<Junctions>();
-
+        //Illuminates every peice of wire in set
         for (int i = 0; i  < junc.Wires.Length; i ++)
         {
             junc.setIlluminated(i, true);

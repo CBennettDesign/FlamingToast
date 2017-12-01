@@ -16,7 +16,7 @@ public class PlayerAudio : MonoBehaviour {
 
     public void PlaySound(AudioClip audio)
     {
-        //instantiate
+        //instantiates Audio Instances
         GameObject audioObject = Instantiate(audioGameObject);
         AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         audioSource.PlayOneShot(audio, 1.0f);

@@ -45,7 +45,10 @@ public class Junctions : MonoBehaviour {
         }
         
     }
-
+    /// <summary>
+    /// Toggles the nearest junction and plays sound
+    /// </summary>
+    /// <param name="useJunctionSound"></param>
     public void ToggleJunction(AudioClip useJunctionSound)
     {
         if (!isPowered)
@@ -67,6 +70,11 @@ public class Junctions : MonoBehaviour {
         setIlluminated(selectedIndex, true);
     }
 
+    /// <summary>
+    /// Sets current illuminated wireset
+    /// </summary>
+    /// <param name="Wire"></param>
+    /// <param name="state"></param>
     public void setIlluminated(int Wire, bool state)
     {
         //creates new color
@@ -91,7 +99,10 @@ public class Junctions : MonoBehaviour {
         if(Wire < NextJunction.Length)
             NextJunction[Wire].SendMessage("Toggle", state, SendMessageOptions.DontRequireReceiver);
     }
-
+    /// <summary>
+    /// Toggle function called from other classes
+    /// </summary>
+    /// <param name="state"></param>
     void Toggle(bool state)
     {
         isPowered = state;

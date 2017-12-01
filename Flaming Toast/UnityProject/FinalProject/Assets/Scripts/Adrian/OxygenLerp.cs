@@ -37,11 +37,11 @@ public class OxygenLerp : MonoBehaviour {
         {
             timer = 1 - (system.OxygenLevel - effectEnd) / (effectStart - effectEnd);
         }
-        
+        //Lerps Vignette
         VignetteModel.Settings SettingsVignette = ppProfile.vignette.settings;
         SettingsVignette.intensity = Mathf.Lerp(MinIntensity, MaxIntensity, timer);
         ppProfile.vignette.settings = SettingsVignette;
-
+        //lerps color grading
         ColorGradingModel.Settings SettingsGradingModel = ppProfile.colorGrading.settings;
         SettingsGradingModel.basic.saturation = Mathf.Lerp(MinSaturation, MaxSaturation, timer);
         ppProfile.colorGrading.settings = SettingsGradingModel;
